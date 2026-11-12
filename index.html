@@ -4,31 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DNA Informatica</title>
-    <!-- Il ?v=2 forza il browser a scaricare il CSS aggiornato -->
-    <link rel="stylesheet" href="css/style.css?v=2">
+    <link rel="stylesheet" href="css/style.css?v=230">
 </head>
 <body>
 
-    <!-- HEADER -->
-    <header class="header">
-        <div class="logo-container">
-            <img src="img/logo.png" alt="Logo del sito" id="mioLogo">
-            <h1>DNA Informatica</h1>
-        </div>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">Chi Siamo</a>
-            <a href="#">Servizi</a>
-            <a href="#">Contatti</a>
-        </nav>
-    </header>
+    <!-- Qui verrà inserito il menu da menu.html -->
+    <div id="header-placeholder"></div>
 
-            <!-- HERO SLIDER CON LOGHI DI BRAND E DOPPIO BOTTONE -->
+    <!-- HERO SLIDER -->
     <section class="hero-slider">
-        <!-- Slide 1: DNA SOFTWARE -->
         <div class="slide active">
             <div class="slide-content">
-                <!-- Brand DNA SOFTWARE -->
                 <div class="slide-brand">
                     <svg class="brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <polyline points="16 18 22 12 16 6"></polyline>
@@ -36,12 +22,9 @@
                     </svg>
                     <span class="brand-text">DNA <strong>SOFTWARE</strong></span>
                 </div>
-                
                 <span class="slide-badge">DNA Hub Architetture</span>
                 <h2>Architetture Software che contano</h2>
                 <p>Progettiamo ecosistemi digitali solidi, scalabili e orientati al futuro. Mettiamo le basi tecniche per garantire alle tue applicazioni massime prestazioni e zero colli di bottiglia.</p>
-                
-                <!-- BOTTONI AFFIANCATI -->
                 <div class="hero-buttons">
                     <a href="#" class="btn-aruba">SCOPRI LE ARCHITETTURE</a>
                     <a href="#" class="btn-outline">PARLA CON UN ESPERTO</a>
@@ -52,10 +35,8 @@
             </div>
         </div>
 
-        <!-- Slide 2: DNA WEB -->
         <div class="slide">
             <div class="slide-content">
-                <!-- Brand DNA WEB -->
                 <div class="slide-brand">
                     <svg class="brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="12" cy="12" r="10"></circle>
@@ -64,12 +45,9 @@
                     </svg>
                     <span class="brand-text">DNA <strong>WEB</strong></span>
                 </div>
-
                 <span class="slide-badge">Piattaforme</span>
                 <h2>Piattaforme che si distinguono</h2>
                 <p>Non creiamo solo software, creiamo esperienze. Sviluppiamo piattaforme personalizzate, sicure e intuitive che si distinguono dalla concorrenza e accelerano il tuo business.</p>
-                
-                <!-- BOTTONI AFFIANCATI -->
                 <div class="hero-buttons">
                     <a href="#" class="btn-aruba">SCOPRI LE PIATTAFORME</a>
                     <a href="#" class="btn-outline">PARLA CON UN ESPERTO</a>
@@ -80,22 +58,17 @@
             </div>
         </div>
 
-        <!-- Slide 3: DNA CLOUD -->
         <div class="slide">
             <div class="slide-content">
-                <!-- Brand DNA CLOUD -->
                 <div class="slide-brand">
                     <svg class="brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
                     </svg>
                     <span class="brand-text">DNA <strong>CLOUD</strong></span>
                 </div>
-
                 <span class="slide-badge">Dashboard</span>
                 <h2>Dashboard su Cloud</h2>
                 <p>Prendi decisioni basate sui dati, non sulle sensazioni. Le nostre dashboard cloud ti offrono una visione in tempo reale, sicura e accessibile dei tuoi KPI da qualsiasi dispositivo.</p>
-                
-                <!-- BOTTONI AFFIANCATI -->
                 <div class="hero-buttons">
                     <a href="#" class="btn-aruba">SCOPRI LE DASHBOARD</a>
                     <a href="#" class="btn-outline">PARLA CON UN ESPERTO</a>
@@ -106,7 +79,6 @@
             </div>
         </div>
 
-        <!-- Frecce e Pallini -->
         <button class="slider-arrow prev" onclick="cambiaSlide(-1)">&#10094;</button>
         <button class="slider-arrow next" onclick="cambiaSlide(1)">&#10095;</button>
 
@@ -117,51 +89,35 @@
         </div>
     </section>
 
-
-
-
-
-
-
-
-         <!-- SEZIONE SERVIZI CON TAB -->
+    <!-- SEZIONE SERVIZI CON TAB -->
     <main class="services-section">
         <div class="container">
-            
-            <!-- Tab di navigazione -->
             <div class="tabs-container">
                 <button class="tab-btn" onclick="apriTab(0)">Privati, professionisti e imprese</button>
                 <button class="tab-btn" onclick="apriTab(1)">Grandi aziende e Pubblica Amministrazione</button>
                 <button class="tab-btn" onclick="apriTab(2)">Business partner e operatori IT</button>
             </div>
 
-            <!-- Contenuto delle Card -->
             <div class="tabs-content">
-                
-                              <!-- =========================================
-                     TAB 1: PRIVATI E IMPRESE (Layout 1)
-                     ========================================= -->
+                <!-- TAB 1 -->
                 <div class="tab-pane layout-1">
-                    
-                    <!-- Bottone per aprire il form -->
                     <div class="booking-trigger-container">
-                       <h2>Hai un progetto IT in mente?</h2>
-<p>Dalla consulenza allo sviluppo, siamo al tuo fianco per trovare la soluzione perfetta per la tua azienda.</p>                     <button class="btn-orange btn-open-booking animate-arrows" onclick="toggleFormPrenotazione()">
-                            <span class="arrow-down">&#8681;</span> <!-- Freccia giù a sinistra -->
+                        <h2>Hai un progetto IT in mente?</h2>
+                        <p>Dalla consulenza allo sviluppo, siamo al tuo fianco per trovare la soluzione perfetta per la tua azienda.</p>
+                        <button class="btn-orange btn-open-booking animate-arrows" onclick="toggleFormPrenotazione()">
+                            <span class="arrow-down">&#8681;</span>
                             APRI E PRENOTA UNA CONSULENZA
-                            <span class="arrow-down">&#8681;</span> <!-- Freccia giù a destra -->
+                            <span class="arrow-down">&#8681;</span>
                         </button>
                     </div>
 
-                    <!-- Form di Prenotazione (Nascosto di default) -->
                     <div class="booking-wrapper" id="bookingFormContainer">
                         <div class="booking-container">
                             <div class="booking-header">
                                 <h2>Prenota una consulenza</h2>
                                 <p>Compila i campi per fissare un appuntamento.</p>
                             </div>
-                            
-                            <form class="booking-form" onsubmit="event.preventDefault(); alert('Richiesta di prenotazione inviata! Ti contatteremo a breve.'); toggleFormPrenotazione();">
+                            <form class="booking-form" onsubmit="event.preventDefault(); alert('Richiesta inviata!'); toggleFormPrenotazione();">
                                 <div class="form-row">
                                     <div class="form-group">
                                         <label for="nome">Nome e Cognome</label>
@@ -172,7 +128,6 @@
                                         <input type="email" id="email" placeholder="mario@email.com" required>
                                     </div>
                                 </div>
-
                                 <div class="form-row">
                                     <div class="form-group">
                                         <label for="telefono">Telefono</label>
@@ -189,7 +144,6 @@
                                         </select>
                                     </div>
                                 </div>
-
                                 <div class="form-row">
                                     <div class="form-group">
                                         <label for="data">Data Preferita</label>
@@ -200,16 +154,14 @@
                                         <input type="time" id="ora" required>
                                     </div>
                                 </div>
-
                                 <div class="form-actions">
                                     <button type="submit" class="btn-search btn-submit">INVIA RICHIESTA</button>
                                 </div>
                             </form>
                         </div>
                     </div>
-                    
+
                     <div class="grid-2-cols mt-40">
-                        <!-- Card 1.1 -->
                         <div class="horizontal-card">
                             <div class="hc-text">
                                 <h3>Dall'idea alla piattaforma. Dal sito all'intero ecosistema.</h3>
@@ -220,7 +172,6 @@
                                 <img src="https://img.magnific.com/foto-premium/gruppo-di-persone-in-un-luogo-di-lavoro-seduti-su-scrivanie-e-che-lavorano-in-un-ufficio-moderno_272375-5232.jpg" alt="Team">
                             </div>
                         </div>
-                        <!-- Card 1.2 -->
                         <div class="horizontal-card">
                             <div class="hc-text">
                                 <h3>Un ecosistema digitale per ogni organizzazione.</h3>
@@ -234,16 +185,12 @@
                     </div>
                 </div>
 
-                                <!-- =========================================
-                     TAB 2: GRANDI AZIENDE (Layout 2)
-                     ========================================= -->
+                <!-- TAB 2 -->
                 <div class="tab-pane layout-2">
                     <div class="layout-header">
                         <div>
-                            <!-- Nuovo blocco con SVG e Titolo -->
                             <div class="header-title-with-icon">
                                 <svg class="header-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <!-- Icona di un "Enterprise / Network" -->
                                     <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
                                 </svg>
                                 <h2>DNA Enterprise</h2>
@@ -252,10 +199,7 @@
                         </div>
                         <a href="#" class="btn-orange">SCOPRI LE NOSTRE SOLUZIONI</a>
                     </div>
-
-                    <!-- (Il resto delle card con le icone piccole rimane identico a prima) -->
                     <div class="grid-3-cols">
-                        <!-- Card 1: DNA Cloud -->
                         <div class="white-card">
                             <div class="card-title-wrapper">
                                 <svg class="card-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -266,8 +210,6 @@
                             <p>Personalizza la tua infrastruttura IT con le <strong>Architetture in cloud</strong>.</p>
                             <a href="#" class="link-blue">Scopri Cloud Enterprise &rarr;</a>
                         </div>
-
-                        <!-- Card 2: DNA Infrastrutture -->
                         <div class="white-card">
                             <div class="card-title-wrapper">
                                 <svg class="card-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -281,8 +223,6 @@
                             <p>Scegli le professionalità nella gestione dell'<strong>infrastruttura IT</strong>.</p>
                             <a href="#" class="link-blue">Esplora le infrastrutture &rarr;</a>
                         </div>
-
-                        <!-- Card 3: DNA Gestionali -->
                         <div class="white-card">
                             <div class="card-title-wrapper">
                                 <svg class="card-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -296,16 +236,13 @@
                         </div>
                     </div>
                 </div>
-                                <!-- =========================================
-                     TAB 3: BUSINESS PARTNER (Layout 3)
-                     ========================================= -->
+
+                <!-- TAB 3 -->
                 <div class="tab-pane layout-3">
                     <div class="layout-header">
                         <div>
-                            <!-- Nuovo blocco con SVG e Titolo -->
                             <div class="header-title-with-icon">
                                 <svg class="header-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <!-- Icona di una rete / collaborazione tra partner -->
                                     <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
                                     <circle cx="9" cy="7" r="4"></circle>
                                     <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
@@ -317,19 +254,20 @@
                         </div>
                         <a href="#" class="btn-orange">MAGGIORI DETTAGLI</a>
                     </div>
-
                     <div class="grid-2-cols">
                         <div class="white-card card-large-text">
                             <p>Il <strong>Programma Partner di DNA Business</strong> offre ad aziende e rivenditori una gamma completa di soluzioni IT e strumenti efficienti per la gestione di servizi di architetture enterprise, per clienti e collaboratori. Assicura inoltre un supporto personalizzato e dedicato e programmi di formazione professionali.</p>
                         </div>
                         <div class="white-card">
-                            <p><strong>Sei alla ricerca di un Partner innovativo e affidabile per la gestione dei tuoi servizi di Architettura, cloud e data center?</strong></p>
+                            <p><strong>Sei alla ricerca di un Partner innovativo e affidabile per la gestione dei tuoi servizi di Architettura, per ogni esigenza?</strong></p>
                             <a href="#" class="btn-outline-blue">Scopri tutti i vantaggi</a>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
     </main>
 
-    <script src="js/app.js"></script>
+    <script src="js/app.js?v=230"></script>
 </body>
 </html>
