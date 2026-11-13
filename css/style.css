@@ -14,7 +14,7 @@ body {
 }
 
 /* =========================================
-   HEADER (solo wrapper - il resto è in menu.css)
+   HEADER
    ========================================= */
 .header {
     display: flex;
@@ -47,7 +47,6 @@ body {
 }
 
 .slide.active { opacity: 1; visibility: visible; z-index: 2; }
-
 .slide-content { flex: 1.2; padding-left: 8%; padding-right: 3%; z-index: 3; color: white; }
 
 .slide-badge {
@@ -67,17 +66,14 @@ body {
 
 .slide-content h2 { font-size: 2.4rem; margin-bottom: 12px; line-height: 1.15; }
 .slide-content p { font-size: 1rem; margin-bottom: 20px; color: #b0b8c4; line-height: 1.5; max-width: 650px; }
-
 .slide-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; margin-top: 10px; }
 .brand-icon { width: 35px; height: 35px; color: #ff6b00; flex-shrink: 0; }
 .brand-text { font-size: 1.5rem; color: white; letter-spacing: 1px; text-transform: uppercase; }
 .brand-text strong { font-weight: 800; color: #ff6b00; }
-
 .hero-buttons { display: flex; flex-direction: row; flex-wrap: nowrap; gap: 12px; margin-top: 15px; align-items: center; }
 
 .btn-aruba {
-    display: inline-block;
-    background-color: #ff6b00; color: white;
+    display: inline-block; background-color: #ff6b00; color: white;
     padding: 12px 20px; font-size: 0.9rem; font-weight: bold;
     text-decoration: none; border-radius: 4px;
     transition: background-color 0.3s ease; white-space: nowrap;
@@ -85,8 +81,7 @@ body {
 .btn-aruba:hover { background-color: #e65c00; }
 
 .btn-outline {
-    display: inline-block;
-    background-color: transparent; color: white;
+    display: inline-block; background-color: transparent; color: white;
     padding: 12px 20px; font-size: 0.9rem; font-weight: bold;
     text-decoration: none; border: 2px solid rgba(255, 255, 255, 0.7);
     border-radius: 4px; transition: all 0.3s ease; white-space: nowrap;
@@ -160,26 +155,17 @@ body {
 .btn-outline-blue:hover { background-color: #0056b3; color: white; }
 
 /* FORM DI PRENOTAZIONE */
-.booking-trigger-container { text-align: center; margin-bottom: 40px; padding: 0 10px; /* Aggiunto padding per non far toccare i bordi */ }
+.booking-trigger-container { text-align: center; margin-bottom: 40px; padding: 0 10px; }
 .booking-trigger-container h2 { font-size: 2.2rem; color: #0f172a; margin-bottom: 10px; }
 .booking-trigger-container p { color: #64748b; margin-bottom: 20px; }
 
-/* PULSANTE PRENOTA - SISTEMATO PER NON SBOARDARE */
 .btn-open-booking {
-    display: inline-flex !important;
-    align-items: center; 
-    justify-content: center;
-    gap: 12px; 
-    padding: 15px 25px; 
-    font-size: 1.1rem; 
-    cursor: pointer;
-    width: auto; /* Larghezza automatica */
-    max-width: 100%; /* Non superare il 100% del contenitore */
-    box-sizing: border-box; 
+    display: inline-flex !important; align-items: center; justify-content: center;
+    gap: 12px; padding: 15px 25px; font-size: 1.1rem; cursor: pointer;
+    width: auto; max-width: 100%; box-sizing: border-box;
 }
 
 .btn-open-booking .arrow-down { color: #ffffff; font-size: 1.2rem; margin-left: 0; }
-
 .animate-arrows .arrow-down { animation: bounceArrow 1s infinite !important; }
 @keyframes bounceArrow { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
 
@@ -211,7 +197,6 @@ body {
 }
 
 .form-actions { margin-top: 20px; text-align: center; }
-
 .btn-submit {
     width: 100%; padding: 15px; font-size: 1.1rem; border-radius: 6px;
     background-color: #ff6b00; color: white; border: none;
@@ -235,7 +220,6 @@ body {
 .layout-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 40px; }
 .layout-header h2 { font-size: 2.5rem; color: #0f172a; margin-bottom: 10px; }
 .layout-header p { color: #475569; font-size: 1.1rem; max-width: 700px; }
-
 .header-title-with-icon { display: flex; align-items: center; gap: 15px; margin-bottom: 10px; }
 .header-svg-icon { width: 45px; height: 45px; color: #ff6b00; flex-shrink: 0; }
 .header-title-with-icon h2 { margin: 0; font-size: 2.5rem; color: #0f172a; }
@@ -249,70 +233,305 @@ body {
 .card-large-text p { font-size: 1.05rem; }
 
 /* =========================================
-   RESPONSIVE (solo hero / servizi / card)
+   DIVISORE ORIZZONTALE
+   ========================================= */
+.section-divider {
+    display: flex; align-items: center; justify-content: center;
+    max-width: 1200px; margin: 0 auto; padding: 0 20px;
+    height: 40px; position: relative; z-index: 10;
+}
+.divider-line { flex: 1; height: 1px; background-color: #e2e8f0; max-width: 400px; }
+.divider-dot {
+    width: 8px; height: 8px; background-color: #ff6b00;
+    border-radius: 50%; margin: 0 20px;
+    box-shadow: 0 0 0 4px rgba(255, 107, 0, 0.1); flex-shrink: 0;
+}
+
+/* =========================================
+   BANNER SLIDER (3 Slide)
+   ========================================= */
+/* =========================================
+   BANNER SLIDER (Sfondo con Contorni Bruciati)
+   ========================================= */
+.banner-slider-section {
+    width: 100%;
+    padding: 100px 20px 150px 20px;
+    position: relative;
+    background-color: #f8fafc;
+    overflow: hidden;
+    
+    /* L'IMMAGINE DI SFONDO */
+    background-image: url('https://geeksforgrowth.com/wp-content/uploads/2024/04/5aa5133f-2770-4471-9998-0831c7ccfb4a.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* EFFETTO BORDI BRUCIATI (Vignettatura ai lati) */
+.banner-slider-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    pointer-events: none;
+    z-index: 1;
+    
+    /* Gradiente radiale: centro trasparente, bordi neri */
+    background: radial-gradient(
+        ellipse at center, 
+        rgba(15, 23, 42, 0.1) 30%,   /* Leggero velo al centro */
+        rgba(15, 23, 42, 0.7) 80%,   /* Scuro verso i bordi */
+        rgba(15, 23, 42, 0.95) 100%  /* Quasi nero agli angoli */
+    );
+}
+
+/* Assicuriamoci che il monitor stia sopra l'effetto bruciato */
+.banner-slider-wrapper {
+    position: relative;
+    z-index: 2;
+    /* ... il resto delle regole del monitor ... */
+}
+
+.banner-track {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    width: 100%;
+}
+
+.banner-slide {
+    min-width: 100%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 50px 60px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+    box-sizing: border-box;
+    position: relative;
+    min-height: 450px;
+}
+
+.banner-slide-content { flex: 1.5; color: #0f172a; }
+
+.banner-tag {
+    display: inline-block;
+    background-color: rgba(255, 107, 0, 0.1);
+    color: #ff6b00; border: 1px solid #ff6b00;
+    padding: 5px 15px; border-radius: 4px;
+    font-size: 0.75rem; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.banner-slide-content h1 {
+    font-size: 3rem; font-weight: 800;
+    line-height: 1.1; margin-bottom: 20px;
+}
+.banner-slide-content h1 span { color: #ff6b00; }
+.banner-slide-content p {
+    font-size: 1.1rem; color: #475569;
+    line-height: 1.6; margin-bottom: 30px;
+}
+
+.banner-cta { display: flex; gap: 15px; flex-wrap: wrap; }
+
+.banner-btn-primary {
+    display: inline-block; background-color: #ff6b00; color: #ffffff;
+    padding: 15px 30px; font-weight: 700; text-decoration: none;
+    border-radius: 4px; transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
+}
+.banner-btn-primary:hover {
+    background-color: #e65c00; transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 107, 0, 0.4);
+}
+
+.banner-btn-secondary {
+    display: inline-block; background-color: transparent; color: #0f172a;
+    padding: 15px 30px; font-weight: 700; text-decoration: none;
+    border-radius: 4px; border: 2px solid #0f172a; transition: all 0.3s;
+}
+.banner-btn-secondary:hover { background-color: #0f172a; color: #ffffff; }
+
+.banner-slide-price {
+    flex: 0 0 350px;
+    background-color: #f8fafc;
+    border-radius: 12px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.15);
+    border-top: 4px solid #ff6b00;
+    transform: rotate(1deg);
+    transition: transform 0.3s;
+}
+.banner-slide-price:hover { transform: rotate(0deg) scale(1.02); }
+
+.price-label {
+    display: block; color: #64748b; font-size: 0.8rem;
+    font-weight: 700; text-transform: uppercase;
+    letter-spacing: 1.5px; margin-bottom: 10px;
+}
+.price-value {
+    font-size: 4rem; font-weight: 900; color: #0f172a;
+    line-height: 1; margin-bottom: 10px;
+}
+.price-value span { font-size: 1.2rem; color: #64748b; font-weight: 600; }
+.price-note {
+    display: block; color: #0f172a; font-weight: 700;
+    font-size: 1rem; margin-bottom: 20px;
+}
+
+/* --- Frecce di Navigazione (Dentro la card) --- */
+.banner-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid #e2e8f0;
+    color: #0f172a;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.banner-arrow:hover {
+    background: #ff6b00;
+    color: #ffffff;
+    border-color: #ff6b00;
+}
+
+.banner-arrow.prev { left: 20px; }
+.banner-arrow.next { right: 20px; }
+
+.banner-dots {
+    display: flex; justify-content: center;
+    gap: 12px; margin-top: 30px;
+}
+.banner-dot {
+    width: 12px; height: 12px; background-color: #cbd5e1;
+    border-radius: 50%; cursor: pointer; transition: background-color 0.3s;
+}
+.banner-dot.active { background-color: #ff6b00; transform: scale(1.2); }
+
+/* =========================================
+   SEZIONE BENTO GRID
+   ========================================= */
+.bento-section { padding: 80px 20px; background-color: #f8fafc; }
+.bento-container {
+    display: grid; grid-template-columns: 1.2fr 1fr 1fr;
+    grid-template-rows: auto; gap: 20px;
+    max-width: 1200px; margin: 0 auto;
+}
+
+.bento-card {
+    background-color: #ffffff; border: 1px solid #e2e8f0;
+    border-radius: 12px; padding: 30px 35px;
+    transition: all 0.3s ease; position: relative;
+    overflow: hidden; min-height: 280px;
+    display: flex; flex-direction: column; justify-content: center;
+}
+.bento-card:hover { border-color: #cbd5e1; box-shadow: 0 8px 30px rgba(0,0,0,0.05); }
+
+.bento-main { grid-column: 1 / 2; grid-row: 1 / 2; border-left: 4px solid #ff6b00; }
+.bento-tag {
+    display: inline-block; color: #ff6b00; font-size: 0.75rem;
+    font-weight: 700; text-transform: uppercase;
+    letter-spacing: 2px; margin-bottom: 15px;
+}
+.bento-main h2 { font-size: 2.2rem; color: #0f172a; line-height: 1.2; margin-bottom: 15px; font-weight: 800; }
+.bento-main p { font-size: 1rem; color: #64748b; line-height: 1.6; margin-bottom: 25px; }
+.bento-link { color: #ff6b00; text-decoration: none; font-weight: 700; font-size: 0.95rem; display: flex; align-items: center; gap: 8px; }
+.bento-link:hover { text-decoration: underline; }
+
+.bento-cta {
+    grid-column: 2 / 3; grid-row: 1 / 2;
+    background-color: #ffffff; border: 1px solid #e2e8f0;
+    display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
+}
+.bento-cta h3 { font-size: 1.6rem; color: #0f172a; margin-bottom: 10px; font-weight: 800; line-height: 1.2; }
+.bento-cta p { font-size: 0.95rem; color: #64748b; margin-bottom: 20px; line-height: 1.5; }
+.bento-btn {
+    display: inline-block; background-color: #ff6b00; color: #ffffff;
+    padding: 10px 20px; text-decoration: none; font-weight: 700;
+    font-size: 0.9rem; border-radius: 6px; transition: all 0.3s;
+    box-shadow: 0 2px 10px rgba(255, 107, 0, 0.2);
+}
+.bento-btn:hover { background-color: #e65c00; transform: translateY(-2px); box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3); }
+
+.bento-services {
+    grid-column: 3 / 4; grid-row: 1 / 2;
+    background-color: #0f172a; color: #ffffff; border: none;
+}
+.bento-services h4 { font-size: 1rem; color: #ff6b00; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
+.bento-list { list-style: none; padding: 0; margin: 0; }
+.bento-list li {
+    font-size: 1rem; font-weight: 600; padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    display: flex; align-items: center; gap: 15px;
+}
+.bento-list li:last-child { border-bottom: none; }
+.bento-list li span {
+    font-size: 0.75rem; color: #ff6b00; font-weight: 800;
+    background-color: rgba(255, 107, 0, 0.15);
+    padding: 3px 8px; border-radius: 4px;
+}
+
+/* Blocco 4: Tre Card di Contenuto */
+.bento-stats-grid {
+    grid-column: 1 / 4; grid-row: 2 / 3;
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 20px; margin-top: 10px;
+}
+.stat-card {
+    background-color: #ffffff; border: 1px solid #e2e8f0;
+    border-radius: 12px; padding: 30px;
+    display: flex; flex-direction: column;
+    transition: all 0.3s ease;
+}
+.stat-card:hover { border-color: #cbd5e1; box-shadow: 0 8px 30px rgba(0,0,0,0.05); transform: translateY(-3px); }
+.content-icon { width: 40px; height: 40px; color: #ff6b00; margin-bottom: 20px; }
+.content-icon svg { width: 100%; height: 100%; }
+.stat-card h3 { font-size: 1.2rem; color: #0f172a; margin-bottom: 10px; font-weight: 700; }
+.stat-card p { font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 20px; flex-grow: 1; }
+.content-link { color: #ff6b00; text-decoration: none; font-weight: 700; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 5px; }
+.content-link:hover { text-decoration: underline; }
+
+/* =========================================
+   RESPONSIVE
    ========================================= */
 @media (max-width: 1024px) {
     .grid-3-cols { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 900px) {
-    /* --- HERO SLIDER MOBILE --- */
-    .hero-slider {
-        height: auto;
-        min-height: 0;
-        overflow: hidden;
-    }
-
-    .slide {
-        position: relative;
-        display: none;
-        flex-direction: column;
-        justify-content: flex-start;
-        height: auto;
-        padding-bottom: 0;
-    }
-
-    .slide.active {
-        display: flex;
-    }
-
-    .slide-content {
-        flex: none;
-        width: 100%;
-        padding: 40px 20px 20px 20px;
-        text-align: center;
-        z-index: 5;
-        background: linear-gradient(to bottom, #0d1117 60%, transparent 100%);
-    }
-
+    /* Hero */
+    .hero-slider { height: auto; min-height: 0; overflow: hidden; }
+    .slide { position: relative; display: none; flex-direction: column; justify-content: flex-start; height: auto; padding-bottom: 0; }
+    .slide.active { display: flex; }
+    .slide-content { flex: none; width: 100%; padding: 40px 20px 20px 20px; text-align: center; z-index: 5; background: linear-gradient(to bottom, #0d1117 60%, transparent 100%); }
     .slide-content h2 { font-size: 2rem; margin-bottom: 15px; }
     .slide-content p { margin: 0 auto 25px auto; max-width: 100%; font-size: 0.95rem; color: #e2e8f0; }
     .slide-badge { margin-top: 0; margin-bottom: 15px; }
-
     .hero-buttons { flex-direction: column; width: 100%; gap: 10px; }
     .btn-aruba, .btn-outline { width: 100%; text-align: center; padding: 12px; }
-
-    .slide-image {
-        width: 100%;
-        height: 250px;
-        flex: none;
-        position: relative;
-    }
-
-    .slide-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        -webkit-mask-image: linear-gradient(to top, transparent 0%, black 60%);
-        mask-image: linear-gradient(to top, transparent 0%, black 60%);
-    }
-
+    .slide-image { width: 100%; height: 250px; flex: none; position: relative; }
+    .slide-image img { width: 100%; height: 100%; object-fit: cover; -webkit-mask-image: linear-gradient(to top, transparent 0%, black 60%); mask-image: linear-gradient(to top, transparent 0%, black 60%); }
     .slider-arrow { display: none !important; }
     .slider-dots { position: absolute; bottom: 15px; left: 50%; transform: translateX(-50%); display: flex; gap: 12px; z-index: 10; }
     .dot { width: 12px; height: 12px; background-color: rgba(255, 255, 255, 0.5); }
     .dot.active { background-color: #ff6b00; }
 
-    /* --- SERVIZI E TAB MOBILE --- */
+    /* Servizi */
     .tabs-container { flex-direction: column; border-radius: 20px; padding: 10px; }
     .tab-btn { border-radius: 10px; margin-bottom: 5px; }
     .grid-2-cols { grid-template-columns: 1fr; }
@@ -323,21 +542,249 @@ body {
     .tab-pane.layout-2, .tab-pane.layout-3 { padding: 20px; }
     .form-row { flex-direction: column; gap: 15px; }
     .booking-container { padding: 25px 20px; }
-
-    /* --- PULSANTE PRENOTA MOBILE --- */
     .btn-open-booking {
-        width: 100% !important; /* Forza la larghezza */
-        max-width: 100% !important; /* Non superare il contenitore */
-        padding: 15px 5px; /* Padding laterale minimo per far stare tutto il testo */
-        font-size: 0.9rem; /* Rimpicciolisce il testo per evitare che sbordi */
-        white-space: normal; /* Permette al testo di andare a capo se serve */
-        text-align: center;
-        display: flex !important; /* Forza il flex per centrare tutto */
-        justify-content: center;
+        width: 100% !important; max-width: 100% !important;
+        padding: 15px 5px; font-size: 0.9rem;
+        white-space: normal; text-align: center;
+        display: flex !important; justify-content: center;
+    }
+    .btn-open-booking .arrow-down { margin: 0 5px; font-size: 1rem; }
+
+    /* Banner */
+    .banner-slider-section { padding: 60px 20px; }
+    .banner-slide { flex-direction: column; padding: 40px 25px; text-align: center; }
+    .banner-slide-content h1 { font-size: 2.2rem; }
+    .banner-slide-content p { font-size: 1rem; }
+    .banner-cta { flex-direction: column; align-items: center; }
+    .banner-btn-primary, .banner-btn-secondary { width: 100%; max-width: 300px; }
+    .banner-slide-price { flex: none; width: 100%; max-width: 350px; transform: rotate(0deg); margin-top: 30px; }
+    .banner-arrow { width: 40px; height: 40px; font-size: 1rem; }
+    .banner-arrow.prev { left: 5px; }
+    .banner-arrow.next { right: 5px; }
+
+    /* Bento */
+    .section-divider { padding: 0 40px; }
+    .divider-line { max-width: 100%; }
+    .bento-container { grid-template-columns: 1fr; grid-template-rows: auto; }
+    .bento-main, .bento-cta, .bento-services { grid-column: 1 / 2; grid-row: auto; min-height: auto; padding: 25px; }
+    .bento-main h2 { font-size: 1.8rem; }
+    .bento-stats-grid { grid-template-columns: 1fr; grid-row: auto; }
+    .stat-card { padding: 25px; }
+}/* =========================================
+   BANNER SLIDER (Correzione Layout)
+   ========================================= */
+.banner-slider-section {
+    width: 100%;
+    background-color: #f1f5f9;
+    padding: 80px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.banner-slider-wrapper {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.banner-track {
+    display: flex;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    width: 100%;
+}
+
+.banner-slide {
+    min-width: 100%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px; /* Ridotto da 40px */
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 50px 40px; /* Ridotto padding laterale */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+    box-sizing: border-box;
+    position: relative;
+    min-height: 450px;
+    /* IMPORTANTE: impedisce al contenuto di sbordare */
+    overflow: hidden;
+}
+
+/* --- Lato Sinistro: Testi e CTA --- */
+.banner-slide-content {
+    flex: 1; /* Occupa lo spazio disponibile */
+    min-width: 0; /* Permette al flex di restringersi */
+    color: #0f172a;
+}
+
+.banner-slide-content h1 {
+    font-size: 2.8rem; /* Leggermente più piccolo */
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.banner-slide-content h1 span {
+    color: #ff6b00;
+}
+
+.banner-slide-content p {
+    font-size: 1.1rem;
+    color: #475569;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    /* IMPORTANTE: limite larghezza per non far allungare troppo il testo */
+    max-width: 500px;
+}
+
+/* --- Lato Destro: Box Prezzo --- */
+.banner-slide-price {
+    flex: 0 0 280px; /* Ridotto da 350px */
+    max-width: 100%;
+    background-color: #f8fafc;
+    border-radius: 12px;
+    padding: 30px 20px; /* Ridotto padding */
+    text-align: center;
+    box-shadow: 8px 8px 25px rgba(0, 0, 0, 0.12);
+    border-top: 4px solid #ff6b00;
+    transform: rotate(1deg);
+    transition: transform 0.3s;
+    /* IMPORTANTE: impedisce al box di sbordare */
+    box-sizing: border-box;
+    margin-right: 10px;
+}
+
+.banner-slide-price:hover {
+    transform: rotate(0deg) scale(1.02);
+}
+
+.price-value {
+    font-size: 3.2rem; /* Ridotto da 4rem */
+    font-weight: 900;
+    color: #0f172a;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.price-value span {
+    font-size: 1rem;
+    color: #64748b;
+    font-weight: 600;
+
+}
+    
+
+/* =========================================
+   BANNER SLIDER - FIX MOBILE
+   ========================================= */
+@media (max-width: 900px) {
+    .banner-slider-section { 
+        padding: 40px 15px 80px 15px; 
     }
     
-    .btn-open-booking .arrow-down {
-        margin: 0 5px; /* Distanzia le frecce dal testo */
-        font-size: 1rem;
+    .banner-slider-wrapper { 
+        padding: 10px; 
+        border-radius: 12px; 
+    }
+    
+    .banner-arrow { 
+        display: none !important; 
+    }
+
+    .banner-track { 
+        min-height: auto; 
+    }
+    
+    .banner-slide { 
+        flex-direction: column; 
+        padding: 25px 15px; 
+        text-align: center; 
+        gap: 20px; 
+        min-height: auto; 
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .banner-slide-content { 
+        width: 100%; 
+        max-width: 100%; 
+        padding: 0; 
+    }
+    
+    .banner-slide-content h1 { 
+        font-size: 1.8rem; 
+        line-height: 1.2; 
+        margin-bottom: 15px; 
+    }
+    
+    .banner-slide-content p { 
+        font-size: 0.95rem; 
+        line-height: 1.5; 
+        margin-bottom: 20px; 
+        max-width: 100%; 
+    }
+    
+    .banner-cta { 
+        flex-direction: column; 
+        width: 100%; 
+        gap: 10px; 
+    }
+    
+    .banner-btn-primary, .banner-btn-secondary { 
+        width: 100%; 
+        max-width: 100%; 
+        padding: 12px 15px; 
+        font-size: 0.9rem; 
+        text-align: center; 
+        box-sizing: border-box; 
+    }
+    
+    .banner-slide-price { 
+        flex: none; 
+        width: 100%; 
+        max-width: 100%; 
+        transform: rotate(0deg); 
+        margin-top: 0; 
+        padding: 20px; 
+        box-sizing: border-box; 
+    }
+    
+    .price-value { 
+        font-size: 2.5rem; 
+    }
+    
+    .price-value span { 
+        font-size: 1rem; 
+    }
+    
+    .banner-dots { 
+        margin-top: 20px; 
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
