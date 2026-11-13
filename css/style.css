@@ -794,3 +794,350 @@ body {
 
 
 
+/* =========================================
+   SEZIONE VISIONE / IL NOSTRO FUTURO
+   ========================================= */
+.vision-section {
+    padding: 120px 20px;
+    background-color: #f8fafc;
+    overflow: hidden; /* Per contenere l'effetto bordo */
+}
+
+.vision-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr; /* Testo un po' più stretto, immagine più grande */
+    gap: 60px;
+    align-items: center;
+}
+
+/* --- Colonna Sinistra: Testi --- */
+.vision-content {
+    position: relative;
+    z-index: 2;
+}
+
+.vision-tag {
+    display: inline-block;
+    color: #ff6b00;
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.vision-content h2 {
+    font-size: 3rem;
+    color: #0f172a;
+    line-height: 1.15;
+    margin-bottom: 25px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.vision-content p {
+    font-size: 1.1rem;
+    color: #475569;
+    line-height: 1.7;
+    margin-bottom: 40px;
+    max-width: 500px;
+}
+
+/* Firma decorativa */
+.vision-signature {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.vision-line {
+    width: 50px;
+    height: 2px;
+    background-color: #ff6b00;
+}
+
+.vision-signature span {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #0f172a;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- Colonna Destra: Immagine --- */
+.vision-image-wrapper {
+    position: relative;
+    z-index: 1;
+    /* Aggiungiamo un po' di margine per far spazio al bordo decorativo */
+    padding: 20px 20px 0 0;
+}
+
+.vision-img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px; /* Angoli arrotondati moderni */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15); /* Ombra profonda per staccare dal fondo */
+    position: relative;
+    z-index: 2;
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 4/3; /* Mantiene proporzioni pulite */
+}
+
+/* Effetto bordo arancione sfalsato (dietro l'immagine) */
+.vision-border {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 90%;
+    height: 90%;
+    border: 3px solid #ff6b00;
+    border-radius: 12px;
+    z-index: 1;
+    transition: all 0.4s ease;
+}
+
+/* Al passaggio del mouse, il bordo si sposta leggermente */
+.vision-image-wrapper:hover .vision-border {
+    top: -10px;
+    right: -10px;
+}
+
+/* =========================================
+   RESPONSIVE MOBILE
+   ========================================= */
+@media (max-width: 900px) {
+    .vision-section {
+        padding: 80px 20px;
+    }
+
+    .vision-container {
+        grid-template-columns: 1fr; /* Una colonna su mobile */
+        gap: 50px;
+    }
+
+    /* Su mobile mettiamo l'immagine sopra il testo (o sotto, a piacere) */
+    .vision-content {
+        order: 2; /* Il testo va sotto l'immagine */
+    }
+    .vision-image-wrapper {
+        order: 1; /* L'immagine va sopra */
+        padding: 0 15px 0 0; /* Margini ridotti */
+    }
+
+    .vision-content h2 {
+        font-size: 2.2rem;
+    }
+
+    .vision-content p {
+        font-size: 1rem;
+    }
+
+    .vision-border {
+        /* Su mobile riduciamo l'effetto bordo per non farlo uscire dallo schermo */
+        width: 95%;
+        height: 95%;
+        top: -5px;
+        right: -5px;
+    }
+}/* =========================================
+   LOGO SOPRA IL TITOLO (Sezione Visione)
+   ========================================= */
+.vision-logo-top {
+    margin-bottom: 30px; /* Spazio tra il logo e il tag "IL NOSTRO SOGNO" */
+}
+
+.vision-logo-top img {
+    height: 24px; /* Altezza contenuta ma visibile */
+    width: auto;
+    object-fit: contain;
+    display: block;
+}/* Riga superiore: logo e tag affiancati */
+.vision-top-row {
+    display: flex;
+    align-items: center; /* Allinea verticalmente al centro */
+    gap: 20px; /* Spazio tra logo e scritta */
+    margin-bottom: 25px; /* Spazio sotto la riga, prima del titolo */
+}
+
+/* Il logo piccolo */
+.vision-mini-logo {
+    height: 180px; /* Dimensione contenuta per stare in riga */
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+/* Il tag "IL NOSTRO SOGNO" (rimane uguale, ma rimuoviamo il margine inferiore) */
+.vision-tag {
+    display: inline-block;
+    color: #ff6b00;
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 0; /* Importante: rimosso per stare in riga */
+    margin-top: 5px; /* Piccolo aggiustamento per centrarlo col logo */
+}
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================
+   SEZIONE VISIONE (Layout Contenuto)
+   ========================================= */
+.vision-section {
+    padding: 100px 20px;
+    background-color: #f8fafc;
+    overflow: hidden;
+}
+
+.vision-container {
+    max-width: 1200px; /* Larghezza contenuta come le altre sezioni */
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Due colonne uguali */
+    gap: 60px;
+    align-items: center; /* Centra verticalmente */
+}
+
+/* --- Colonna Sinistra: Testi --- */
+.vision-content {
+    position: relative;
+    z-index: 2;
+}
+
+.vision-tag {
+    display: inline-block;
+    color: #ff6b00;
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.vision-content h2 {
+    font-size: 2.8rem;
+    color: #0f172a;
+    line-height: 1.15;
+    margin-bottom: 25px;
+    font-weight: 800;
+}
+
+.vision-content p {
+    font-size: 1.1rem;
+    color: #475569;
+    line-height: 1.7;
+    margin-bottom: 35px;
+}
+
+.vision-signature {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.vision-line {
+    width: 50px;
+    height: 2px;
+    background-color: #ff6b00;
+}
+
+.vision-signature span {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #0f172a;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- Colonna Destra: Immagine --- */
+.vision-image-wrapper {
+    position: relative;
+    z-index: 1;
+    padding: 20px 20px 0 0; /* Spazio per il bordo arancione */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vision-img {
+    width: 100%;
+    max-height: 500px; /* Altezza massima per non farla esplodere */
+    object-fit: cover; /* Riempie lo spazio senza deformarsi */
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    position: relative;
+    z-index: 2;
+    display: block;
+}
+
+/* Effetto bordo arancione sfalsato */
+.vision-border {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 90%;
+    height: 90%;
+    border: 3px solid #ff6b00;
+    border-radius: 12px;
+    z-index: 1;
+    transition: all 0.4s ease;
+}
+
+.vision-image-wrapper:hover .vision-border {
+    top: -10px;
+    right: -10px;
+}
+
+/* =========================================
+   RESPONSIVE MOBILE
+   ========================================= */
+@media (max-width: 900px) {
+    .vision-section {
+        padding: 60px 20px;
+    }
+
+    .vision-container {
+        grid-template-columns: 1fr; /* Una colonna su mobile */
+        gap: 40px;
+    }
+
+    /* Su mobile mettiamo l'immagine sopra il testo */
+    .vision-content {
+        order: 2;
+    }
+    .vision-image-wrapper {
+        order: 1;
+        padding: 10px;
+    }
+
+    .vision-content h2 {
+        font-size: 2rem;
+    }
+
+    .vision-content p {
+        font-size: 1rem;
+    }
+
+    .vision-img {
+        max-height: 300px; /* Più bassa su mobile */
+    }
+
+    .vision-border {
+        width: 95%;
+        height: 95%;
+        top: -5px;
+        right: -5px;
+    }
+}
