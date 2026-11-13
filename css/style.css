@@ -160,13 +160,22 @@ body {
 .btn-outline-blue:hover { background-color: #0056b3; color: white; }
 
 /* FORM DI PRENOTAZIONE */
-.booking-trigger-container { text-align: center; margin-bottom: 40px; }
+.booking-trigger-container { text-align: center; margin-bottom: 40px; padding: 0 10px; /* Aggiunto padding per non far toccare i bordi */ }
 .booking-trigger-container h2 { font-size: 2.2rem; color: #0f172a; margin-bottom: 10px; }
 .booking-trigger-container p { color: #64748b; margin-bottom: 20px; }
 
+/* PULSANTE PRENOTA - SISTEMATO PER NON SBOARDARE */
 .btn-open-booking {
-    display: inline-flex !important; align-items: center; justify-content: center;
-    gap: 12px; padding: 15px 30px; font-size: 1.1rem; cursor: pointer;
+    display: inline-flex !important;
+    align-items: center; 
+    justify-content: center;
+    gap: 12px; 
+    padding: 15px 25px; 
+    font-size: 1.1rem; 
+    cursor: pointer;
+    width: auto; /* Larghezza automatica */
+    max-width: 100%; /* Non superare il 100% del contenitore */
+    box-sizing: border-box; 
 }
 
 .btn-open-booking .arrow-down { color: #ffffff; font-size: 1.2rem; margin-left: 0; }
@@ -314,4 +323,21 @@ body {
     .tab-pane.layout-2, .tab-pane.layout-3 { padding: 20px; }
     .form-row { flex-direction: column; gap: 15px; }
     .booking-container { padding: 25px 20px; }
+
+    /* --- PULSANTE PRENOTA MOBILE --- */
+    .btn-open-booking {
+        width: 100% !important; /* Forza la larghezza */
+        max-width: 100% !important; /* Non superare il contenitore */
+        padding: 15px 5px; /* Padding laterale minimo per far stare tutto il testo */
+        font-size: 0.9rem; /* Rimpicciolisce il testo per evitare che sbordi */
+        white-space: normal; /* Permette al testo di andare a capo se serve */
+        text-align: center;
+        display: flex !important; /* Forza il flex per centrare tutto */
+        justify-content: center;
+    }
+    
+    .btn-open-booking .arrow-down {
+        margin: 0 5px; /* Distanzia le frecce dal testo */
+        font-size: 1rem;
+    }
 }

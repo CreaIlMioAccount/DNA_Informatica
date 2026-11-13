@@ -15,12 +15,12 @@
     width: 55%;
     background-color: #ffffff;
     display: flex;
-    align-items: flex-start; /* Importante per ancorare il logo in alto */
+    align-items: flex-start;
     justify-content: flex-start;
     padding: 0 20px 0 40px; 
     height: 100%;
     position: relative;
-    z-index: 10; /* Alza il contenitore bianco sopra il nero */
+    z-index: 10;
     border-bottom-right-radius: 150px 100%; 
     clip-path: none; 
 }
@@ -35,10 +35,10 @@
 #mioLogo { 
     height: 100px; 
     width: auto;
-    position: absolute; /* Sgancia il logo dal flusso normale */
-    top: 0px; /* <--- QUESTO È IL COMANDO MAGICO: sposta il logo giù di 15px. Aumenta o diminuisci questo numero per alzarlo/abbassarlo */
+    position: absolute;
+    top: 0px; 
     left: 0;
-    z-index: 20; /* Assicura che il logo stia sopra tutto */
+    z-index: 20;
     object-fit: contain;
 }
 
@@ -218,10 +218,7 @@
 
 .megamenu {
     position: fixed;
-    
-    /* 1. Avvicinalo all'header (riduci questo valore) */
-    top: 130px; /* Era 180px, ora è più vicino al menu */
-    
+    top: 130px;
     left: 50%;
     transform: translateX(-50%);
     width: 1150px;
@@ -229,10 +226,7 @@
     box-shadow: 0 15px 50px rgba(0,0,0,0.15);
     border: 1px solid #e2e8f0;
     border-radius: 12px;
-    
-    /* 2. Riduci lo spazio interno (padding) */
-    padding: 20px; /* Era 30px, ora è più compatto */
-    
+    padding: 20px;
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
@@ -380,7 +374,7 @@
 
     .header-top-left {
         width: 100%;
-        height: 100px;
+        height: 90px;
         padding: 10px 20px;
         justify-content: center;
         flex: 1 1 100%;
@@ -389,45 +383,66 @@
         border-bottom-right-radius: 0;
     }
 
-     #mioLogo {
-        position: relative; /* Resetta la posizione per il mobile */
+    #mioLogo {
+        position: relative;
         top: 0;
         left: 0;
         height: auto;
-        max-height: 100px;
+        max-height: 80px;
         width: auto;
         object-fit: contain;
         margin: 0 auto;
     }
 
+    /* --- SISTEMAZIONE FASCIA NERA MOBILE --- */
     .header-top-right {
         width: 100%;
         height: auto;
         margin-left: 0;
         border-radius: 0;
-        padding: 10px 20px;
+        padding: 10px 15px; /* Ridotto padding per renderlo compatto */
+        display: flex;
+        flex-direction: column; /* Mette menu e bottoni in colonna */
         justify-content: center;
-        flex-wrap: wrap;
-        gap: 10px;
-        flex: 1 1 100%;
+        align-items: center;
+        gap: 10px; /* Spazio tra menu e bottoni */
     }
 
     .top-nav {
+        display: flex;
+        flex-wrap: wrap; /* Permette ai link di andare a capo se serve */
         justify-content: center;
-        gap: 10px;
+        align-items: center;
+        gap: 8px 12px; /* Spazio orizzontale e verticale tra i link */
         width: 100%;
     }
 
     .top-nav a {
-        font-size: 0.65rem;
+        font-size: 0.6rem; /* Font piccolo per far stare tutto */
+        letter-spacing: 0; /* Rimuove lo spazio tra le lettere */
+        line-height: 1.2;
     }
 
     .header-actions {
-        width: 100%;
+        display: flex;
         justify-content: center;
+        align-items: center;
+        width: 100%;
+        gap: 10px;
         margin-top: 5px;
     }
 
+    .btn-login, .btn-start {
+        padding: 6px 12px; /* Bottoni più compatti */
+        font-size: 0.75rem;
+    }
+
+    .icon-btn {
+        width: 30px;
+        height: 30px;
+    }
+
+    /* --- MENU BIANCO E HAMBURGER --- */
     .header-bottom-row {
         padding: 0;
         margin-top: 0;
