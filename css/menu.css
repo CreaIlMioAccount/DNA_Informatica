@@ -6,7 +6,7 @@
 .header-top-row {
     display: flex;
     width: 100%;
-    height: 80px;
+    height: 50px;
     position: relative;
     background-color: #1a1a1a;
 }
@@ -15,26 +15,31 @@
     width: 55%;
     background-color: #ffffff;
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* Importante per ancorare il logo in alto */
     justify-content: flex-start;
-    padding: 0 20px 0 40px;
+    padding: 0 20px 0 40px; 
     height: 100%;
     position: relative;
-    z-index: 2;
-    border-bottom-right-radius: 150px 100%;
-    clip-path: none;
+    z-index: 10; /* Alza il contenitore bianco sopra il nero */
+    border-bottom-right-radius: 150px 100%; 
+    clip-path: none; 
 }
 
 .logo-container {
     display: flex;
-    align-items: center;
-    gap: 15px;
+    align-items: flex-start;
     height: 100%;
+    position: relative;
 }
 
-#mioLogo {
-    height: 120px;
+#mioLogo { 
+    height: 100px; 
     width: auto;
+    position: absolute; /* Sgancia il logo dal flusso normale */
+    top: 0px; /* <--- QUESTO È IL COMANDO MAGICO: sposta il logo giù di 15px. Aumenta o diminuisci questo numero per alzarlo/abbassarlo */
+    left: 0;
+    z-index: 20; /* Assicura che il logo stia sopra tutto */
+    object-fit: contain;
 }
 
 .header-top-right {
@@ -379,8 +384,15 @@
         border-bottom-right-radius: 0;
     }
 
-    #mioLogo {
-        height: 100px;
+     #mioLogo {
+        position: relative; /* Resetta la posizione per il mobile */
+        top: 0;
+        left: 0;
+        height: auto;
+        max-height: 100px;
+        width: auto;
+        object-fit: contain;
+        margin: 0 auto;
     }
 
     .header-top-right {
