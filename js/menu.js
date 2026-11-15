@@ -1,9 +1,12 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-    // --- 1. CARICAMENTO DEL MENU DA FILE ESTERNO ---
+    // --- 1. CARICAMENTO DEL MENU DA FILE ESTERNO (Percorso Dinamico) ---
     const placeholder = document.getElementById('header-placeholder');
     if (placeholder) {
-        fetch('menu.html')
+        const isInPages = window.location.pathname.includes('/pages/');
+        const menuPath = isInPages ? '../menu.html' : 'menu.html';
+
+        fetch(menuPath)
             .then(response => response.text())
             .then(data => {
                 placeholder.innerHTML = data;
@@ -20,10 +23,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // --- 3. LOGICA PER I MEGA MENU (APERTURA AL CLICK) ---
     window.toggleMegamenu = function(event, elemento) {
-        event.preventDefault(); 
-        event.stopPropagation(); 
         const hasMegamenu = elemento.closest('.has-megamenu');
-        if (!hasMegamenu) return;
+        if (!hasMegamenu) return; 
+
+        // Se il link ha un megamenu, blocca la navigazione e apri/chiudi il menu.
+        // ECCEZIONE: se il link è "Home" (o punta a index.html), lascia navigare.
+        const isHomeLink = elemento.getAttribute('href') === '/index.html' || elemento.getAttribute('href') === 'index.html';
+        
+        if (!isHomeLink) {
+            event.preventDefault(); 
+            event.stopPropagation(); 
+        }
 
         // Chiudi gli altri megamenu aperti
         const tuttiIMegamenu = document.querySelectorAll('.has-megamenu.active');

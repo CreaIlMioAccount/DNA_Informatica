@@ -1,0 +1,412 @@
+/* =========================================
+   PAGINA BENVENUTI - STILI SPECIFICI
+   ========================================= */
+
+/* --- HERO INTRODUTTIVA --- */
+.benvenuti-hero {
+    padding: 120px 20px;
+    background-color: #0f172a;
+    color: #ffffff;
+    text-align: center;
+}
+
+.benvenuti-hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.benvenuti-tag {
+    display: inline-block;
+    color: #ff6b00;
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.benvenuti-hero h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.benvenuti-hero p {
+    font-size: 1.2rem;
+    color: #cbd5e1;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* --- CONTAINER GENERICO --- */
+.benvenuti-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- LA NOSTRA STORIA --- */
+.benvenuti-storia {
+    padding: 100px 20px;
+    background-color: #ffffff;
+}
+
+.storia-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.storia-text h2 {
+    font-size: 2.8rem;
+    color: #0f172a;
+    line-height: 1.15;
+    margin-bottom: 25px;
+    font-weight: 800;
+}
+
+.storia-text p {
+    font-size: 1.1rem;
+    color: #475569;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.storia-signature {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.storia-line {
+    width: 50px;
+    height: 2px;
+    background-color: #ff6b00;
+}
+
+.storia-signature span {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #0f172a;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.storia-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+/* --- I NOSTRI VALORI --- */
+.benvenuti-valori {
+    padding: 100px 20px;
+    background-color: #f8fafc;
+}
+
+.valori-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.valori-header h2 {
+    font-size: 2.8rem;
+    color: #0f172a;
+    font-weight: 800;
+}
+
+.valori-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.valore-card {
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.valore-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+    border-color: #ff6b00;
+}
+
+.valore-icon {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 20px auto;
+    color: #ff6b00;
+}
+
+.valore-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.valore-card h3 {
+    font-size: 1.3rem;
+    color: #0f172a;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.valore-card p {
+    font-size: 0.95rem;
+    color: #64748b;
+    line-height: 1.6;
+}
+
+/* --- IL NOSTRO METODO --- */
+.benvenuti-metodo {
+    padding: 100px 20px;
+    background-color: #ffffff;
+}
+
+.metodo-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 60px auto;
+}
+
+.metodo-header h2 {
+    font-size: 2.8rem;
+    color: #0f172a;
+    margin-bottom: 15px;
+    font-weight: 800;
+}
+
+.metodo-header p {
+    font-size: 1.1rem;
+    color: #64748b;
+}
+
+.metodo-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.metodo-step {
+    padding: 40px 30px;
+    background-color: #f8fafc;
+    border-radius: 12px;
+    border-top: 4px solid #ff6b00;
+    transition: all 0.3s ease;
+}
+
+.metodo-step:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+}
+
+.step-number {
+    font-size: 2rem;
+    font-weight: 900;
+    color: #ff6b00;
+    margin-bottom: 15px;
+    letter-spacing: -1px;
+}
+
+.metodo-step h3 {
+    font-size: 1.3rem;
+    color: #0f172a;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.metodo-step p {
+    font-size: 0.95rem;
+    color: #64748b;
+    line-height: 1.6;
+}
+
+/* --- CTA FINALE --- */
+.benvenuti-cta {
+    padding: 100px 20px;
+    background-color: #0f172a;
+    text-align: center;
+    color: #ffffff;
+}
+
+.cta-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.cta-content h2 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+.cta-content p {
+    font-size: 1.2rem;
+    color: #cbd5e1;
+    margin-bottom: 40px;
+}
+
+.btn-cta-primario {
+    display: inline-block;
+    background-color: #ff6b00;
+    color: #ffffff;
+    padding: 18px 45px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
+}
+
+.btn-cta-primario:hover {
+    background-color: #e65c00;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 107, 0, 0.4);
+}
+
+/* =========================================
+   RESPONSIVE MOBILE
+   ========================================= */
+@media (max-width: 900px) {
+    .benvenuti-hero {
+        padding: 80px 20px;
+    }
+    .benvenuti-hero h1 {
+        font-size: 2.2rem;
+    }
+    .benvenuti-hero p {
+        font-size: 1rem;
+    }
+    .benvenuti-storia, .benvenuti-valori, .benvenuti-metodo, .benvenuti-cta {
+        padding: 60px 20px;
+    }
+    .storia-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .storia-image {
+        order: -1; /* Mette l'immagine sopra su mobile */
+    }
+    .storia-text h2, .valori-header h2, .metodo-header h2, .cta-content h2 {
+        font-size: 2rem;
+    }
+    .valori-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .metodo-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .valori-grid {
+        grid-template-columns: 1fr;
+    }
+}/* --- HERO INTRODUTTIVA CON IMMAGINE --- */
+.benvenuti-hero {
+    padding: 120px 20px;
+    background-color: #0f172a; /* Colore di fallback */
+    color: #ffffff;
+    text-align: center;
+    position: relative;
+    /* IMMAGINE DI SFONDO */
+    background-image: url('https://thumbs.dreamstime.com/b/concetto-di-digitalizzazione-dei-processi-aziendali-e-della-tecnologia-moderna-trasformazione-digitale-213043758.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Overlay scuro per far leggere il testo */
+.benvenuti-hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(31, 31, 32, 0.897); /* Velo scuro all'85% */
+    z-index: 1;
+}
+
+/* Contenuto sopra l'overlay */
+.benvenuti-hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}/* =========================================
+   PULSANTI HERO BENVENUTI
+   ========================================= */
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.btn-hero-primary {
+    display: inline-block;
+    background-color: #ff6b00;
+    color: #ffffff;
+    padding: 15px 35px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
+    border: 2px solid #ff6b00;
+}
+
+.btn-hero-primary:hover {
+    background-color: #e65c00;
+    border-color: #e65c00;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 107, 0, 0.4);
+}
+
+.btn-hero-secondary {
+    display: inline-block;
+    background-color: transparent;
+    color: #ffffff;
+    padding: 15px 35px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+}
+
+.btn-hero-secondary:hover {
+    background-color: #ffffff;
+    color: #0f172a;
+    border-color: #ffffff;
+    transform: translateY(-2px);
+}/* Pulsante "Chi Siamo" nella sezione storia */
+.btn-storia {
+    display: inline-block;
+    margin-top: 30px;
+    background-color: #ff6b00;
+    color: #ffffff;
+    padding: 12px 30px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
+}
+
+.btn-storia:hover {
+    background-color: #e65c00;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 107, 0, 0.4);
+}
