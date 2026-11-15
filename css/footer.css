@@ -1,0 +1,264 @@
+/* =========================================
+   FOOTER DNA INFORMATICA
+   ========================================= */
+.site-footer {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 80px 20px 0 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-top: 4px solid #ff6b00;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    /* 4 colonne: brand, link, contatti, newsletter */
+    grid-template-columns: 1.5fr 1fr 1.2fr 1.5fr; 
+    gap: 40px;
+    padding-bottom: 60px;
+}
+
+/* --- Colonna Brand --- */
+.footer-col-brand {
+    max-width: 300px;
+}
+
+.footer-logo {
+    height: 100px;
+    width: auto;
+    margin-bottom: 20px;
+    display: block;
+    /* Filtro rimosso: il logo originale si vede bene su sfondo scuro */
+}
+
+.footer-col-brand p {
+    font-size: 0.95rem;
+    color: #94a3b8;
+    line-height: 1.6;
+}
+
+/* --- Titoli Colonne --- */
+.footer-col h4 {
+    font-size: 1.1rem;
+    color: #ffffff;
+    margin-bottom: 25px;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-col h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: #ff6b00;
+}
+
+/* --- Link Utili --- */
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #ff6b00;
+    padding-left: 5px;
+}
+
+/* --- Contatti --- */
+.footer-contacts {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-contacts li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+    color: #94a3b8;
+}
+
+.footer-contacts svg {
+    width: 18px;
+    height: 18px;
+    color: #ff6b00;
+    flex-shrink: 0;
+}
+
+.footer-contacts a {
+    color: #94a3b8;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-contacts a:hover {
+    color: #ff6b00;
+}
+
+/* --- Social --- */
+.footer-social {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-social a {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.footer-social a:hover {
+    background-color: #ff6b00;
+    transform: translateY(-3px);
+}
+
+.footer-social svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* --- Newsletter --- */
+.footer-newsletter p {
+    font-size: 0.95rem;
+    color: #94a3b8;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.newsletter-form input {
+    flex: 1;
+    min-width: 150px;
+    padding: 12px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    color: #ffffff;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.newsletter-form input::placeholder {
+    color: #64748b;
+}
+
+.newsletter-form input:focus {
+    border-color: #ff6b00;
+}
+
+.newsletter-form button {
+    background-color: #ff6b00;
+    color: #ffffff;
+    border: none;
+    padding: 12px 20px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.newsletter-form button:hover {
+    background-color: #e65c00;
+}
+
+/* --- Copyright --- */
+.footer-bottom {
+    background-color: #0a0f1a;
+    padding: 25px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    font-size: 0.85rem;
+    color: #64748b;
+    flex-wrap: wrap;
+}
+
+.footer-bottom-container a {
+    color: #94a3b8;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-bottom-container a:hover {
+    color: #ff6b00;
+}
+
+/* =========================================
+   RESPONSIVE MOBILE
+   ========================================= */
+@media (max-width: 1024px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr; /* 2 colonne su tablet */
+    }
+    .footer-col-brand, .footer-newsletter {
+        grid-column: 1 / -1; /* Brand e newsletter occupano tutta la larghezza */
+    }
+}
+
+@media (max-width: 900px) {
+    .site-footer {
+        padding: 60px 20px 0 20px;
+    }
+    .footer-container {
+        grid-template-columns: 1fr; /* 1 colonna su mobile */
+        gap: 30px;
+        padding-bottom: 40px;
+    }
+    .footer-col-brand {
+        max-width: 100%;
+    }
+    .footer-logo {
+        height: 50px;
+    }
+    .footer-bottom-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    .newsletter-form {
+        flex-direction: column;
+    }
+    .newsletter-form input, .newsletter-form button {
+        width: 100%;
+    }
+}

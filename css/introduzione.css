@@ -1,0 +1,254 @@
+/* =========================================
+   PAGINA INTRODUZIONE - STILI EDITORIALI
+   ========================================= */
+
+/* --- CONTAINER GENERICO --- */
+.intro-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.intro-tag {
+    display: inline-block;
+    color: #ff6b00;
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+/* --- HERO --- */
+.intro-editorial-hero {
+    padding: 100px 0;
+    background-color: #f8fafc;
+}
+
+.intro-hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.intro-hero-text h1 {
+    font-size: 3.5rem;
+    color: #0f172a;
+    line-height: 1.1;
+    margin-bottom: 30px;
+    font-weight: 800;
+}
+
+.intro-hero-text p {
+    font-size: 1.2rem;
+    color: #475569;
+    line-height: 1.7;
+}
+
+.intro-hero-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+/* --- SEZIONE FILOSOFIA (Citazione) --- */
+.intro-filosofia {
+    padding: 100px 0;
+    background-color: #0f172a;
+    color: #ffffff;
+    text-align: center;
+}
+
+.quote-icon {
+    width: 50px;
+    height: 50px;
+    color: #ff6b00;
+    margin-bottom: 30px;
+}
+
+.filosofia-content h2 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: 1.3;
+    max-width: 900px;
+    margin: 0 auto 30px auto;
+}
+
+.filosofia-content h2 span {
+    color: #ff6b00;
+}
+
+.filosofia-content p {
+    color: #94a3b8;
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+/* --- SEZIONE COMPETENZE --- */
+.intro-competenze {
+    padding: 100px 0;
+    background-color: #ffffff;
+}
+
+.competenze-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.competenze-header h2 {
+    font-size: 2.8rem;
+    color: #0f172a;
+    font-weight: 800;
+}
+
+.competenze-list {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.competenza-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 40px 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.competenza-number {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #ff6b00;
+    line-height: 1;
+    opacity: 0.3;
+    flex-shrink: 0;
+}
+
+.competenza-text h3 {
+    font-size: 1.5rem;
+    color: #0f172a;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.competenza-text p {
+    font-size: 1.05rem;
+    color: #475569;
+    line-height: 1.6;
+}
+
+/* --- SEZIONE MANIFESTO (Card Scura) --- */
+.intro-manifesto {
+    padding: 100px 0;
+    background-color: #f8fafc;
+}
+
+.manifesto-box {
+    background-color: #0f172a;
+    color: #ffffff;
+    padding: 80px;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+.manifesto-box h2 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    font-weight: 700;
+}
+
+.manifesto-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.manifesto-item {
+    padding-left: 20px;
+    border-left: 3px solid #ff6b00;
+}
+
+.manifesto-item h4 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.manifesto-item p {
+    color: #cbd5e1;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* --- CTA FINALE --- */
+.intro-cta {
+    padding: 100px 0;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.cta-content h2 {
+    font-size: 2.5rem;
+    color: #0f172a;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+.cta-content p {
+    font-size: 1.1rem;
+    color: #64748b;
+    margin-bottom: 40px;
+}
+
+.btn-cta-primario {
+    display: inline-block;
+    background-color: #ff6b00;
+    color: #ffffff;
+    padding: 18px 45px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
+}
+
+.btn-cta-primario:hover {
+    background-color: #e65c00;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 107, 0, 0.4);
+}
+
+/* =========================================
+   RESPONSIVE MOBILE
+   ========================================= */
+@media (max-width: 900px) {
+    .intro-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .intro-hero-text h1 {
+        font-size: 2.5rem;
+    }
+    .intro-hero-text p {
+        font-size: 1rem;
+    }
+    .filosofia-content h2 {
+        font-size: 1.8rem;
+    }
+    .competenze-header h2, .manifesto-box h2, .cta-content h2 {
+        font-size: 2rem;
+    }
+    .competenza-item {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .manifesto-box {
+        padding: 40px 25px;
+    }
+    .manifesto-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
