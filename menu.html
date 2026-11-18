@@ -11,16 +11,16 @@
 
         <div class="header-top-right">
           <div class="top-nav">
-    <a href="#">Area Privata</a>
-    <a href="#">Supporto</a>
-    <a href="#">Contatti</a>
-    <a href="#">Chi Siamo</a>
-    <a href="#">Blog</a>
-    <a href="#">Lavora con noi</a>
-    <a href="#">Partner</a>
-    <a href="#">News</a>
-    <a href="#">Eventi</a>
-</div>
+            <a href="#">Area Privata</a>
+            <a href="#">Supporto</a>
+            <a href="#">Contatti</a>
+            <a href="#">Chi Siamo</a>
+            <a href="#">Blog</a>
+            <a href="#">Lavora con noi</a>
+            <a href="#">Partner</a>
+            <a href="#">News</a>
+            <a href="#">Eventi</a>
+          </div>
 
             <div class="header-actions">
                 <button class="icon-btn search-btn" aria-label="Cerca">
@@ -50,253 +50,81 @@
             
             <nav class="main-nav" id="mainNav">
                 
-                <!-- 1. HOME -->
-                <div class="has-megamenu">
-                    <a href="/index.html" onclick="toggleMegamenu(event, this)">Home <span class="arrow-down">&#9662;</span></a>
-                    
+                <!-- 1. HOME (onclick sul contenitore) -->
+                <div class="has-megamenu" onclick="toggleMegamenu(event, this)">
+                    <!-- Contenitore unico per link e freccia -->
+                    <div class="menu-trigger">
+                        <a href="/index.html" class="home-link">Home</a>
+                        <span class="arrow-down">&#9662;</span>
+                    </div>
+
                     <div class="megamenu">
                         <div class="mega-header">
                             <h3>Benvenuto in DNA Informatica</h3>
                             <p>Scopri chi siamo e come possiamo aiutare la tua azienda a crescere.</p>
                         </div>
                         <div class="mega-content">
-   <div class="mega-links">
-        <a href="/pages/benvenuti.html" class="mega-link">
-            <svg class="mega-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-            </svg>
-            <div>
-                <h4>Benvenuti</h4>
-                <p>La nostra storia e i nostri valori.</p>
-            </div>
-        </a>
-
-        <a href="/pages/introduzione.html" class="mega-link">
-            <svg class="mega-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                <polyline points="14 2 14 8 20 8"></polyline>
-                <line x1="16" y1="13" x2="8" y2="13"></line>
-                <line x1="16" y1="17" x2="8" y2="17"></line>
-                <polyline points="10 9 9 9 8 9"></polyline>
-            </svg>
-            <div>
-                <h4>Introduzione</h4>
-                <p>Come lavoriamo e cosa facciamo.</p>
-            </div>
-        </a>
-
-        <a href="#" class="mega-link">
-            <svg class="mega-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="18" y1="20" x2="18" y2="10"></line>
-                <line x1="12" y1="20" x2="12" y2="4"></line>
-                <line x1="6" y1="20" x2="6" y2="14"></line>
-            </svg>
-            <div>
-                <h4>Studi</h4>
-                <p>Analisi e ricerche di settore.</p>
-            </div>
-        </a>
-
-        <a href="#" class="mega-link">
-            <svg class="mega-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="13.5" cy="6.5" r="2.5"></circle>
-                <circle cx="17.5" cy="10.5" r="2.5"></circle>
-                <circle cx="8.5" cy="7.5" r="2.5"></circle>
-                <circle cx="6.5" cy="12.5" r="2.5"></circle>
-                <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"></path>
-            </svg>
-            <div>
-                <h4>Logo &amp; Brand</h4>
-                <p>Identità visiva e posizionamento.</p>
-            </div>
-        </a>
-
-        <a href="#" class="mega-link">
-            <svg class="mega-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="11" cy="11" r="8"></circle>
-                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-            </svg>
-            <div>
-                <h4>Ricerca</h4>
-                <p>SEO, keyword e analisi competitor.</p>
-            </div>
-        </a>
-
-        <a href="#" class="mega-link">
-            <svg class="mega-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-            </svg>
-            <div>
-                <h4>Strategia</h4>
-                <p>Piani d'azione su misura.</p>
-            </div>
-        </a>
-
-        <a href="#" class="mega-link">
-            <svg class="mega-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                <line x1="8" y1="21" x2="16" y2="21"></line>
-                <line x1="12" y1="17" x2="12" y2="21"></line>
-            </svg>
-            <div>
-                <h4>Progetti</h4>
-                <p>Casi studio e portfolio.</p>
-            </div>
-        </a>
-
-        <a href="#" class="mega-link">
-            <svg class="mega-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                <polyline points="22,6 12,13 2,6"></polyline>
-            </svg>
-            <div>
-                <h4>Contatti</h4>
-                <p>Parla con il nostro team.</p>
-            </div>
-        </a>
-    </div>
+                            <div class="mega-links">
+                                <a href="/pages/benvenuti.html" class="mega-link"><svg class="mega-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg><div><h4>Benvenuti</h4><p>La nostra storia e i nostri valori.</p></div></a>
+                                <a href="/pages/introduzione.html" class="mega-link"><svg class="mega-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg><div><h4>Introduzione</h4><p>Come lavoriamo e cosa facciamo.</p></div></a>
+                                <a href="/pages/studi.html" class="mega-link"><svg class="mega-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg><div><h4>Studi</h4><p>Analisi e ricerche di settore.</p></div></a>
+                                <a href="#" class="mega-link"><svg class="mega-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="13.5" cy="6.5" r="2.5"></circle><circle cx="17.5" cy="10.5" r="2.5"></circle><circle cx="8.5" cy="7.5" r="2.5"></circle><circle cx="6.5" cy="12.5" r="2.5"></circle><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"></path></svg><div><h4>Logo &amp; Brand</h4><p>Identità visiva e posizionamento.</p></div></a>
+                                <a href="#" class="mega-link"><svg class="mega-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg><div><h4>Ricerca</h4><p>SEO, keyword e analisi competitor.</p></div></a>
+                                <a href="#" class="mega-link"><svg class="mega-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg><div><h4>Strategia</h4><p>Piani d'azione su misura.</p></div></a>
+                                <a href="#" class="mega-link"><svg class="mega-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg><div><h4>Progetti</h4><p>Casi studio e portfolio.</p></div></a>
+                                <a href="#" class="mega-link"><svg class="mega-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg><div><h4>Contatti</h4><p>Parla con il nostro team.</p></div></a>
+                            </div>
                             <div class="mega-casestudy">
-                                <div class="cs-icon-wrapper">
-                                    <svg class="cs-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"></path></svg>
-                                </div>
+                                <div class="cs-icon-wrapper"><svg class="cs-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"></path></svg></div>
                                 <span class="cs-badge">CASE STUDY</span>
                                 <h4>Digitalizzazione completata in 3 mesi</h4>
                                 <p>Scopri come <strong>Rossi & Figli</strong> ha rivoluzionato i suoi processi con le nostre soluzioni.</p>
                                 <a href="#" class="cs-link">Leggi il caso studio &rarr;</a>
                             </div>
                         </div>
-                        <div class="mega-footer">
-                            <span>Hai bisogno di aiuto?</span>
-                            <a href="#" class="support-link">Contatta il supporto &rarr;</a>
-                        </div>
+                        <div class="mega-footer"><span>Hai bisogno di aiuto?</span><a href="#" class="support-link">Contatta il supporto &rarr;</a></div>
                     </div>
                 </div>
 
-                <!-- 2. PRODOTTI -->
-                <div class="has-megamenu">
-                    <a href="#" onclick="toggleMegamenu(event, this)">Prodotti <span class="arrow-down">&#9662;</span></a>
+                <!-- 2. PRODOTTI (onclick sul contenitore) -->
+                <div class="has-megamenu" onclick="toggleMegamenu(event, this)">
+                    <div class="menu-trigger">
+                        <a href="#" class="home-link">Prodotti</a>
+                        <span class="arrow-down">&#9662;</span>
+                    </div>
                     <div class="megamenu">
-                        <div class="mega-header">
-                            <h3>I nostri Prodotti</h3>
-                            <p>Scopri le soluzioni software e cloud pensate per la tua crescita.</p>
-                        </div>
-                       <div class="mega-content">
-    <div class="mega-links">
-        <a href="#" class="mega-link">
-            <svg class="mega-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10"></circle>
-                <line x1="2" y1="12" x2="22" y2="12"></line>
-                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-            </svg>
-            <div>
-                <h4>DNA Web <span class="tag tag-new">New</span></h4>
-                <p>Design di interfacce e siti web responsive.</p>
-            </div>
-        </a>
-
-        <a href="#" class="mega-link">
-            <svg class="mega-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-            </svg>
-            <div>
-                <h4>DNA Comunicazione</h4>
-                <p>UI/UX writing e sistemi di comunicazione.</p>
-            </div>
-        </a>
-
-        <a href="#" class="mega-link">
-            <svg class="mega-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <line x1="18" y1="20" x2="18" y2="10"></line>
-                <line x1="12" y1="20" x2="12" y2="4"></line>
-                <line x1="6" y1="20" x2="6" y2="14"></line>
-            </svg>
-            <div>
-                <h4>DNA Marketing</h4>
-                <p>Data visualization e sistemi di analytics.</p>
-            </div>
-        </a>
-
-        <a href="#" class="mega-link">
-            <svg class="mega-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                <circle cx="12" cy="7" r="4"></circle>
-            </svg>
-            <div>
-                <h4>DNA Business</h4>
-                <p>Consulenza UX e design per il business.</p>
-            </div>
-        </a>
-
-        <a href="#" class="mega-link">
-            <svg class="mega-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="16 18 22 12 16 6"></polyline>
-                <polyline points="8 6 2 12 8 18"></polyline>
-            </svg>
-            <div>
-                <h4>DNA Software <span class="tag tag-popular">Popolare</span></h4>
-                <p>Design system e interfacce applicative.</p>
-            </div>
-        </a>
-
-        <a href="#" class="mega-link">
-            <svg class="mega-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
-                <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
-                <line x1="6" y1="6" x2="6.01" y2="6"></line>
-                <line x1="6" y1="18" x2="6.01" y2="18"></line>
-            </svg>
-            <div>
-                <h4>DNA Infrastructure</h4>
-                <p>Architetture di sistemi e reti scalabili.</p>
-            </div>
-        </a>
-
-        <a href="#" class="mega-link">
-            <svg class="mega-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="3"></circle>
-                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
-            </svg>
-            <div>
-                <h4>DNA Gestionali</h4>
-                <p>Interfacce per software gestionali complessi.</p>
-            </div>
-        </a>
-
-        <a href="#" class="mega-link">
-            <svg class="mega-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
-            </svg>
-            <div>
-                <h4>DNA Cloud <span class="tag tag-ai">AI</span></h4>
-                <p>Architetture in cloud e sistemi distribuiti.</p>
-            </div>
-        </a>
-    </div>
+                        <div class="mega-header"><h3>I nostri Prodotti</h3><p>Scopri le soluzioni software e cloud pensate per la tua crescita.</p></div>
+                        <div class="mega-content">
+                            <div class="mega-links">
+                                <a href="#" class="mega-link"><svg class="mega-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg><div><h4>DNA Web <span class="tag tag-new">New</span></h4><p>Design di interfacce e siti web responsive.</p></div></a>
+                                <a href="#" class="mega-link"><svg class="mega-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg><div><h4>DNA Comunicazione</h4><p>UI/UX writing e sistemi di comunicazione.</p></div></a>
+                                <a href="#" class="mega-link"><svg class="mega-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg><div><h4>DNA Marketing</h4><p>Data visualization e sistemi di analytics.</p></div></a>
+                                <a href="#" class="mega-link"><svg class="mega-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg><div><h4>DNA Business</h4><p>Consulenza UX e design per il business.</p></div></a>
+                                <a href="#" class="mega-link"><svg class="mega-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg><div><h4>DNA Software <span class="tag tag-popular">Popolare</span></h4><p>Design system e interfacce applicative.</p></div></a>
+                                <a href="#" class="mega-link"><svg class="mega-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg><div><h4>DNA Infrastructure</h4><p>Architetture di sistemi e reti scalabili.</p></div></a>
+                                <a href="#" class="mega-link"><svg class="mega-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg><div><h4>DNA Gestionali</h4><p>Interfacce per software gestionali complessi.</p></div></a>
+                                <a href="#" class="mega-link"><svg class="mega-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg><div><h4>DNA Cloud <span class="tag tag-ai">AI</span></h4><p>Architetture in cloud e sistemi distribuiti.</p></div></a>
+                            </div>
                             <div class="mega-casestudy">
-                                <div class="cs-icon-wrapper">
-                                    <svg class="cs-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"></path></svg>
-                                </div>
+                                <div class="cs-icon-wrapper"><svg class="cs-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"></path></svg></div>
                                 <span class="cs-badge">CASE STUDY</span>
                                 <h4>Riduzione dei costi del 40%</h4>
                                 <p>Scopri come <strong>TechNova</strong> ha migrato la sua infrastruttura al cloud con noi.</p>
                                 <a href="#" class="cs-link">Leggi il caso studio &rarr;</a>
                             </div>
                         </div>
-                        <div class="mega-footer">
-                            <span>Hai bisogno di aiuto?</span>
-                            <a href="#" class="support-link">Contatta il supporto &rarr;</a>
-                        </div>
+                        <div class="mega-footer"><span>Hai bisogno di aiuto?</span><a href="#" class="support-link">Contatta il supporto &rarr;</a></div>
                     </div>
                 </div>
 
-              <!-- 3. SERVIZI -->
-                <div class="has-megamenu">
-                    <a href="#" onclick="toggleMegamenu(event, this)">Servizi <span class="arrow-down">&#9662;</span></a>
+                <!-- 3. SERVIZI -->
+                <div class="has-megamenu" onclick="toggleMegamenu(event, this)">
+                    <div class="menu-trigger">
+                        <a href="#" class="home-link">Servizi</a>
+                        <span class="arrow-down">&#9662;</span>
+                    </div>
                     <div class="megamenu">
-                        <div class="mega-header">
-                            <h3>I nostri Servizi</h3>
-                            <p>Tutto ciò di cui hai bisogno per la trasformazione digitale.</p>
-                        </div>
+                        <div class="mega-header"><h3>I nostri Servizi</h3><p>Tutto ciò di cui hai bisogno per la trasformazione digitale.</p></div>
                         <div class="mega-content">
                             <div class="mega-links">
                                 <a href="#" class="mega-link"><svg class="mega-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg><div><h4>Analisi Dati <span class="tag tag-popular">Popolare</span></h4><p>Dashboard e data visualization.</p></div></a>
@@ -309,30 +137,25 @@
                                 <a href="#" class="mega-link"><svg class="mega-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg><div><h4>Cloud</h4><p>Architetture cloud e hosting.</p></div></a>
                             </div>
                             <div class="mega-casestudy">
-                                <div class="cs-icon-wrapper">
-                                    <svg class="cs-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"></path></svg>
-                                </div>
+                                <div class="cs-icon-wrapper"><svg class="cs-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"></path></svg></div>
                                 <span class="cs-badge">CASE STUDY</span>
                                 <h4>+150% di traffico in 6 mesi</h4>
                                 <p>Il nostro team SEO ha trasformato la visibilità online di <strong>Moda Italia</strong>.</p>
                                 <a href="#" class="cs-link">Leggi il caso studio &rarr;</a>
                             </div>
                         </div>
-                        <div class="mega-footer">
-                            <span>Hai bisogno di aiuto?</span>
-                            <a href="#" class="support-link">Contatta il supporto &rarr;</a>
-                        </div>
+                        <div class="mega-footer"><span>Hai bisogno di aiuto?</span><a href="#" class="support-link">Contatta il supporto &rarr;</a></div>
                     </div>
                 </div>
 
                 <!-- 4. SOLUZIONI -->
-                <div class="has-megamenu">
-                    <a href="#" onclick="toggleMegamenu(event, this)">Soluzioni <span class="arrow-down">&#9662;</span></a>
+                <div class="has-megamenu" onclick="toggleMegamenu(event, this)">
+                    <div class="menu-trigger">
+                        <a href="#" class="home-link">Soluzioni</a>
+                        <span class="arrow-down">&#9662;</span>
+                    </div>
                     <div class="megamenu">
-                        <div class="mega-header">
-                            <h3>Le nostre Soluzioni</h3>
-                            <p>Soluzioni IT personalizzate per ogni esigenza aziendale.</p>
-                        </div>
+                        <div class="mega-header"><h3>Le nostre Soluzioni</h3><p>Soluzioni IT personalizzate per ogni esigenza aziendale.</p></div>
                         <div class="mega-content">
                             <div class="mega-links">
                                 <a href="#" class="mega-link"><svg class="mega-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg><div><h4>Business Intelligence</h4><p>Dashboard e report interattivi.</p></div></a>
@@ -345,30 +168,25 @@
                                 <a href="#" class="mega-link"><svg class="mega-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg><div><h4>Cloud Native</h4><p>Applicazioni moderne e scalabili.</p></div></a>
                             </div>
                             <div class="mega-casestudy">
-                                <div class="cs-icon-wrapper">
-                                    <svg class="cs-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"></path></svg>
-                                </div>
+                                <div class="cs-icon-wrapper"><svg class="cs-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"></path></svg></div>
                                 <span class="cs-badge">CASE STUDY</span>
                                 <h4>E-commerce da 1M di euro</h4>
                                 <p>Abbiamo sviluppato la piattaforma che ha portato <strong>ArtigianoShop</strong> a superare il milione di euro di fatturato.</p>
                                 <a href="#" class="cs-link">Leggi il caso studio &rarr;</a>
                             </div>
                         </div>
-                        <div class="mega-footer">
-                            <span>Hai bisogno di aiuto?</span>
-                            <a href="#" class="support-link">Contatta il supporto &rarr;</a>
-                        </div>
+                        <div class="mega-footer"><span>Hai bisogno di aiuto?</span><a href="#" class="support-link">Contatta il supporto &rarr;</a></div>
                     </div>
                 </div>
 
                 <!-- 5. SETTORI -->
-                <div class="has-megamenu">
-                    <a href="#" onclick="toggleMegamenu(event, this)">Settori <span class="arrow-down">&#9662;</span></a>
+                <div class="has-megamenu" onclick="toggleMegamenu(event, this)">
+                    <div class="menu-trigger">
+                        <a href="#" class="home-link">Settori</a>
+                        <span class="arrow-down">&#9662;</span>
+                    </div>
                     <div class="megamenu">
-                        <div class="mega-header">
-                            <h3>Settori che serviamo</h3>
-                            <p>Soluzioni specifiche per ogni industria.</p>
-                        </div>
+                        <div class="mega-header"><h3>Settori che serviamo</h3><p>Soluzioni specifiche per ogni industria.</p></div>
                         <div class="mega-content">
                             <div class="mega-links">
                                 <a href="#" class="mega-link"><svg class="mega-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20h20"></path><path d="M5 20V8l5 4V8l5 4V8l5 4v8"></path></svg><div><h4>Manifattura</h4><p>Interfacce per Industria 4.0.</p></div></a>
@@ -381,30 +199,25 @@
                                 <a href="#" class="mega-link"><svg class="mega-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg><div><h4>Energia</h4><p>Interfacce per utilities.</p></div></a>
                             </div>
                             <div class="mega-casestudy">
-                                <div class="cs-icon-wrapper">
-                                    <svg class="cs-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"></path></svg>
-                                </div>
+                                <div class="cs-icon-wrapper"><svg class="cs-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"></path></svg></div>
                                 <span class="cs-badge">CASE STUDY</span>
                                 <h4>Industria 4.0 in azione</h4>
                                 <p>Scopri come <strong>MeccanicaPro</strong> ha automatizzato la produzione riducendo gli errori del 90%.</p>
                                 <a href="#" class="cs-link">Leggi il caso studio &rarr;</a>
                             </div>
                         </div>
-                        <div class="mega-footer">
-                            <span>Hai bisogno di aiuto?</span>
-                            <a href="#" class="support-link">Contatta il supporto &rarr;</a>
-                        </div>
+                        <div class="mega-footer"><span>Hai bisogno di aiuto?</span><a href="#" class="support-link">Contatta il supporto &rarr;</a></div>
                     </div>
                 </div>
 
                 <!-- 6. ULTIME TECNOLOGIE -->
-                <div class="has-megamenu">
-                    <a href="#" onclick="toggleMegamenu(event, this)">Ultime tecnologie <span class="arrow-down">&#9662;</span></a>
+                <div class="has-megamenu" onclick="toggleMegamenu(event, this)">
+                    <div class="menu-trigger">
+                        <a href="#" class="home-link">Ultime tecnologie</a>
+                        <span class="arrow-down">&#9662;</span>
+                    </div>
                     <div class="megamenu">
-                        <div class="mega-header">
-                            <h3>Ultime Tecnologie</h3>
-                            <p>Resta al passo con l'innovazione.</p>
-                        </div>
+                        <div class="mega-header"><h3>Ultime Tecnologie</h3><p>Resta al passo con l'innovazione.</p></div>
                         <div class="mega-content">
                             <div class="mega-links">
                                 <a href="#" class="mega-link"><svg class="mega-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg><div><h4>AI <span class="tag tag-ai">AI</span></h4><p>Design e interfacce per AI.</p></div></a>
@@ -417,30 +230,25 @@
                                 <a href="#" class="mega-link"><svg class="mega-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg><div><h4>Serverless</h4><p>Interfacce per cloud computing.</p></div></a>
                             </div>
                             <div class="mega-casestudy">
-                                <div class="cs-icon-wrapper">
-                                    <svg class="cs-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"></path></svg>
-                                </div>
+                                <div class="cs-icon-wrapper"><svg class="cs-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"></path></svg></div>
                                 <span class="cs-badge">CASE STUDY</span>
                                 <h4>AI per il customer service</h4>
                                 <p>Il nostro chatbot AI ha ridotto del 60% i tempi di risposta per <strong>EnergiaVerde</strong>.</p>
                                 <a href="#" class="cs-link">Leggi il caso studio &rarr;</a>
                             </div>
                         </div>
-                        <div class="mega-footer">
-                            <span>Hai bisogno di aiuto?</span>
-                            <a href="#" class="support-link">Contatta il supporto &rarr;</a>
-                        </div>
+                        <div class="mega-footer"><span>Hai bisogno di aiuto?</span><a href="#" class="support-link">Contatta il supporto &rarr;</a></div>
                     </div>
                 </div>
 
                 <!-- 7. PROGRAMMAZIONE -->
-                <div class="has-megamenu">
-                    <a href="#" onclick="toggleMegamenu(event, this)">Programmazione <span class="arrow-down">&#9662;</span></a>
+                <div class="has-megamenu" onclick="toggleMegamenu(event, this)">
+                    <div class="menu-trigger">
+                        <a href="#" class="home-link">Programmazione</a>
+                        <span class="arrow-down">&#9662;</span>
+                    </div>
                     <div class="megamenu">
-                        <div class="mega-header">
-                            <h3>Programmazione</h3>
-                            <p>Linguaggi e framework per ogni progetto.</p>
-                        </div>
+                        <div class="mega-header"><h3>Programmazione</h3><p>Linguaggi e framework per ogni progetto.</p></div>
                         <div class="mega-content">
                             <div class="mega-links">
                                 <a href="#" class="mega-link"><svg class="mega-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg><div><h4>Frontend</h4><p>UI design e HTML/CSS/JS.</p></div></a>
@@ -453,30 +261,25 @@
                                 <a href="#" class="mega-link"><svg class="mega-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg><div><h4>Cloud</h4><p>Architetture AWS, Azure, GCP.</p></div></a>
                             </div>
                             <div class="mega-casestudy">
-                                <div class="cs-icon-wrapper">
-                                    <svg class="cs-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"></path></svg>
-                                </div>
+                                <div class="cs-icon-wrapper"><svg class="cs-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"></path></svg></div>
                                 <span class="cs-badge">CASE STUDY</span>
                                 <h4>App mobile in 8 settimane</h4>
                                 <p>Abbiamo sviluppato l'app di <strong>FitLife</strong> con React Native, raggiungendo 10.000 download in un mese.</p>
                                 <a href="#" class="cs-link">Leggi il caso studio &rarr;</a>
                             </div>
                         </div>
-                        <div class="mega-footer">
-                            <span>Hai bisogno di aiuto?</span>
-                            <a href="#" class="support-link">Contatta il supporto &rarr;</a>
-                        </div>
+                        <div class="mega-footer"><span>Hai bisogno di aiuto?</span><a href="#" class="support-link">Contatta il supporto &rarr;</a></div>
                     </div>
                 </div>
 
                 <!-- 8. DESIGN -->
-                <div class="has-megamenu">
-                    <a href="#" onclick="toggleMegamenu(event, this)">Design <span class="arrow-down">&#9662;</span></a>
+                <div class="has-megamenu" onclick="toggleMegamenu(event, this)">
+                    <div class="menu-trigger">
+                        <a href="#" class="home-link">Design</a>
+                        <span class="arrow-down">&#9662;</span>
+                    </div>
                     <div class="megamenu">
-                        <div class="mega-header">
-                            <h3>Design</h3>
-                            <p>Creatività e funzionalità per il tuo brand.</p>
-                        </div>
+                        <div class="mega-header"><h3>Design</h3><p>Creatività e funzionalità per il tuo brand.</p></div>
                         <div class="mega-content">
                             <div class="mega-links">
                                 <a href="#" class="mega-link"><svg class="mega-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg><div><h4>UI/UX</h4><p>Interfacce e esperienze utente.</p></div></a>
@@ -489,30 +292,25 @@
                                 <a href="#" class="mega-link"><svg class="mega-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg><div><h4>3D</h4><p>Modellazione e design 3D.</p></div></a>
                             </div>
                             <div class="mega-casestudy">
-                                <div class="cs-icon-wrapper">
-                                    <svg class="cs-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"></path></svg>
-                                </div>
+                                <div class="cs-icon-wrapper"><svg class="cs-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"></path></svg></div>
                                 <span class="cs-badge">CASE STUDY</span>
                                 <h4>Restyling che conquista</h4>
                                 <p>Il nuovo design di <strong>Boutique Chic</strong> ha aumentato le conversioni del 35%.</p>
                                 <a href="#" class="cs-link">Leggi il caso studio &rarr;</a>
                             </div>
                         </div>
-                        <div class="mega-footer">
-                            <span>Hai bisogno di aiuto?</span>
-                            <a href="#" class="support-link">Contatta il supporto &rarr;</a>
-                        </div>
+                        <div class="mega-footer"><span>Hai bisogno di aiuto?</span><a href="#" class="support-link">Contatta il supporto &rarr;</a></div>
                     </div>
                 </div>
 
                 <!-- 9. RISORSE -->
-                <div class="has-megamenu">
-                    <a href="#" onclick="toggleMegamenu(event, this)">Risorse <span class="arrow-down">&#9662;</span></a>
+                <div class="has-megamenu" onclick="toggleMegamenu(event, this)">
+                    <div class="menu-trigger">
+                        <a href="#" class="home-link">Risorse</a>
+                        <span class="arrow-down">&#9662;</span>
+                    </div>
                     <div class="megamenu">
-                        <div class="mega-header">
-                            <h3>Risorse</h3>
-                            <p>Guide, articoli e materiali per approfondire.</p>
-                        </div>
+                        <div class="mega-header"><h3>Risorse</h3><p>Guide, articoli e materiali per approfondire.</p></div>
                         <div class="mega-content">
                             <div class="mega-links">
                                 <a href="#" class="mega-link"><svg class="mega-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg><div><h4>Blog</h4><p>Articoli su design e UI/UX.</p></div></a>
@@ -525,30 +323,25 @@
                                 <a href="#" class="mega-link"><svg class="mega-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg><div><h4>Community</h4><p>Forum su design e interfacce.</p></div></a>
                             </div>
                             <div class="mega-casestudy">
-                                <div class="cs-icon-wrapper">
-                                    <svg class="cs-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"></path></svg>
-                                </div>
+                                <div class="cs-icon-wrapper"><svg class="cs-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"></path></svg></div>
                                 <span class="cs-badge">CASE STUDY</span>
                                 <h4>Il blog che genera lead</h4>
                                 <p>La nostra content strategy ha portato a <strong>Studio Legale Bianchi</strong> 50 nuovi contatti al mese.</p>
                                 <a href="#" class="cs-link">Leggi il caso studio &rarr;</a>
                             </div>
                         </div>
-                        <div class="mega-footer">
-                            <span>Hai bisogno di aiuto?</span>
-                            <a href="#" class="support-link">Contatta il supporto &rarr;</a>
-                        </div>
+                        <div class="mega-footer"><span>Hai bisogno di aiuto?</span><a href="#" class="support-link">Contatta il supporto &rarr;</a></div>
                     </div>
                 </div>
 
                 <!-- 10. SUPPORTO -->
-                <div class="has-megamenu">
-                    <a href="#" onclick="toggleMegamenu(event, this)">Supporto <span class="arrow-down">&#9662;</span></a>
+                <div class="has-megamenu" onclick="toggleMegamenu(event, this)">
+                    <div class="menu-trigger">
+                        <a href="#" class="home-link">Supporto</a>
+                        <span class="arrow-down">&#9662;</span>
+                    </div>
                     <div class="megamenu">
-                        <div class="mega-header">
-                            <h3>Supporto</h3>
-                            <p>Siamo qui per aiutarti.</p>
-                        </div>
+                        <div class="mega-header"><h3>Supporto</h3><p>Siamo qui per aiutarti.</p></div>
                         <div class="mega-content">
                             <div class="mega-links">
                                 <a href="#" class="mega-link"><svg class="mega-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg><div><h4>Help Desk</h4><p>Assistenza su interfacce e sistemi.</p></div></a>
@@ -561,30 +354,25 @@
                                 <a href="#" class="mega-link"><svg class="mega-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><div><h4>Status</h4><p>Stato di servizi e sistemi.</p></div></a>
                             </div>
                             <div class="mega-casestudy">
-                                <div class="cs-icon-wrapper">
-                                    <svg class="cs-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"></path></svg>
-                                </div>
+                                <div class="cs-icon-wrapper"><svg class="cs-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"></path></svg></div>
                                 <span class="cs-badge">CASE STUDY</span>
                                 <h4>Supporto 24/7 senza interruzioni</h4>
                                 <p>Grazie al nostro help desk, <strong>LogisticaVeloce</strong> ha ridotto i tempi di inattività del 70%.</p>
                                 <a href="#" class="cs-link">Leggi il caso studio &rarr;</a>
                             </div>
                         </div>
-                        <div class="mega-footer">
-                            <span>Hai bisogno di aiuto?</span>
-                            <a href="#" class="support-link">Contatta il supporto &rarr;</a>
-                        </div>
+                        <div class="mega-footer"><span>Hai bisogno di aiuto?</span><a href="#" class="support-link">Contatta il supporto &rarr;</a></div>
                     </div>
                 </div>
 
                 <!-- 11. AZIENDA -->
-                <div class="has-megamenu">
-                    <a href="#" onclick="toggleMegamenu(event, this)">Azienda <span class="arrow-down">&#9662;</span></a>
+                <div class="has-megamenu" onclick="toggleMegamenu(event, this)">
+                    <div class="menu-trigger">
+                        <a href="#" class="home-link">Azienda</a>
+                        <span class="arrow-down">&#9662;</span>
+                    </div>
                     <div class="megamenu">
-                        <div class="mega-header">
-                            <h3>La nostra Azienda</h3>
-                            <p>Scopri la nostra storia, il team e i valori.</p>
-                        </div>
+                        <div class="mega-header"><h3>La nostra Azienda</h3><p>Scopri la nostra storia, il team e i valori.</p></div>
                         <div class="mega-content">
                             <div class="mega-links">
                                 <a href="#" class="mega-link"><svg class="mega-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg><div><h4>Chi Siamo</h4><p>La nostra storia e visione design.</p></div></a>
@@ -597,19 +385,14 @@
                                 <a href="#" class="mega-link"><svg class="mega-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg><div><h4>News</h4><p>Comunicati su design e progetti.</p></div></a>
                             </div>
                             <div class="mega-casestudy">
-                                <div class="cs-icon-wrapper">
-                                    <svg class="cs-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"></path></svg>
-                                </div>
+                                <div class="cs-icon-wrapper"><svg class="cs-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"></path></svg></div>
                                 <span class="cs-badge">CASE STUDY</span>
                                 <h4>Da startup a PMI in 2 anni</h4>
                                 <p>La storia di <strong>Innovatech</strong>, cresciuta con il nostro supporto tecnologico.</p>
                                 <a href="#" class="cs-link">Leggi il caso studio &rarr;</a>
                             </div>
                         </div>
-                        <div class="mega-footer">
-                            <span>Hai bisogno di aiuto?</span>
-                            <a href="#" class="support-link">Contatta il supporto &rarr;</a>
-                        </div>
+                        <div class="mega-footer"><span>Hai bisogno di aiuto?</span><a href="#" class="support-link">Contatta il supporto &rarr;</a></div>
                     </div>
                 </div>
 

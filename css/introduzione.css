@@ -1,8 +1,8 @@
 /* =========================================
-   PAGINA INTRODUZIONE - STILI EDITORIALI
+   PAGINA INTRODUZIONE - DNA INFORMATICA
    ========================================= */
 
-/* --- CONTAINER GENERICO --- */
+/* --- BASE --- */
 .intro-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -19,236 +19,429 @@
     margin-bottom: 20px;
 }
 
-/* --- HERO --- */
-.intro-editorial-hero {
-    padding: 100px 0;
+.intro-tag.light {
+    color: #ff6b00;
+}
+
+/* --- 1. HERO CINEMATOGRAFICA --- */
+.intro-cinematic {
+    position: relative;
+    height: 100vh;
+    min-height: 650px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    padding: 20px;
+}
+
+.intro-cinematic-bg {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.1);
+    filter: brightness(0.35) saturate(0.9);
+}
+
+.intro-cinematic-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(180deg, rgba(10,10,10,0.75) 0%, rgba(10,10,10,0.95) 100%);
+}
+
+.intro-cinematic-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1000px;
+}
+
+.intro-cinematic-content h1 {
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -2px;
+    color: #ffffff;
+    margin: 0 0 30px 0;
+}
+
+.intro-cinematic-content h1 span {
+    color: #ff6b00;
+}
+
+.intro-cinematic-content p {
+    font-size: 1.3rem;
+    color: #cbd5e1;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.intro-scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    color: #94a3b8;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.intro-scroll-line {
+    width: 1px;
+    height: 50px;
+    background: linear-gradient(to bottom, #ff6b00, transparent);
+    animation: scrollDown 2s infinite;
+}
+
+@keyframes scrollDown {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(20px); opacity: 0; }
+}
+
+/* --- 2. LA NOSTRA IDENTITÀ (Asimmetrica) --- */
+.intro-identita {
+    padding: 120px 20px;
     background-color: #f8fafc;
 }
 
-.intro-hero-grid {
+.intro-identita-grid {
     display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 60px;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
     align-items: center;
 }
 
-.intro-hero-text h1 {
-    font-size: 3.5rem;
+.intro-identita-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+}
+
+.intro-identita-text h2 {
+    font-size: 3rem;
     color: #0f172a;
     line-height: 1.1;
     margin-bottom: 30px;
     font-weight: 800;
 }
 
-.intro-hero-text p {
-    font-size: 1.2rem;
+.intro-identita-text p {
+    font-size: 1.1rem;
     color: #475569;
     line-height: 1.7;
+    margin-bottom: 20px;
 }
 
-.intro-hero-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
-}
-
-/* --- SEZIONE FILOSOFIA (Citazione) --- */
-.intro-filosofia {
-    padding: 100px 0;
+/* --- 3. TIMELINE --- */
+.intro-timeline-section {
+    padding: 120px 20px;
     background-color: #0f172a;
     color: #ffffff;
+}
+
+.intro-timeline-header {
     text-align: center;
+    max-width: 800px;
+    margin: 0 auto 80px auto;
 }
 
-.quote-icon {
-    width: 50px;
-    height: 50px;
-    color: #ff6b00;
-    margin-bottom: 30px;
+.intro-timeline-header h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 20px;
 }
 
-.filosofia-content h2 {
-    font-size: 2.8rem;
-    font-weight: 700;
-    line-height: 1.3;
-    max-width: 900px;
-    margin: 0 auto 30px auto;
-}
-
-.filosofia-content h2 span {
-    color: #ff6b00;
-}
-
-.filosofia-content p {
-    color: #94a3b8;
+.intro-timeline-header p {
     font-size: 1.1rem;
-    font-style: italic;
+    color: #94a3b8;
 }
 
-/* --- SEZIONE COMPETENZE --- */
-.intro-competenze {
-    padding: 100px 0;
+.intro-timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding-left: 40px;
+}
+
+.intro-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, #ff6b00, #1f2937);
+}
+
+.timeline-item {
+    position: relative;
+    padding: 0 0 50px 40px;
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -8px;
+    top: 5px;
+    width: 14px;
+    height: 14px;
+    background-color: #ff6b00;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(255, 107, 0, 0.2);
+}
+
+.timeline-year {
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: #ff6b00;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.timeline-content h3 {
+    font-size: 1.4rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.timeline-content p {
+    font-size: 1rem;
+    color: #cbd5e1;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* --- 4. IL NOSTRO MONDO TECNOLOGICO --- */
+.intro-tech-world {
+    padding: 120px 20px;
     background-color: #ffffff;
 }
 
-.competenze-header {
+.intro-tech-header {
     text-align: center;
-    margin-bottom: 60px;
+    max-width: 800px;
+    margin: 0 auto 60px auto;
 }
 
-.competenze-header h2 {
-    font-size: 2.8rem;
+.intro-tech-header h2 {
+    font-size: 3rem;
     color: #0f172a;
     font-weight: 800;
 }
 
-.competenze-list {
+.intro-tech-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.tech-card {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 40px 30px;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.tech-card:hover {
+    background-color: #ffffff;
+    border-color: #ff6b00;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+}
+
+.tech-card-large {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    background-color: #0f172a;
+    color: #ffffff;
+    justify-content: flex-start;
+}
+
+.tech-card-large:hover {
+    background-color: #0f172a;
+    border-color: #ff6b00;
+}
+
+.tech-card-large h3 {
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 15px;
+    font-weight: 800;
+}
+
+.tech-card-large p {
+    font-size: 1rem;
+    color: #cbd5e1;
+    line-height: 1.6;
+}
+
+.tech-card h3 {
+    font-size: 1.3rem;
+    color: #0f172a;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.tech-card p {
+    font-size: 0.95rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* --- 5. LA VISIONE --- */
+.intro-vision {
+    position: relative;
+    padding: 180px 20px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.intro-vision-bg {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    filter: brightness(0.3) saturate(1.3);
+}
+
+.intro-vision-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle at center, rgba(255,107,0,0.1) 0%, rgba(10,10,10,0.9) 70%);
+}
+
+.intro-vision-content {
+    position: relative;
+    z-index: 2;
     max-width: 900px;
     margin: 0 auto;
 }
 
-.competenza-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 30px;
-    padding: 40px 0;
-    border-bottom: 1px solid #e2e8f0;
-}
-
-.competenza-number {
-    font-size: 2.5rem;
-    font-weight: 900;
-    color: #ff6b00;
-    line-height: 1;
-    opacity: 0.3;
-    flex-shrink: 0;
-}
-
-.competenza-text h3 {
-    font-size: 1.5rem;
-    color: #0f172a;
-    margin-bottom: 10px;
-    font-weight: 700;
-}
-
-.competenza-text p {
-    font-size: 1.05rem;
-    color: #475569;
-    line-height: 1.6;
-}
-
-/* --- SEZIONE MANIFESTO (Card Scura) --- */
-.intro-manifesto {
-    padding: 100px 0;
-    background-color: #f8fafc;
-}
-
-.manifesto-box {
-    background-color: #0f172a;
+.intro-vision-content h2 {
+    font-size: 3.5rem;
     color: #ffffff;
-    padding: 80px;
-    border-radius: 20px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 30px;
 }
 
-.manifesto-box h2 {
-    font-size: 2.5rem;
-    margin-bottom: 50px;
-    font-weight: 700;
-}
-
-.manifesto-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-}
-
-.manifesto-item {
-    padding-left: 20px;
-    border-left: 3px solid #ff6b00;
-}
-
-.manifesto-item h4 {
-    font-size: 1.3rem;
-    margin-bottom: 10px;
-    color: #ffffff;
-}
-
-.manifesto-item p {
+.intro-vision-content p {
+    font-size: 1.2rem;
     color: #cbd5e1;
-    font-size: 1rem;
-    line-height: 1.6;
+    line-height: 1.7;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-/* --- CTA FINALE --- */
-.intro-cta {
-    padding: 100px 0;
-    background-color: #ffffff;
+/* --- 6. CHIUSURA NARRATIVA --- */
+.intro-conclusion {
+    padding: 150px 20px;
+    background-color: #000000;
     text-align: center;
 }
 
-.cta-content h2 {
-    font-size: 2.5rem;
-    color: #0f172a;
-    margin-bottom: 20px;
-    font-weight: 800;
+.intro-conclusion-content {
+    max-width: 900px;
+    margin: 0 auto;
 }
 
-.cta-content p {
-    font-size: 1.1rem;
-    color: #64748b;
+.intro-quote-icon {
+    width: 60px;
+    height: 60px;
+    color: #ff6b00;
     margin-bottom: 40px;
 }
 
-.btn-cta-primario {
-    display: inline-block;
-    background-color: #ff6b00;
-    color: #ffffff;
-    padding: 18px 45px;
-    font-size: 1.1rem;
+.intro-conclusion blockquote {
+    font-size: 2.5rem;
     font-weight: 700;
-    text-decoration: none;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
+    line-height: 1.4;
+    color: #ffffff;
+    margin: 0 0 30px 0;
+    letter-spacing: -0.5px;
 }
 
-.btn-cta-primario:hover {
-    background-color: #e65c00;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(255, 107, 0, 0.4);
+.intro-conclusion p {
+    font-size: 1.1rem;
+    color: #ff6b00;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0;
 }
 
 /* =========================================
    RESPONSIVE MOBILE
    ========================================= */
+@media (max-width: 1024px) {
+    .intro-tech-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+    }
+    .tech-card-large {
+        grid-column: 1 / -1;
+        grid-row: auto;
+    }
+}
+
 @media (max-width: 900px) {
-    .intro-hero-grid {
+    .intro-cinematic-content h1 {
+        font-size: 2.5rem;
+    }
+    .intro-cinematic-content p {
+        font-size: 1rem;
+    }
+    .intro-identita, .intro-timeline-section, .intro-tech-world, .intro-vision, .intro-conclusion {
+        padding: 80px 20px;
+    }
+    .intro-identita-grid {
         grid-template-columns: 1fr;
         gap: 40px;
     }
-    .intro-hero-text h1 {
-        font-size: 2.5rem;
+    .intro-identita-image {
+        order: -1;
     }
-    .intro-hero-text p {
-        font-size: 1rem;
-    }
-    .filosofia-content h2 {
-        font-size: 1.8rem;
-    }
-    .competenze-header h2, .manifesto-box h2, .cta-content h2 {
+    .intro-identita-text h2,
+    .intro-timeline-header h2,
+    .intro-tech-header h2,
+    .intro-vision-content h2 {
         font-size: 2rem;
     }
-    .competenza-item {
-        flex-direction: column;
-        gap: 10px;
-    }
-    .manifesto-box {
-        padding: 40px 25px;
-    }
-    .manifesto-grid {
+    .intro-tech-grid {
         grid-template-columns: 1fr;
-        gap: 30px;
+    }
+    .intro-timeline {
+        padding-left: 30px;
+    }
+    .intro-vision {
+        background-attachment: scroll;
+    }
+    .intro-conclusion blockquote {
+        font-size: 1.6rem;
     }
 }

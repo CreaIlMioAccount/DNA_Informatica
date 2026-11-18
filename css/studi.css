@@ -1,0 +1,403 @@
+/* =========================================
+   PAGINA LO STUDIO - DNAHUB
+   ========================================= */
+
+/* --- RESET E BASE --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #0f172a;
+    color: #ffffff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* --- CONTAINER --- */
+.studio-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- TAG --- */
+.studio-tag {
+    display: inline-block;
+    color: #ff6b00;
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+/* --- GRIGLIA 2 COLONNE --- */
+.studio-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.studio-grid-reverse .studio-text {
+    order: 2;
+}
+.studio-grid-reverse .studio-image {
+    order: 1;
+}
+
+/* --- HERO --- */
+.studio-hero {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1920&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+}
+
+.studio-hero-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(15, 23, 42, 0.75);
+    z-index: 1;
+}
+
+.studio-hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1000px;
+}
+
+.studio-hero-content h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 30px;
+    color: #ffffff;
+}
+
+.studio-hero-content h1 span {
+    color: #ff6b00;
+}
+
+.studio-hero-content p {
+    font-size: 1.3rem;
+    color: #cbd5e1;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* --- SEZIONE STORIA --- */
+.studio-storia {
+    padding: 120px 20px;
+    background-color: #f8fafc;
+    color: #0f172a;
+}
+
+.studio-storia .studio-tag {
+    color: #ff6b00;
+}
+
+.studio-storia h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 30px;
+    color: #0f172a;
+}
+
+.studio-storia p {
+    font-size: 1.1rem;
+    color: #475569;
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+.studio-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+}
+
+/* --- SEZIONE IDENTITÀ --- */
+.studio-identita {
+    padding: 120px 20px;
+    background-color: #0f172a;
+    color: #ffffff;
+}
+
+.studio-identita-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 80px auto;
+}
+
+.studio-identita-header h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.studio-identita-header p {
+    font-size: 1.1rem;
+    color: #94a3b8;
+}
+
+.studio-identita-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.identita-card {
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 40px 30px;
+    transition: all 0.3s ease;
+}
+
+.identita-card:hover {
+    background-color: rgba(255, 107, 0, 0.05);
+    border-color: #ff6b00;
+    transform: translateY(-5px);
+}
+
+.identita-card h3 {
+    font-size: 1.3rem;
+    color: #ff6b00;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.identita-card p {
+    font-size: 0.95rem;
+    color: #cbd5e1;
+    line-height: 1.6;
+}
+
+/* --- SEZIONE COMPETENZE --- */
+.studio-competenze {
+    padding: 120px 20px;
+    background-color: #ffffff;
+    color: #0f172a;
+}
+
+.studio-competenze-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 80px auto;
+}
+
+.studio-competenze-header h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    color: #0f172a;
+}
+
+.studio-competenze-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.competenza-card {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 40px 30px;
+    transition: all 0.3s ease;
+}
+
+.competenza-card:hover {
+    background-color: #ffffff;
+    border-color: #ff6b00;
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+}
+
+.competenza-card h3 {
+    font-size: 1.2rem;
+    color: #0f172a;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.competenza-card p {
+    font-size: 0.95rem;
+    color: #64748b;
+    line-height: 1.6;
+}
+
+/* --- SEZIONE APPROCCIO --- */
+.studio-approccio {
+    padding: 120px 20px;
+    background-color: #f8fafc;
+    color: #0f172a;
+}
+
+.studio-approccio .studio-tag {
+    color: #ff6b00;
+}
+
+.studio-approccio h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 30px;
+    color: #0f172a;
+}
+
+.studio-approccio p {
+    font-size: 1.1rem;
+    color: #475569;
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+/* --- SEZIONE INNOVAZIONE --- */
+.studio-innovazione {
+    padding: 160px 20px;
+    background-color: #0f172a;
+    color: #ffffff;
+    text-align: center;
+    position: relative;
+    background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1920&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.studio-innovazione-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(15, 23, 42, 0.85);
+    z-index: 1;
+}
+
+.studio-innovazione-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.studio-innovazione-content h2 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 30px;
+}
+
+.studio-innovazione-content p {
+    font-size: 1.2rem;
+    color: #cbd5e1;
+    margin-bottom: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- CITAZIONE FINALE --- */
+.studio-citazione {
+    padding: 120px 20px;
+    background-color: #0f172a;
+    text-align: center;
+}
+
+.studio-citazione-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.citazione-icon {
+    width: 60px;
+    height: 60px;
+    color: #ff6b00;
+    margin-bottom: 40px;
+}
+
+.studio-citazione h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+
+.studio-citazione p {
+    color: #94a3b8;
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+/* =========================================
+   RESPONSIVE MOBILE
+   ========================================= */
+@media (max-width: 1024px) {
+    .studio-identita-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .studio-competenze-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 900px) {
+    .studio-hero {
+        height: 80vh;
+        min-height: 500px;
+    }
+    .studio-hero-content h1 {
+        font-size: 2.5rem;
+    }
+    .studio-hero-content p {
+        font-size: 1rem;
+    }
+    .studio-storia, .studio-identita, .studio-competenze, .studio-approccio, .studio-innovazione, .studio-citazione {
+        padding: 60px 20px;
+    }
+    .studio-grid-2 {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .studio-grid-reverse .studio-text {
+        order: 1;
+    }
+    .studio-grid-reverse .studio-image {
+        order: 2;
+    }
+    .studio-storia h2, .studio-identita-header h2, .studio-competenze-header h2, .studio-approccio h2 {
+        font-size: 2rem;
+    }
+    .studio-identita-grid, .studio-competenze-grid {
+        grid-template-columns: 1fr;
+    }
+    .studio-innovazione {
+        padding: 80px 20px;
+        background-attachment: scroll;
+    }
+    .studio-innovazione-content h2 {
+        font-size: 2.2rem;
+    }
+    .studio-innovazione-content p {
+        font-size: 1rem;
+    }
+    .studio-citazione h2 {
+        font-size: 1.8rem;
+    }
+}

@@ -167,26 +167,44 @@
 }
 .main-nav::-webkit-scrollbar { display: none; }
 
-.main-nav a {
+/* Contenitore interno per gestire il click */
+.menu-trigger {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 8px 0;
+    cursor: pointer;
+}
+
+/* Stile per il link del testo */
+.home-link {
     color: #475569;
     text-decoration: none;
     font-weight: 600;
     font-size: 0.9rem;
     transition: color 0.3s;
-    padding: 8px 0;
-    display: flex;
-    align-items: center;
+    margin-right: 8px;
 }
-.main-nav a:hover { color: #ff6b00; }
+.home-link:hover { color: #ff6b00; }
 
+/* Stile per la freccia */
 .arrow-down {
     display: inline-block;
     font-size: 1.2rem;
-    margin-left: 8px;
     color: #475569;
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
+/* Stile per il contenitore della freccia */
+/* Stile per il pulsante della freccia (che ora cattura anche i click sullo spazio vuoto) */
+.toggle-mega {
+    cursor: pointer;
+    padding: 8px 0 8px 20px; /* Più spazio a sinistra per allargare l'area di click */
+    display: flex;
+    align-items: center;
+    flex-grow: 1; /* Fa espandere la freccia fino a riempire la riga */
+    justify-content: flex-end; /* Spinge la freccia verso destra */
+}
 .nav-arrow {
     background: #f8fafc;
     border: 1px solid #e2e8f0;
@@ -214,7 +232,11 @@
 /* =========================================
    MEGA MENU (DESKTOP)
    ========================================= */
-.has-megamenu { position: relative; }
+.has-megamenu { 
+    position: relative; 
+    display: flex;
+    align-items: center;
+}
 
 .megamenu {
     position: fixed;
@@ -232,6 +254,8 @@
     transition: all 0.3s ease;
     z-index: 9999;
 }
+
+/* Apertura all'hover (desktop) e alla classe active (click) */
 .has-megamenu:hover .megamenu,
 .has-megamenu.active .megamenu {
     opacity: 1;
@@ -394,32 +418,31 @@
         margin: 0 auto;
     }
 
-    /* --- SISTEMAZIONE FASCIA NERA MOBILE --- */
     .header-top-right {
         width: 100%;
         height: auto;
         margin-left: 0;
         border-radius: 0;
-        padding: 10px 15px; /* Ridotto padding per renderlo compatto */
+        padding: 10px 15px;
         display: flex;
-        flex-direction: column; /* Mette menu e bottoni in colonna */
+        flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap: 10px; /* Spazio tra menu e bottoni */
+        gap: 10px;
     }
 
     .top-nav {
         display: flex;
-        flex-wrap: wrap; /* Permette ai link di andare a capo se serve */
+        flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-        gap: 8px 12px; /* Spazio orizzontale e verticale tra i link */
+        gap: 8px 12px;
         width: 100%;
     }
 
     .top-nav a {
-        font-size: 0.7rem; /* Font piccolo per far stare tutto */
-        letter-spacing: 0; /* Rimuove lo spazio tra le lettere */
+        font-size: 0.7rem;
+        letter-spacing: 0;
         line-height: 1.2;
     }
 
@@ -433,7 +456,7 @@
     }
 
     .btn-login, .btn-start {
-        padding: 6px 12px; /* Bottoni più compatti */
+        padding: 6px 12px;
         font-size: 0.75rem;
     }
 
@@ -502,33 +525,48 @@
         display: flex;
     }
 
-    .main-nav a {
-        font-size: 1rem;
-        padding: 15px 20px;
+    /* Stile mobile per la riga del menu (testo + freccia) */
+    .has-megamenu {
         width: 100%;
         border-bottom: 1px solid #f1f5f9;
         display: flex;
-        justify-content: space-between;
-        align-items: center;
+        flex-direction: column;
+        padding: 0;
     }
 
-    .arrow-down {
+    .menu-trigger {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 15px 20px;
+        cursor: pointer;
+    }
+
+    .menu-trigger .home-link {
+        flex-grow: 1;
+        font-size: 1rem;
+        color: #475569;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    .menu-trigger .arrow-down {
         display: inline-block !important;
         font-size: 1rem;
-        margin-left: 10px;
-        transition: transform 0.3s ease;
         color: #ff6b00;
+        transition: transform 0.3s ease;
     }
 
     .has-megamenu.active .arrow-down {
         transform: rotate(180deg);
     }
 
-    .megamenu {
+    /* --- MEGAMENU MOBILE --- */
+    .has-megamenu .megamenu {
         display: none !important;
-        position: static !important;
         width: 100% !important;
-        max-width: 100% !important;
+        flex-basis: 100%;
+        position: static !important;
         box-shadow: none !important;
         border: none !important;
         padding: 0 !important;
@@ -541,7 +579,20 @@
     }
 
     .has-megamenu.active .megamenu {
+        display: block !important; 
+    }
+
+    /* Disabilita l'hover su mobile per evitare conflitti col click */
+    .has-megamenu:hover .megamenu {
+        display: none !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+    }
+    
+    .has-megamenu.active:hover .megamenu {
         display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
     }
 
     .mega-header {
