@@ -962,6 +962,28 @@
         font-size: 16px;
       }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   </style>
 
   <!-- ATMOSFERA E SCIA ENERGETICA DI SFONDO -->
@@ -2872,6 +2894,31 @@
           </div>
         </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
         <div class="dir-links">
           <a href="#chi-siamo" class="dir-link">Chi Siamo</a>
           <a href="#team" class="dir-link">Team</a>
@@ -5338,6 +5385,1172 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="dna-support-section" class="dna-sup-sec">
+  <style>
+    .dna-sup-sec {
+      --sup-bg: #f8fafc;
+      --sup-card: #ffffff;
+      --sup-card-soft: #f1f5f9;
+      --sup-orange: #f97316;
+      --sup-orange-dark: #ea580c;
+      --sup-cyan: #0284c7;
+      --sup-emerald: #059669;
+      --sup-text: #0f172a;
+      --sup-soft: #334155;
+      --sup-muted: #64748b;
+      --sup-border: rgba(15, 23, 42, 0.11);
+
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--sup-bg);
+      background-image:
+        radial-gradient(ellipse 50% 340px at 15% 15%, rgba(249, 115, 22, 0.08), transparent 72%),
+        radial-gradient(ellipse 45% 320px at 85% 80%, rgba(2, 132, 199, 0.07), transparent 72%);
+      color: var(--sup-text);
+      padding: 84px 56px 92px;
+      position: relative;
+      width: 100%;
+      box-sizing: border-box;
+      border-top: 1px solid rgba(15, 23, 42, 0.09);
+    }
+
+    .dna-sup-sec *,
+    .dna-sup-sec *::before,
+    .dna-sup-sec *::after {
+      box-sizing: border-box;
+    }
+
+    .dna-sup-sec .sup-wrap {
+      max-width: 1680px;
+      margin: 0 auto;
+    }
+
+    /* HEADER */
+    .dna-sup-sec .sup-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 42px;
+    }
+
+    .dna-sup-sec .sup-kicker {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12.5px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--sup-orange-dark);
+      margin-bottom: 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .dna-sup-sec .sup-kicker i {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--sup-emerald);
+      box-shadow: 0 0 0 4px rgba(5, 150, 105, 0.16);
+    }
+
+    .dna-sup-sec .sup-h2 {
+      font-size: clamp(32px, 3.8vw, 48px);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.025em;
+      margin: 0 0 12px;
+      color: var(--sup-text);
+    }
+
+    .dna-sup-sec .sup-h2 span {
+      color: var(--sup-orange-dark);
+    }
+
+    .dna-sup-sec .sup-sub {
+      font-size: 17px;
+      line-height: 1.55;
+      color: var(--sup-soft);
+      max-width: 720px;
+      margin: 0;
+    }
+
+    .dna-sup-sec .sup-status {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 800;
+      color: #065f46;
+      background: #ecfdf5;
+      border: 1px solid #a7f3d0;
+      border-radius: 999px;
+      padding: 9px 15px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+    }
+
+    /* CANALI INFORMATIVI */
+    .dna-sup-sec .sup-channels {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 28px;
+    }
+
+    .dna-sup-sec .sup-card {
+      background: var(--sup-card);
+      border: 1px solid var(--sup-border);
+      border-radius: 18px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 18px;
+      box-shadow: 0 10px 26px -14px rgba(15, 23, 42, 0.18);
+      transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .dna-sup-sec .sup-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--sup-orange);
+      box-shadow: 0 16px 32px -14px rgba(15, 23, 42, 0.24);
+    }
+
+    .dna-sup-sec .sup-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .dna-sup-sec .sup-ico {
+      width: 42px;
+      height: 42px;
+      border-radius: 11px;
+      background: #fff7ed;
+      border: 1px solid #fed7aa;
+      color: var(--sup-orange-dark);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    .dna-sup-sec .sup-ico.cyan {
+      background: #f0f9ff;
+      border-color: #bae6fd;
+      color: var(--sup-cyan);
+    }
+
+    .dna-sup-sec .sup-ico.em {
+      background: #ecfdf5;
+      border-color: #a7f3d0;
+      color: var(--sup-emerald);
+    }
+
+    .dna-sup-sec .sup-sla {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--sup-text);
+      background: var(--sup-card-soft);
+      border: 1px solid #e2e8f0;
+      border-radius: 999px;
+      padding: 4px 10px;
+    }
+
+    .dna-sup-sec .sup-title {
+      font-size: 20px;
+      font-weight: 800;
+      margin: 0 0 6px;
+      color: var(--sup-text);
+    }
+
+    .dna-sup-sec .sup-desc {
+      font-size: 14.5px;
+      line-height: 1.55;
+      color: var(--sup-soft);
+      margin: 0;
+    }
+
+    .dna-sup-sec .sup-foot {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding-top: 14px;
+      border-top: 1px solid #e2e8f0;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+    }
+
+    .dna-sup-sec .sup-hours {
+      color: var(--sup-muted);
+      font-weight: 600;
+    }
+
+    .dna-sup-sec .sup-action {
+      color: var(--sup-text);
+      text-decoration: none;
+      font-weight: 800;
+    }
+
+    .dna-sup-sec .sup-action:hover {
+      color: var(--sup-orange-dark);
+      text-decoration: underline;
+    }
+
+    /* FAQ SITO + RICHIESTA INFORMAZIONI */
+    .dna-sup-sec .sup-bottom {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 20px;
+      align-items: start;
+    }
+
+    .dna-sup-sec .sup-faq-box,
+    .dna-sup-sec .sup-ticket-box {
+      background: var(--sup-card);
+      border: 1px solid var(--sup-border);
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 10px 26px -14px rgba(15, 23, 42, 0.16);
+    }
+
+    .dna-sup-sec .sup-box-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .dna-sup-sec .sup-box-title {
+      font-size: 18px;
+      font-weight: 800;
+      margin: 0;
+      color: var(--sup-text);
+    }
+
+    .dna-sup-sec .sup-search {
+      width: 100%;
+      max-width: 300px;
+      background: var(--sup-bg);
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      padding: 9px 12px;
+      color: var(--sup-text);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 13.5px;
+      outline: none;
+    }
+
+    .dna-sup-sec .sup-search:focus {
+      border-color: var(--sup-text);
+      background: #ffffff;
+    }
+
+    .dna-sup-sec .sup-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .dna-sup-sec .sup-tag {
+      background: #0f172a;
+      border: 1.5px solid #0f172a;
+      color: #ffffff;
+      border-radius: 999px;
+      padding: 6px 13px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .dna-sup-sec .sup-tag:hover {
+      background: #1e293b;
+      border-color: #1e293b;
+    }
+
+    .dna-sup-sec .sup-tag.is-active {
+      background: #ffffff;
+      border-color: #0f172a;
+      color: #0f172a;
+      box-shadow: 0 6px 16px -8px rgba(15, 23, 42, 0.35);
+    }
+
+    .dna-sup-sec .sup-faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .dna-sup-sec .sup-faq-item {
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      background: var(--sup-bg);
+      overflow: hidden;
+    }
+
+    .dna-sup-sec .sup-faq-item[hidden] {
+      display: none;
+    }
+
+    .dna-sup-sec .sup-faq-q {
+      width: 100%;
+      background: transparent;
+      border: 0;
+      padding: 13px 16px;
+      color: var(--sup-text);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 14.5px;
+      font-weight: 700;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      cursor: pointer;
+    }
+
+    .dna-sup-sec .sup-faq-q span.plus {
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--sup-orange-dark);
+      font-size: 16px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .dna-sup-sec .sup-faq-a {
+      display: none;
+      padding: 10px 16px 14px;
+      font-size: 13.5px;
+      line-height: 1.55;
+      color: var(--sup-soft);
+      border-top: 1px dashed #cbd5e1;
+      background: #ffffff;
+    }
+
+    .dna-sup-sec .sup-faq-item.is-open .sup-faq-a {
+      display: block;
+    }
+
+    /* FORM RAPIDO INFORMAZIONI */
+    .dna-sup-sec .sup-form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .dna-sup-sec .sup-input,
+    .dna-sup-sec .sup-select,
+    .dna-sup-sec .sup-textarea {
+      width: 100%;
+      background: var(--sup-bg);
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      padding: 10px 12px;
+      color: var(--sup-text);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 13.5px;
+      outline: none;
+    }
+
+    .dna-sup-sec .sup-input:focus,
+    .dna-sup-sec .sup-select:focus,
+    .dna-sup-sec .sup-textarea:focus {
+      border-color: #0f172a;
+      background: #ffffff;
+    }
+
+    .dna-sup-sec .sup-textarea {
+      min-height: 84px;
+      resize: vertical;
+    }
+
+    .dna-sup-sec .sup-btn {
+      background: #0f172a;
+      color: #ffffff;
+      border: 1.5px solid #0f172a;
+      border-radius: 10px;
+      padding: 11px 16px;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+    }
+
+    .dna-sup-sec .sup-btn:hover {
+      background: #ffffff;
+      color: #0f172a;
+      transform: translateY(-1px);
+    }
+
+    .dna-sup-sec .sup-feedback {
+      display: none;
+      margin-top: 8px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      background: #ecfdf5;
+      border: 1px solid #a7f3d0;
+      color: #065f46;
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 1.45;
+    }
+
+    .dna-sup-sec .sup-feedback.is-shown {
+      display: block;
+    }
+
+    @media (max-width: 1100px) {
+      .dna-sup-sec .sup-channels,
+      .dna-sup-sec .sup-bottom {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .dna-sup-sec {
+        padding: 64px 20px 72px;
+      }
+      .dna-sup-sec .sup-search {
+        max-width: 100%;
+      }
+    }
+  </style>
+
+  <div class="sup-wrap">
+    <div class="sup-header">
+      <div>
+        <div class="sup-kicker"><i></i> SUPPORTO INFORMATIVO &amp; ORIENTAMENTO</div>
+        <h2 class="sup-h2">Risposte <span>chiare sul portale</span> e sui nostri servizi</h2>
+        <p class="sup-sub">
+          Tutto quello che serve per orientarti tra DNA Hub, soluzioni software, cloud e AI su misura: se hai un dubbio sul percorso più adatto alla tua azienda, scrivici qui.
+        </p>
+      </div>
+
+      <div class="sup-status">&#9679; CONSULENZA &amp; INFO ATTIVE</div>
+    </div>
+
+    <!-- 3 CANALI INFORMATIVI DEL SITO -->
+    <div class="sup-channels">
+      <article class="sup-card">
+        <div>
+          <div class="sup-card-top">
+            <span class="sup-ico">P</span>
+            <span class="sup-sla">PORTALE DNA HUB</span>
+          </div>
+          <h3 class="sup-title">Guida ai Servizi &amp; Aree</h3>
+          <p class="sup-desc">
+            Orientamento rapido sulle sezioni del sito: dalla visione di DNA Hub ai gestionali su misura, cloud, R&amp;D Lab e servizi in promozione.
+          </p>
+        </div>
+        <div class="sup-foot">
+          <span class="sup-hours">PORTALE.DNAINFORMATICA.COM</span>
+          <a href="#dna-hub-corporate" class="sup-action">Vai a DNA Hub &rarr;</a>
+        </div>
+      </article>
+
+      <article class="sup-card">
+        <div>
+          <div class="sup-card-top">
+            <span class="sup-ico cyan">S</span>
+            <span class="sup-sla">PROGETTI &amp; PREVENTIVI</span>
+          </div>
+          <h3 class="sup-title">Analisi &amp; Fattibilità</h3>
+          <p class="sup-desc">
+            Vuoi capire se realizzare una piattaforma web, integrare un gestionale o avviare un progetto AI? Partiamo da un confronto chiaro sui tuoi obiettivi.
+          </p>
+        </div>
+        <div class="sup-foot">
+          <span class="sup-hours">CONFRONTO SU MISURA</span>
+          <a href="#supQuickForm" class="sup-action" data-preset-topic="Informazioni Servizi & Preventivo">Chiedi info &rarr;</a>
+        </div>
+      </article>
+
+      <article class="sup-card">
+        <div>
+          <div class="sup-card-top">
+            <span class="sup-ico em">C</span>
+            <span class="sup-sla">CONTATTI DIRETTI</span>
+          </div>
+          <h3 class="sup-title">Azienda, Partner &amp; Carriere</h3>
+          <p class="sup-desc">
+            Informazioni su DNA Informatica, collaborazioni tecnologiche, certificazioni, case study e candidature per entrare nel team.
+          </p>
+        </div>
+        <div class="sup-foot">
+          <span class="sup-hours">DNA INFORMATICA</span>
+          <a href="#supQuickForm" class="sup-action" data-preset-topic="Azienda, Partner o Lavora con noi">Scrivici &rarr;</a>
+        </div>
+      </article>
+    </div>
+
+    <!-- FAQ SITO + FORM INFORMAZIONI -->
+    <div class="sup-bottom">
+      <div class="sup-faq-box">
+        <div class="sup-box-head">
+          <h3 class="sup-box-title">Domande frequenti sul sito e sui servizi</h3>
+          <input type="search" class="sup-search" id="supSearchInput" placeholder="Cerca nel sito (es. DNA Hub, promo, AI, cloud)...">
+        </div>
+
+        <div class="sup-tags" id="supTags">
+          <button type="button" class="sup-tag is-active" data-tag="all">Tutti</button>
+          <button type="button" class="sup-tag" data-tag="hub">DNA Hub &amp; Sito</button>
+          <button type="button" class="sup-tag" data-tag="servizi">Software &amp; Cloud</button>
+          <button type="button" class="sup-tag" data-tag="ai">AI &amp; Lab</button>
+          <button type="button" class="sup-tag" data-tag="promo">Promo &amp; Info</button>
+        </div>
+
+        <div class="sup-faq-list" id="supFaqList">
+          <div class="sup-faq-item is-open" data-tags="hub promo">
+            <button type="button" class="sup-faq-q">
+              <span>Cos'è DNA Hub e come si collega a DNA Informatica?</span>
+              <span class="plus">&minus;</span>
+            </button>
+            <div class="sup-faq-a">
+              DNA Hub è il cuore della nostra visione e dell'ecosistema digitale di DNA Informatica: riunisce metodo progettuale, architetture cloud, ricerca R&amp;D e soluzioni su misura per le imprese.
+            </div>
+          </div>
+
+          <div class="sup-faq-item" data-tags="servizi promo">
+            <button type="button" class="sup-faq-q">
+              <span>Come funzionano i servizi in promozione mostrati nella pagina?</span>
+              <span class="plus">+</span>
+            </button>
+            <div class="sup-faq-a">
+              Le promozioni (come Audit Cloud &amp; Sicurezza, Gestionale su Misura e Copilota AI &amp; Automazione) offrono un punto d'ingresso strutturato con analisi iniziale, tempi chiari e condizioni dedicate: puoi richiederle tramite il modulo a lato.
+            </div>
+          </div>
+
+          <div class="sup-faq-item" data-tags="servizi ai">
+            <button type="button" class="sup-faq-q">
+              <span>Sviluppate solo software nuovi o integrate anche sistemi già esistenti?</span>
+              <span class="plus">+</span>
+            </button>
+            <div class="sup-faq-a">
+              Facciamo entrambe le cose: possiamo progettare una piattaforma o un gestionale da zero oppure affiancare, evolvere e integrare con API e automazioni AI gli strumenti che l'azienda usa già.
+            </div>
+          </div>
+
+          <div class="sup-faq-item" data-tags="hub ai">
+            <button type="button" class="sup-faq-q">
+              <span>Come posso chiedere una consulenza o inviare la mia candidatura?</span>
+              <span class="plus">+</span>
+            </button>
+            <div class="sup-faq-a">
+              Puoi compilare il modulo rapido qui a fianco indicando l'argomento (informazioni su un servizio, preventivo, collaborazione o candidatura): ti ricontatteremo per darti tutte le indicazioni necessarie.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sup-ticket-box">
+        <h3 class="sup-box-title">Richiedi informazioni al team</h3>
+        <p class="sup-desc" style="margin-top:6px;">
+          Hai bisogno di chiarimenti su un servizio, su DNA Hub o su una promo? Scrivici qui.
+        </p>
+
+        <form class="sup-form" id="supQuickForm">
+          <input type="text" class="sup-input" id="supName" placeholder="Nome e Azienda" required>
+          <input type="email" class="sup-input" id="supEmail" placeholder="Email di contatto" required>
+          <select class="sup-select" id="supTopic">
+            <option value="Informazioni Servizi & Preventivo">Informazioni Servizi &amp; Preventivo</option>
+            <option value="DNA Hub & Visione Aziendale">DNA Hub &amp; Visione Aziendale</option>
+            <option value="Servizi in Promozione">Servizi in Promozione</option>
+            <option value="Azienda, Partner o Lavora con noi">Azienda, Partner o Lavora con noi</option>
+          </select>
+          <textarea class="sup-textarea" id="supMsg" placeholder="Scrivi qui la tua domanda o il progetto di cui vorresti parlare..." required></textarea>
+          <button type="submit" class="sup-btn">Invia richiesta informazioni</button>
+          <div class="sup-feedback" id="supFeedback"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const root = document.getElementById('dna-support-section');
+      if (!root) return;
+
+      const faqItems = root.querySelectorAll('.sup-faq-item');
+      const tags = root.querySelectorAll('.sup-tag');
+      const searchInput = root.querySelector('#supSearchInput');
+      const form = root.querySelector('#supQuickForm');
+      const topicSelect = root.querySelector('#supTopic');
+      const feedback = root.querySelector('#supFeedback');
+
+      let activeTag = 'all';
+
+      function filterFaqs() {
+        const q = (searchInput ? searchInput.value : '').trim().toLowerCase();
+
+        faqItems.forEach(function (item) {
+          const itemTags = (item.getAttribute('data-tags') || '').toLowerCase();
+          const content = (item.textContent || '').toLowerCase();
+          const matchTag = activeTag === 'all' || itemTags.indexOf(activeTag) !== -1;
+          const matchSearch = !q || content.indexOf(q) !== -1;
+
+          item.hidden = !(matchTag && matchSearch);
+        });
+      }
+
+      faqItems.forEach(function (item) {
+        const btn = item.querySelector('.sup-faq-q');
+        const plus = item.querySelector('.plus');
+        if (!btn) return;
+
+        btn.addEventListener('click', function () {
+          const isOpen = item.classList.toggle('is-open');
+          if (plus) plus.innerHTML = isOpen ? '&minus;' : '+';
+        });
+      });
+
+      tags.forEach(function (tagBtn) {
+        tagBtn.addEventListener('click', function () {
+          tags.forEach(function (t) { t.classList.remove('is-active'); });
+          tagBtn.classList.add('is-active');
+          activeTag = tagBtn.getAttribute('data-tag') || 'all';
+          filterFaqs();
+        });
+      });
+
+      if (searchInput) {
+        searchInput.addEventListener('input', filterFaqs);
+      }
+
+      root.querySelectorAll('[data-preset-topic]').forEach(function (link) {
+        link.addEventListener('click', function () {
+          const preset = link.getAttribute('data-preset-topic');
+          if (topicSelect && preset) {
+            topicSelect.value = preset;
+          }
+        });
+      });
+
+      if (form) {
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          const nameVal = (root.querySelector('#supName').value || '').trim();
+          const topicVal = topicSelect ? topicSelect.value : 'Informazioni';
+          if (feedback) {
+            feedback.textContent = 'Richiesta registrata per "' + topicVal + '"' + (nameVal ? ' (' + nameVal + ')' : '') + '. Collega qui il tuo endpoint/form backend per l\'invio reale.';
+            feedback.classList.add('is-shown');
+          }
+          form.reset();
+          if (topicSelect && topicVal) topicSelect.value = topicVal;
+        });
+      }
+    })();
+  </script>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="dna-blog-community" class="dna-ed-bc">
+  <style>
+    .dna-ed-bc {
+      --ed-bg: #ffffff;
+      --ed-surface: #f8fafc;
+      --ed-ink: #0f172a;
+      --ed-body: #334155;
+      --ed-muted: #64748b;
+      --ed-accent: #f97316;
+      --ed-line: rgba(15, 23, 42, 0.12);
+
+      background: var(--ed-bg);
+      color: var(--ed-ink);
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      padding: 88px 56px 96px;
+      width: 100%;
+      box-sizing: border-box;
+      border-top: 1px solid var(--ed-line);
+    }
+
+    .dna-ed-bc *,
+    .dna-ed-bc *::before,
+    .dna-ed-bc *::after {
+      box-sizing: border-box;
+    }
+
+    .dna-ed-bc .ed-wrap {
+      max-width: 1360px;
+      margin: 0 auto;
+    }
+
+    /* TOP EDITORIAL BLOCK */
+    .dna-ed-bc .ed-hero {
+      margin-bottom: 72px;
+    }
+
+    .dna-ed-bc .ed-hero-title {
+      font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+      font-style: italic;
+      font-weight: 500;
+      font-size: clamp(38px, 4.6vw, 62px);
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      color: #090d16;
+      margin: 0 0 28px;
+      max-width: 980px;
+    }
+
+    .dna-ed-bc .ed-hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .dna-ed-bc .ed-hero-copy {
+      font-size: 15px;
+      line-height: 1.65;
+      color: var(--ed-body);
+      margin: 0;
+    }
+
+    /* ALTERNATING ROWS */
+    .dna-ed-bc .ed-rows {
+      display: flex;
+      flex-direction: column;
+      gap: 72px;
+    }
+
+    .dna-ed-bc .ed-row {
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .dna-ed-bc .ed-row.is-reverse .ed-photo-box {
+      order: 2;
+    }
+
+    .dna-ed-bc .ed-row.is-reverse .ed-copy-box {
+      order: 1;
+    }
+
+    .dna-ed-bc .ed-photo-box {
+      border-radius: 14px;
+      overflow: hidden;
+      background: var(--ed-surface);
+      box-shadow: 0 18px 36px -22px rgba(15, 23, 42, 0.28);
+    }
+
+    .dna-ed-bc .ed-photo-box img {
+      width: 100%;
+      height: 330px;
+      object-fit: cover;
+      object-position: center 20%;
+      display: block;
+    }
+
+    .dna-ed-bc .ed-subhead {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: clamp(20px, 2vw, 25px);
+      font-weight: 500;
+      line-height: 1.3;
+      color: #111827;
+      margin: 0 0 18px;
+    }
+
+    .dna-ed-bc .ed-text {
+      font-size: 14.5px;
+      line-height: 1.68;
+      color: var(--ed-body);
+      margin: 0 0 28px;
+    }
+
+    .dna-ed-bc .ed-cta-line {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--ed-line);
+      max-width: 440px;
+      text-decoration: none;
+      color: var(--ed-ink);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      transition: border-color 0.2s ease, color 0.2s ease;
+    }
+
+    .dna-ed-bc .ed-cta-line:hover {
+      border-bottom-color: var(--ed-accent);
+      color: var(--ed-accent);
+    }
+
+    .dna-ed-bc .ed-cta-arrow {
+      font-size: 18px;
+      line-height: 1;
+      transition: transform 0.2s ease;
+    }
+
+    .dna-ed-bc .ed-cta-line:hover .ed-cta-arrow {
+      transform: translateX(5px);
+    }
+
+    @media (max-width: 960px) {
+      .dna-ed-bc .ed-hero-grid,
+      .dna-ed-bc .ed-row {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .dna-ed-bc .ed-row.is-reverse .ed-photo-box,
+      .dna-ed-bc .ed-row.is-reverse .ed-copy-box {
+        order: initial;
+      }
+
+      .dna-ed-bc .ed-photo-box img {
+        height: 250px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .dna-ed-bc {
+        padding: 64px 20px 72px;
+      }
+    }
+  </style>
+
+  <div class="ed-wrap">
+    <!-- TITOLO EDITORIALE + INTRO -->
+    <div class="ed-hero">
+      <h2 class="ed-hero-title">
+        Il Blog e la Community che Trasformano le Idee in Realtà&rdquo;
+      </h2>
+
+      <div class="ed-hero-grid">
+        <div></div>
+        <p class="ed-hero-copy">
+          Benvenuti su &ldquo;Connessi e Ispirati&rdquo;, il luogo dove le idee prendono vita e le connessioni si trasformano in opportunità. Qui troverai articoli stimolanti, storie di successo, consigli pratici e una community vibrante di persone appassionate e curiose. Unisciti a noi per esplorare nuovi orizzonti, condividere le tue esperienze e crescere insieme in un ambiente di sostegno e ispirazione. Che tu sia un creativo, un imprenditore o semplicemente un curioso, &ldquo;Connessi e Ispirati&rdquo; è il tuo punto di riferimento per trasformare le idee in realtà.
+        </p>
+      </div>
+    </div>
+
+    <!-- RIGHE ALTERNATE -->
+    <div class="ed-rows">
+      <!-- BLOCCO 1: BLOG -->
+      <div class="ed-row">
+        <div class="ed-photo-box">
+          <img
+            src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=80"
+            alt="Uomo legge il giornale"
+          >
+        </div>
+
+        <div class="ed-copy-box">
+          <h3 class="ed-subhead">&ldquo;Visioni in Parole: Il Blog che Ispira e Connetta&rdquo;</h3>
+          <p class="ed-text">
+            Benvenuti su &ldquo;Visioni in Parole&rdquo;, il blog che trasforma idee e passioni in ispirazione quotidiana. Qui troverete articoli stimolanti, approfondimenti su temi attuali, storie di successo e consigli pratici per nutrire la vostra curiosità e creatività. Che siate alla ricerca di nuove prospettive o di soluzioni innovative, &ldquo;Visioni in Parole&rdquo; è il luogo ideale per esplorare, imparare e crescere insieme. Unitevi a noi in questo viaggio di scoperta e lasciatevi ispirare dalle parole che contano.
+          </p>
+          <a href="#blog" class="ed-cta-line">
+            <span>VAI AL BLOG</span>
+            <span class="ed-cta-arrow">&rarr;</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- BLOCCO 2: FORUM / GRUPPI -->
+      <div class="ed-row is-reverse">
+        <div class="ed-photo-box">
+          <img
+            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=80"
+            alt="Gruppo di persone che dialoga e collabora"
+          >
+        </div>
+
+        <div class="ed-copy-box">
+          <h3 class="ed-subhead">&ldquo;Dialoghi e Connessioni: Il Forum della Community&rdquo;</h3>
+          <p class="ed-text">
+            Benvenuti su &ldquo;Dialoghi e Connessioni&rdquo;, il forum dove la nostra community si riunisce per condividere idee, esperienze e conoscenze. Questo è uno spazio aperto e inclusivo, dedicato a discussioni stimolanti, supporto reciproco e crescita collettiva. Che tu voglia chiedere consigli, condividere un progetto o semplicemente connetterti con persone che condividono i tuoi interessi, qui troverai una rete di supporto pronta ad accoglierti. Partecipa ai dialoghi, scopri nuove prospettive e contribuisci a costruire una community vibrante e collaborativa.
+          </p>
+          <a href="#gruppi" class="ed-cta-line">
+            <span>VAI AI GRUPPI</span>
+            <span class="ed-cta-arrow">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+<div id="dna-hero-separator" class="dna-hero-sep">
+  <style>
+    .dna-hero-sep {
+      --sep-line: rgba(255, 255, 255, 0.14);
+      --sep-bg: #05080f;
+      --sep-pill-bg: #0c1220;
+      --sep-orange: #44af29;
+      --sep-text: #ffffff;
+      width: 100%;
+      background: var(--sep-bg);
+      padding: 10px 48px;
+      box-sizing: border-box;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    .dna-hero-sep *,
+    .dna-hero-sep *::before,
+    .dna-hero-sep *::after {
+      box-sizing: border-box;
+    }
+
+    .dna-hero-sep .sep-track {
+      max-width: 1680px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .dna-hero-sep .sep-line {
+      flex: 1;
+      height: 10px;
+      background: linear-gradient(90deg, transparent, var(--sep-line) 25%, var(--sep-line) 100%);
+    }
+
+    .dna-hero-sep .sep-line--right {
+      background: linear-gradient(90deg, var(--sep-line) 0%, var(--sep-line) 75%, transparent);
+    }
+
+    .dna-hero-sep .sep-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 6px 20px;
+      border-radius: 999px;
+      background: var(--sep-pill-bg);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: var(--sep-text);
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: none;
+      white-space: nowrap;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+    }
+
+    .dna-hero-sep .sep-star {
+      color: var(--sep-orange);
+      font-size: 16px;
+      line-height: 1;
+      text-shadow: 0 0 10px rgba(249, 115, 22, 0.75);
+    }
+
+    .dna-hero-sep .sep-label span {
+      color: var(--sep-orange);
+    }
+
+    @media (max-width: 768px) {
+      .dna-hero-sep {
+        padding: 8px 20px;
+      }
+      .dna-hero-sep .sep-track {
+        gap: 12px;
+      }
+      .dna-hero-sep .sep-badge {
+        padding: 5px 15px;
+        font-size: 13.5px;
+      }
+      .dna-hero-sep .sep-star {
+        font-size: 14px;
+      }
+    }
+  </style>
+
+  <div class="sep-track" role="separator" aria-label="DnaHub">
+    <span class="sep-line" aria-hidden="true"></span>
+    <span class="sep-badge">
+      <i class="sep-star" aria-hidden="true">&#9733;</i>
+      <span class="sep-label">Dna<span>Hub</span></span>
+    </span>
+    <span class="sep-line sep-line--right" aria-hidden="true"></span>
+  </div>
+</div>
 
 
 

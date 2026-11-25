@@ -718,3 +718,77 @@
     /* Effetto "pop" quando cambia numero */
     transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 900px) {
+    /* Barra a tutta larghezza e senza restrizioni di max-width */
+    .header-top-right {
+        width: 100%;
+        max-width: none;
+        margin: 0 0 8px 0;
+        border-radius: 0; /* Rimuovi o adatta se preferisci i bordi arrotondati ai lati */
+        padding: 8px 12px;
+        gap: 8px;
+    }
+
+    /* Le voci vanno a capo (wrap) anziché scorrere orizzontalmente */
+    .top-nav {
+        flex-wrap: wrap;
+        justify-content: center; /* Centrato o flex-start a seconda delle preferenze */
+        overflow-x: visible;
+        gap: 8px;
+        padding: 4px;
+    }
+    
+    .top-nav::-webkit-scrollbar {
+        display: block; /* Ripristina la visualizzazione della scrollbar se necessario */
+    }
+
+    .top-nav a {
+        font-size: 0.7rem; /* Leggermente più leggibile se va a capo */
+        flex-shrink: 1;
+    }
+
+    /* Pulsanti azione adattati per la larghezza piena */
+    .header-actions {
+        gap: 6px;
+        margin-top: 4px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .icon-btn {
+        width: 28px;
+        height: 28px;
+        flex-shrink: 0;
+    }
+
+    .btn-preventivo-header {
+        padding: 6px 10px;
+        font-size: 10px;
+        margin-right: 0;
+        gap: 5px;
+    }
+
+    .header-count-badge {
+        width: 16px;
+        height: 16px;
+        font-size: 10px;
+    }
+
+    .btn-login,
+    .btn-start {
+        padding: 5px 10px;
+        font-size: 0.72rem;
+    }
+}
