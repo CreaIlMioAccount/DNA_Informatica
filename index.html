@@ -13,83 +13,1576 @@
     <!-- Qui verrà inserito il menu da menu.html -->
    <div id="header-placeholder"></div>
 
-    <!-- HERO SLIDER -->
-    <section class="hero-slider">
-        <div class="slide active">
-            <div class="slide-content">
-                <div class="slide-brand">
-                    <svg class="brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polyline points="16 18 22 12 16 6"></polyline>
-                        <polyline points="8 6 2 12 8 18"></polyline>
-                    </svg>
-                    <span class="brand-text">DNA <strong>SOFTWARE</strong></span>
-                </div>
-                <span class="slide-badge">DNA Hub Architetture</span>
-                <h2>Architetture Software che contano</h2>
-                <p>Progettiamo ecosistemi digitali solidi, scalabili e orientati al futuro. Mettiamo le basi tecniche per garantire alle tue applicazioni massime prestazioni e zero colli di bottiglia.</p>
-                <div class="hero-buttons">
-                    <a href="#" class="btn-aruba">SCOPRI LE ARCHITETTURE</a>
-                    <a href="#" class="btn-outline">PARLA CON UN ESPERTO</a>
-                </div>
-            </div>
-            <div class="slide-image">
-                <img src="https://cdn.pixabay.com/photo/2023/09/28/07/25/technology-8280864_1280.jpg" alt="Architetture">
-            </div>
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section id="dna-hero-showcase" class="dna-showcase-sec">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+    .dna-showcase-sec {
+      --bg-void: #05080f;
+      --bg-panel: #0c1220;
+      --bg-card: #11192b;
+      --orange: #f97316;
+      --orange-bright: #fb923c;
+      --cyan: #38bdf8;
+      --emerald: #10b981;
+      --emerald-bright: #34d399;
+      --text-white: #ffffff;
+      --text-soft: #cbd5e1;
+      --text-muted: #94a3b8;
+
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-void);
+      background-image:
+        radial-gradient(ellipse 46% 360px at 42% 68%, rgba(249, 115, 22, 0.24), transparent 70%),
+        radial-gradient(ellipse 50% 420px at 78% 35%, rgba(14, 165, 233, 0.16), transparent 72%),
+        linear-gradient(125deg, #04070d 0%, #080e1a 48%, #05080f 100%);
+      color: var(--text-white);
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      padding: 68px 56px 84px;
+      box-sizing: border-box;
+    }
+
+    .dna-showcase-sec *,
+    .dna-showcase-sec *::before,
+    .dna-showcase-sec *::after {
+      box-sizing: border-box;
+    }
+
+    /* ATMOSFERA & SCIA LUMINOSA DIAGONALE */
+    .dna-showcase-sec .bg-atmosphere {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .dna-showcase-sec .bg-mountain {
+      position: absolute;
+      inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1800&q=80');
+      background-size: cover;
+      background-position: 35% 45%;
+      opacity: 0.22;
+      mix-blend-mode: luminosity;
+      -webkit-mask-image: radial-gradient(ellipse 75% 85% at 45% 55%, #000 15%, transparent 78%);
+      mask-image: radial-gradient(ellipse 75% 85% at 45% 55%, #000 15%, transparent 78%);
+    }
+
+    .dna-showcase-sec .bg-streak {
+      position: absolute;
+      left: 12%;
+      bottom: 8%;
+      width: 55%;
+      height: 220px;
+      background: linear-gradient(156deg, transparent 46%, rgba(249, 115, 22, 0.85) 49.5%, #ffd8a8 50%, rgba(249, 115, 22, 0.65) 50.8%, transparent 55%);
+      filter: blur(2px);
+      opacity: 0.85;
+    }
+
+    .dna-showcase-sec .bg-streak-glow {
+      position: absolute;
+      left: 16%;
+      bottom: 6%;
+      width: 48%;
+      height: 240px;
+      background: linear-gradient(156deg, transparent 40%, rgba(249, 115, 22, 0.35) 50%, transparent 60%);
+      filter: blur(24px);
+    }
+
+    /* SLIDES WRAPPER */
+    .dna-showcase-sec .slides-viewport {
+      max-width: 1680px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .dna-showcase-sec .sc-slide {
+      display: none;
+      grid-template-columns: 44% 56%;
+      align-items: center;
+      gap: 28px;
+      animation: scFadeSlide 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    .dna-showcase-sec .sc-slide.active {
+      display: grid;
+    }
+
+    @keyframes scFadeSlide {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* COLONNA SINISTRA */
+    .dna-showcase-sec .sc-left {
+      position: relative;
+      padding-right: 12px;
+    }
+
+    .dna-showcase-sec .sc-kicker {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13.5px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-soft);
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .dna-showcase-sec .sc-kicker span {
+      opacity: 0.45;
+    }
+
+    .dna-showcase-sec .sc-title {
+      font-size: clamp(38px, 4.5vw, 64px);
+      font-weight: 800;
+      line-height: 1.04;
+      letter-spacing: -0.03em;
+      margin: 0 0 20px;
+      color: #ffffff;
+    }
+
+    .dna-showcase-sec .sc-title span {
+      display: block;
+      color: var(--orange);
+      text-shadow: 0 0 36px rgba(249, 115, 22, 0.3);
+    }
+
+    .dna-showcase-sec .sc-desc {
+      font-size: 19px;
+      line-height: 1.55;
+      color: var(--text-soft);
+      max-width: 520px;
+      margin: 0 0 32px;
+    }
+
+    .dna-showcase-sec .sc-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 44px;
+    }
+
+    .dna-showcase-sec .btn-sc-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+      color: #ffffff;
+      font-size: 16.5px;
+      font-weight: 700;
+      padding: 16px 28px;
+      border-radius: 10px;
+      text-decoration: none;
+      box-shadow: 0 12px 30px -6px rgba(249, 115, 22, 0.55);
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+    }
+
+    .dna-showcase-sec .btn-sc-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 36px -4px rgba(249, 115, 22, 0.75);
+    }
+
+    .dna-showcase-sec .btn-sc-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(15, 23, 42, 0.55);
+      color: #ffffff;
+      font-size: 16.5px;
+      font-weight: 600;
+      padding: 15px 28px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.26);
+      backdrop-filter: blur(8px);
+      text-decoration: none;
+      transition: all 0.22s ease;
+    }
+
+    .dna-showcase-sec .btn-sc-secondary:hover {
+      border-color: var(--orange);
+      background: rgba(249, 115, 22, 0.12);
+    }
+
+    /* SOCIAL PROOF + PILASTRI */
+    .dna-showcase-sec .sc-social-row {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .dna-showcase-sec .sc-proof {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .dna-showcase-sec .avatar-stack {
+      display: flex;
+      align-items: center;
+    }
+
+    .dna-showcase-sec .avatar-stack img,
+    .dna-showcase-sec .avatar-badge {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 2px solid #0a0f1c;
+      object-fit: cover;
+      margin-left: -12px;
+    }
+
+    .dna-showcase-sec .avatar-stack img:first-child {
+      margin-left: 0;
+    }
+
+    .dna-showcase-sec .avatar-badge {
+      background: #141c2f;
+      color: #ffffff;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 800;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-color: rgba(249, 115, 22, 0.45);
+    }
+
+    .dna-showcase-sec .proof-txt strong {
+      display: block;
+      font-size: 16px;
+      font-weight: 700;
+      color: #ffffff;
+    }
+
+    .dna-showcase-sec .proof-txt span {
+      display: block;
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    .dna-showcase-sec .sc-pillars-vertical {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 15px;
+      font-weight: 700;
+      font-style: italic;
+      line-height: 1.55;
+      letter-spacing: 0.14em;
+      color: rgba(251, 146, 60, 0.78);
+      text-transform: uppercase;
+      user-select: none;
+    }
+
+    /* COLONNA DESTRA: SCHERMO 3D */
+    .dna-showcase-sec .sc-right {
+      position: relative;
+      perspective: 1600px;
+      padding: 12px 18px 26px 0;
+    }
+
+    .dna-showcase-sec .hub-screen {
+      background: linear-gradient(155deg, rgba(16, 23, 40, 0.96) 0%, rgba(9, 13, 24, 0.98) 100%);
+      border: 1.5px solid rgba(56, 189, 248, 0.25);
+      border-radius: 18px;
+      box-shadow:
+        -24px 28px 65px rgba(0, 0, 0, 0.85),
+        0 0 40px rgba(14, 165, 233, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.14);
+      display: grid;
+      grid-template-columns: 185px 1fr;
+      overflow: hidden;
+      transform: rotateY(-11deg) rotateX(2deg);
+      transform-style: preserve-3d;
+      transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease;
+    }
+
+    .dna-showcase-sec .sc-right:hover .hub-screen {
+      transform: rotateY(-5deg) rotateX(1deg);
+      box-shadow:
+        -16px 24px 60px rgba(0, 0, 0, 0.9),
+        0 0 48px rgba(249, 115, 22, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.18);
+    }
+
+    .dna-showcase-sec .theme-emerald:hover .hub-screen {
+      box-shadow:
+        -16px 24px 60px rgba(0, 0, 0, 0.9),
+        0 0 48px rgba(16, 185, 129, 0.22),
+        inset 0 1px 0 rgba(255, 255, 255, 0.18);
+    }
+
+    .dna-showcase-sec .hub-sidebar {
+      background: rgba(7, 11, 20, 0.85);
+      border-right: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 20px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .dna-showcase-sec .hub-logo {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      color: #ffffff;
+      padding: 4px 8px 18px;
+    }
+
+    .dna-showcase-sec .hub-logo span {
+      color: var(--cyan);
+      font-weight: 600;
+    }
+
+    .dna-showcase-sec .theme-emerald .hub-logo span {
+      color: var(--emerald-bright);
+    }
+
+    .dna-showcase-sec .hub-nav-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      border: none;
+      background: transparent;
+      text-align: left;
+      width: 100%;
+      transition: all 0.2s ease;
+    }
+
+    .dna-showcase-sec .hub-nav-item:hover {
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    /* STATI ATTIVI DEI TASTI PER CIASCUN TEMA SLIDE */
+    .dna-showcase-sec .theme-orange .hub-nav-item.active {
+      background: linear-gradient(135deg, #f97316, #ea580c);
+      color: #ffffff;
+      box-shadow: 0 6px 18px rgba(249, 115, 22, 0.4);
+    }
+
+    .dna-showcase-sec .theme-cyan .hub-nav-item.active {
+      background: linear-gradient(135deg, #0284c7, #0369a1);
+      color: #ffffff;
+      box-shadow: 0 6px 18px rgba(14, 165, 233, 0.4);
+    }
+
+    .dna-showcase-sec .theme-emerald .hub-nav-item.active {
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: #ffffff;
+      box-shadow: 0 6px 18px rgba(16, 185, 129, 0.42);
+    }
+
+    .dna-showcase-sec .hub-main {
+      padding: 18px 20px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .dna-showcase-sec .hub-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .dna-showcase-sec .hub-search {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: 8px;
+      padding: 7px 14px;
+      font-size: 13px;
+      color: var(--text-muted);
+      width: 220px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .dna-showcase-sec .hub-user {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .dna-showcase-sec .hub-user img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1.5px solid var(--orange);
+    }
+
+    .dna-showcase-sec .hub-user-info strong {
+      display: block;
+      font-size: 13px;
+      color: #ffffff;
+      line-height: 1.1;
+    }
+
+    .dna-showcase-sec .hub-user-info small {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .dna-showcase-sec .hub-row-top {
+      display: grid;
+      grid-template-columns: 1.35fr 1fr;
+      gap: 14px;
+    }
+
+    .dna-showcase-sec .hub-box {
+      background: rgba(15, 23, 42, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 14px 16px;
+    }
+
+    .dna-showcase-sec .hub-box-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+
+    .dna-showcase-sec .hub-box-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #f1f5f9;
+    }
+
+    .dna-showcase-sec .hub-pill {
+      font-size: 11px;
+      color: var(--text-muted);
+      background: rgba(255, 255, 255, 0.06);
+      padding: 3px 9px;
+      border-radius: 6px;
+    }
+
+    .dna-showcase-sec .bars-chart {
+      height: 106px;
+      display: flex;
+      align-items: flex-end;
+      gap: 8px;
+      padding-top: 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .dna-showcase-sec .bar-col {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      height: 100%;
+      justify-content: flex-end;
+    }
+
+    .dna-showcase-sec .bar-fill {
+      width: 100%;
+      border-radius: 4px 4px 0 0;
+      background: linear-gradient(180deg, #fb923c 0%, #ea580c 100%);
+      transition: height 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+      box-shadow: 0 0 12px rgba(249, 115, 22, 0.25);
+    }
+
+    .dna-showcase-sec .bar-fill.cyan-bar {
+      background: linear-gradient(180deg, #38bdf8 0%, #0284c7 100%);
+      box-shadow: 0 0 12px rgba(56, 189, 248, 0.28);
+    }
+
+    .dna-showcase-sec .bar-fill.emerald-bar {
+      background: linear-gradient(180deg, #34d399 0%, #059669 100%);
+      box-shadow: 0 0 12px rgba(16, 185, 129, 0.32);
+    }
+
+    .dna-showcase-sec .bar-col span {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9.5px;
+      color: #64748b;
+    }
+
+    .dna-showcase-sec .donut-wrap {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .dna-showcase-sec .donut-ring {
+      width: 92px;
+      height: 92px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      position: relative;
+      transition: background 0.4s ease;
+    }
+
+    .dna-showcase-sec .donut-ring::after {
+      content: attr(data-pct);
+      width: 66px;
+      height: 66px;
+      border-radius: 50%;
+      background: #0e1525;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 16px;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .dna-showcase-sec .donut-legend {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 11.5px;
+      color: var(--text-soft);
+    }
+
+    .dna-showcase-sec .donut-legend li {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .dna-showcase-sec .donut-legend i {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .dna-showcase-sec .hub-kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    .dna-showcase-sec .hk-card {
+      background: rgba(15, 23, 42, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 10px;
+      padding: 11px 12px;
+    }
+
+    .dna-showcase-sec .hk-lbl {
+      font-size: 11.5px;
+      color: var(--text-muted);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .dna-showcase-sec .hk-val {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 20px;
+      font-weight: 800;
+      color: #ffffff;
+      display: block;
+    }
+
+    .dna-showcase-sec .hk-delta {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--emerald);
+      margin-top: 3px;
+      display: inline-block;
+    }
+
+    .dna-showcase-sec .hub-row-bot {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 14px;
+    }
+
+    .dna-showcase-sec .act-list {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .dna-showcase-sec .act-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12px;
+      color: var(--text-soft);
+      padding-bottom: 7px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .dna-showcase-sec .act-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .dna-showcase-sec .act-dot {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .dna-showcase-sec .act-dot i {
+      width: 18px;
+      height: 18px;
+      border-radius: 5px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-style: normal;
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    .dna-showcase-sec .act-time {
+      font-size: 11px;
+      color: #64748b;
+    }
+
+    .dna-showcase-sec .perf-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+
+    .dna-showcase-sec .perf-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--orange-bright);
+    }
+
+    .dna-showcase-sec .floating-quote-card {
+      position: absolute;
+      right: 4px;
+      bottom: 8px;
+      width: 215px;
+      background: linear-gradient(155deg, rgba(17, 24, 39, 0.96) 0%, rgba(9, 13, 22, 0.98) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 14px;
+      padding: 20px 18px;
+      box-shadow: 0 22px 45px rgba(0, 0, 0, 0.85), 0 0 24px rgba(56, 189, 248, 0.15);
+      backdrop-filter: blur(12px);
+      z-index: 5;
+    }
+
+    .dna-showcase-sec .floating-quote-card p {
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 1.4;
+      color: #f8fafc;
+      margin: 0 0 18px;
+    }
+
+    .dna-showcase-sec .floating-quote-card span {
+      display: block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    /* CONTROLLI SLIDER */
+    .dna-showcase-sec .sc-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(15, 23, 42, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #ffffff;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+      backdrop-filter: blur(8px);
+      transition: all 0.25s ease;
+    }
+
+    .dna-showcase-sec .sc-arrow:hover {
+      background: var(--orange);
+      border-color: var(--orange);
+      box-shadow: 0 0 20px rgba(249, 115, 22, 0.55);
+    }
+
+    .dna-showcase-sec .sc-arrow.prev { left: 14px; }
+    .dna-showcase-sec .sc-arrow.next { right: 14px; }
+
+    .dna-showcase-sec .sc-dots {
+      position: absolute;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      z-index: 10;
+    }
+
+    .dna-showcase-sec .sc-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 99px;
+      background: rgba(255, 255, 255, 0.25);
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .dna-showcase-sec .sc-dot.active {
+      width: 34px;
+      background: var(--orange);
+      box-shadow: 0 0 12px rgba(249, 115, 22, 0.65);
+    }
+
+    /* TABLET & MOBILE */
+    @media (max-width: 1200px) {
+      .dna-showcase-sec {
+        padding: 56px 28px 76px;
+      }
+      .dna-showcase-sec .sc-slide.active {
+        grid-template-columns: 1fr;
+        gap: 38px;
+      }
+      .dna-showcase-sec .hub-screen,
+      .dna-showcase-sec .sc-right:hover .hub-screen {
+        transform: none;
+      }
+      .dna-showcase-sec .sc-title {
+        color: #ffffff !important;
+      }
+      .dna-showcase-sec .sc-title span {
+        color: #f97316 !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .dna-showcase-sec {
+        padding: 44px 18px 72px;
+      }
+      .dna-showcase-sec .sc-social-row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .dna-showcase-sec .sc-pillars-vertical {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      .dna-showcase-sec .hub-screen {
+        grid-template-columns: 1fr;
+      }
+      .dna-showcase-sec .hub-sidebar {
+        flex-direction: row;
+        overflow-x: auto;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 12px;
+      }
+      .dna-showcase-sec .hub-logo {
+        padding: 0 10px 0 0;
+      }
+      .dna-showcase-sec .hub-nav-item {
+        width: auto;
+        white-space: nowrap;
+      }
+      .dna-showcase-sec .hub-row-top,
+      .dna-showcase-sec .hub-row-bot {
+        grid-template-columns: 1fr;
+      }
+      .dna-showcase-sec .hub-kpi-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .dna-showcase-sec .floating-quote-card {
+        position: static;
+        width: 100%;
+        margin-top: 16px;
+      }
+      .dna-showcase-sec .sc-arrow {
+        top: auto;
+        bottom: 14px;
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+      }
+    }
+  </style>
+
+  <!-- ATMOSFERA E SCIA ENERGETICA DI SFONDO -->
+  <div class="bg-atmosphere" aria-hidden="true">
+    <div class="bg-mountain"></div>
+    <div class="bg-streak-glow"></div>
+    <div class="bg-streak"></div>
+  </div>
+
+  <div class="slides-viewport">
+    <!-- ==================== SLIDE 1: DNA HUB & GESTIONALI ==================== -->
+    <div class="sc-slide active" data-slide="0">
+      <div class="sc-left">
+        <div class="sc-kicker">
+          TECNOLOGIA <span>|</span> STRATEGIA <span>|</span> RISULTATI
         </div>
 
-        <div class="slide">
-            <div class="slide-content">
-                <div class="slide-brand">
-                    <svg class="brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <line x1="2" y1="12" x2="22" y2="12"></line>
-                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                    </svg>
-                    <span class="brand-text">DNA <strong>WEB</strong></span>
-                </div>
-                <span class="slide-badge">Piattaforme</span>
-                <h2>Piattaforme che si distinguono</h2>
-                <p>Non creiamo solo software, creiamo esperienze. Sviluppiamo piattaforme personalizzate, sicure e intuitive che si distinguono dalla concorrenza e accelerano il tuo business.</p>
-                <div class="hero-buttons">
-                    <a href="#" class="btn-aruba">SCOPRI LE PIATTAFORME</a>
-                    <a href="#" class="btn-outline">PARLA CON UN ESPERTO</a>
-                </div>
-            </div>
-            <div class="slide-image">
-                <img src="https://www.ydeos.fr/wp-content/uploads/2026/03/Comprendre-sylae-et-ses-fonctionnalites-principales-1024x585.jpg" alt="Piattaforme">
-            </div>
+        <h2 class="sc-title">
+          Soluzioni Digitali
+          <span>per un futuro reale</span>
+        </h2>
+
+        <p class="sc-desc">
+          Sviluppiamo piattaforme, gestionali e strategie digitali che fanno crescere la tua azienda.
+        </p>
+
+        <div class="sc-actions">
+          <a href="#esplora-dna-architect" class="btn-sc-primary">
+            Scopri i nostri servizi <span>&rarr;</span>
+          </a>
+          <a href="#contatti" class="btn-sc-secondary">
+            Parla con un esperto
+          </a>
         </div>
 
-        <div class="slide">
-            <div class="slide-content">
-                <div class="slide-brand">
-                    <svg class="brand-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
-                    </svg>
-                    <span class="brand-text">DNA <strong>CLOUD</strong></span>
-                </div>
-                <span class="slide-badge">Dashboard</span>
-                <h2>Dashboard su Cloud</h2>
-                <p>Prendi decisioni basate sui dati, non sulle sensazioni. Le nostre dashboard cloud ti offrono una visione in tempo reale, sicura e accessibile dei tuoi KPI da qualsiasi dispositivo.</p>
-                <div class="hero-buttons">
-                    <a href="#" class="btn-aruba">SCOPRI LE DASHBOARD</a>
-                    <a href="#" class="btn-outline">PARLA CON UN ESPERTO</a>
-                </div>
+        <div class="sc-social-row">
+          <div class="sc-proof">
+            <div class="avatar-stack">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Cliente 1">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="Cliente 2">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80" alt="Cliente 3">
+              <span class="avatar-badge">+200</span>
             </div>
-            <div class="slide-image">
-                <img src="https://img.lovepik.com/photo/60217/2480.jpg_wh860.jpg" alt="Dashboard">
+            <div class="proof-txt">
+              <strong>Oltre 200 aziende</strong>
+              <span>hanno scelto DNA Informatica</span>
             </div>
+          </div>
+
+          <div class="sc-pillars-vertical" aria-hidden="true">
+            <div>IDEAS</div>
+            <div>SOFTWARE</div>
+            <div>PEOPLE</div>
+            <div>RESULTS</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sc-right theme-orange">
+        <div class="hub-screen">
+          <aside class="hub-sidebar">
+            <div class="hub-logo">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.2">
+                <path d="M4 4c5 0 11 16 16 16M20 4c-5 0-11 16-16 16M7 9h10M7 15h10"/>
+              </svg>
+              DNA <span>HUB</span>
+            </div>
+            <button type="button" class="hub-nav-item active" data-tab="hub-dashboard">&#9638; Dashboard</button>
+            <button type="button" class="hub-nav-item" data-tab="hub-progetti">&#128193; Progetti</button>
+            <button type="button" class="hub-nav-item" data-tab="hub-clienti">&#128101; Clienti</button>
+            <button type="button" class="hub-nav-item" data-tab="hub-task">&#9745; Task</button>
+            <button type="button" class="hub-nav-item" data-tab="hub-documenti">&#128196; Documenti</button>
+            <button type="button" class="hub-nav-item" data-tab="hub-analisi">&#128202; Analisi</button>
+            <button type="button" class="hub-nav-item" data-tab="hub-messaggi">&#9993; Messaggi</button>
+          </aside>
+
+          <div class="hub-main">
+            <div class="hub-topbar">
+              <div class="hub-search">&#128269; Cerca...</div>
+              <div class="hub-user">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=100&q=80" alt="Andrea Admin">
+                <div class="hub-user-info">
+                  <strong>Andrea</strong>
+                  <small>Admin</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="hub-row-top">
+              <div class="hub-box">
+                <div class="hub-box-head">
+                  <span class="hub-box-title js-chart-title">Panoramica Progetti</span>
+                  <span class="hub-pill">Ultimi 12 mesi &#9662;</span>
+                </div>
+                <div class="bars-chart js-bars">
+                  <div class="bar-col"><div class="bar-fill" style="height:28%;"></div><span>GEN</span></div>
+                  <div class="bar-col"><div class="bar-fill" style="height:36%;"></div><span>FEB</span></div>
+                  <div class="bar-col"><div class="bar-fill" style="height:48%;"></div><span>MAR</span></div>
+                  <div class="bar-col"><div class="bar-fill" style="height:64%;"></div><span>APR</span></div>
+                  <div class="bar-col"><div class="bar-fill" style="height:78%;"></div><span>MAG</span></div>
+                  <div class="bar-col"><div class="bar-fill" style="height:86%;"></div><span>GIU</span></div>
+                  <div class="bar-col"><div class="bar-fill" style="height:74%;"></div><span>LUG</span></div>
+                  <div class="bar-col"><div class="bar-fill" style="height:92%;"></div><span>AGO</span></div>
+                  <div class="bar-col"><div class="bar-fill" style="height:98%;"></div><span>SET</span></div>
+                </div>
+              </div>
+
+              <div class="hub-box">
+                <div class="hub-box-head">
+                  <span class="hub-box-title">Obiettivi annuali</span>
+                  <span class="hub-pill">&#9662;</span>
+                </div>
+                <div class="donut-wrap">
+                  <div class="donut-ring js-donut" data-pct="78%" style="background: conic-gradient(#f97316 0% 78%, #1e293b 78% 100%);"></div>
+                  <ul class="donut-legend">
+                    <li><i style="background:#f97316;"></i> Sviluppo</li>
+                    <li><i style="background:#fb923c;"></i> Design</li>
+                    <li><i style="background:#38bdf8;"></i> Infrastruttura</li>
+                    <li><i style="background:#10b981;"></i> Marketing</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="hub-kpi-grid">
+              <div class="hk-card"><span class="hk-lbl">Progetti attivi</span><strong class="hk-val js-kpi1">24</strong><span class="hk-delta">+12%</span></div>
+              <div class="hk-card"><span class="hk-lbl">Clienti</span><strong class="hk-val js-kpi2">18</strong><span class="hk-delta">+8%</span></div>
+              <div class="hk-card"><span class="hk-lbl">Task completati</span><strong class="hk-val js-kpi3">312</strong><span class="hk-delta">+28%</span></div>
+              <div class="hk-card"><span class="hk-lbl">Ore di lavoro</span><strong class="hk-val js-kpi4">1.428</strong><span class="hk-delta">+15%</span></div>
+            </div>
+
+            <div class="hub-row-bot">
+              <div class="hub-box">
+                <div class="hub-box-head"><span class="hub-box-title">Attività recenti</span></div>
+                <div class="act-list">
+                  <div class="act-item"><span class="act-dot"><i style="background:rgba(56,189,248,0.2);color:#38bdf8;">N</i> Nuovo progetto e-commerce</span><span class="act-time">3 ore fa</span></div>
+                  <div class="act-item"><span class="act-dot"><i style="background:rgba(16,185,129,0.2);color:#10b981;">S</i> Aggiornamento server</span><span class="act-time">4 ore fa</span></div>
+                  <div class="act-item"><span class="act-dot"><i style="background:rgba(249,115,22,0.2);color:#f97316;">C</i> Nuovo contatto</span><span class="act-time">1 giorno fa</span></div>
+                </div>
+              </div>
+
+              <div class="hub-box">
+                <div class="perf-head">
+                  <span class="hub-box-title">Performance</span>
+                  <span class="perf-badge js-perf">+32%</span>
+                </div>
+                <svg viewBox="0 0 260 76" width="100%" height="72" fill="none">
+                  <path d="M4 64 L44 52 L84 58 L124 40 L164 46 L204 24 L256 10" stroke="#f97316" stroke-width="2.4" stroke-linecap="round"/>
+                  <circle cx="256" cy="10" r="4" fill="#fb923c" stroke="#ffffff" stroke-width="1.5"/>
+                </svg>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <button class="slider-arrow prev" onclick="cambiaSlide(-1)">&#10094;</button>
-        <button class="slider-arrow next" onclick="cambiaSlide(1)">&#10095;</button>
-
-        <div class="slider-dots">
-            <span class="dot active" onclick="vaiASlide(0)"></span>
-            <span class="dot" onclick="vaiASlide(1)"></span>
-            <span class="dot" onclick="vaiASlide(2)"></span>
+        <div class="floating-quote-card">
+          <p>Trasformiamo le idee in soluzioni digitali.</p>
+          <span>DNA INFORMATICA</span>
         </div>
-    </section>
+      </div>
+    </div>
+
+    <!-- ==================== SLIDE 2: ARCHITETTURE & CLOUD ==================== -->
+    <div class="sc-slide" data-slide="1">
+      <div class="sc-left">
+        <div class="sc-kicker">
+          CLOUD <span>|</span> SCALABILITÀ <span>|</span> SICUREZZA
+        </div>
+
+        <h2 class="sc-title">
+          Architetture Cloud
+          <span>senza colli di bottiglia</span>
+        </h2>
+
+        <p class="sc-desc">
+          Progettiamo infrastrutture distribuite, microservizi e API ad alta disponibilità con monitoraggio continuo e backup automatizzati.
+        </p>
+
+        <div class="sc-actions">
+          <a href="#piani-dna" class="btn-sc-primary">
+            Esplora le architetture <span>&rarr;</span>
+          </a>
+          <a href="#contatti" class="btn-sc-secondary">
+            Richiedi un audit tecnico
+          </a>
+        </div>
+
+        <div class="sc-social-row">
+          <div class="sc-proof">
+            <div class="avatar-stack">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="CTO 1">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=120&q=80" alt="CTO 2">
+              <span class="avatar-badge">99.9%</span>
+            </div>
+            <div class="proof-txt">
+              <strong>SLA Garantito 99.98%</strong>
+              <span>Infrastrutture Zero-Trust e Disaster Recovery</span>
+            </div>
+          </div>
+
+          <div class="sc-pillars-vertical" aria-hidden="true">
+            <div>CLOUD</div>
+            <div>SECURITY</div>
+            <div>UPTIME</div>
+            <div>SCALE</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sc-right theme-cyan">
+        <div class="hub-screen" style="border-color: rgba(56, 189, 248, 0.38);">
+          <aside class="hub-sidebar">
+            <div class="hub-logo">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.2">
+                <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/>
+              </svg>
+              DNA <span>CLOUD</span>
+            </div>
+            <button type="button" class="hub-nav-item active" data-tab="cloud-cluster">&#9729; Cluster &amp; Nodi</button>
+            <button type="button" class="hub-nav-item" data-tab="cloud-zerotrust">&#128274; Zero Trust</button>
+            <button type="button" class="hub-nav-item" data-tab="cloud-gateway">&#9889; API Gateway</button>
+            <button type="button" class="hub-nav-item" data-tab="cloud-backup">&#128190; Backup &amp; DR</button>
+            <button type="button" class="hub-nav-item" data-tab="cloud-telemetria">&#128200; Telemetria</button>
+          </aside>
+
+          <div class="hub-main">
+            <div class="hub-topbar">
+              <div class="hub-search">&#128269; Nodo eu-south-1...</div>
+              <div class="hub-user">
+                <div class="hub-user-info">
+                  <strong>Cluster Prod-01</strong>
+                  <small style="color:#10b981;">&#9679; Operativo</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="hub-row-top">
+              <div class="hub-box">
+                <div class="hub-box-head">
+                  <span class="hub-box-title js-chart-title">Carico &amp; Throughput API</span>
+                  <span class="hub-pill">Tempo reale</span>
+                </div>
+                <div class="bars-chart js-bars">
+                  <div class="bar-col"><div class="bar-fill cyan-bar" style="height:44%;"></div><span>01</span></div>
+                  <div class="bar-col"><div class="bar-fill cyan-bar" style="height:56%;"></div><span>02</span></div>
+                  <div class="bar-col"><div class="bar-fill cyan-bar" style="height:68%;"></div><span>03</span></div>
+                  <div class="bar-col"><div class="bar-fill cyan-bar" style="height:62%;"></div><span>04</span></div>
+                  <div class="bar-col"><div class="bar-fill cyan-bar" style="height:82%;"></div><span>05</span></div>
+                  <div class="bar-col"><div class="bar-fill cyan-bar" style="height:90%;"></div><span>06</span></div>
+                  <div class="bar-col"><div class="bar-fill cyan-bar" style="height:86%;"></div><span>07</span></div>
+                  <div class="bar-col"><div class="bar-fill cyan-bar" style="height:95%;"></div><span>08</span></div>
+                </div>
+              </div>
+
+              <div class="hub-box">
+                <div class="hub-box-head">
+                  <span class="hub-box-title">Efficienza Risorse</span>
+                  <span class="hub-pill">Auto-Scale</span>
+                </div>
+                <div class="donut-wrap">
+                  <div class="donut-ring js-donut" data-pct="94%" style="background: conic-gradient(#38bdf8 0% 94%, #1e293b 94% 100%);"></div>
+                  <ul class="donut-legend">
+                    <li><i style="background:#38bdf8;"></i> Microservizi</li>
+                    <li><i style="background:#10b981;"></i> Edge Cache</li>
+                    <li><i style="background:#f97316;"></i> Database</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="hub-kpi-grid">
+              <div class="hk-card"><span class="hk-lbl">Uptime SLA</span><strong class="hk-val js-kpi1">99.98%</strong><span class="hk-delta">Stabile</span></div>
+              <div class="hk-card"><span class="hk-lbl">Latenza media</span><strong class="hk-val js-kpi2">14ms</strong><span class="hk-delta">-38%</span></div>
+              <div class="hk-card"><span class="hk-lbl">Richieste/min</span><strong class="hk-val js-kpi3">48.2K</strong><span class="hk-delta">+22%</span></div>
+              <div class="hk-card"><span class="hk-lbl">Nodi attivi</span><strong class="hk-val js-kpi4">16</strong><span class="hk-delta">Auto</span></div>
+            </div>
+
+            <div class="hub-row-bot">
+              <div class="hub-box">
+                <div class="hub-box-head"><span class="hub-box-title">Log Infrastruttura</span></div>
+                <div class="act-list">
+                  <div class="act-item"><span class="act-dot"><i style="background:rgba(16,185,129,0.2);color:#10b981;">&#10003;</i> Deploy zero-downtime v4.2</span><span class="act-time">12 min fa</span></div>
+                  <div class="act-item"><span class="act-dot"><i style="background:rgba(56,189,248,0.2);color:#38bdf8;">&#10003;</i> Snapshot DB crittografato</span><span class="act-time">1 ora fa</span></div>
+                </div>
+              </div>
+
+              <div class="hub-box">
+                <div class="perf-head">
+                  <span class="hub-box-title">Velocità Risposta</span>
+                  <span class="perf-badge js-perf" style="color:#38bdf8;">+44%</span>
+                </div>
+                <svg viewBox="0 0 260 66" width="100%" height="62" fill="none">
+                  <path d="M4 54 L50 44 L100 48 L150 28 L200 20 L256 8" stroke="#38bdf8" stroke-width="2.4" stroke-linecap="round"/>
+                  <circle cx="256" cy="8" r="4" fill="#38bdf8" stroke="#ffffff" stroke-width="1.5"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="floating-quote-card">
+          <p>Infrastrutture veloci, sicure e pronte a scalare.</p>
+          <span>DNA CLOUD INFRA</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== SLIDE 3: AI & BUSINESS INTELLIGENCE (VERDE SMERALDO) ==================== -->
+    <div class="sc-slide" data-slide="2">
+      <div class="sc-left">
+        <div class="sc-kicker">
+          AI COPILOTS <span>|</span> DATA <span>|</span> AUTOMAZIONE
+        </div>
+
+        <h2 class="sc-title">
+          Intelligenza Artificiale
+          <span>applicata ai tuoi dati</span>
+        </h2>
+
+        <p class="sc-desc">
+          Integriamo modelli generativi, dashboard predittive e automazioni intelligenti nei processi aziendali per decidere in tempo reale.
+        </p>
+
+        <div class="sc-actions">
+          <a href="#ultime-tecnologie-dna" class="btn-sc-primary">
+            Scopri il Lab R&amp;D <span>&rarr;</span>
+          </a>
+          <a href="#contatti" class="btn-sc-secondary">
+            Prenota una demo AI
+          </a>
+        </div>
+
+        <div class="sc-social-row">
+          <div class="sc-proof">
+            <div class="avatar-stack">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=120&q=80" alt="Data 1">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=120&q=80" alt="Data 2">
+              <span class="avatar-badge" style="border-color: rgba(16, 185, 129, 0.55); color: #34d399;">+42%</span>
+            </div>
+            <div class="proof-txt">
+              <strong>+42% Efficienza Operativa</strong>
+              <span>Riduzione dei tempi sui flussi ripetitivi</span>
+            </div>
+          </div>
+
+          <div class="sc-pillars-vertical" aria-hidden="true">
+            <div>NEURAL</div>
+            <div>INSIGHTS</div>
+            <div>PREDICT</div>
+            <div>AUTOMATE</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sc-right theme-emerald">
+        <div class="hub-screen" style="border-color: rgba(16, 185, 129, 0.42);">
+          <aside class="hub-sidebar">
+            <div class="hub-logo">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.2">
+                <circle cx="12" cy="12" r="9"/>
+                <circle cx="12" cy="12" r="3"/>
+              </svg>
+              DNA <span>AI LAB</span>
+            </div>
+            <button type="button" class="hub-nav-item active" data-tab="ai-modelli">&#10024; Modelli AI</button>
+            <button type="button" class="hub-nav-item" data-tab="ai-bi">&#128202; Predictive BI</button>
+            <button type="button" class="hub-nav-item" data-tab="ai-copiloti">&#129302; Copiloti</button>
+            <button type="button" class="hub-nav-item" data-tab="ai-pipeline">&#128279; Data Pipeline</button>
+            <button type="button" class="hub-nav-item" data-tab="ai-automazioni">&#9881; Automazioni</button>
+          </aside>
+
+          <div class="hub-main">
+            <div class="hub-topbar">
+              <div class="hub-search">&#128269; Chiedi a DNA Copilot...</div>
+              <div class="hub-user">
+                <div class="hub-user-info">
+                  <strong>Neural Engine</strong>
+                  <small style="color:#34d399;">&#9679; v3.8 Active</small>
+                </div>
+              </div>
+            </div>
+
+            <div class="hub-row-top">
+              <div class="hub-box">
+                <div class="hub-box-head">
+                  <span class="hub-box-title js-chart-title">Previsione Domanda &amp; Ricavi</span>
+                  <span class="hub-pill">Modello Predittivo</span>
+                </div>
+                <div class="bars-chart js-bars">
+                  <div class="bar-col"><div class="bar-fill emerald-bar" style="height:34%;"></div><span>Q1</span></div>
+                  <div class="bar-col"><div class="bar-fill emerald-bar" style="height:48%;"></div><span>Q2</span></div>
+                  <div class="bar-col"><div class="bar-fill emerald-bar" style="height:62%;"></div><span>Q3</span></div>
+                  <div class="bar-col"><div class="bar-fill emerald-bar" style="height:74%;"></div><span>Q4</span></div>
+                  <div class="bar-col"><div class="bar-fill emerald-bar" style="height:86%;"></div><span>AI-1</span></div>
+                  <div class="bar-col"><div class="bar-fill emerald-bar" style="height:94%;"></div><span>AI-2</span></div>
+                  <div class="bar-col"><div class="bar-fill emerald-bar" style="height:100%;"></div><span>AI-3</span></div>
+                </div>
+              </div>
+
+              <div class="hub-box">
+                <div class="hub-box-head">
+                  <span class="hub-box-title">Automazione Flussi</span>
+                  <span class="hub-pill">ROI</span>
+                </div>
+                <div class="donut-wrap">
+                  <div class="donut-ring js-donut" data-pct="86%" style="background: conic-gradient(#10b981 0% 86%, #1e293b 86% 100%);"></div>
+                  <ul class="donut-legend">
+                    <li><i style="background:#10b981;"></i> Documenti AI</li>
+                    <li><i style="background:#38bdf8;"></i> Forecasting</li>
+                    <li><i style="background:#f97316;"></i> Customer Care</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="hub-kpi-grid">
+              <div class="hk-card"><span class="hk-lbl">Ore risparmiate</span><strong class="hk-val js-kpi1">640/m</strong><span class="hk-delta">+42%</span></div>
+              <div class="hk-card"><span class="hk-lbl">Accuratezza</span><strong class="hk-val js-kpi2">97.4%</strong><span class="hk-delta">+6.2%</span></div>
+              <div class="hk-card"><span class="hk-lbl">Workflow attivi</span><strong class="hk-val js-kpi3">38</strong><span class="hk-delta">+14</span></div>
+              <div class="hk-card"><span class="hk-lbl">Query AI/giorno</span><strong class="hk-val js-kpi4">12.4K</strong><span class="hk-delta">Live</span></div>
+            </div>
+
+            <div class="hub-row-bot">
+              <div class="hub-box">
+                <div class="hub-box-head"><span class="hub-box-title">Azioni Copilot</span></div>
+                <div class="act-list">
+                  <div class="act-item"><span class="act-dot"><i style="background:rgba(16,185,129,0.22);color:#34d399;">AI</i> Report vendite Q4 generato</span><span class="act-time">Adesso</span></div>
+                  <div class="act-item"><span class="act-dot"><i style="background:rgba(56,189,248,0.2);color:#38bdf8;">BI</i> Anomalia stock intercettata</span><span class="act-time">18 min fa</span></div>
+                </div>
+              </div>
+
+              <div class="hub-box">
+                <div class="perf-head">
+                  <span class="hub-box-title">Impatto Margini</span>
+                  <span class="perf-badge js-perf" style="color:#34d399;">+39%</span>
+                </div>
+                <svg viewBox="0 0 260 66" width="100%" height="62" fill="none">
+                  <path d="M4 58 L52 46 L104 42 L156 26 L208 18 L256 6" stroke="#10b981" stroke-width="2.4" stroke-linecap="round"/>
+                  <circle cx="256" cy="6" r="4" fill="#34d399" stroke="#ffffff" stroke-width="1.5"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="floating-quote-card">
+          <p>Dati trasformati in decisioni strategiche automatiche.</p>
+          <span>DNA AI &amp; DATA</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FRECCE NAVIGAZIONE -->
+  <button type="button" class="sc-arrow prev" aria-label="Slide precedente">&#10094;</button>
+  <button type="button" class="sc-arrow next" aria-label="Slide successiva">&#10095;</button>
+
+  <!-- PALLINI INDICATORI -->
+  <div class="sc-dots" role="tablist" aria-label="Seleziona slide">
+    <button type="button" class="sc-dot active" data-dot="0" aria-label="Slide 1"></button>
+    <button type="button" class="sc-dot" data-dot="1" aria-label="Slide 2"></button>
+    <button type="button" class="sc-dot" data-dot="2" aria-label="Slide 3"></button>
+  </div>
+
+  <script>
+    (function () {
+      const root = document.getElementById('dna-hero-showcase');
+      if (!root) return;
+
+      const slides = root.querySelectorAll('.sc-slide');
+      const dots = root.querySelectorAll('.sc-dot');
+      const prevBtn = root.querySelector('.sc-arrow.prev');
+      const nextBtn = root.querySelector('.sc-arrow.next');
+      let current = 0;
+      let timer = null;
+
+      /* Dati interattivi per i tasti sidebar di tutte e 3 le slide */
+      const tabDatasets = {
+        /* SLIDE 1 - DNA HUB (ARANCIO) */
+        'hub-dashboard':  { title: 'Panoramica Progetti',    bars: [28,36,48,64,78,86,74,92,98], kpis: ['24','18','312','1.428'],   perf: '+32%', pct: '78%', color: '#f97316' },
+        'hub-progetti':   { title: 'Avanzamento Sprint',     bars: [45,58,64,72,84,90,88,95,99], kpis: ['31','22','418','1.890'],   perf: '+41%', pct: '85%', color: '#f97316' },
+        'hub-clienti':    { title: 'Crescita Portafoglio',   bars: [22,34,46,55,68,76,82,90,96], kpis: ['19','204','185','980'],    perf: '+29%', pct: '82%', color: '#f97316' },
+        'hub-task':       { title: 'Velocità Completamento', bars: [52,60,58,74,80,86,91,94,97], kpis: ['14','16','520','1.120'],   perf: '+38%', pct: '91%', color: '#f97316' },
+        'hub-documenti':  { title: 'Archivio & Contratti',   bars: [30,40,48,56,64,72,78,84,90], kpis: ['12','18','148','640'],     perf: '+24%', pct: '74%', color: '#f97316' },
+        'hub-analisi':    { title: 'KPI & Business Intel',   bars: [38,50,62,74,82,89,93,96,100],kpis: ['28','25','390','1.610'],   perf: '+47%', pct: '89%', color: '#f97316' },
+        'hub-messaggi':   { title: 'Ticket & Supporto SLA',  bars: [65,70,68,76,82,88,85,92,96], kpis: ['06','18','274','830'],     perf: '+35%', pct: '95%', color: '#f97316' },
+
+        /* SLIDE 2 - DNA CLOUD (CIANO) */
+        'cloud-cluster':    { title: 'Carico & Throughput API',   bars: [44,56,68,62,82,90,86,95], kpis: ['99.98%','14ms','48.2K','16'], perf: '+44%', pct: '94%', color: '#38bdf8' },
+        'cloud-zerotrust':  { title: 'Scansione Policy & WAF',    bars: [78,82,85,88,91,94,96,99], kpis: ['100%','4ms','19.4K','0'],    perf: '+52%', pct: '99%', color: '#38bdf8' },
+        'cloud-gateway':    { title: 'Traffico Microservizi',     bars: [35,48,60,74,85,92,94,98], kpis: ['99.99%','11ms','82.6K','24'], perf: '+61%', pct: '92%', color: '#38bdf8' },
+        'cloud-backup':     { title: 'Snapshot & Geo-Replica',    bars: [60,65,70,75,80,85,90,94], kpis: ['15 min','9ms','12.4TB','04'], perf: '+39%', pct: '97%', color: '#38bdf8' },
+        'cloud-telemetria': { title: 'Ottimizzazione Risorse',    bars: [50,58,66,72,79,84,89,93], kpis: ['99.98%','12ms','54.1K','18'], perf: '+48%', pct: '96%', color: '#38bdf8' },
+
+        /* SLIDE 3 - DNA AI LAB (VERDE SMERALDO) */
+        'ai-modelli':     { title: 'Previsione Domanda & Ricavi', bars: [34,48,62,74,86,94,100], kpis: ['640/m','97.4%','38','12.4K'], perf: '+39%', pct: '86%', color: '#10b981' },
+        'ai-bi':          { title: 'Analisi Predittiva Margini',  bars: [42,54,66,78,84,91,97],  kpis: ['720/m','98.1%','44','18.9K'], perf: '+46%', pct: '91%', color: '#10b981' },
+        'ai-copiloti':    { title: 'Adozione Copiloti Interni',   bars: [28,44,58,72,85,93,99],  kpis: ['890/m','96.8%','52','24.1K'], perf: '+54%', pct: '89%', color: '#10b981' },
+        'ai-pipeline':    { title: 'Flussi ETL & Vector DB',      bars: [55,62,70,76,82,88,95],  kpis: ['510/m','99.2%','29','31.0K'], perf: '+41%', pct: '94%', color: '#10b981' },
+        'ai-automazioni': { title: 'Task Autonomi Eseguiti',      bars: [40,52,65,79,88,95,100], kpis: ['980/m','97.9%','64','29.5K'], perf: '+58%', pct: '93%', color: '#10b981' }
+      };
+
+      /* Attiva i pulsanti sidebar su TUTTE le slide */
+      slides.forEach(function (slide) {
+        const navButtons = slide.querySelectorAll('.hub-nav-item');
+        const chartTitle = slide.querySelector('.js-chart-title');
+        const bars = slide.querySelectorAll('.js-bars .bar-fill');
+        const kpi1 = slide.querySelector('.js-kpi1');
+        const kpi2 = slide.querySelector('.js-kpi2');
+        const kpi3 = slide.querySelector('.js-kpi3');
+        const kpi4 = slide.querySelector('.js-kpi4');
+        const perfBadge = slide.querySelector('.js-perf');
+        const donut = slide.querySelector('.js-donut');
+
+        navButtons.forEach(function (btn) {
+          btn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            navButtons.forEach(function (b) { b.classList.remove('active'); });
+            btn.classList.add('active');
+
+            const key = btn.getAttribute('data-tab');
+            const data = tabDatasets[key];
+            if (!data) return;
+
+            if (chartTitle) chartTitle.textContent = data.title;
+            if (kpi1) kpi1.textContent = data.kpis[0];
+            if (kpi2) kpi2.textContent = data.kpis[1];
+            if (kpi3) kpi3.textContent = data.kpis[2];
+            if (kpi4) kpi4.textContent = data.kpis[3];
+            if (perfBadge) perfBadge.textContent = data.perf;
+
+            if (donut) {
+              donut.setAttribute('data-pct', data.pct);
+              donut.style.background = 'conic-gradient(' + data.color + ' 0% ' + data.pct + ', #1e293b ' + data.pct + ' 100%)';
+            }
+
+            bars.forEach(function (bar, idx) {
+              if (data.bars[idx] !== undefined) {
+                bar.style.height = data.bars[idx] + '%';
+              }
+            });
+
+            startAuto();
+          });
+        });
+
+        /* Parallasse 3D al movimento del mouse su desktop per ogni schermo */
+        const stage = slide.querySelector('.sc-right');
+        const screen = slide.querySelector('.hub-screen');
+        if (stage && screen) {
+          stage.addEventListener('mousemove', function (ev) {
+            if (window.innerWidth <= 1200) return;
+            const rect = stage.getBoundingClientRect();
+            const x = (ev.clientX - rect.left) / rect.width - 0.5;
+            const y = (ev.clientY - rect.top) / rect.height - 0.5;
+            const rotY = -9 + x * 8;
+            const rotX = 2 - y * 6;
+            screen.style.transform = 'rotateY(' + rotY.toFixed(2) + 'deg) rotateX(' + rotX.toFixed(2) + 'deg)';
+          });
+
+          stage.addEventListener('mouseleave', function () {
+            screen.style.transform = '';
+          });
+        }
+      });
+
+      function showSlide(index) {
+        current = (index + slides.length) % slides.length;
+        slides.forEach(function (s, i) {
+          s.classList.toggle('active', i === current);
+        });
+        dots.forEach(function (d, i) {
+          d.classList.toggle('active', i === current);
+        });
+      }
+
+      function startAuto() {
+        stopAuto();
+        timer = setInterval(function () {
+          showSlide(current + 1);
+        }, 7000);
+      }
+
+      function stopAuto() {
+        if (timer) clearInterval(timer);
+      }
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', function () {
+          showSlide(current - 1);
+          startAuto();
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', function () {
+          showSlide(current + 1);
+          startAuto();
+        });
+      }
+
+      dots.forEach(function (dot) {
+        dot.addEventListener('click', function () {
+          const idx = parseInt(dot.getAttribute('data-dot'), 10);
+          showSlide(idx);
+          startAuto();
+        });
+      });
+
+      root.addEventListener('mouseenter', stopAuto);
+      root.addEventListener('mouseleave', startAuto);
+
+      let touchStartX = 0;
+      root.addEventListener('touchstart', function (e) {
+        touchStartX = e.changedTouches[0].screenX;
+      }, { passive: true });
+
+      root.addEventListener('touchend', function (e) {
+        const diff = touchStartX - e.changedTouches[0].screenX;
+        if (Math.abs(diff) > 45) {
+          showSlide(diff > 0 ? current + 1 : current - 1);
+          startAuto();
+        }
+      }, { passive: true });
+
+      startAuto();
+    })();
+  </script>
+</section>
+
+
+
+
+
+
+
+
+
+
+<!-- ==========================================
+     DNA — CONTENITORE TRANSIZIONE ONDULATA
+     Altezza: 40px
+========================================== -->
+
+<div class="dna-transition-wave" aria-hidden="true">
+
+    <style>
+        .dna-transition-wave {
+            position: relative;
+            width: 100%;
+            height: 40px;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            line-height: 0;
+            background: #f7f9fc;
+        }
+
+        .dna-transition-wave svg {
+            display: block;
+            width: 100%;
+            height: 40px;
+        }
+    </style>
+
+ <svg viewBox="0 0 1440 40"
+     preserveAspectRatio="none"
+     xmlns="http://www.w3.org/2000/svg">
+
+    <path
+        d="M0 13 C360 13 360 35 720 22 C1080 9 1080 31 1440 13 L1440 40 L0 40 Z"
+        fill="#111315"/>
+
+    <path
+        d="M0 13 C360 13 360 35 720 22 C1080 9 1080 31 1440 13"
+        fill="none"
+        stroke="#f97316"
+        stroke-width="1.2"
+        opacity=".7"/>
+</svg>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
  
@@ -302,7 +1795,58 @@
     }
 
 
+/* ==========================================
+   DNA — ONDA PROFONDA DI TRANSIZIONE
+========================================== */
 
+.dna-hero-light {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 130px;
+}
+
+.dna-hero-light .dna-hero-wave {
+    position: absolute;
+    z-index: 4;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 130px;
+    pointer-events: none;
+}
+
+.dna-hero-light .dna-hero-wave svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.dna-hero-light .slider-arrow,
+.dna-hero-light .slider-dots {
+    z-index: 6;
+}
+
+/* SPAZIO SUPERIORE PER ARCHITETTURA DNA */
+
+.dna-arch-sec {
+    padding-top: 50px !important;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+    .dna-hero-light {
+        padding-bottom: 75px;
+    }
+
+    .dna-hero-light .dna-hero-wave {
+        height: 75px;
+    }
+
+    .dna-arch-sec {
+        padding-top: 50px !important;
+    }
+}
 
 
 
@@ -886,6 +2430,7 @@
       transform: translateY(-2px);
       background: #1c1f23;
     }
+
 
     /* ================= FASCIA PIANI & INVESTIMENTO ================= */
     .dna-arch-sec .pricing-zone {
@@ -2689,6 +4234,88 @@
     })();
   </script>
 </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
