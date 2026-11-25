@@ -25,7 +25,99 @@
 
 
 
+<div id="dna-hero-separator" class="dna-hero-sep">
+  <style>
+    .dna-hero-sep {
+      --sep-line: rgba(255, 255, 255, 0.14);
+      --sep-bg: #05080f;
+      --sep-pill-bg: #0c1220;
+      --sep-orange: #44af29;
+      --sep-text: #ffffff;
+      width: 100%;
+      background: var(--sep-bg);
+      padding: 10px 48px;
+      box-sizing: border-box;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
 
+    .dna-hero-sep *,
+    .dna-hero-sep *::before,
+    .dna-hero-sep *::after {
+      box-sizing: border-box;
+    }
+
+    .dna-hero-sep .sep-track {
+      max-width: 1680px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .dna-hero-sep .sep-line {
+      flex: 1;
+      height: 10px;
+      background: linear-gradient(90deg, transparent, var(--sep-line) 25%, var(--sep-line) 100%);
+    }
+
+    .dna-hero-sep .sep-line--right {
+      background: linear-gradient(90deg, var(--sep-line) 0%, var(--sep-line) 75%, transparent);
+    }
+
+    .dna-hero-sep .sep-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 6px 20px;
+      border-radius: 999px;
+      background: var(--sep-pill-bg);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: var(--sep-text);
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: none;
+      white-space: nowrap;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+    }
+
+    .dna-hero-sep .sep-star {
+      color: var(--sep-orange);
+      font-size: 16px;
+      line-height: 1;
+      text-shadow: 0 0 10px rgba(249, 115, 22, 0.75);
+    }
+
+    .dna-hero-sep .sep-label span {
+      color: var(--sep-orange);
+    }
+
+    @media (max-width: 768px) {
+      .dna-hero-sep {
+        padding: 8px 20px;
+      }
+      .dna-hero-sep .sep-track {
+        gap: 12px;
+      }
+      .dna-hero-sep .sep-badge {
+        padding: 5px 15px;
+        font-size: 13.5px;
+      }
+      .dna-hero-sep .sep-star {
+        font-size: 14px;
+      }
+    }
+  </style>
+
+  <div class="sep-track" role="separator" aria-label="DnaHub">
+    <span class="sep-line" aria-hidden="true"></span>
+    <span class="sep-badge">
+      <i class="sep-star" aria-hidden="true">&#9733;</i>
+      <span class="sep-label">Dna<span>Hub</span></span>
+    </span>
+    <span class="sep-line sep-line--right" aria-hidden="true"></span>
+  </div>
+</div>
 
 
 
@@ -4264,6 +4356,316 @@
 
 
 
+<div id="dna-white-bridge" class="dna-white-bridge">
+  <style>
+    .dna-white-bridge {
+      background: #f8fafc;
+      color: #0f172a;
+      border-top: 1px solid rgba(15, 23, 42, 0.1);
+      border-bottom: 1px solid rgba(15, 23, 42, 0.1);
+      padding: 24px 56px;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      box-sizing: border-box;
+      width: 100%;
+    }
+
+    .dna-white-bridge *,
+    .dna-white-bridge *::before,
+    .dna-white-bridge *::after {
+      box-sizing: border-box;
+    }
+
+    .dna-white-bridge .bridge-inner {
+      max-width: 1680px;
+      margin: 0 auto;
+    }
+
+    .dna-white-bridge .bridge-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px 24px;
+    }
+
+    .dna-white-bridge .bridge-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12.5px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #0f172a;
+    }
+
+    .dna-white-bridge .bridge-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #f97316;
+      box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.2);
+    }
+
+    .dna-white-bridge .bridge-statement {
+      font-size: 15.5px;
+      font-weight: 600;
+      line-height: 1.5;
+      color: #1e293b;
+      margin: 0;
+    }
+
+    .dna-white-bridge .bridge-statement strong {
+      color: #0f172a;
+      font-weight: 800;
+    }
+
+    .dna-white-bridge .bridge-pills {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* STATO NORMALE: NERO CON TESTO BIANCO E SCRITTA PROMO ARANCIONE */
+    .dna-white-bridge .bridge-pill {
+      background: #0f172a;
+      border: 1.5px solid #0f172a;
+      border-radius: 999px;
+      padding: 8px 15px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      color: #ffffff;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .dna-white-bridge .bridge-pill:hover {
+      background: #1e293b;
+      border-color: #1e293b;
+      transform: translateY(-1px);
+    }
+
+    .dna-white-bridge .bridge-pill .promo-tag {
+      background: rgba(249, 115, 22, 0.16);
+      border: 1px solid rgba(251, 146, 60, 0.45);
+      color: #fb923c;
+      border-radius: 999px;
+      padding: 2px 8px;
+      font-size: 10px;
+      font-weight: 800;
+      transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+    }
+
+    /* STATO AL CLIC: BIANCO CON TESTO NERO E SCRITTA PROMO ARANCIONE AD ALTO CONTRASTO */
+    .dna-white-bridge .bridge-pill.is-open {
+      background: #ffffff;
+      border-color: #0f172a;
+      color: #0f172a;
+      box-shadow: 0 8px 20px -8px rgba(15, 23, 42, 0.35);
+    }
+
+    .dna-white-bridge .bridge-pill.is-open .promo-tag {
+      background: #fff7ed;
+      border-color: #fdba74;
+      color: #ea580c;
+    }
+
+    .dna-white-bridge .bridge-drawer {
+      display: none;
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid #cbd5e1;
+      font-size: 14.5px;
+      line-height: 1.55;
+      color: #1e293b;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .dna-white-bridge .bridge-drawer.is-visible {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .dna-white-bridge .bridge-drawer-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      max-width: 1180px;
+    }
+
+    .dna-white-bridge .promo-badge-val {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11.5px;
+      font-weight: 800;
+      color: #c2410c;
+      background: #fff7ed;
+      border: 1.5px solid #fdba74;
+      border-radius: 999px;
+      padding: 4px 12px;
+      white-space: nowrap;
+    }
+
+    .dna-white-bridge .bridge-actions {
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .dna-white-bridge .bridge-actions a.promo-req {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 800;
+      color: #0f172a;
+      background: #ffffff;
+      border: 1.5px solid #0f172a;
+      border-radius: 999px;
+      padding: 6px 14px;
+      text-decoration: none;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .dna-white-bridge .bridge-actions a.promo-req:hover {
+      background: #0f172a;
+      color: #ffffff;
+    }
+
+    .dna-white-bridge .bridge-actions button.promo-close {
+      background: none;
+      border: 0;
+      padding: 4px 6px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 700;
+      color: #334155;
+      cursor: pointer;
+    }
+
+    .dna-white-bridge .bridge-actions button.promo-close:hover {
+      color: #0f172a;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .dna-white-bridge {
+        padding: 18px 20px;
+      }
+      .dna-white-bridge .bridge-statement {
+        font-size: 14.5px;
+      }
+      .dna-white-bridge .bridge-pill {
+        width: 100%;
+        justify-content: space-between;
+      }
+    }
+  </style>
+
+  <div class="bridge-inner">
+    <div class="bridge-row">
+      <div class="bridge-brand">
+        <i class="bridge-dot" aria-hidden="true"></i>
+        DNA INFORMATICA • SERVIZI IN PROMOZIONE
+      </div>
+
+      <p class="bridge-statement">
+        Pacchetti dedicati alle imprese: <strong>avvio rapido, condizioni agevolate e affiancamento diretto</strong>.
+      </p>
+
+      <div class="bridge-pills">
+        <button type="button" class="bridge-pill" data-promo="cloud">
+          AUDIT CLOUD &amp; SICUREZZA <span class="promo-tag">PROMO</span>
+        </button>
+        <button type="button" class="bridge-pill" data-promo="gestionale">
+          GESTIONALE SU MISURA <span class="promo-tag">PROMO</span>
+        </button>
+        <button type="button" class="bridge-pill" data-promo="ai">
+          COPILOTA AI &amp; AUTOMAZIONE <span class="promo-tag">PROMO</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="bridge-drawer" id="bridgeDrawer">
+      <div class="bridge-drawer-meta">
+        <span class="promo-badge-val" id="promoVal"></span>
+        <span id="bridgeDrawerText"></span>
+      </div>
+      <div class="bridge-actions">
+        <a href="#contatti" class="promo-req" id="promoLink">Richiedi promo &rarr;</a>
+        <button type="button" class="promo-close" id="bridgeClose">Chiudi &times;</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const root = document.getElementById('dna-white-bridge');
+      if (!root) return;
+
+      const pills = root.querySelectorAll('.bridge-pill');
+      const drawer = root.querySelector('#bridgeDrawer');
+      const valBadge = root.querySelector('#promoVal');
+      const drawerText = root.querySelector('#bridgeDrawerText');
+      const promoLink = root.querySelector('#promoLink');
+      const closeBtn = root.querySelector('#bridgeClose');
+
+      const promos = {
+        cloud: {
+          val: 'CHECK-UP + BACKUP TEST INCLUSI',
+          text: 'Analisi completa di infrastruttura cloud, vulnerabilità e continuità operativa con piano d’intervento prioritario.',
+          href: '#contatti'
+        },
+        gestionale: {
+          val: 'ANALISI PROCESSI GRATUITA',
+          text: 'Mappatura dei flussi interni e prototipo operativo per automatizzare ordini, magazzino, preventivi o reportistica.',
+          href: '#contatti'
+        },
+        ai: {
+          val: 'PILOT OPERATIVO IN 14 GIORNI',
+          text: 'Assistenti interni su documenti aziendali, estrazione dati e automazione attività ripetitive con controllo degli accessi.',
+          href: '#contatti'
+        }
+      };
+
+      pills.forEach(function (pill) {
+        pill.addEventListener('click', function () {
+          const alreadyOpen = pill.classList.contains('is-open');
+          pills.forEach(function (p) { p.classList.remove('is-open'); });
+
+          if (alreadyOpen) {
+            drawer.classList.remove('is-visible');
+            return;
+          }
+
+          pill.classList.add('is-open');
+          const key = pill.getAttribute('data-promo');
+          const item = promos[key];
+          if (!item) return;
+
+          valBadge.textContent = item.val;
+          drawerText.textContent = item.text;
+          promoLink.setAttribute('href', item.href);
+          drawer.classList.add('is-visible');
+        });
+      });
+
+      if (closeBtn) {
+        closeBtn.addEventListener('click', function () {
+          pills.forEach(function (p) { p.classList.remove('is-open'); });
+          drawer.classList.remove('is-visible');
+        });
+      }
+    })();
+  </script>
+</div>
 
 
 
@@ -4307,8 +4709,628 @@
 
 
 
+<section id="dna-hub-corporate" class="dna-corp-sec">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
+    .dna-corp-sec {
+      --bg-void: #05080f;
+      --bg-card: #0c1220;
+      --bg-card-2: #11192b;
+      --orange: #f97316;
+      --orange-bright: #fb923c;
+      --cyan: #38bdf8;
+      --emerald: #10b981;
+      --text-white: #ffffff;
+      --text-soft: #cbd5e1;
+      --text-muted: #94a3b8;
 
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-void);
+      background-image:
+        radial-gradient(ellipse 55% 420px at 18% 22%, rgba(249, 115, 22, 0.16), transparent 72%),
+        radial-gradient(ellipse 50% 420px at 82% 78%, rgba(56, 189, 248, 0.12), transparent 72%),
+        linear-gradient(180deg, #05080f 0%, #070c18 55%, #05080f 100%);
+      color: var(--text-white);
+      padding: 92px 56px;
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .dna-corp-sec *,
+    .dna-corp-sec *::before,
+    .dna-corp-sec *::after {
+      box-sizing: border-box;
+    }
+
+    .dna-corp-sec .corp-wrap {
+      max-width: 1680px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* HEADER */
+    .dna-corp-sec .corp-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 52px;
+    }
+
+    .dna-corp-sec .corp-kicker {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13.5px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      color: var(--orange);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .dna-corp-sec .corp-kicker i {
+      width: 8px;
+      height: 8px;
+      background: var(--orange);
+      border-radius: 50%;
+      box-shadow: 0 0 12px rgba(249, 115, 22, 0.8);
+    }
+
+    .dna-corp-sec .corp-h2 {
+      font-size: clamp(36px, 4.2vw, 56px);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -0.025em;
+      margin: 0 0 14px;
+      color: #ffffff;
+    }
+
+    .dna-corp-sec .corp-h2 span {
+      color: var(--orange);
+    }
+
+    .dna-corp-sec .corp-intro {
+      font-size: 18.5px;
+      line-height: 1.55;
+      color: var(--text-soft);
+      max-width: 720px;
+      margin: 0;
+    }
+
+    .dna-corp-sec .corp-badge-pill {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--text-soft);
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      padding: 10px 16px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .dna-corp-sec .corp-badge-pill b {
+      color: var(--emerald);
+      font-weight: 800;
+    }
+
+    /* LAYOUT PRINCIPALE */
+    .dna-corp-sec .corp-grid {
+      display: grid;
+      grid-template-columns: 52% 48%;
+      gap: 36px;
+      align-items: stretch;
+    }
+
+    /* FOTO REALE EDIFICIO */
+    .dna-corp-sec .photo-card {
+      position: relative;
+      width: 100%;
+      min-height: 560px;
+      height: 100%;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1.5px solid rgba(255, 255, 255, 0.14);
+      box-shadow:
+        0 28px 70px rgba(0, 0, 0, 0.85),
+        0 0 45px rgba(249, 115, 22, 0.12);
+    }
+
+    .dna-corp-sec .photo-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .dna-corp-sec .photo-card:hover img {
+      transform: scale(1.03);
+    }
+
+    .dna-corp-sec .photo-vignette {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(5, 8, 15, 0.25) 0%,
+        rgba(5, 8, 15, 0.12) 45%,
+        rgba(5, 8, 15, 0.92) 100%
+      );
+      pointer-events: none;
+    }
+
+    .dna-corp-sec .photo-top-bar {
+      position: absolute;
+      top: 22px;
+      left: 22px;
+      right: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      z-index: 2;
+    }
+
+    .dna-corp-sec .hq-chip {
+      background: rgba(8, 13, 24, 0.78);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      padding: 8px 14px;
+      border-radius: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: #ffffff;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .dna-corp-sec .hq-chip span {
+      color: var(--orange-bright);
+    }
+
+    .dna-corp-sec .photo-bottom {
+      position: absolute;
+      left: 28px;
+      right: 28px;
+      bottom: 26px;
+      z-index: 2;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .dna-corp-sec .photo-title {
+      font-size: 26px;
+      font-weight: 800;
+      margin: 0 0 6px;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+    }
+
+    .dna-corp-sec .photo-title span {
+      color: var(--orange-bright);
+    }
+
+    .dna-corp-sec .photo-sub {
+      font-size: 14.5px;
+      color: var(--text-soft);
+      margin: 0;
+      max-width: 440px;
+    }
+
+    .dna-corp-sec .photo-metrics {
+      display: flex;
+      gap: 12px;
+    }
+
+    .dna-corp-sec .pm-box {
+      background: rgba(12, 18, 32, 0.84);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 12px;
+      padding: 10px 14px;
+      min-width: 96px;
+    }
+
+    .dna-corp-sec .pm-box strong {
+      display: block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 17px;
+      font-weight: 800;
+      color: #ffffff;
+    }
+
+    .dna-corp-sec .pm-box small {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    /* COLONNA DESTRA: BENTO + DETTAGLIO INTERATTIVO */
+    .dna-corp-sec .right-col {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .dna-corp-sec .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .dna-corp-sec .corp-card {
+      background: linear-gradient(155deg, rgba(17, 25, 43, 0.88) 0%, rgba(10, 15, 28, 0.96) 100%);
+      border: 1.5px solid rgba(255, 255, 255, 0.09);
+      border-radius: 18px;
+      padding: 22px 22px 20px;
+      text-align: left;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .dna-corp-sec .corp-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(249, 115, 22, 0.55);
+    }
+
+    .dna-corp-sec .corp-card.is-selected {
+      border-color: var(--orange);
+      box-shadow: 0 14px 34px -10px rgba(249, 115, 22, 0.35);
+      background: linear-gradient(155deg, rgba(24, 34, 56, 0.95) 0%, rgba(12, 18, 32, 0.98) 100%);
+    }
+
+    .dna-corp-sec .card-glow {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(190px circle at var(--mx, 50%) var(--my, 50%), rgba(249, 115, 22, 0.16), transparent 75%);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+
+    .dna-corp-sec .corp-card:hover .card-glow {
+      opacity: 1;
+    }
+
+    .dna-corp-sec .c-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+
+    .dna-corp-sec .c-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 19px;
+    }
+
+    .dna-corp-sec .c-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    .dna-corp-sec .corp-card.is-selected .c-tag {
+      color: var(--orange-bright);
+    }
+
+    .dna-corp-sec .c-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: #ffffff;
+      margin: 0 0 6px;
+    }
+
+    .dna-corp-sec .c-desc {
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--text-soft);
+      margin: 0;
+    }
+
+    /* BOX FOCUS ATTIVO IN BASSO A DESTRA */
+    .dna-corp-sec .focus-panel {
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.92) 0%, rgba(9, 14, 26, 0.98) 100%);
+      border: 1.5px solid rgba(249, 115, 22, 0.35);
+      border-radius: 18px;
+      padding: 22px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .dna-corp-sec .focus-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .dna-corp-sec .focus-kicker {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      color: var(--orange-bright);
+      text-transform: uppercase;
+    }
+
+    .dna-corp-sec .focus-kpi {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--emerald);
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.28);
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
+
+    .dna-corp-sec .focus-text {
+      font-size: 15px;
+      line-height: 1.55;
+      color: var(--text-soft);
+      margin: 0;
+    }
+
+    .dna-corp-sec .focus-cta {
+      align-self: flex-start;
+      margin-top: 4px;
+      font-size: 14px;
+      font-weight: 700;
+      color: #ffffff;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s, gap 0.2s;
+    }
+
+    .dna-corp-sec .focus-cta:hover {
+      color: var(--orange-bright);
+      gap: 10px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1250px) {
+      .dna-corp-sec {
+        padding: 72px 32px;
+      }
+      .dna-corp-sec .corp-grid {
+        grid-template-columns: 1fr;
+      }
+      .dna-corp-sec .photo-card {
+        min-height: 440px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .dna-corp-sec {
+        padding: 52px 18px;
+      }
+      .dna-corp-sec .corp-header {
+        margin-bottom: 34px;
+      }
+      .dna-corp-sec .photo-card {
+        min-height: 360px;
+      }
+      .dna-corp-sec .photo-bottom {
+        left: 18px;
+        right: 18px;
+        bottom: 18px;
+      }
+      .dna-corp-sec .photo-title {
+        font-size: 21px;
+      }
+      .dna-corp-sec .bento-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+  <div class="corp-wrap">
+    <div class="corp-header">
+      <div>
+        <div class="corp-kicker"><i></i> L'AZIENDA &amp; LA VISIONE</div>
+        <h2 class="corp-h2">DNA HUB: <span>un luogo dove l'idea diventa impresa</span></h2>
+        <p class="corp-intro">
+          Uniamo ingegneria del software, cloud e ricerca applicata con un approccio concreto: costruire sistemi solidi che accompagnano la crescita reale delle aziende.
+        </p>
+      </div>
+
+      <div class="corp-badge-pill">
+        <b>&#9679;</b> DNA INFORMATICA • +200 IMPRESE SEGUITE
+      </div>
+    </div>
+
+    <div class="corp-grid">
+      <!-- FOTO ARCHITETTONICA REALE -->
+      <div class="photo-card">
+       <img
+  src="img/ufficio2.png"
+  alt="Postazione di lavoro informatica moderna"
+/>
+        <div class="photo-vignette" aria-hidden="true"></div>
+
+        <div class="photo-top-bar">
+          <div class="hq-chip">DNA <span>HUB</span> • HEADQUARTER</div>
+          <div class="hq-chip"><span>ISO</span> READY • ZERO-TRUST</div>
+        </div>
+
+        <div class="photo-bottom">
+          <div>
+            <h3 class="photo-title">Il sogno di un <span>polo tecnologico</span> su misura</h3>
+            <p class="photo-sub">Spazio, metodo e persone dedicati a trasformare processi complessi in piattaforme chiare.</p>
+          </div>
+
+          <div class="photo-metrics">
+            <div class="pm-box">
+              <strong>+200</strong>
+              <small>Aziende</small>
+            </div>
+            <div class="pm-box">
+              <strong>99.98%</strong>
+              <small>Affidabilità</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SEZIONI AZIENDALI INTERATTIVE -->
+      <div class="right-col">
+        <div class="bento-grid">
+          <button type="button" class="corp-card is-selected" data-info="visione">
+            <div class="card-glow"></div>
+            <div class="c-top">
+              <span class="c-icon">&#127919;</span>
+              <span class="c-tag">01 • VISIONE</span>
+            </div>
+            <h3 class="c-title">La Nostra Visione</h3>
+            <p class="c-desc">Tecnologia concreta al servizio della marginalità e dell'efficienza aziendale.</p>
+          </button>
+
+          <button type="button" class="corp-card" data-info="stack">
+            <div class="card-glow"></div>
+            <div class="c-top">
+              <span class="c-icon">&#9881;</span>
+              <span class="c-tag">02 • TECH STACK</span>
+            </div>
+            <h3 class="c-title">Architettura &amp; Cloud</h3>
+            <p class="c-desc">Sistemi scalabili, API sicure, gestionali su misura e continuità operativa.</p>
+          </button>
+
+          <button type="button" class="corp-card" data-info="lab">
+            <div class="card-glow"></div>
+            <div class="c-top">
+              <span class="c-icon">&#129504;</span>
+              <span class="c-tag">03 • RICERCA &amp; AI</span>
+            </div>
+            <h3 class="c-title">Laboratorio R&amp;D</h3>
+            <p class="c-desc">Automazioni intelligenti, analisi predittive e copiloti integrati nei flussi.</p>
+          </button>
+
+          <button type="button" class="corp-card" data-info="valori">
+            <div class="card-glow"></div>
+            <div class="c-top">
+              <span class="c-icon">&#129309;</span>
+              <span class="c-tag">04 • VALORI</span>
+            </div>
+            <h3 class="c-title">Cultura &amp; Partner</h3>
+            <p class="c-desc">Trasparenza, responsabilità e affiancamento diretto in ogni fase del progetto.</p>
+          </button>
+        </div>
+
+        <div class="focus-panel" id="dnaCorpFocus">
+          <div class="focus-head">
+            <span class="focus-kicker" id="focusKicker">LA NOSTRA VISIONE</span>
+            <span class="focus-kpi" id="focusKpi">IMPATTO MISURABILE</span>
+          </div>
+          <p class="focus-text" id="focusText">
+            Crediamo in un digitale che non complica il lavoro quotidiano, ma lo rende più rapido, leggibile e controllabile. Ogni soluzione nasce dall'ascolto dei processi reali dell'azienda per generare risultati misurabili nel tempo.
+          </p>
+          <a href="#contatti" class="focus-cta" id="focusCta">Parla con il team DNA Informatica &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const root = document.getElementById('dna-hub-corporate');
+      if (!root) return;
+
+      const cards = root.querySelectorAll('.corp-card');
+      const kicker = root.querySelector('#focusKicker');
+      const kpi = root.querySelector('#focusKpi');
+      const text = root.querySelector('#focusText');
+      const cta = root.querySelector('#focusCta');
+
+      const details = {
+        visione: {
+          kicker: 'LA NOSTRA VISIONE',
+          kpi: 'IMPATTO MISURABILE',
+          text: 'Crediamo in un digitale che non complica il lavoro quotidiano, ma lo rende più rapido, leggibile e controllabile. Ogni soluzione nasce dall\'ascolto dei processi reali dell\'azienda per generare risultati misurabili nel tempo.',
+          cta: 'Scopri come lavoriamo →',
+          href: '#contatti'
+        },
+        stack: {
+          kicker: 'ARCHITETTURA & CLOUD',
+          kpi: 'SLA 99.98% • SCALABILE',
+          text: 'Progettiamo piattaforme web, gestionali custom, integrazioni ERP e infrastrutture cloud con sicurezza Zero-Trust, backup automatizzati e prestazioni costanti anche nei picchi di traffico.',
+          cta: 'Esplora i servizi cloud →',
+          href: '#contatti'
+        },
+        lab: {
+          kicker: 'LABORATORIO R&D',
+          kpi: 'AUTOMAZIONE & DATA BI',
+          text: 'Sperimentiamo modelli AI, flussi automatizzati e cruscotti predittivi applicati a documenti, reportistica, supporto clienti e controllo di gestione per ridurre i tempi operativi.',
+          cta: 'Richiedi una demo AI →',
+          href: '#contatti'
+        },
+        valori: {
+          kicker: 'CULTURA & PARTNER',
+          kpi: 'AFFIANCAMENTO DIRETTO',
+          text: 'Lavoriamo con tempi chiari, codice manutenibile e confronto diretto con chi prende decisioni. Non lasciamo mai il cliente solo dopo il rilascio: cresciamo insieme al tuo business.',
+          cta: 'Prenota una call conoscitiva →',
+          href: '#contatti'
+        }
+      };
+
+      cards.forEach(function (card) {
+        card.addEventListener('mousemove', function (e) {
+          const rect = card.getBoundingClientRect();
+          card.style.setProperty('--mx', (e.clientX - rect.left) + 'px');
+          card.style.setProperty('--my', (e.clientY - rect.top) + 'px');
+        });
+
+        card.addEventListener('click', function () {
+          cards.forEach(function (c) { c.classList.remove('is-selected'); });
+          card.classList.add('is-selected');
+
+          const key = card.getAttribute('data-info');
+          const item = details[key];
+          if (!item) return;
+
+          if (kicker) kicker.textContent = item.kicker;
+          if (kpi) kpi.textContent = item.kpi;
+          if (text) text.textContent = item.text;
+          if (cta) {
+            cta.textContent = item.cta;
+            cta.setAttribute('href', item.href);
+          }
+        });
+      });
+    })();
+  </script>
+</section>
 
 
 
