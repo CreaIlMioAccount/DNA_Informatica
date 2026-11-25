@@ -1,0 +1,2696 @@
+
+/* =========================================================
+   DNA INFORMATICA — PREVENTIVO
+   Project Studio / Editorial Architecture
+========================================================= */
+
+.quote-page {
+    --quote-orange: #f36b21;
+    --quote-black: #171717;
+    --quote-grey: #777;
+    --quote-line: #e8e8e8;
+    --quote-soft: #f7f7f5;
+
+    width: 100%;
+    overflow: hidden;
+    background: #fff;
+    color: var(--quote-black);
+    font-family: inherit;
+}
+
+/* =========================================================
+   INTRODUZIONE
+========================================================= */
+
+.quote-intro {
+    position: relative;
+    padding: 115px 7% 85px;
+    background: #fff;
+}
+
+.quote-intro::before {
+    content: "DNA";
+    position: absolute;
+    right: -25px;
+    top: 20px;
+    font-size: clamp(180px, 27vw, 390px);
+    font-weight: 800;
+    letter-spacing: -0.12em;
+    line-height: 1;
+    color: rgba(0, 0, 0, 0.025);
+    pointer-events: none;
+}
+
+.quote-intro-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 1450px;
+    margin: 0 auto;
+}
+
+.quote-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-bottom: 42px;
+    color: #777;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+}
+
+.quote-eyebrow-line {
+    width: 35px;
+    height: 2px;
+    background: var(--quote-orange);
+}
+
+.quote-intro h1 {
+    max-width: 1050px;
+    margin: 0;
+    font-size: clamp(55px, 8.5vw, 118px);
+    font-weight: 800;
+    letter-spacing: -0.075em;
+    line-height: 0.98;
+}
+
+.quote-intro h1 span {
+    color: var(--quote-orange);
+}
+
+.quote-intro-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 40px;
+    margin-top: 65px;
+    padding-top: 25px;
+    border-top: 1px solid var(--quote-line);
+}
+
+.quote-intro-bottom p {
+    max-width: 480px;
+    margin: 0;
+    color: #666;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.quote-index {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #777;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    white-space: nowrap;
+}
+
+.quote-index span:first-child {
+    color: var(--quote-orange);
+    font-size: 17px;
+}
+
+.quote-index-line {
+    width: 45px;
+    height: 1px;
+    background: var(--quote-orange);
+}
+
+/* =========================================================
+   WORKSPACE
+========================================================= */
+
+.quote-workspace {
+    max-width: 1450px;
+    margin: 0 auto;
+    padding: 75px 7% 120px;
+}
+
+.quote-workspace-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 30px;
+    padding-bottom: 35px;
+    border-bottom: 1px solid var(--quote-line);
+}
+
+.quote-section-label {
+    display: block;
+    margin-bottom: 20px;
+    color: var(--quote-orange);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.quote-workspace-heading h2,
+.quote-form-heading h2 {
+    margin: 0;
+    font-size: clamp(34px, 4.5vw, 58px);
+    font-weight: 750;
+    letter-spacing: -0.055em;
+    line-height: 1.08;
+}
+
+.quote-workspace-heading p,
+.quote-form-heading p {
+    max-width: 560px;
+    margin: 17px 0 0;
+    color: var(--quote-grey);
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.quote-counter {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    flex-shrink: 0;
+}
+
+.quote-counter span {
+    color: var(--quote-orange);
+    font-size: 65px;
+    font-weight: 800;
+    letter-spacing: -5px;
+    line-height: 1;
+}
+
+.quote-counter small {
+    margin-top: 8px;
+    color: #888;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+/* =========================================================
+   SERVIZI SELEZIONATI
+========================================================= */
+
+.quote-selected-services {
+    padding: 35px 0 90px;
+}
+
+.quote-empty-state {
+    position: relative;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 45px;
+    background: var(--quote-soft);
+    border: 1px solid #eeeeeb;
+}
+
+.quote-empty-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 43px;
+    height: 43px;
+    margin-bottom: 25px;
+    border: 1px solid var(--quote-orange);
+    border-radius: 50%;
+    color: var(--quote-orange);
+    font-size: 25px;
+    font-weight: 300;
+}
+
+.quote-empty-state h3 {
+    margin: 0;
+    font-size: clamp(24px, 3vw, 36px);
+    font-weight: 750;
+    letter-spacing: -1.5px;
+}
+
+.quote-empty-state p {
+    max-width: 510px;
+    margin: 13px 0 24px;
+    color: #777;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.quote-text-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    color: var(--quote-black);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    transition: color .25s ease;
+}
+
+.quote-text-link span {
+    color: var(--quote-orange);
+    font-size: 18px;
+}
+
+.quote-text-link:hover {
+    color: var(--quote-orange);
+}
+
+/* =========================================================
+   RIGHE DEI SERVIZI
+   Classi da utilizzare in preventivo.js
+========================================================= */
+
+.quote-service-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    padding: 25px 5px;
+    border-bottom: 1px solid var(--quote-line);
+    animation: quoteFadeIn .35s ease both;
+}
+
+.quote-service-info {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.quote-service-number {
+    color: var(--quote-orange);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.quote-service-info h3 {
+    margin: 0;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -.5px;
+}
+
+.quote-service-info p {
+    margin: 6px 0 0;
+    color: #888;
+    font-size: 12px;
+}
+
+.quote-service-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.quote-remove {
+    padding: 10px 0;
+    border: 0;
+    background: transparent;
+    color: #999;
+    font: inherit;
+    font-size: 11px;
+    cursor: pointer;
+    transition: color .2s ease;
+}
+
+.quote-remove:hover {
+    color: #d94343;
+}
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.quote-form-section {
+    padding-top: 75px;
+    border-top: 1px solid var(--quote-line);
+}
+
+.quote-form-heading {
+    margin-bottom: 50px;
+}
+
+.quote-form {
+    width: 100%;
+}
+
+.quote-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 45px;
+    row-gap: 38px;
+}
+
+.quote-field {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.quote-field-full {
+    grid-column: 1 / -1;
+}
+
+.quote-field label {
+    color: #444;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .5px;
+}
+
+.quote-field input,
+.quote-field textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px 2px;
+    border: 0;
+    border-bottom: 1px solid #d8d8d8;
+    border-radius: 0;
+    outline: none;
+    background: transparent;
+    color: var(--quote-black);
+    font: inherit;
+    font-size: 15px;
+    transition: border-color .25s ease;
+}
+
+.quote-field input::placeholder,
+.quote-field textarea::placeholder {
+    color: #b0b0b0;
+}
+
+.quote-field input:focus,
+.quote-field textarea:focus {
+    border-bottom-color: var(--quote-orange);
+}
+
+.quote-field textarea {
+    min-height: 130px;
+    resize: vertical;
+    line-height: 1.7;
+}
+
+/* =========================================================
+   INVIO PROPOSTA
+========================================================= */
+
+.quote-form-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    margin-top: 55px;
+    padding-top: 30px;
+    border-top: 1px solid var(--quote-line);
+}
+
+.quote-form-bottom p {
+    max-width: 330px;
+    margin: 0;
+    color: #888;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.quote-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 45px;
+    min-width: 260px;
+    padding: 19px 23px;
+    border: 1px solid var(--quote-black);
+    background: var(--quote-black);
+    color: #fff;
+    font: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background .3s ease, border-color .3s ease;
+}
+
+.quote-submit-arrow {
+    color: var(--quote-orange);
+    font-size: 21px;
+    transition: transform .3s ease;
+}
+
+.quote-submit:hover {
+    border-color: var(--quote-orange);
+    background: var(--quote-orange);
+}
+
+.quote-submit:hover .quote-submit-arrow {
+    color: #fff;
+    transform: translate(4px, -4px);
+}
+
+.quote-form-feedback {
+    min-height: 20px;
+    margin-top: 20px;
+    color: var(--quote-orange);
+    font-size: 13px;
+}
+
+/* =========================================================
+   ANIMAZIONI
+========================================================= */
+
+@keyframes quoteFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .quote-intro {
+        padding: 85px 6% 55px;
+    }
+
+    .quote-intro::before {
+        top: 60px;
+        right: -15px;
+        font-size: 190px;
+    }
+
+    .quote-eyebrow {
+        margin-bottom: 30px;
+        font-size: 9px;
+        letter-spacing: 1.7px;
+    }
+
+    .quote-intro h1 {
+        font-size: clamp(49px, 11vw, 75px);
+    }
+
+    .quote-intro-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 25px;
+        margin-top: 40px;
+    }
+
+    .quote-intro-bottom p {
+        font-size: 14px;
+    }
+
+    .quote-workspace {
+        padding: 55px 6% 80px;
+    }
+
+    .quote-workspace-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .quote-counter {
+        align-items: flex-start;
+        flex-direction: row;
+        gap: 12px;
+    }
+
+    .quote-counter span {
+        font-size: 38px;
+    }
+
+    .quote-counter small {
+        align-self: center;
+    }
+
+    .quote-selected-services {
+        padding: 25px 0 65px;
+    }
+
+    .quote-empty-state {
+        min-height: 250px;
+        padding: 30px 24px;
+    }
+
+    .quote-service-item {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .quote-service-actions {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .quote-form-section {
+        padding-top: 55px;
+    }
+
+    .quote-form-heading {
+        margin-bottom: 35px;
+    }
+
+    .quote-form-grid {
+        grid-template-columns: 1fr;
+        row-gap: 28px;
+    }
+
+    .quote-field-full {
+        grid-column: auto;
+    }
+
+    .quote-form-bottom {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 25px;
+        margin-top: 40px;
+    }
+
+    .quote-submit {
+        width: 100%;
+        min-width: 0;
+    }
+}
+
+@media (max-width: 420px) {
+
+    .quote-intro h1 {
+        font-size: 46px;
+    }
+
+    .quote-workspace-heading h2,
+    .quote-form-heading h2 {
+        font-size: 34px;
+    }
+
+    .quote-empty-state h3 {
+        font-size: 25px;
+    }
+}
+
+/* =========================================================
+   REVISIONE DESIGN — HERO COMPATTA
+========================================================= */
+
+.quote-intro {
+    padding: 55px 5% 35px;
+}
+
+.quote-intro::before {
+    font-size: clamp(120px, 17vw, 230px);
+    top: 5px;
+    right: 2%;
+}
+
+.quote-eyebrow {
+    margin-bottom: 22px;
+}
+
+.quote-intro h1 {
+    max-width: 850px;
+    font-size: clamp(42px, 5.2vw, 72px);
+    line-height: 1.02;
+    letter-spacing: -0.065em;
+}
+
+.quote-intro-bottom {
+    margin-top: 28px;
+    padding-top: 18px;
+    align-items: center;
+}
+
+.quote-intro-bottom p {
+    font-size: 14px;
+    max-width: 540px;
+}
+
+.quote-workspace {
+    padding: 35px 5% 75px;
+}
+
+.quote-workspace-heading {
+    padding-bottom: 22px;
+}
+
+.quote-section-label {
+    margin-bottom: 12px;
+}
+
+.quote-workspace-heading h2,
+.quote-form-heading h2 {
+    font-size: clamp(29px, 3.4vw, 43px);
+}
+
+.quote-workspace-heading p,
+.quote-form-heading p {
+    margin-top: 10px;
+    font-size: 13px;
+}
+
+.quote-counter span {
+    font-size: 48px;
+}
+
+.quote-selected-services {
+    padding: 15px 0 55px;
+}
+
+.quote-form-section {
+    padding-top: 45px;
+}
+
+.quote-form-heading {
+    margin-bottom: 32px;
+}
+
+@media (max-width: 768px) {
+    .quote-intro {
+        padding: 42px 6% 30px;
+    }
+
+    .quote-intro h1 {
+        font-size: clamp(39px, 9vw, 58px);
+    }
+
+    .quote-intro-bottom {
+        margin-top: 22px;
+    }
+
+    .quote-workspace {
+        padding: 30px 6% 60px;
+    }
+
+    .quote-workspace-heading {
+        flex-direction: row;
+        align-items: flex-end;
+    }
+
+    .quote-counter {
+        align-items: flex-end;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .quote-counter span {
+        font-size: 34px;
+    }
+
+    .quote-counter small {
+        font-size: 8px;
+        white-space: nowrap;
+    }
+
+    .quote-form-section {
+        padding-top: 35px;
+    }
+}
+
+@media (max-width: 480px) {
+    .quote-workspace-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .quote-counter {
+        align-items: center;
+        flex-direction: row;
+        gap: 10px;
+    }
+}
+
+/* =========================================================
+   SERVIZI — ELENCO EDITORIALE
+========================================================= */
+
+.quote-service-item {
+    min-height: 92px;
+    padding: 19px 12px;
+    border-bottom: 1px solid #e9e9e9;
+    transition: background .25s ease, padding .25s ease;
+}
+
+.quote-service-item:first-child {
+    border-top: 1px solid #e9e9e9;
+}
+
+.quote-service-item:hover {
+    padding-left: 20px;
+    background: #fafaf9;
+}
+
+.quote-service-info {
+    gap: 22px;
+}
+
+.quote-service-number {
+    font-size: 12px;
+    min-width: 24px;
+}
+
+.quote-service-info h3 {
+    font-size: 16px;
+    letter-spacing: -.4px;
+}
+
+.quote-service-info p {
+    font-size: 11px;
+    margin-top: 5px;
+}
+
+.quote-service-actions {
+    gap: 22px;
+}
+
+.quote-service-tag {
+    color: #999;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    white-space: nowrap;
+}
+
+.quote-remove {
+    font-size: 10px;
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .quote-service-item {
+        min-height: auto;
+        padding: 17px 5px;
+    }
+
+    .quote-service-item:hover {
+        padding-left: 5px;
+    }
+
+    .quote-service-actions {
+        justify-content: space-between;
+        padding-left: 46px;
+    }
+
+    .quote-service-tag {
+        font-size: 7px;
+    }
+}
+
+/* =========================================================
+   RIEPILOGO PROGETTO
+========================================================= */
+
+.quote-project-summary {
+    margin: 0 0 75px;
+    padding: 25px 30px 30px;
+    background: #f7f7f5;
+    border: 1px solid #ededeb;
+}
+
+.quote-summary-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #e2e2df;
+    color: #888;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.7px;
+}
+
+.quote-summary-indicator {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--quote-orange);
+}
+
+.quote-summary-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 25px;
+    padding-top: 25px;
+}
+
+.quote-summary-content h3 {
+    margin: 0;
+    font-size: clamp(27px, 3vw, 39px);
+    line-height: 1.05;
+    letter-spacing: -1.8px;
+}
+
+.quote-summary-content h3 span {
+    color: var(--quote-orange);
+}
+
+.quote-summary-content p {
+    max-width: 440px;
+    margin: 12px 0 0;
+    color: #777;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.quote-summary-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    flex-shrink: 0;
+}
+
+.quote-summary-stat strong {
+    color: var(--quote-orange);
+    font-size: 46px;
+    line-height: 1;
+    letter-spacing: -3px;
+}
+
+.quote-summary-stat span {
+    margin-top: 7px;
+    color: #888;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+}
+
+/* =========================================================
+   PRIVACY
+========================================================= */
+
+.quote-privacy {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: 35px;
+}
+
+.quote-privacy input {
+    width: 16px;
+    height: 16px;
+    margin: 2px 0 0;
+    accent-color: var(--quote-orange);
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.quote-privacy label {
+    color: #888;
+    font-size: 11px;
+    line-height: 1.7;
+    cursor: pointer;
+}
+
+.quote-privacy a {
+    color: var(--quote-black);
+    text-decoration-color: var(--quote-orange);
+    text-underline-offset: 3px;
+}
+
+.quote-privacy a:hover {
+    color: var(--quote-orange);
+}
+
+@media (max-width: 600px) {
+    .quote-project-summary {
+        padding: 22px 20px;
+        margin-bottom: 55px;
+    }
+
+    .quote-summary-content {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .quote-summary-stat {
+        align-items: flex-start;
+        flex-direction: row;
+        gap: 12px;
+    }
+
+    .quote-summary-stat span {
+        align-self: center;
+    }
+}
+
+/* =========================================
+   DNA INFORMATICA - PROJECT CART
+========================================= */
+
+.quote-page {
+    background: #fff;
+    color: #171717;
+    padding-bottom: 100px;
+}
+
+/* HEADER */
+
+.quote-cart-header {
+    padding: 35px 7% 45px;
+    border-bottom: 1px solid #ededed;
+}
+
+.quote-breadcrumb {
+    display: flex;
+    gap: 12px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #999;
+    margin-bottom: 48px;
+}
+
+.quote-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 30px;
+}
+
+.quote-eyebrow,
+.quote-section-label {
+    display: block;
+    color: #999;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+}
+
+.quote-title-row h1 {
+    margin: 13px 0 10px;
+    font-size: clamp(40px, 5vw, 64px);
+    line-height: 1;
+    letter-spacing: -3px;
+    font-weight: 700;
+}
+
+.quote-title-row h1 span {
+    color: #f36b21;
+}
+
+.quote-title-row p {
+    margin: 0;
+    color: #777;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.quote-header-count {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+}
+
+.quote-header-count strong {
+    font-size: 45px;
+    line-height: 1;
+    letter-spacing: -2px;
+    color: #f36b21;
+}
+
+.quote-header-count span {
+    color: #999;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+}
+
+/* CART LAYOUT */
+
+.quote-cart-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 340px;
+    gap: 65px;
+    padding: 65px 7% 80px;
+    align-items: start;
+}
+
+.quote-block-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #e9e9e9;
+}
+
+.quote-block-heading h2,
+.quote-summary-box h2 {
+    margin: 12px 0 0;
+    font-size: 25px;
+    letter-spacing: -1px;
+}
+
+.quote-cart-note {
+    color: #aaa;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+}
+
+/* SERVICE ROWS */
+
+.quote-selected-services {
+    padding: 0;
+}
+
+.quote-service-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    min-height: 100px;
+    padding: 20px 12px;
+    border-bottom: 1px solid #ededed;
+    transition: background .2s ease;
+}
+
+.quote-service-item:first-child {
+    border-top: 1px solid #ededed;
+}
+
+.quote-service-item:hover {
+    background: #fafafa;
+}
+
+.quote-service-info {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.quote-service-number {
+    color: #f36b21;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.quote-service-info h3 {
+    margin: 0;
+    font-size: 15px;
+    letter-spacing: -.3px;
+}
+
+.quote-service-info p {
+    margin: 6px 0 0;
+    color: #999;
+    font-size: 10px;
+}
+
+.quote-service-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.quote-service-tag {
+    color: #999;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.quote-remove {
+    border: 0;
+    background: transparent;
+    color: #999;
+    font-size: 10px;
+    cursor: pointer;
+    transition: color .2s;
+}
+
+.quote-remove:hover {
+    color: #f36b21;
+}
+
+/* ADD MORE */
+
+.quote-add-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 25px;
+    color: #222;
+    font-size: 11px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.quote-add-more span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px;
+    height: 25px;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    font-size: 17px;
+    transition: all .2s;
+}
+
+.quote-add-more:hover {
+    color: #f36b21;
+}
+
+.quote-add-more:hover span {
+    background: #f36b21;
+    border-color: #f36b21;
+    color: #fff;
+}
+
+/* SIDEBAR */
+
+.quote-cart-sidebar {
+    position: sticky;
+    top: 30px;
+}
+
+.quote-summary-box {
+    padding: 28px;
+    background: #f7f7f5;
+    border: 1px solid #ededeb;
+}
+
+.quote-summary-box h2 {
+    margin-bottom: 30px;
+}
+
+.quote-summary-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 17px 0;
+    border-top: 1px solid #e5e5e2;
+    font-size: 11px;
+}
+
+.quote-summary-line span {
+    color: #777;
+}
+
+.quote-summary-line strong {
+    font-size: 12px;
+    text-align: right;
+}
+
+.quote-summary-line:first-of-type strong {
+    color: #f36b21;
+}
+
+.quote-summary-description {
+    padding: 18px 0;
+    color: #888;
+    font-size: 11px;
+    line-height: 1.8;
+    border-top: 1px solid #e5e5e2;
+}
+
+.quote-proceed {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 17px 19px;
+    background: #f36b21;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background .2s;
+}
+
+.quote-proceed:hover {
+    background: #d95712;
+}
+
+.quote-proceed span {
+    font-size: 18px;
+}
+
+.quote-summary-footnote {
+    margin: 15px 0 0;
+    color: #999;
+    font-size: 9px;
+    text-align: center;
+}
+
+/* CONTACT FORM */
+
+.quote-form-section {
+    padding: 65px 7% 0;
+    border-top: 1px solid #ededed;
+}
+
+.quote-form-heading {
+    max-width: 600px;
+    margin-bottom: 40px;
+}
+
+.quote-form-heading h2 {
+    margin: 14px 0 10px;
+    font-size: clamp(29px, 3.5vw, 43px);
+    letter-spacing: -1.8px;
+}
+
+.quote-form-heading p {
+    color: #777;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.quote-form {
+    max-width: 900px;
+}
+
+.quote-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px 30px;
+}
+
+.quote-field {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.quote-field label {
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.quote-field input,
+.quote-field textarea {
+    width: 100%;
+    padding: 14px 15px;
+    border: 1px solid #e5e5e5;
+    background: #fff;
+    color: #222;
+    font-family: inherit;
+    font-size: 12px;
+    outline: none;
+    transition: border-color .2s;
+    box-sizing: border-box;
+}
+
+.quote-field input:focus,
+.quote-field textarea:focus {
+    border-color: #f36b21;
+}
+
+.quote-field textarea {
+    resize: vertical;
+}
+
+.quote-field-full {
+    grid-column: 1 / -1;
+}
+
+.quote-privacy {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.quote-privacy input {
+    margin-top: 3px;
+    accent-color: #f36b21;
+}
+
+.quote-privacy label {
+    color: #888;
+    font-size: 10px;
+    line-height: 1.7;
+}
+
+.quote-privacy a {
+    color: #222;
+    text-decoration-color: #f36b21;
+}
+
+.quote-form-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-top: 35px;
+}
+
+.quote-form-bottom p {
+    color: #999;
+    font-size: 10px;
+}
+
+.quote-submit {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    padding: 17px 23px;
+    border: 0;
+    background: #171717;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background .2s;
+}
+
+.quote-submit:hover {
+    background: #f36b21;
+}
+
+.quote-submit span {
+    font-size: 17px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+    .quote-cart-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .quote-cart-sidebar {
+        position: static;
+    }
+
+    .quote-summary-box {
+        max-width: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .quote-cart-header {
+        padding: 28px 6% 35px;
+    }
+
+    .quote-breadcrumb {
+        margin-bottom: 35px;
+    }
+
+    .quote-title-row {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .quote-header-count {
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .quote-header-count strong {
+        font-size: 30px;
+    }
+
+    .quote-cart-layout {
+        padding: 40px 6% 55px;
+    }
+
+    .quote-block-heading {
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .quote-cart-note {
+        padding-top: 5px;
+    }
+
+    .quote-service-item {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 15px;
+        padding: 18px 5px;
+    }
+
+    .quote-service-actions {
+        width: 100%;
+        justify-content: space-between;
+        padding-left: 40px;
+    }
+
+    .quote-service-info h3 {
+        font-size: 13px;
+    }
+
+    .quote-form-section {
+        padding: 45px 6% 0;
+    }
+
+    .quote-form-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .quote-field-full {
+        grid-column: auto;
+    }
+
+    .quote-form-bottom {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .quote-submit {
+        justify-content: space-between;
+    }
+}
+
+/* =================================
+   DNA PREVENTIVI - IMAGE BANNER
+================================= */
+
+.dna-quote-banner {
+    position: relative;
+    min-height: 270px;
+    display: flex;
+    align-items: center;
+    padding: 45px 7%;
+    overflow: hidden;
+
+    background-image: url("https://ai.nju.edu.cn/rinc/img/NeuralNetwork/BYZN.png");
+    background-size: cover;
+    background-position: center 55%;
+    background-repeat: no-repeat;
+
+    color: #fff;
+}
+
+.dna-quote-banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(10, 10, 10, .90) 0%,
+        rgba(10, 10, 10, .72) 42%,
+        rgba(10, 10, 10, .12) 100%
+    );
+}
+
+.dna-quote-banner-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.dna-quote-brand {
+    display: flex;
+    flex-direction: column;
+    font-size: 29px;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+    line-height: 1;
+}
+
+.dna-quote-brand span {
+    margin-top: 6px;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.dna-quote-divider {
+    width: 2px;
+    height: 85px;
+    background: rgba(255,255,255,.75);
+}
+
+.dna-quote-title h1 {
+    margin: 0;
+    font-size: clamp(34px, 5vw, 62px);
+    line-height: 1;
+    letter-spacing: -2.5px;
+    font-weight: 800;
+}
+
+.dna-quote-title h1 strong {
+    color: #f36b21;
+}
+
+.dna-quote-title p {
+    margin: 12px 0 0;
+    color: #eee;
+    font-size: 15px;
+    letter-spacing: .2px;
+}
+
+.dna-quote-banner-index {
+    position: absolute;
+    z-index: 2;
+    right: 7%;
+    bottom: 25px;
+    color: rgba(255,255,255,.75);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.dna-quote-banner-index span {
+    color: #f36b21;
+    padding: 0 5px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 600px) {
+    .dna-quote-banner {
+        min-height: 210px;
+        padding: 35px 6%;
+        background-position: 60% center;
+    }
+
+    .dna-quote-banner-content {
+        gap: 17px;
+    }
+
+    .dna-quote-brand {
+        font-size: 21px;
+    }
+
+    .dna-quote-brand span {
+        font-size: 7px;
+        letter-spacing: 2px;
+    }
+
+    .dna-quote-divider {
+        height: 65px;
+    }
+
+    .dna-quote-title h1 {
+        font-size: clamp(27px, 7vw, 39px);
+        letter-spacing: -1.5px;
+    }
+
+    .dna-quote-title p {
+        font-size: 11px;
+    }
+
+    .dna-quote-banner-index {
+        right: 6%;
+        bottom: 13px;
+        font-size: 7px;
+    }
+}
+
+/* ICONE SERVIZI NEL CARRELLO */
+
+.quote-service-info {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.quote-service-icon {
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f7f7f5;
+    border: 1px solid #ededeb;
+    border-radius: 5px;
+}
+
+.quote-service-icon svg {
+    width: 27px;
+    height: 27px;
+    fill: none;
+    stroke: #f36b21;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+@media (max-width: 600px) {
+    .quote-service-icon {
+        width: 43px;
+        height: 43px;
+    }
+
+    .quote-service-icon svg {
+        width: 23px;
+        height: 23px;
+    }
+}
+
+/* ==========================================
+   DNA INFORMATICA - CONFIGURATORE PREVENTIVO
+========================================== */
+
+.quote-configurator {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 320px;
+    gap: 35px;
+    max-width: 1200px;
+    margin: 35px auto 55px;
+    padding: 0 25px;
+    font-family: inherit;
+}
+
+.quote-configurator-main {
+    min-width: 0;
+}
+
+.quote-configurator-heading {
+    margin-bottom: 25px;
+}
+
+.quote-configurator-heading span {
+    display: block;
+    color: #e87524;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.quote-configurator-heading h2 {
+    color: #171717;
+    font-size: 27px;
+    font-weight: 700;
+    margin: 0 0 8px;
+}
+
+.quote-configurator-heading p {
+    color: #777;
+    font-size: 14px;
+    margin: 0;
+}
+
+/* PACCHETTI */
+
+.quote-packages {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+
+.quote-package {
+    position: relative;
+    display: block;
+    cursor: pointer;
+}
+
+.quote-package input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.quote-package-content {
+    min-height: 145px;
+    padding: 22px 18px;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+    transition: .25s ease;
+}
+
+.quote-package-content strong {
+    display: block;
+    color: #222;
+    font-size: 15px;
+    margin-bottom: 13px;
+}
+
+.quote-package-content .price {
+    display: block;
+    color: #171717;
+    font-size: 25px;
+    font-weight: 750;
+}
+
+.quote-package-content small {
+    display: block;
+    color: #888;
+    font-size: 11px;
+    margin-top: 8px;
+}
+
+.quote-package input:checked + .quote-package-content {
+    border: 2px solid #e87524;
+    background: #fffaf6;
+    box-shadow: 0 5px 18px rgba(0,0,0,.06);
+}
+
+.quote-package input:checked + .quote-package-content strong {
+    color: #e87524;
+}
+
+/* FUNZIONALITÀ AGGIUNTIVE */
+
+.quote-extras-heading {
+    margin: 38px 0 16px;
+    font-size: 17px;
+    color: #222;
+}
+
+.quote-extras {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.quote-extra-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 15px 16px;
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+.quote-extra-item:hover {
+    border-color: #e87524;
+}
+
+.quote-extra-item input {
+    accent-color: #e87524;
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+.quote-extra-item span {
+    flex: 1;
+    color: #333;
+    font-size: 13px;
+}
+
+.quote-extra-item strong {
+    color: #e87524;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+/* RIEPILOGO PREZZO */
+
+.quote-price-summary {
+    align-self: start;
+    position: sticky;
+    top: 25px;
+    padding: 25px;
+    background: #171717;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.quote-price-summary > span {
+    display: block;
+    color: #aaa;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    margin-bottom: 20px;
+}
+
+.quote-price-line {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 13px 0;
+    border-bottom: 1px solid #383838;
+    font-size: 13px;
+}
+
+.quote-price-line span {
+    color: #bbb;
+}
+
+.quote-price-line strong {
+    color: #fff;
+}
+
+.quote-price-total {
+    margin-top: 22px;
+}
+
+.quote-price-total span {
+    display: block;
+    color: #aaa;
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.quote-price-total strong {
+    display: block;
+    color: #f18435;
+    font-size: 32px;
+    font-weight: 750;
+}
+
+.quote-price-note {
+    margin-top: 18px;
+    color: #999;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 850px) {
+    .quote-configurator {
+        grid-template-columns: 1fr;
+    }
+
+    .quote-price-summary {
+        position: static;
+    }
+}
+
+@media (max-width: 600px) {
+    .quote-packages {
+        grid-template-columns: 1fr;
+    }
+
+    .quote-extras {
+        grid-template-columns: 1fr;
+    }
+
+    .quote-configurator {
+        padding: 0 16px;
+        gap: 22px;
+    }
+
+    .quote-configurator-heading h2 {
+        font-size: 23px;
+    }
+}
+
+/* ==============================================
+   DNA INFORMATICA - CONFIGURATORE PREVENTIVO
+   CSS ALLINEATO ALL'HTML
+============================================== */
+
+.quote-configurator {
+    max-width: 1450px;
+    margin: 0 auto;
+    padding: 55px 7% 65px;
+    background: #fff;
+    border-bottom: 1px solid #ededed;
+}
+
+.quote-configurator-heading {
+    margin-bottom: 32px;
+}
+
+.quote-configurator-heading .quote-eyebrow {
+    display: block;
+    margin-bottom: 13px;
+    color: #f36b21;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.quote-configurator-heading h2 {
+    margin: 0;
+    color: #171717;
+    font-size: clamp(28px, 3.5vw, 43px);
+    font-weight: 750;
+    letter-spacing: -1.8px;
+}
+
+.quote-configurator-heading h2 span {
+    color: #f36b21;
+}
+
+.quote-configurator-heading p {
+    margin: 12px 0 0;
+    color: #777;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* LAYOUT INTERNO */
+
+.quote-configurator-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 320px;
+    gap: 45px;
+    align-items: start;
+}
+
+.quote-configurator-options {
+    min-width: 0;
+}
+
+.quote-config-group {
+    margin-bottom: 35px;
+}
+
+.quote-config-group h3 {
+    margin: 0 0 16px;
+    color: #222;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* OPZIONI PACCHETTI E FUNZIONALITÀ */
+
+.quote-config-option {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-height: 58px;
+    padding: 14px 17px;
+    margin-bottom: 8px;
+    border: 1px solid #e9e9e9;
+    background: #fff;
+    cursor: pointer;
+    transition: border-color .2s ease, background .2s ease;
+}
+
+.quote-config-option:hover {
+    border-color: #f36b21;
+    background: #fffaf7;
+}
+
+.quote-config-option input {
+    width: 17px;
+    height: 17px;
+    flex-shrink: 0;
+    margin: 0;
+    accent-color: #f36b21;
+    cursor: pointer;
+}
+
+.quote-config-option span {
+    flex: 1;
+    color: #333;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.quote-config-option strong {
+    color: #171717;
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.quote-config-option:has(input:checked) {
+    border-color: #f36b21;
+    background: #fff8f3;
+}
+
+.quote-config-option:has(input:checked) strong {
+    color: #f36b21;
+}
+
+/* RIEPILOGO PREZZO */
+
+.quote-live-summary {
+    position: sticky;
+    top: 30px;
+    padding: 28px;
+    background: #171717;
+    color: #fff;
+}
+
+.quote-live-summary .quote-eyebrow {
+    display: block;
+    margin-bottom: 20px;
+    color: #f36b21;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.7px;
+}
+
+.quote-live-summary h3 {
+    margin: 0 0 25px;
+    color: #fff;
+    font-size: 21px;
+    line-height: 1.3;
+    letter-spacing: -.6px;
+}
+
+.quote-live-total {
+    padding: 20px 0;
+    margin-bottom: 10px;
+    border-top: 1px solid #393939;
+    border-bottom: 1px solid #393939;
+    color: #f36b21;
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.quote-live-details {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 13px 0;
+    border-bottom: 1px solid #393939;
+    font-size: 11px;
+}
+
+.quote-live-details span {
+    color: #aaa;
+}
+
+.quote-live-details strong {
+    color: #fff;
+    white-space: nowrap;
+}
+
+.quote-live-summary > p {
+    margin: 20px 0 0;
+    color: #999;
+    font-size: 10px;
+    line-height: 1.8;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+    .quote-configurator-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .quote-live-summary {
+        position: static;
+    }
+}
+
+@media (max-width: 600px) {
+    .quote-configurator {
+        padding: 40px 6%;
+    }
+
+    .quote-config-option {
+        padding: 13px 12px;
+        gap: 10px;
+    }
+
+    .quote-config-option span {
+        font-size: 12px;
+    }
+
+    .quote-live-summary {
+        padding: 23px 20px;
+    }
+
+    .quote-live-total {
+        font-size: 27px;
+    }
+}/* =========================================
+   FIX DEFINITIVO CONFIGURATORE PREVENTIVO
+========================================= */
+
+.quote-configurator {
+    display: block !important;
+    grid-template-columns: none !important;
+    gap: 0 !important;
+
+    width: 100%;
+    max-width: 1450px;
+    margin: 0 auto;
+    padding: 55px 7% 65px;
+
+    box-sizing: border-box;
+    background: #fff;
+    border-bottom: 1px solid #ededed;
+}
+
+.quote-configurator-heading {
+    display: block;
+    width: 100%;
+    margin-bottom: 32px;
+}
+
+.quote-configurator-grid {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) 320px !important;
+    gap: 45px;
+    align-items: start;
+    width: 100%;
+}
+
+.quote-configurator-options {
+    min-width: 0;
+}
+
+.quote-live-summary {
+    position: sticky;
+    top: 30px;
+}
+
+@media (max-width: 900px) {
+    .quote-configurator-grid {
+        grid-template-columns: 1fr !important;
+        gap: 25px;
+    }
+
+    .quote-live-summary {
+        position: static;
+    }
+}
+
+@media (max-width: 600px) {
+    .quote-configurator {
+        padding: 40px 6%;
+    }
+}
+/* Contenitore del bottone indipendente */
+.quote-global-reset-wrapper {
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid #ededed;
+    display: flex;
+    justify-content: center; /* <--- ORA È AL CENTRO */
+    width: 100%;
+}
+
+/* Stile del bottone Rosso */
+.btn-reset-danger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 32px;
+    background: #dc3545; /* Rosso acceso */
+    color: #ffffff;
+    border: 1px solid #dc3545;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 50px; /* L'ho reso un po' più "pillola" per essere elegante */
+}
+
+.btn-reset-danger:hover {
+    background: #bb2d3b; /* Rosso più scuro */
+    border-color: #b02a37;
+    box-shadow: 0 8px 25px rgba(220, 53, 69, 0.4);
+    transform: translateY(-3px);
+}
+/* PREZZO DEL SINGOLO SERVIZIO */
+.quote-service-price {
+    display: inline-block;
+    color: #e87524;
+    font-size: 17px;
+    font-weight: 700;
+    white-space: nowrap;
+    margin: 0 12px;
+}
+
+/* RIEPILOGO TOTALE SERVIZI */
+.quote-services-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 22px 25px;
+    margin-top: 20px;
+    background: #f7f7f7;
+    border: 1px solid #e8e8e8;
+    border-radius: 8px;
+}
+
+.quote-services-total span {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+
+.quote-services-total strong {
+    color: #e87524;
+    font-size: 24px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+    .quote-service-actions {
+        flex-wrap: wrap;
+    }
+
+    .quote-service-price {
+        margin: 5px 0;
+    }
+
+    .quote-services-total {
+        padding: 18px;
+    }
+
+    .quote-services-total strong {
+        font-size: 20px;
+    }
+}
+/* PREZZO SINGOLO SERVIZIO */
+.quote-service-price {
+    display: inline-block;
+    color: #e87524;
+    font-size: 17px;
+    font-weight: 700;
+    white-space: nowrap;
+    margin: 0 12px;
+}
+
+/* TOTALE SERVIZI */
+.quote-services-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 22px 25px;
+    margin-top: 20px;
+    background: #f7f7f7;
+    border: 1px solid #e8e8e8;
+    border-radius: 8px;
+}
+
+.quote-services-total span {
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+}
+
+.quote-services-total strong {
+    color: #e87524;
+    font-size: 24px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+    .quote-service-actions {
+        flex-wrap: wrap;
+    }
+
+    .quote-service-price {
+        margin: 5px 0;
+    }
+
+    .quote-services-total {
+        padding: 18px;
+    }
+
+    .quote-services-total strong {
+        font-size: 20px;
+    }
+}/* TOTALE SERVIZI NEL RIEPILOGO LATERALE */
+
+.quote-total-line {
+    margin-top: 22px;
+    padding-top: 20px;
+    border-top: 1px solid #e8e8e8;
+}
+
+.quote-total-line span {
+    font-weight: 600;
+    color: #333;
+}
+
+.quote-total-line strong {
+    color: #e87524;
+    font-size: 21px;
+    font-weight: 800;
+    white-space: nowrap;
+}/* RIEPILOGO SERVIZI NEL MODULO CONTATTI */
+
+.quote-form-services {
+    background: #f8f9fb;
+    border: 1px solid #e5e8ed;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.quote-form-services h3 {
+    font-size: 20px;
+    margin: 0 0 8px;
+    color: #20242a;
+}
+
+.quote-form-services > p {
+    color: #737b85;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.quote-form-service-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 13px 0;
+    border-bottom: 1px solid #e5e8ed;
+}
+
+.quote-form-service-item span {
+    color: #333;
+    font-size: 14px;
+}
+
+.quote-form-service-item strong {
+    color: #e87524;
+    white-space: nowrap;
+}
+
+.quote-form-services-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding-top: 20px;
+    margin-top: 10px;
+    font-weight: 700;
+}
+
+.quote-form-services-total strong {
+    color: #e87524;
+    font-size: 22px;
+}
+/* RIEPILOGO SERVIZI NEL MODULO CONTATTI */
+
+.quote-form-services {
+    display: none;
+    margin-bottom: 35px;
+    padding: 25px;
+    background: #f7f8fa;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+}
+
+.quote-form-services:not(:empty) {
+    display: block;
+}
+
+.quote-form-services h3 {
+    margin: 0 0 20px;
+    font-size: 19px;
+    font-weight: 700;
+    color: #171717;
+}
+
+.quote-form-service-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    padding: 13px 0;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 14px;
+}
+
+.quote-form-service-item:last-of-type {
+    border-bottom: none;
+}
+
+.quote-form-service-item strong {
+    white-space: nowrap;
+}
+
+.quote-form-services-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 1px solid #d1d5db;
+    font-size: 16px;
+    font-weight: 700;
+    color: #171717;
+}
+/* ==========================================
+   RIEPILOGO COMPATTO NEL MODULO CONTATTI
+========================================== */
+
+.quote-form-services {
+    display: none;
+    margin-bottom: 35px;
+    padding: 25px 28px;
+    background: #fff;
+    border: 1px solid #eaeaea;
+    border-radius: 10px;
+}
+
+.quote-form-services:not(:empty) {
+    display: block;
+}
+
+.quote-form-summary-heading {
+    margin-bottom: 18px;
+}
+
+.quote-form-summary-heading > span {
+    display: block;
+    margin-bottom: 7px;
+    color: #f36b21;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+}
+
+.quote-form-summary-heading h3 {
+    margin: 0;
+    color: #171717;
+    font-size: 19px;
+    font-weight: 800;
+}
+
+.quote-form-summary-group {
+    padding: 15px 0;
+    border-top: 1px solid #eeeeee;
+}
+
+.quote-form-summary-group-title {
+    display: block;
+    margin-bottom: 8px;
+    color: #999;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+.quote-form-summary-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 7px 0;
+    color: #444;
+    font-size: 13px;
+}
+
+.quote-form-summary-row strong {
+    color: #171717;
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.quote-form-summary-subtotal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 8px;
+    padding-top: 12px;
+    border-top: 1px dashed #e5e5e5;
+    color: #777;
+    font-size: 12px;
+}
+
+.quote-form-summary-subtotal strong {
+    color: #171717;
+    font-size: 14px;
+}
+
+.quote-form-summary-total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 10px;
+    padding-top: 17px;
+    border-top: 1px solid #dedede;
+    color: #171717;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.quote-form-summary-total strong {
+    color: #f36b21;
+    font-size: 21px;
+    white-space: nowrap;
+}
+
+.quote-form-summary-note {
+    margin: 12px 0 0;
+    color: #999;
+    font-size: 10px;
+    line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+    .quote-form-services {
+        padding: 20px 17px;
+    }
+
+    .quote-form-summary-row {
+        font-size: 12px;
+    }
+
+    .quote-form-summary-total strong {
+        font-size: 19px;
+    }
+}
+/* Riduzione testi preventivo di 4px */
+
+.quote-page {
+    font-size: 13px;
+}
+
+.quote-page p {
+    font-size: 12px;
+}
+
+.quote-page h1 {
+    font-size: clamp(30px, 4vw, 44px);
+}
+
+.quote-page h2 {
+    font-size: clamp(23px, 3vw, 32px);
+}
+
+.quote-page h3 {
+    font-size: 17px;
+}
+
+.quote-service-details p,
+.quote-summary-description,
+.quote-empty p {
+    font-size: 12px;
+}
+
+.quote-service-details h3 {
+    font-size: 16px;
+}
+
+.quote-service-price {
+    font-size: 15px;
+}
+
+.quote-summary-line {
+    font-size: 12px;
+}
+
+.quote-service-tag {
+    font-size: 9px;
+}
+
+.quote-page button,
+.quote-page .quote-proceed {
+    font-size: 12px;
+}
+
+.dna-sub-menu a {
+    font-size: 11px;
+}
+
+.quote-configurator-wrapper {
+    font-size: 12px;
+}
+
+.quote-configurator-wrapper label {
+    font-size: 12px;
+}
+
+#quote-live-total {
+    font-size: 21px;
+}
+
+#quote-contacts label {
+    font-size: 12px;
+}
+
+#quote-contacts input,
+#quote-contacts textarea,
+#quote-contacts select {
+    font-size: 12px;
+}
+
+.quote-form-summary-row,
+.quote-form-summary-row strong {
+    font-size: 12px;
+}
+
+.quote-form-summary-group-title {
+    font-size: 12px;
+}
+
+.quote-form-summary-total {
+    font-size: 13px;
+}
+
+.quote-form-summary-total strong {
+    font-size: 20px;
+}
+
+.quote-form-summary-note {
+    font-size: 10px;
+}
+
+.quote-form-summary-heading > span {
+    font-size: 9px;
+}
+
+.quote-form-summary-heading h3 {
+    font-size: 20px;
+}
+
+@media (max-width: 768px) {
+    .quote-page {
+        font-size: 12px;
+    }
+
+    .quote-page p {
+        font-size: 11.5px;
+    }
+
+    .quote-page h1 {
+        font-size: 28px;
+    }
+
+    .quote-page h2 {
+        font-size: 23px;
+    }
+
+    .quote-page h3 {
+        font-size: 15px;
+    }
+
+    .quote-service-details p {
+        font-size: 11px;
+    }
+
+    .dna-sub-menu a {
+        font-size: 10px;
+    }
+
+    #quote-contacts label,
+    #quote-contacts input,
+    #quote-contacts textarea {
+        font-size: 12px;
+    }
+}

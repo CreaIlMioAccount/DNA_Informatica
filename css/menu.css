@@ -195,15 +195,14 @@
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
-/* Stile per il contenitore della freccia */
 /* Stile per il pulsante della freccia (che ora cattura anche i click sullo spazio vuoto) */
 .toggle-mega {
     cursor: pointer;
-    padding: 8px 0 8px 20px; /* Più spazio a sinistra per allargare l'area di click */
+    padding: 8px 0 8px 20px;
     display: flex;
     align-items: center;
-    flex-grow: 1; /* Fa espandere la freccia fino a riempire la riga */
-    justify-content: flex-end; /* Spinge la freccia verso destra */
+    flex-grow: 1;
+    justify-content: flex-end;
 }
 .nav-arrow {
     background: #f8fafc;
@@ -236,6 +235,7 @@
     position: relative; 
     display: flex;
     align-items: center;
+
 }
 
 .megamenu {
@@ -252,7 +252,7 @@
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
-    z-index: 9999;
+    z-index: 19999;
 }
 
 /* Apertura all'hover (desktop) e alla classe active (click) */
@@ -537,24 +537,37 @@
     .menu-trigger {
         display: flex;
         align-items: center;
+        justify-content: space-between;
         width: 100%;
-        padding: 15px 20px;
-        cursor: pointer;
+        padding: 0;                /* il padding lo gestiamo sui due figli */
+        cursor: default;
     }
 
+    /* Il testo: occupa lo spazio e naviga */
     .menu-trigger .home-link {
-        flex-grow: 1;
+        flex: 1;
+        padding: 16px 20px;
         font-size: 1rem;
+        font-weight: 600;
         color: #475569;
         text-decoration: none;
-        font-weight: 600;
+        cursor: pointer;
+        margin-right: 0;
     }
 
+    /* La freccia: bersaglio touch dedicato, 48x48 */
     .menu-trigger .arrow-down {
-        display: inline-block !important;
-        font-size: 1rem;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        font-size: 1.6rem;         /* freccia più grande */
         color: #ff6b00;
+        flex-shrink: 0;
+        cursor: pointer;
         transition: transform 0.3s ease;
+        -webkit-tap-highlight-color: transparent;
     }
 
     .has-megamenu.active .arrow-down {
@@ -655,4 +668,53 @@
     .mega-footer {
         display: none !important;
     }
+}/* =========================================
+   BOTTONE PREVENTIVO NELL'HEADER
+   ========================================= */
+.btn-preventivo-header {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #f36b21; /* Arancione DNA */
+    color: #ffffff;
+    padding: 9px 16px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-right: 15px; /* Spazio dal bottone Accedi */
+    white-space: nowrap;
+}
+
+.btn-preventivo-header:hover {
+    background: #d95712; /* Arancione più scuro */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(243,107,33,0.3);
+    color: #ffffff;
+}/* Stile del bottone esistente (aggiungiamo flex per centrare la scritta e il badge) */
+.btn-preventivo-header {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px; /* Spazio tra la scritta e il pallino */
+    /* ... il resto del tuo CSS esistente rimane uguale ... */
+}
+
+/* Stile del Badge Numerico */
+.header-count-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    color: #f36b21;
+    font-size: 11px;
+    font-weight: 800;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    line-height: 1;
+    /* Effetto "pop" quando cambia numero */
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }

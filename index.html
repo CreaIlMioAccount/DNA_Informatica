@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DNA Informatica</title>
     <link rel="stylesheet" href="css/style.css?v=230">
-<link rel="stylesheet" href="css/menu.css?v=230">
+<link rel="stylesheet" href="css/menu.css?v=250">
 <link rel="stylesheet" href="/css/footer.css?v=1">
 </head>
 <body>
 
     <!-- Qui verrà inserito il menu da menu.html -->
-    <div id="header-placeholder"></div>
+   <div id="header-placeholder"></div>
 
     <!-- HERO SLIDER -->
     <section class="hero-slider">
@@ -92,380 +92,1660 @@
     </section>
 
 
-   <!-- SEZIONE BENTO GRID (Presentazione Servizi) -->
-<div class="section-divider">
-    <div class="divider-line"></div>
-    <div class="divider-dot"></div>
-    <div class="divider-line"></div>
-</div>
+ 
+
+
+
+<section id="esplora-dna-architect" class="dna-arch-sec">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+    .dna-arch-sec {
+      /* COLORE ESATTO DELLO SLIDER SOPRA (#111315) PER ZERO STACCO */
+      --bg-slider-match: #111315;
+      --bg-carbon: #0c0d0f;
+      --bg-light: #ffffff;
+      --orange: #f97316;
+      --orange-bright: #fb923c;
+      --cyan: #38bdf8;
+      --emerald: #10b981;
+      --purple: #a855f7;
+      --text-dark: #0a0a0a;
+      --text-muted: #475569;
+      --line-dark: rgba(255, 255, 255, 0.14);
+      --line-light: rgba(10, 10, 10, 0.14);
+      --radius: 8px;
+
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-slider-match);
+      background-image:
+        radial-gradient(ellipse 45% 240px at 82% 0%, rgba(249, 115, 22, 0.08), transparent 75%),
+        linear-gradient(180deg, #111315 0%, #0d0e11 16%, #08090b 41.5%, #eef2f6 41.55%, #e5ecf3 100%);
+      padding: 64px 36px 64px;
+      width: 100%;
+      box-sizing: border-box;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* GRIGLIA BLUEPRINT CHE COMPARE GRADUALMENTE DOPO I PRIMI 110PX */
+    .dna-arch-sec::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 580px;
+      background-image:
+        linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+      background-size: 48px 48px;
+      -webkit-mask-image: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.85) 26%, #000 75%, transparent 100%);
+      mask-image: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.85) 26%, #000 75%, transparent 100%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* IMMAGINE ARCHITETTONICA SFUMATA CHE EMERGE SOLO DOPO L'ATTACCO DELLO SLIDER */
+    .dna-arch-sec::before {
+      content: '';
+      position: absolute;
+      top: 70px;
+      right: 0;
+      width: 68%;
+      height: 460px;
+      background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center 35%;
+      opacity: 0.16;
+      mix-blend-mode: luminosity;
+      -webkit-mask-image: radial-gradient(ellipse 75% 70% at 78% 48%, #000 5%, transparent 70%);
+      mask-image: radial-gradient(ellipse 75% 70% at 78% 48%, #000 5%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .dna-arch-sec *,
+    .dna-arch-sec *::before,
+    .dna-arch-sec *::after {
+      box-sizing: border-box;
+    }
+
+    .dna-arch-sec .arch-wrap {
+      max-width: 1680px;
+      width: 100%;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ================= LAYER IMMAGINI SFUMATE NELLE CARD ================= */
+    .dna-arch-sec .card-fade-img {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      pointer-events: none;
+      z-index: 0;
+      transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.4s ease;
+    }
+
+    .dna-arch-sec .a-card:hover .card-fade-img,
+    .dna-arch-sec .pr-card:hover .card-fade-img {
+      transform: scale(1.06);
+    }
+
+    .dna-arch-sec .fade-dark-right {
+      opacity: 0.2;
+      mix-blend-mode: lighten;
+      -webkit-mask-image: linear-gradient(125deg, transparent 22%, rgba(0, 0, 0, 0.45) 58%, #000 100%);
+      mask-image: linear-gradient(125deg, transparent 22%, rgba(0, 0, 0, 0.45) 58%, #000 100%);
+    }
+
+    .dna-arch-sec .fade-light-right {
+      opacity: 0.14;
+      filter: grayscale(35%) contrast(108%);
+      -webkit-mask-image: radial-gradient(ellipse 90% 90% at 88% 72%, #000 10%, transparent 72%);
+      mask-image: radial-gradient(ellipse 90% 90% at 88% 72%, #000 10%, transparent 72%);
+    }
+
+    .dna-arch-sec .fade-orange-right {
+      opacity: 0.22;
+      mix-blend-mode: overlay;
+      -webkit-mask-image: linear-gradient(135deg, transparent 20%, #000 100%);
+      mask-image: linear-gradient(135deg, transparent 20%, #000 100%);
+    }
+
+    /* ================= HEADER ARCHITETTONICO (VOCI A SINISTRA, TITOLO A DESTRA) ================= */
+    .dna-arch-sec .arch-top {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 28px;
+      margin-bottom: 40px;
+      padding-bottom: 26px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+      color: #ffffff;
+    }
+
+    .dna-arch-sec .arch-title-box {
+      text-align: right;
+      margin-left: auto;
+    }
+
+    .dna-arch-sec .arch-coord {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 15.5px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      background: rgba(56, 189, 248, 0.08);
+      border: 1px solid rgba(56, 189, 248, 0.28);
+      padding: 6px 14px;
+      border-radius: 4px;
+      margin-bottom: 14px;
+    }
+
+    .dna-arch-sec .arch-coord i {
+      width: 8px;
+      height: 8px;
+      background: var(--emerald);
+      box-shadow: 0 0 10px var(--emerald);
+      animation: archPulse 1.6s infinite;
+    }
+
+    @keyframes archPulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.35; }
+    }
+
+    .dna-arch-sec .arch-h2 {
+      font-size: clamp(36px, 4.5vw, 56px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.04;
+      margin: 0;
+    }
+
+    .dna-arch-sec .arch-h2 span { color: var(--orange); }
+
+    .dna-arch-sec .arch-lead {
+      font-size: 19px;
+      line-height: 1.5;
+      color: #cbd5e1;
+      margin: 12px 0 0 auto;
+      max-width: 820px;
+    }
+
+    .dna-arch-sec .arch-pillars {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .dna-arch-sec .arch-pillars span {
+      padding: 6px 14px;
+      border-left: 3px solid var(--orange);
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(6px);
+      color: #f8fafc;
+    }
 
 
 
 
 
 
-    <!-- SEZIONE SERVIZI CON TAB -->
-    <main class="services-section">
-        <div class="container">
-            <div class="tabs-container">
-                <button class="tab-btn" onclick="apriTab(0)">Privati, professionisti e imprese</button>
-                <button class="tab-btn" onclick="apriTab(1)">Grandi aziende e Pubblica Amministrazione</button>
-                <button class="tab-btn" onclick="apriTab(2)">Business partner e operatori IT</button>
-            </div>
 
-            <div class="tabs-content">
-                <!-- TAB 1 -->
-                <div class="tab-pane layout-1">
-                    <div class="booking-trigger-container">
-                        <h2>Hai un progetto IT in mente?</h2>
-                        <p>Dalla consulenza allo sviluppo, siamo al tuo fianco per trovare la soluzione perfetta per la tua azienda.</p>
-                        <button class="btn-orange btn-open-booking animate-arrows" onclick="toggleFormPrenotazione()">
-                            <span class="arrow-down">&#8681;</span>
-                            APRI E PRENOTA UNA CONSULENZA
-                            <span class="arrow-down">&#8681;</span>
-                        </button>
-                    </div>
 
-                    <div class="booking-wrapper" id="bookingFormContainer">
-                        <div class="booking-container">
-                            <div class="booking-header">
-                                <h2>Prenota una consulenza</h2>
-                                <p>Compila i campi per fissare un appuntamento.</p>
-                            </div>
-                            <form class="booking-form" onsubmit="event.preventDefault(); alert('Richiesta inviata!'); toggleFormPrenotazione();">
-                                <div class="form-row">
-                                    <div class="form-group">
-                                        <label for="nome">Nome e Cognome</label>
-                                        <input type="text" id="nome" placeholder="Mario Rossi" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="email">Email</label>
-                                        <input type="email" id="email" placeholder="mario@email.com" required>
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group">
-                                        <label for="telefono">Telefono</label>
-                                        <input type="tel" id="telefono" placeholder="+39 123 456 7890" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="servizio">Tipo di Servizio</label>
-                                        <select id="servizio" required>
-                                            <option value="" disabled selected>Scegli un servizio...</option>
-                                            <option value="consulenza">Consulenza Generale</option>
-                                            <option value="software">Sviluppo Software</option>
-                                            <option value="cloud">Soluzioni Cloud</option>
-                                            <option value="web">Sito Web / E-commerce</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group">
-                                        <label for="data">Data Preferita</label>
-                                        <input type="date" id="data" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="ora">Ora Preferita</label>
-                                        <input type="time" id="ora" required>
-                                    </div>
-                                </div>
-                                <div class="form-actions">
-                                    <button type="submit" class="btn-search btn-submit">INVIA RICHIESTA</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
 
-                    <div class="grid-2-cols mt-40">
-                        <div class="horizontal-card">
-                            <div class="hc-text">
-                                <h3>Dall'idea alla piattaforma. Dal sito all'intero ecosistema.</h3>
-                                <p>Progettiamo e realizziamo infrastrutture digitali complete: siti web, gestionali, cloud, database, automazioni e soluzioni AI per aziende, professionisti ed enti che vogliono innovare e crescere nel tempo.</p>
-                                <a href="#" class="link-blue">Esplora le soluzioni &rarr;</a>
-                            </div>
-                            <div class="hc-image">
-                                <img src="https://img.magnific.com/foto-premium/gruppo-di-persone-in-un-luogo-di-lavoro-seduti-su-scrivanie-e-che-lavorano-in-un-ufficio-moderno_272375-5232.jpg" alt="Team">
-                            </div>
-                        </div>
-                        <div class="horizontal-card">
-                            <div class="hc-text">
-                                <h3>Un ecosistema digitale per ogni organizzazione.</h3>
-                                <p>Supportiamo privati, professionisti, aziende, enti e partner nella trasformazione digitale attraverso siti web, piattaforme gestionali, cloud, automazioni, intelligenza artificiale e infrastrutture IT progettate per crescere nel tempo.</p>
-                                <a href="#" class="link-blue">Esplora le soluzioni &rarr;</a>
-                            </div>
-                            <div class="hc-image">
-                                <img src="https://www.stampli.com/wp-content/uploads/2017/03/Improving-Accounts-Payable-%E2%80%98AP%E2%80%99preciation.png" alt="Persona al pc">
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- TAB 2 -->
-                <div class="tab-pane layout-2">
-                    <div class="layout-header">
-                        <div>
-                            <div class="header-title-with-icon">
-                                <svg class="header-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                                </svg>
-                                <h2>DNA Enterprise</h2>
-                            </div>
-                            <p>Affianchiamo aziende e Pubblica Amministrazione nella Architettura di progetti IT complessi.</p>
-                        </div>
-                        <a href="#" class="btn-orange">SCOPRI LE NOSTRE SOLUZIONI</a>
-                    </div>
-                    <div class="grid-3-cols">
-                        <div class="white-card">
-                            <div class="card-title-wrapper">
-                                <svg class="card-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
-                                </svg>
-                                <h3>DNA Cloud</h3>
-                            </div>
-                            <p>Personalizza la tua infrastruttura IT con le <strong>Architetture in cloud</strong>.</p>
-                            <a href="#" class="link-blue">Scopri Cloud Enterprise &rarr;</a>
-                        </div>
-                        <div class="white-card">
-                            <div class="card-title-wrapper">
-                                <svg class="card-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
-                                    <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
-                                    <line x1="6" y1="6" x2="6.01" y2="6"></line>
-                                    <line x1="6" y1="18" x2="6.01" y2="18"></line>
-                                </svg>
-                                <h3>DNA Infrastrutture</h3>
-                            </div>
-                            <p>Scegli le professionalità nella gestione dell'<strong>infrastruttura IT</strong>.</p>
-                            <a href="#" class="link-blue">Esplora le infrastrutture &rarr;</a>
-                        </div>
-                        <div class="white-card">
-                            <div class="card-title-wrapper">
-                                <svg class="card-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <circle cx="12" cy="12" r="3"></circle>
-                                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
-                                </svg>
-                                <h3>DNA Gestionali</h3>
-                            </div>
-                            <p>Digitalizzare l'azienda è più facile con i migliori <strong>Gestionali</strong>.</p>
-                            <a href="#" class="link-blue">Inizia la digitalizzazione &rarr;</a>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- TAB 3 -->
-                <div class="tab-pane layout-3">
-                    <div class="layout-header">
-                        <div>
-                            <div class="header-title-with-icon">
-                                <svg class="header-svg-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                                    <circle cx="9" cy="7" r="4"></circle>
-                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                                </svg>
-                                <h2>DNA Business</h2>
-                            </div>
-                            <p>Le soluzioni IT per rivenditori e professionisti del web.</p>
-                        </div>
-                        <a href="#" class="btn-orange">MAGGIORI DETTAGLI</a>
-                    </div>
-                    <div class="grid-2-cols">
-                        <div class="white-card card-large-text">
-                            <p>Il <strong>Programma Partner di DNA Business</strong> offre ad aziende e rivenditori una gamma completa di soluzioni IT e strumenti efficienti per la gestione di servizi di architetture enterprise, per clienti e collaboratori. Assicura inoltre un supporto personalizzato e dedicato e programmi di formazione professionali.</p>
-                        </div>
-                        <div class="white-card">
-                            <p><strong>Sei alla ricerca di un Partner innovativo e affidabile per la gestione dei tuoi servizi di Architettura, per ogni esigenza?</strong></p>
-                            <a href="#" class="btn-outline-blue">Scopri tutti i vantaggi</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+
+
+
+
+
+    
+    /* ================= GRIGLIA STRUTTURALE BENTO ================= */
+    .dna-arch-sec .arch-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-auto-rows: minmax(265px, auto);
+      gap: 22px;
+    }
+
+    .dna-arch-sec .a-card {
+      border-radius: var(--radius);
+      padding: 28px 30px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.28s ease, box-shadow 0.28s ease;
+    }
+
+    .dna-arch-sec .a-card::before,
+    .dna-arch-sec .a-card::after {
+      content: '+';
+      position: absolute;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1;
+      pointer-events: none;
+      opacity: 0.45;
+      z-index: 4;
+    }
+
+    .dna-arch-sec .a-card::before { top: 8px; left: 10px; }
+    .dna-arch-sec .a-card::after  { bottom: 8px; right: 10px; }
+
+    .dna-arch-sec .a-card:hover { transform: translateY(-4px); }
+
+    .dna-arch-sec .a-card.dark {
+      background: linear-gradient(165deg, #16181c 0%, #0b0c0e 100%);
+      border: 1px solid var(--line-dark);
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.85);
+      color: #f8fafc;
+    }
+
+    .dna-arch-sec .a-card.dark::before,
+    .dna-arch-sec .a-card.dark::after { color: var(--orange-bright); }
+    .dna-arch-sec .a-card.dark:hover { border-color: var(--orange); }
+
+    .dna-arch-sec .a-card.light {
+      background: #ffffff;
+      border: 1px solid var(--line-light);
+      box-shadow: 0 14px 30px -12px rgba(0, 0, 0, 0.09);
+      color: var(--text-dark);
+    }
+
+    .dna-arch-sec .a-card.light::before,
+    .dna-arch-sec .a-card.light::after { color: #0a0a0a; }
+    .dna-arch-sec .a-card.light:hover { border-color: var(--orange); }
+
+    .dna-arch-sec .a-card.orange-cta {
+      background: linear-gradient(145deg, #f97316 0%, #ea580c 60%, #c2410c 100%);
+      border: 1px solid rgba(255, 255, 255, 0.45);
+      box-shadow: 0 20px 40px -12px rgba(249, 115, 22, 0.45);
+      color: #ffffff;
+    }
+
+    .dna-arch-sec .a-card.orange-cta::before,
+    .dna-arch-sec .a-card.orange-cta::after { color: #ffffff; opacity: 0.75; }
+
+    .dna-arch-sec .a-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding-bottom: 12px;
+      margin-bottom: 14px;
+      border-bottom: 1px dashed rgba(148, 163, 184, 0.25);
+      position: relative;
+      z-index: 3;
+    }
+
+    .dna-arch-sec .a-id {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .dna-arch-sec .a-ico {
+      width: 42px;
+      height: 42px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .dna-arch-sec .a-ico.or { background: var(--orange); color: #fff; }
+    .dna-arch-sec .a-ico.soft {
+      background: rgba(249, 115, 22, 0.1);
+      color: var(--orange);
+      border: 1px solid rgba(249, 115, 22, 0.3);
+    }
+    .dna-arch-sec .a-ico.white {
+      background: rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+
+    .dna-arch-sec .a-card h3 {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin: 0;
+      line-height: 1.15;
+    }
+
+    .dna-arch-sec .a-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 17px;
+      font-weight: 800;
+      opacity: 0.55;
+    }
+
+    .dna-arch-sec .a-desc {
+      font-size: 17.5px;
+      line-height: 1.5;
+      margin: 0 0 16px;
+      position: relative;
+      z-index: 3;
+    }
+
+    .dna-arch-sec .a-card.dark .a-desc { color: #cbd5e1; }
+    .dna-arch-sec .a-card.light .a-desc { color: var(--text-muted); }
+    .dna-arch-sec .a-card.orange-cta .a-desc { color: #ffffff; }
+
+    .dna-arch-sec .a-foot {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: auto;
+      padding-top: 14px;
+      border-top: 1px solid rgba(148, 163, 184, 0.2);
+      position: relative;
+      z-index: 3;
+    }
+
+    .dna-arch-sec .a-meta-txt {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 15px;
+      color: #64748b;
+    }
+
+    .dna-arch-sec .a-link {
+      font-size: 16.5px;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap 0.2s, color 0.2s;
+    }
+
+    .dna-arch-sec .a-card.dark .a-link { color: var(--cyan); }
+    .dna-arch-sec .a-card.dark .a-link:hover { color: var(--orange-bright); gap: 10px; }
+    .dna-arch-sec .a-card.light .a-link { color: var(--text-dark); }
+    .dna-arch-sec .a-card.light .a-link:hover { color: var(--orange); gap: 10px; }
+
+    /* ================= POSIZIONAMENTO ASIMMETRICO ================= */
+    .dna-arch-sec .m-01 { grid-column: 1 / 5; grid-row: 1 / 3; }
+    .dna-arch-sec .m-03 { grid-column: 5 / 13; grid-row: 1 / 2; }
+    .dna-arch-sec .m-02 { grid-column: 5 / 9; grid-row: 2 / 3; }
+    .dna-arch-sec .m-05 { grid-column: 9 / 13; grid-row: 2 / 3; }
+    .dna-arch-sec .m-04 { grid-column: 1 / 6; grid-row: 3 / 4; }
+    .dna-arch-sec .m-06 { grid-column: 6 / 13; grid-row: 3 / 4; }
+    .dna-arch-sec .m-07 { grid-column: 1 / 9; grid-row: 4 / 5; }
+    .dna-arch-sec .m-08 { grid-column: 9 / 13; grid-row: 4 / 5; }
+
+    /* ================= COMPONENTI INTERNI ================= */
+    .dna-arch-sec .arch-helix {
+      position: absolute;
+      right: -12px;
+      top: 56px;
+      width: 175px;
+      height: 300px;
+      opacity: 0.22;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .dna-arch-sec .kpi-trio {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin: 12px 0;
+      position: relative;
+      z-index: 3;
+    }
+
+    .dna-arch-sec .kpi-cell {
+      background: rgba(10, 11, 13, 0.78);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 6px;
+      padding: 12px 8px;
+      text-align: center;
+    }
+
+    .dna-arch-sec .kpi-num {
+      display: block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 23px;
+      font-weight: 800;
+      color: var(--orange-bright);
+      line-height: 1.1;
+    }
+
+    .dna-arch-sec .kpi-lbl {
+      display: block;
+      font-size: 14.5px;
+      color: #cbd5e1;
+      margin-top: 4px;
+      line-height: 1.25;
+    }
+
+    .dna-arch-sec .dir-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 10px 0;
+      position: relative;
+      z-index: 3;
+    }
+
+    .dna-arch-sec .dir-link {
+      font-size: 15px;
+      font-weight: 700;
+      color: #f8fafc;
+      background: rgba(10, 11, 13, 0.72);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      padding: 6px 12px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .dna-arch-sec .dir-link:hover {
+      border-color: var(--orange);
+      background: rgba(249, 115, 22, 0.22);
+    }
+
+    .dna-arch-sec .m-03-split {
+      display: grid;
+      grid-template-columns: 45% 55%;
+      gap: 24px;
+      align-items: center;
+      height: 100%;
+      position: relative;
+      z-index: 3;
+    }
+
+    .dna-arch-sec .sector-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 10px;
+    }
+
+    .dna-arch-sec .s-chip {
+      font-size: 14.5px;
+      font-weight: 700;
+      color: #e2e8f0;
+      background: rgba(10, 11, 13, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      padding: 5px 11px;
+      border-radius: 4px;
+    }
+
+    .dna-arch-sec .cad-monitor {
+      background: rgba(10, 11, 13, 0.85);
+      backdrop-filter: blur(6px);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 6px;
+      padding: 16px 18px;
+    }
+
+    .dna-arch-sec .cad-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .dna-arch-sec .cad-stat {
+      background: rgba(255, 255, 255, 0.04);
+      border-left: 2px solid var(--orange);
+      padding: 6px 10px;
+    }
+
+    .dna-arch-sec .cad-stat span {
+      display: block;
+      font-size: 14px;
+      color: #94a3b8;
+    }
+
+    .dna-arch-sec .cad-stat strong {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 19px;
+      color: #ffffff;
+    }
+
+    .dna-arch-sec .cad-stat strong em {
+      font-style: normal;
+      color: var(--emerald);
+      font-size: 15px;
+    }
+
+    .dna-arch-sec .arch-stack {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 3;
+    }
+
+    .dna-arch-sec .st-box {
+      background: rgba(248, 250, 252, 0.92);
+      backdrop-filter: blur(4px);
+      border: 1px solid #cbd5e1;
+      border-left: 3px solid var(--orange);
+      border-radius: 4px;
+      padding: 8px 12px;
+      font-size: 15px;
+      font-weight: 700;
+      color: #0a0a0a;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .dna-arch-sec .rd-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 3;
+    }
+
+    .dna-arch-sec .rd-box {
+      background: rgba(10, 11, 13, 0.78);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 4px;
+      padding: 8px 10px;
+      font-size: 15px;
+      font-weight: 700;
+      color: #f8fafc;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+    }
+
+    .dna-arch-sec .rd-box span {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      color: var(--orange-bright);
+    }
+
+    .dna-arch-sec .brand-spec {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 3;
+    }
+
+    .dna-arch-sec .spec-badge {
+      background: #111315;
+      color: #ffffff;
+      border: 1px solid var(--orange);
+      border-radius: 6px;
+      padding: 12px 16px;
+    }
+
+    .dna-arch-sec .spec-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      flex: 1;
+    }
+
+    .dna-arch-sec .sp-tag {
+      background: rgba(241, 245, 249, 0.92);
+      border: 1px solid #cbd5e1;
+      border-radius: 4px;
+      padding: 6px 10px;
+      font-size: 15px;
+      font-weight: 700;
+      color: #0a0a0a;
+    }
+
+    .dna-arch-sec .strat-matrix {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 3;
+    }
+
+    .dna-arch-sec .sm-col {
+      background: rgba(248, 250, 252, 0.92);
+      backdrop-filter: blur(4px);
+      border: 1px solid #cbd5e1;
+      border-top: 3px solid #111315;
+      border-radius: 4px;
+      padding: 10px;
+      transition: all 0.2s ease;
+    }
+
+    .dna-arch-sec .sm-col:hover {
+      border-top-color: var(--orange);
+      background: #fff7ed;
+    }
+
+    .dna-arch-sec .sm-col b {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14.5px;
+      color: var(--orange);
+      display: block;
+    }
+
+    .dna-arch-sec .sm-col strong {
+      font-size: 16px;
+      color: #0a0a0a;
+      display: block;
+      margin-top: 3px;
+    }
+
+    .dna-arch-sec .sm-col small {
+      font-size: 13.5px;
+      color: #475569;
+      display: block;
+      margin-top: 2px;
+    }
+
+    .dna-arch-sec .div-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      position: relative;
+      z-index: 3;
+    }
+
+    .dna-arch-sec .d-unit {
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+
+    .dna-arch-sec .d-unit:hover {
+      transform: translateY(-4px);
+      border-color: var(--orange);
+    }
+
+    .dna-arch-sec .d-unit-top {
+      padding: 12px;
+      min-height: 104px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    .dna-arch-sec .tag-pill {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: 3px;
+    }
+
+    .dna-arch-sec .tp-new { background: #10b981; color: #050505; }
+    .dna-arch-sec .tp-pop { background: #f97316; color: #ffffff; }
+    .dna-arch-sec .tp-ai  { background: #a855f7; color: #ffffff; }
+    .dna-arch-sec .tp-bi  { background: #38bdf8; color: #050505; }
+
+    .dna-arch-sec .d-unit-bot {
+      padding: 12px;
+      border-top: 1px solid #e2e8f0;
+      background: #f8fafc;
+    }
+
+    .dna-arch-sec .d-unit-bot strong {
+      display: block;
+      font-size: 16.5px;
+      font-weight: 800;
+      color: #0a0a0a;
+    }
+
+    .dna-arch-sec .d-unit-bot small {
+      display: block;
+      font-size: 14px;
+      color: #475569;
+      margin-top: 3px;
+      line-height: 1.3;
+    }
+
+    .dna-arch-sec .sup-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 14px;
+      position: relative;
+      z-index: 3;
+    }
+
+    .dna-arch-sec .sup-item {
+      background: rgba(255, 255, 255, 0.22);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      color: #ffffff;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 5px 11px;
+      border-radius: 4px;
+      text-decoration: none;
+    }
+
+    .dna-arch-sec .sup-item:hover { background: rgba(255, 255, 255, 0.35); }
+
+    .dna-arch-sec .btn-arch-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: #111315;
+      color: #ffffff;
+      font-size: 17px;
+      font-weight: 800;
+      padding: 12px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .dna-arch-sec .btn-arch-cta:hover {
+      transform: translateY(-2px);
+      background: #1c1f23;
+    }
+
+    /* ================= FASCIA PIANI & INVESTIMENTO ================= */
+    .dna-arch-sec .pricing-zone {
+      margin-top: 44px;
+      padding-top: 36px;
+      border-top: 2px solid #111315;
+    }
+
+    .dna-arch-sec .pr-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 28px;
+    }
+
+    .dna-arch-sec .pr-kicker {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 6px;
+    }
+
+    .dna-arch-sec .pr-title {
+      font-size: clamp(28px, 3.4vw, 40px);
+      font-weight: 800;
+      color: #0a0a0a;
+      letter-spacing: -0.025em;
+      margin: 0;
+    }
+
+    .dna-arch-sec .pr-subtitle {
+      font-size: 18px;
+      color: #475569;
+      margin: 6px 0 0;
+      max-width: 780px;
+    }
+
+    .dna-arch-sec .pr-toggle {
+      display: inline-flex;
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 4px;
+      gap: 4px;
+    }
+
+    .dna-arch-sec .pr-btn-mode {
+      border: none;
+      background: transparent;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14.5px;
+      font-weight: 700;
+      padding: 10px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      color: #475569;
+      transition: all 0.2s ease;
+    }
+
+    .dna-arch-sec .pr-btn-mode.active {
+      background: #111315;
+      color: #ffffff;
+    }
+
+    .dna-arch-sec .pr-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .dna-arch-sec .pr-card {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 28px 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .dna-arch-sec .pr-card > div,
+    .dna-arch-sec .pr-card > a {
+      position: relative;
+      z-index: 2;
+    }
+
+    .dna-arch-sec .pr-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--orange);
+      box-shadow: 0 18px 36px -12px rgba(0, 0, 0, 0.14);
+    }
+
+    .dna-arch-sec .pr-card.featured {
+      background: linear-gradient(165deg, #16181c 0%, #0b0c0e 100%);
+      border: 2px solid var(--orange);
+      color: #ffffff;
+      box-shadow: 0 22px 44px -12px rgba(0, 0, 0, 0.35);
+    }
+
+    .dna-arch-sec .pr-top-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .dna-arch-sec .pr-div-name {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 15px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--orange);
+    }
+
+    .dna-arch-sec .pr-card h4 {
+      font-size: 23px;
+      font-weight: 800;
+      margin: 0 0 8px;
+      line-height: 1.2;
+    }
+
+    .dna-arch-sec .pr-desc {
+      font-size: 16.5px;
+      line-height: 1.45;
+      color: #475569;
+      margin: 0 0 18px;
+    }
+
+    .dna-arch-sec .pr-card.featured .pr-desc { color: #cbd5e1; }
+
+    .dna-arch-sec .pr-price-box {
+      padding: 16px 0;
+      margin-bottom: 18px;
+      border-top: 1px dashed rgba(148, 163, 184, 0.35);
+      border-bottom: 1px dashed rgba(148, 163, 184, 0.35);
+    }
+
+    .dna-arch-sec .pr-from {
+      display: block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      color: #64748b;
+      text-transform: uppercase;
+    }
+
+    .dna-arch-sec .pr-card.featured .pr-from { color: #94a3b8; }
+
+    .dna-arch-sec .pr-amount {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 34px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+    }
+
+    .dna-arch-sec .pr-vat {
+      display: block;
+      font-size: 14.5px;
+      color: #64748b;
+      margin-top: 4px;
+    }
+
+    .dna-arch-sec .pr-card.featured .pr-vat { color: #94a3b8; }
+
+    .dna-arch-sec .pr-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .dna-arch-sec .pr-features li {
+      font-size: 16px;
+      line-height: 1.35;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .dna-arch-sec .pr-features li::before {
+      content: '✓';
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 800;
+      color: var(--emerald);
+      flex-shrink: 0;
+    }
+
+    .dna-arch-sec .pr-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 13px 18px;
+      border-radius: 6px;
+      font-size: 16.5px;
+      font-weight: 800;
+      text-decoration: none;
+      background: #111315;
+      color: #ffffff;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .dna-arch-sec .pr-cta:hover {
+      background: var(--orange);
+      transform: translateY(-2px);
+    }
+
+    .dna-arch-sec .pr-card.featured .pr-cta {
+      background: var(--orange);
+      color: #ffffff;
+    }
+
+    .dna-arch-sec .pr-card.featured .pr-cta:hover { background: #ea580c; }
+
+    /* ================= FOOTER BAR ================= */
+    .dna-arch-sec .arch-foot {
+      margin-top: 34px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(10, 10, 10, 0.16);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #334155;
+    }
+
+    /* ================= RESPONSIVE ================= */
+    @media (max-width: 1380px) {
+      .dna-arch-sec .m-01, .dna-arch-sec .m-03,
+      .dna-arch-sec .m-04, .dna-arch-sec .m-06,
+      .dna-arch-sec .m-07 { grid-column: 1 / 13; grid-row: auto; }
+      .dna-arch-sec .m-02, .dna-arch-sec .m-05,
+      .dna-arch-sec .m-08 { grid-column: span 6; grid-row: auto; }
+      .dna-arch-sec .m-03-split { grid-template-columns: 1fr; }
+      .dna-arch-sec .pr-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 960px) {
+      .dna-arch-sec .arch-title-box {
+        text-align: left;
+        margin-left: 0;
+      }
+      .dna-arch-sec .arch-lead {
+        margin-left: 0;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .dna-arch-sec { padding: 48px 16px 44px; }
+      .dna-arch-sec .m-02, .dna-arch-sec .m-05,
+      .dna-arch-sec .m-08 { grid-column: 1 / 13; }
+      .dna-arch-sec .div-4,
+      .dna-arch-sec .pr-grid { grid-template-columns: 1fr; }
+      .dna-arch-sec .strat-matrix { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 540px) {
+      .dna-arch-sec .strat-matrix,
+      .dna-arch-sec .kpi-trio { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <div class="arch-wrap">
+    <!-- HEADER ARCHITETTONICO INVERTITO: VOCI A SINISTRA, TITOLO A DESTRA -->
+    <div class="arch-top">
+      <div class="arch-pillars">
+        <span>UI/UX Design</span>
+        <span>Cloud &amp; AI</span>
+        <span>Sviluppo</span>
+        <span>Strategia</span>
+      </div>
+
+      <div class="arch-title-box">
+        <div class="arch-coord">
+          <i></i>
+          SYS.ARCH // DNA INFORMATICA ECOSYSTEM
         </div>
-    </main>
-
-   <!-- SEZIONE BENTO GRID (Presentazione Servizi) -->
-<div class="section-divider">
-    <div class="divider-line"></div>
-    <div class="divider-dot"></div>
-    <div class="divider-line"></div>
-</div>
-
-
-
-
-
-
-
-
-
-<!-- SEZIONE BANNER SLIDER (3 Slide - Design) -->
-<section class="banner-slider-section">
-    <div class="banner-slider-wrapper">
-        
-        <div class="banner-track" id="bannerTrack">
-            
-            <!-- Slide 1: UI/UX Design -->
-            <div class="banner-slide">
-                <div class="banner-slide-content">
-                    <span class="banner-tag">ESPERIENZA UTENTE</span>
-                    <h1>Interfacce che gli utenti<br><span>amano usare.</span></h1>
-                    <p>Progettiamo UI/UX intuitive, accessibili e belle da vedere. Ogni interazione è studiata per rendere l'esperienza fluida e memorabile.</p>
-                    <div class="banner-cta">
-                        <a href="#" class="banner-btn-primary">PRENOTA IL SERVIZIO</a>
-                        <a href="#" class="banner-btn-secondary">SCOPRI DI PIÙ</a>
-                    </div>
-                </div>
-                <div class="banner-slide-price">
-                    <span class="price-label">A PARTIRE DA</span>
-                    <div class="price-value">€79<span>/ora</span></div>
-                    <span class="price-note">UI/UX Design</span>
-                </div>
-            </div>
-
-            <!-- Slide 2: Branding & Identità Visiva -->
-            <div class="banner-slide">
-                <div class="banner-slide-content">
-                    <span class="banner-tag">IDENTITÀ VISIVA</span>
-                    <h1>Un brand che si fa<br><span>riconoscere al primo sguardo.</span></h1>
-                    <p>Logo, palette colori, tipografia e linee guida: costruiamo l'identità visiva del tuo marchio per renderlo unico e coerente su ogni canale.</p>
-                    <div class="banner-cta">
-                        <a href="#" class="banner-btn-primary">PRENOTA IL SERVIZIO</a>
-                        <a href="#" class="banner-btn-secondary">SCOPRI DI PIÙ</a>
-                    </div>
-                </div>
-                <div class="banner-slide-price">
-                    <span class="price-label">A PARTIRE DA</span>
-                    <div class="price-value">€499<span>/progetto</span></div>
-                    <span class="price-note">Brand Identity</span>
-                </div>
-            </div>
-
-            <!-- Slide 3: Design System -->
-            <div class="banner-slide">
-                <div class="banner-slide-content">
-                    <span class="banner-tag">DESIGN SYSTEM</span>
-                    <h1>Un sistema di design<br><span>scalabile e coerente.</span></h1>
-                    <p>Componenti riutilizzabili, stile uniforme e linee guida chiare. Il nostro design system aiuta il tuo team a costruire interfacce coerenti in metà del tempo.</p>
-                    <div class="banner-cta">
-                        <a href="#" class="banner-btn-primary">PRENOTA IL SERVIZIO</a>
-                        <a href="#" class="banner-btn-secondary">SCOPRI DI PIÙ</a>
-                    </div>
-                </div>
-                <div class="banner-slide-price">
-                    <span class="price-label">A PARTIRE DA</span>
-                    <div class="price-value">€1.299<span>/progetto</span></div>
-                    <span class="price-note">Design System</span>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- Frecce -->
-        <button class="banner-arrow prev" onclick="cambiaBannerSlide(-1)">&#10094;</button>
-        <button class="banner-arrow next" onclick="cambiaBannerSlide(1)">&#10095;</button>
-
-        <!-- Dots -->
-        <div class="banner-dots">
-            <span class="banner-dot active" onclick="vaiABannerSlide(0)"></span>
-            <span class="banner-dot" onclick="vaiABannerSlide(1)"></span>
-            <span class="banner-dot" onclick="vaiABannerSlide(2)"></span>
-        </div>
+        <h2 class="arch-h2">Architettura &amp; Ecosistema <span>DNA</span></h2>
+        <p class="arch-lead">
+          Design di interfacce, sistemi distribuiti, data visualization e consulenza UX per progettare piattaforme digitali scalabili.
+        </p>
+      </div>
     </div>
-</section>
 
-   <!-- SEZIONE BENTO GRID (Presentazione Servizi) -->
-<div class="section-divider">
-    <div class="divider-line"></div>
-    <div class="divider-dot"></div>
-    <div class="divider-line"></div>
-</div>
+    <!-- GRIGLIA MODULARE ASIMMETRICA -->
+    <div class="arch-grid">
+      <!-- 01: BENVENUTI -->
+      <article class="a-card dark m-01">
+        <div class="card-fade-img fade-dark-right" style="background-image:url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=80');"></div>
 
-<section class="bento-section">
-    <div class="bento-container">
-        
-        <!-- Blocco 1: Titolo e descrizione -->
-        <div class="bento-card bento-main">
-            <span class="bento-tag">DNA Informatica</span>
-            <h2>Soluzioni digitali<br>per un mondo che cambia.</h2>
-            <p>Progettiamo, sviluppiamo e gestiamo infrastrutture IT sicure e performanti per aziende che vogliono crescere. Un unico partner, infinite possibilità.</p>
-            <a href="#" class="bento-link">Scopri chi siamo &rarr;</a>
+        <svg class="arch-helix" viewBox="0 0 120 260" fill="none">
+          <path d="M25 10 C25 65, 95 75, 95 130 C95 185, 25 195, 25 250" stroke="#38bdf8" stroke-width="3" stroke-linecap="square"/>
+          <path d="M95 10 C95 65, 25 75, 25 130 C25 185, 95 195, 95 250" stroke="#f97316" stroke-width="3" stroke-linecap="square"/>
+          <line x1="35" y1="35" x2="85" y2="35" stroke="#fff" stroke-width="1.5" stroke-dasharray="4 4"/>
+          <line x1="45" y1="75" x2="75" y2="75" stroke="#fff" stroke-width="1.5"/>
+          <line x1="45" y1="185" x2="75" y2="185" stroke="#fff" stroke-width="1.5"/>
+          <line x1="35" y1="225" x2="85" y2="225" stroke="#fff" stroke-width="1.5" stroke-dasharray="4 4"/>
+        </svg>
+
+        <div>
+          <div class="a-head">
+            <div class="a-id">
+              <div class="a-ico or">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3">
+                  <path d="M3 10.5L12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1v-9.5z"/>
+                </svg>
+              </div>
+              <h3>Benvenuti</h3>
+            </div>
+            <span class="a-num">[01]</span>
+          </div>
+          <p class="a-desc">
+            La nostra storia e i nostri valori: designer, sviluppatori e architetti uniti da una visione condivisa su qualità e certificazioni UX.
+          </p>
         </div>
 
-        <!-- Blocco 2: CTA -->
-        <div class="bento-card bento-cta">
-            <h3>Pronto a iniziare?</h3>
-            <p>Prenota una consulenza gratuita con i nostri esperti.</p>
-            <a href="#" class="bento-btn">CONTATTACI ORA</a>
+        <div class="kpi-trio">
+          <div class="kpi-cell">
+            <span class="kpi-num arch-cnt" data-val="20">20+</span>
+            <span class="kpi-lbl">Anni esperienza</span>
+          </div>
+          <div class="kpi-cell">
+            <span class="kpi-num arch-cnt" data-val="100">100+</span>
+            <span class="kpi-lbl">Clienti &amp; Partner</span>
+          </div>
+          <div class="kpi-cell">
+            <span class="kpi-num arch-cnt" data-val="250">250+</span>
+            <span class="kpi-lbl">Case Study</span>
+          </div>
         </div>
 
-               <!-- Blocco 3: Lista servizi -->
-                <!-- Blocco 3: Lista servizi -->
-        <div class="bento-card bento-services">
-            <h4>Design</h4>
-            <ul class="bento-list">
-                <li><span>01</span> UI/UX</li>
-                <li><span>02</span> Branding</li>
-                <li><span>03</span> Web Design</li>
-                <li><span>04</span> Graphic Design</li>
+        <div class="dir-links">
+          <a href="#chi-siamo" class="dir-link">Chi Siamo</a>
+          <a href="#team" class="dir-link">Team</a>
+          <a href="#certificazioni" class="dir-link">Certificazioni</a>
+          <a href="#partner" class="dir-link">Partner</a>
+          <a href="#lavora-con-noi" class="dir-link">Lavora con noi</a>
+        </div>
+
+        <div class="a-foot">
+          <span class="a-meta-txt" style="color:#94a3b8;">STORIA • VISIONE</span>
+          <a href="#benvenuti" class="a-link">Scopri Chi Siamo →</a>
+        </div>
+      </article>
+
+      <!-- 03: STUDI & ANALISI DI SETTORE -->
+      <article class="a-card dark m-03">
+        <div class="card-fade-img fade-dark-right" style="background-image:url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80');"></div>
+
+        <div class="m-03-split">
+          <div style="display:flex; flex-direction:column; justify-content:space-between; height:100%;">
+            <div>
+              <div class="a-head">
+                <div class="a-id">
+                  <div class="a-ico or">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3">
+                      <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>
+                    </svg>
+                  </div>
+                  <h3>Studi &amp; Analisi di Settore</h3>
+                </div>
+                <span class="a-num">[03]</span>
+              </div>
+              <p class="a-desc" style="margin-bottom:8px;">
+                Dashboard, Business Intelligence e ricerche verticali su mercati complessi.
+              </p>
+              <div class="sector-list">
+                <span class="s-chip">Finanza</span>
+                <span class="s-chip">Sanità</span>
+                <span class="s-chip">Manifattura 4.0</span>
+                <span class="s-chip">Retail</span>
+                <span class="s-chip">PA &amp; Energia</span>
+              </div>
+            </div>
+            <div class="a-foot" style="padding-top:10px; margin-top:12px;">
+              <a href="#studi" class="a-link">Analisi Dati &amp; Whitepaper →</a>
+            </div>
+          </div>
+
+          <div class="cad-monitor">
+            <div class="cad-stats">
+              <div class="cad-stat"><span>Analisi Dati</span><strong>+42% <em>▲</em></strong></div>
+              <div class="cad-stat"><span>E-commerce</span><strong>+32% <em>▲</em></strong></div>
+              <div class="cad-stat"><span>Cloud &amp; AI</span><strong>+27% <em>▲</em></strong></div>
+            </div>
+            <svg viewBox="0 0 360 66" style="width:100%; height:66px; overflow:visible;">
+              <defs>
+                <linearGradient id="archWave" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#f97316" stop-opacity="0.4"/>
+                  <stop offset="100%" stop-color="#f97316" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <line x1="0" y1="22" x2="360" y2="22" stroke="rgba(255,255,255,0.1)"/>
+              <line x1="0" y1="44" x2="360" y2="44" stroke="rgba(255,255,255,0.1)"/>
+              <path d="M0,56 L60,48 L120,42 L180,28 L240,22 L300,12 L360,6 L360,66 L0,66 Z" fill="url(#archWave)"/>
+              <polyline fill="none" stroke="#f97316" stroke-width="2.5" points="0,56 60,48 120,42 180,28 240,22 300,12 360,6"/>
+              <polyline fill="none" stroke="#38bdf8" stroke-width="1.8" stroke-dasharray="4 4" points="0,60 60,52 120,46 180,34 240,28 300,18 360,14"/>
+              <rect x="356" y="2" width="8" height="8" fill="#f97316"/>
+            </svg>
+          </div>
+        </div>
+      </article>
+
+      <!-- 02: INTRODUZIONE -->
+      <article class="a-card light m-02">
+        <div class="card-fade-img fade-light-right" style="background-image:url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80');"></div>
+
+        <div>
+          <div class="a-head">
+            <div class="a-id">
+              <div class="a-ico soft">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3">
+                  <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+                </svg>
+              </div>
+              <h3>Introduzione</h3>
+            </div>
+            <span class="a-num">[02]</span>
+          </div>
+          <p class="a-desc">Come lavoriamo e cosa facciamo: sviluppo end-to-end dal design system all&apos;infrastruttura.</p>
+        </div>
+
+        <div class="arch-stack">
+          <div class="st-box"><span>Frontend</span><span>01</span></div>
+          <div class="st-box"><span>Backend</span><span>02</span></div>
+          <div class="st-box"><span>Mobile &amp; API</span><span>03</span></div>
+          <div class="st-box"><span>DevOps &amp; DB</span><span>04</span></div>
+        </div>
+
+        <div class="a-foot">
+          <span class="a-meta-txt">QA &amp; TESTING</span>
+          <a href="#introduzione" class="a-link">Workflow →</a>
+        </div>
+      </article>
+
+      <!-- 05: RICERCA & SEO -->
+      <article class="a-card dark m-05">
+        <div class="card-fade-img fade-dark-right" style="background-image:url('https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=800&q=80');"></div>
+
+        <div>
+          <div class="a-head">
+            <div class="a-id">
+              <div class="a-ico or">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3">
+                  <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                </svg>
+              </div>
+              <h3>Ricerca &amp; SEO</h3>
+            </div>
+            <span class="a-num">[05]</span>
+          </div>
+          <p class="a-desc">SEO per interfacce, keyword research, analisi competitor e tecnologie di frontiera.</p>
+        </div>
+
+        <div class="rd-grid">
+          <div class="rd-box">SEO &amp; Keyword <span>TOP</span></div>
+          <div class="rd-box">AI &amp; Quantum <span>R&amp;D</span></div>
+          <div class="rd-box">IoT &amp; Edge <span>5G</span></div>
+          <div class="rd-box">VR/AR &amp; Web3 <span>LAB</span></div>
+        </div>
+
+        <div class="a-foot">
+          <span class="a-meta-txt" style="color:#94a3b8;">R&amp;D LAB</span>
+          <a href="#ricerca" class="a-link">Esplora →</a>
+        </div>
+      </article>
+
+      <!-- 04: LOGO & BRAND -->
+      <article class="a-card light m-04">
+        <div class="card-fade-img fade-light-right" style="background-image:url('https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=900&q=80');"></div>
+
+        <div>
+          <div class="a-head">
+            <div class="a-id">
+              <div class="a-ico soft">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3">
+                  <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.9 0 1.6-.7 1.6-1.6 0-.4-.2-.8-.4-1.1-.3-.3-.4-.7-.4-1.1 0-.9.7-1.6 1.6-1.6h2c3 0 5.6-2.5 5.6-5.6C22 6 17.5 2 12 2z"/>
+                </svg>
+              </div>
+              <h3>Logo &amp; Brand</h3>
+            </div>
+            <span class="a-num">[04]</span>
+          </div>
+          <p class="a-desc">Identità visiva, posizionamento, design system, motion design e modellazione 3D per interfacce.</p>
+        </div>
+
+        <div class="brand-spec">
+          <div class="spec-badge">
+            <div style="font-size:23px; font-weight:800; letter-spacing:-0.03em;">
+              <span style="color:#f97316;">D</span>NA
+            </div>
+            <div style="font-family:'JetBrains Mono', monospace; font-size:13px; color:#94a3b8; margin-top:2px;">DESIGN SYSTEM</div>
+          </div>
+          <div class="spec-tags">
+            <span class="sp-tag">UI/UX</span>
+            <span class="sp-tag">Branding</span>
+            <span class="sp-tag">Web Design</span>
+            <span class="sp-tag">Motion</span>
+            <span class="sp-tag">Prototyping</span>
+            <span class="sp-tag">3D &amp; Illus.</span>
+          </div>
+        </div>
+
+        <div class="a-foot">
+          <span class="a-meta-txt">UX WRITING &amp; IDENTITÀ</span>
+          <a href="#logo-brand" class="a-link">Vedi Design System →</a>
+        </div>
+      </article>
+
+      <!-- 06: STRATEGIA -->
+      <article class="a-card light m-06">
+        <div class="card-fade-img fade-light-right" style="background-image:url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1100&q=80');"></div>
+
+        <div>
+          <div class="a-head">
+            <div class="a-id">
+              <div class="a-ico soft">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                </svg>
+              </div>
+              <h3>Strategia</h3>
+            </div>
+            <span class="a-num">[06]</span>
+          </div>
+          <p class="a-desc">Piani d&apos;azione su misura: design strategy, UX research, architetture Zero Trust e piattaforme enterprise.</p>
+        </div>
+
+        <div class="strat-matrix">
+          <div class="sm-col"><b>01</b><strong>Consulenza</strong><small>UX Research</small></div>
+          <div class="sm-col"><b>02</b><strong>CRM &amp; ERP</strong><small>Processi</small></div>
+          <div class="sm-col"><b>03</b><strong>Zero Trust</strong><small>Sicurezza</small></div>
+          <div class="sm-col"><b>04</b><strong>Data Center</strong><small>Cloud Native</small></div>
+          <div class="sm-col" style="border-top-color:var(--orange); background:#fff7ed;"><b>05</b><strong>E-commerce</strong><small>Crescita</small></div>
+        </div>
+
+        <div class="a-foot">
+          <span class="a-meta-txt">SMART WORKING • AUDIT • FORMAZIONE</span>
+          <a href="#strategia" class="a-link">Costruisci il piano →</a>
+        </div>
+      </article>
+
+      <!-- 07: PROGETTI & DIVISIONI DNA -->
+      <article class="a-card light m-07">
+        <div class="card-fade-img fade-light-right" style="background-image:url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80');"></div>
+
+        <div class="a-head">
+          <div class="a-id">
+            <div class="a-ico soft">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3">
+                <rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/>
+              </svg>
+            </div>
+            <div>
+              <h3>Progetti &amp; Divisioni DNA</h3>
+            </div>
+          </div>
+          <span class="a-num">[07]</span>
+        </div>
+
+        <div class="div-4">
+          <a href="#dna-web" class="d-unit">
+            <div class="d-unit-top" style="background-image:linear-gradient(155deg, rgba(17,19,21,0.9), rgba(28,31,36,0.72)), url('https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=600&q=80'); color:#fff;">
+              <div style="display:flex; justify-content:space-between; align-items:center;">
+                <span style="font-family:'JetBrains Mono', monospace; font-size:13.5px; font-weight:800; color:#38bdf8;">UI/WEB</span>
+                <span class="tag-pill tp-new">New</span>
+              </div>
+              <div style="font-size:15.5px; font-weight:700; line-height:1.25;">Siti web responsive</div>
+            </div>
+            <div class="d-unit-bot">
+              <strong>DNA Web</strong>
+              <small>Design responsive &amp; UX</small>
+            </div>
+          </a>
+
+          <a href="#dna-software" class="d-unit">
+            <div class="d-unit-top" style="background-image:linear-gradient(155deg, rgba(241,245,249,0.92), rgba(226,232,240,0.75)), url('https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=600&q=80');">
+              <div style="display:flex; justify-content:space-between; align-items:center;">
+                <span style="font-family:'JetBrains Mono', monospace; font-size:13.5px; font-weight:800; color:#0a0a0a;">SYSTEM</span>
+                <span class="tag-pill tp-pop">Popolare</span>
+              </div>
+              <div style="font-size:15.5px; font-weight:700; color:#0a0a0a; line-height:1.25;">Gestionali &amp; App</div>
+            </div>
+            <div class="d-unit-bot">
+              <strong>DNA Software</strong>
+              <small>Design System &amp; ERP</small>
+            </div>
+          </a>
+
+          <a href="#dna-cloud" class="d-unit">
+            <div class="d-unit-top" style="background-image:linear-gradient(155deg, rgba(17,19,21,0.9), rgba(30,27,75,0.68)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80'); color:#fff;">
+              <div style="display:flex; justify-content:space-between; align-items:center;">
+                <span style="font-family:'JetBrains Mono', monospace; font-size:13.5px; font-weight:800; color:#c084fc;">INFRA</span>
+                <span class="tag-pill tp-ai">AI</span>
+              </div>
+              <div style="font-size:15.5px; font-weight:700; line-height:1.25;">Sistemi distribuiti</div>
+            </div>
+            <div class="d-unit-bot">
+              <strong>DNA Cloud</strong>
+              <small>Cloud &amp; Infrastructure</small>
+            </div>
+          </a>
+
+          <a href="#dna-marketing" class="d-unit">
+            <div class="d-unit-top" style="background-image:linear-gradient(155deg, rgba(17,19,21,0.9), rgba(28,31,36,0.72)), url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80'); color:#fff;">
+              <div style="display:flex; justify-content:space-between; align-items:center;">
+                <span style="font-family:'JetBrains Mono', monospace; font-size:13.5px; color:#38bdf8; font-weight:800;">DATA</span>
+                <span class="tag-pill tp-bi">BI</span>
+              </div>
+              <div style="font-size:15.5px; font-weight:700; line-height:1.25;">Analytics &amp; Business</div>
+            </div>
+            <div class="d-unit-bot">
+              <strong>DNA Marketing</strong>
+              <small>Data viz &amp; Business UX</small>
+            </div>
+          </a>
+        </div>
+      </article>
+
+      <!-- 08: CONTATTI & SUPPORTO -->
+      <article class="a-card orange-cta m-08">
+        <div class="card-fade-img fade-orange-right" style="background-image:url('https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=800&q=80');"></div>
+
+        <div>
+          <div class="a-head" style="border-bottom-color:rgba(255,255,255,0.3);">
+            <div class="a-id">
+              <div class="a-ico white">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3">
+                  <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                </svg>
+              </div>
+              <h3>Contatti &amp; Supporto</h3>
+            </div>
+            <span class="a-num" style="opacity:0.85;">[08]</span>
+          </div>
+          <p class="a-desc" style="margin-bottom:14px;">
+            Parla con il nostro team. Siamo qui per aiutarti su interfacce, sistemi e nuovi progetti.
+          </p>
+          <div class="sup-grid">
+            <a href="#help-desk" class="sup-item">Help Desk</a>
+            <a href="#ticket" class="sup-item">Ticket</a>
+            <a href="#documentazione" class="sup-item">Documentazione</a>
+            <a href="#status" class="sup-item">● Status</a>
+          </div>
+        </div>
+
+        <div class="a-foot" style="border-top-color:rgba(255,255,255,0.3);">
+          <span style="font-family:'JetBrains Mono', monospace; font-size:15px; font-weight:700;">AUDIT &amp; MANUTENZIONE</span>
+          <a href="#contatti" class="btn-arch-cta">Parla con il team →</a>
+        </div>
+      </article>
+    </div>
+
+    <!-- ================= FASCIA PIANI & INVESTIMENTO ================= -->
+    <div id="piani-dna" class="pricing-zone">
+      <div class="pr-header">
+        <div>
+          <div class="pr-kicker">[09] // MODULI &amp; INVESTIMENTO TRASPARENTE</div>
+          <h3 class="pr-title">Soluzioni Modulari &amp; Listino Indicativo</h3>
+          <p class="pr-subtitle">
+            Ogni progetto nasce su misura, ma partiamo da basi chiare: scegli tra sviluppo chiavi in mano o formula gestita con manutenzione e assistenza continua.
+          </p>
+        </div>
+
+        <div class="pr-toggle" role="group" aria-label="Modalità di investimento">
+          <button type="button" class="pr-btn-mode active" data-plan-mode="project">Progetto Chiavi in Mano</button>
+          <button type="button" class="pr-btn-mode" data-plan-mode="monthly">Canone Gestito / Mese</button>
+        </div>
+      </div>
+
+      <div class="pr-grid">
+        <!-- PIANO 1: DNA WEB -->
+        <div class="pr-card">
+          <div class="card-fade-img fade-light-right" style="background-image:url('https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=700&q=80');"></div>
+          <div>
+            <div class="pr-top-row">
+              <span class="pr-div-name">DNA WEB</span>
+              <span class="tag-pill tp-new">New</span>
+            </div>
+            <h4>UI/UX &amp; Sito Web Responsive</h4>
+            <p class="pr-desc">Identità visiva, design system su misura, interfacce veloci e ottimizzazione SEO tecnica.</p>
+
+            <div class="pr-price-box">
+              <span class="pr-from" data-label-project="A partire da" data-label-monthly="Canone tutto incluso">A partire da</span>
+              <div class="pr-amount" data-price-project="€ 1.890" data-price-monthly="€ 149/mese">€ 1.890</div>
+              <span class="pr-vat" data-vat-project="Una tantum • IVA escl." data-vat-monthly="Hosting, SSL &amp; aggiornamenti incl.">Una tantum • IVA escl.</span>
+            </div>
+
+            <ul class="pr-features">
+              <li>Design UI/UX &amp; Prototipo interattivo</li>
+              <li>Sviluppo Frontend responsive &amp; Core Web Vitals</li>
+              <li>SEO on-page &amp; struttura semantica</li>
+              <li>Formazione autonoma alla gestione contenuti</li>
             </ul>
-        </div>
-        <!-- Blocco 4: Tre Card di Contenuto -->
-        <div class="bento-stats-grid">
-            
-            <!-- Card 1: Data Center -->
-            <div class="stat-card">
-                <div class="content-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
-                        <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
-                        <line x1="6" y1="6" x2="6.01" y2="6"></line>
-                        <line x1="6" y1="18" x2="6.01" y2="18"></line>
-                    </svg>
-                </div>
-                <h3>Data Center</h3>
-                <p>Server dedicati, ridondanza e sicurezza fisica per un'infrastruttura sempre attiva.</p>
-                <a href="#" class="content-link">Scopri di più &rarr;</a>
-            </div>
+          </div>
 
-            <!-- Card 2: Consulenza IT -->
-            <div class="stat-card">
-                <div class="content-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                        <circle cx="9" cy="7" r="4"></circle>
-                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                    </svg>
-                </div>
-                <h3>Consulenza IT</h3>
-                <p>Analizziamo la tua infrastruttura e progettiamo la strategia digitale più adatta alle tue esigenze.</p>
-                <a href="#" class="content-link">Scopri di più &rarr;</a>
-            </div>
-
-            <!-- Card 3: Formazione -->
-            <div class="stat-card">
-                <div class="content-icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
-                    </svg>
-                </div>
-                <h3>Formazione</h3>
-                <p>Corsi e training per il tuo team. Aggiorna le competenze IT della tua azienda con i nostri esperti.</p>
-                <a href="#" class="content-link">Scopri di più &rarr;</a>
-            </div>
-
+          <a href="#contatti" class="pr-cta">Richiedi preventivo Web →</a>
         </div>
 
+        <!-- PIANO 2: DNA SOFTWARE (IN EVIDENZA) -->
+        <div class="pr-card featured">
+          <div class="card-fade-img fade-dark-right" style="background-image:url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=700&q=80');"></div>
+          <div>
+            <div class="pr-top-row">
+              <span class="pr-div-name">DNA SOFTWARE</span>
+              <span class="tag-pill tp-pop">Popolare</span>
+            </div>
+            <h4>Portali, Web App &amp; Gestionali</h4>
+            <p class="pr-desc">Piattaforme applicative complesse, CRM/ERP su misura, aree riservate e integrazioni API.</p>
+
+            <div class="pr-price-box">
+              <span class="pr-from" data-label-project="A partire da" data-label-monthly="Canone evolutivo">A partire da</span>
+              <div class="pr-amount" data-price-project="€ 4.500" data-price-monthly="€ 390/mese">€ 4.500</div>
+              <span class="pr-vat" data-vat-project="Progetto su misura • IVA escl." data-vat-monthly="Manutenzione, evolutive &amp; SLA incl.">Progetto su misura • IVA escl.</span>
+            </div>
+
+            <ul class="pr-features">
+              <li>Design System &amp; Interfacce applicative</li>
+              <li>Architettura Backend, API REST &amp; Database</li>
+              <li>Dashboard Analisi Dati &amp; Business Intelligence</li>
+              <li>Supporto Help Desk &amp; Ticket prioritario</li>
+            </ul>
+          </div>
+
+          <a href="#contatti" class="pr-cta">Progetta il tuo Software →</a>
+        </div>
+
+        <!-- PIANO 3: DNA CLOUD & AI -->
+        <div class="pr-card">
+          <div class="card-fade-img fade-light-right" style="background-image:url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=700&q=80');"></div>
+          <div>
+            <div class="pr-top-row">
+              <span class="pr-div-name">DNA CLOUD</span>
+              <span class="tag-pill tp-ai">AI</span>
+            </div>
+            <h4>Infrastrutture, Sicurezza &amp; AI</h4>
+            <p class="pr-desc">Sistemi distribuiti scalabili, architetture Zero Trust, automazione AI e continuità operativa.</p>
+
+            <div class="pr-price-box">
+              <span class="pr-from" data-label-project="Setup &amp; Migrazione da" data-label-monthly="Gestione Managed da">Setup &amp; Migrazione da</span>
+              <div class="pr-amount" data-price-project="€ 2.400" data-price-monthly="€ 240/mese">€ 2.400</div>
+              <span class="pr-vat" data-vat-project="Audit &amp; deploy • IVA escl." data-vat-monthly="Monitoraggio 24/7 &amp; backup incl.">Audit &amp; deploy • IVA escl.</span>
+            </div>
+
+            <ul class="pr-features">
+              <li>Architettura Cloud Native &amp; DevOps CI/CD</li>
+              <li>Sicurezza Zero Trust &amp; Audit di sistema</li>
+              <li>Integrazione modelli AI &amp; flussi automatizzati</li>
+              <li>Backup ridondati &amp; Disaster Recovery</li>
+            </ul>
+          </div>
+
+          <a href="#contatti" class="pr-cta">Configura Cloud &amp; AI →</a>
+        </div>
+
+        <!-- PIANO 4: STRATEGIA & UX AUDIT -->
+        <div class="pr-card">
+          <div class="card-fade-img fade-light-right" style="background-image:url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=700&q=80');"></div>
+          <div>
+            <div class="pr-top-row">
+              <span class="pr-div-name">STRATEGIA &amp; UX</span>
+              <span class="tag-pill tp-bi">Audit</span>
+            </div>
+            <h4>Consulenza, Audit &amp; Brand</h4>
+            <p class="pr-desc">Analisi usabilità, ricerca competitor, restyling identità visiva e affiancamento al tuo team.</p>
+
+            <div class="pr-price-box">
+              <span class="pr-from" data-label-project="Pacchetto Audit da" data-label-monthly="Affiancamento continuo">Pacchetto Audit da</span>
+              <div class="pr-amount" data-price-project="€ 950" data-price-monthly="€ 290/mese">€ 950</div>
+              <span class="pr-vat" data-vat-project="Report + roadmap • IVA escl." data-vat-monthly="Ore dedicate &amp; formazione team">Report + roadmap • IVA escl.</span>
+            </div>
+
+            <ul class="pr-features">
+              <li>UX Audit &amp; analisi colli di bottiglia</li>
+              <li>Ricerca SEO, Keyword &amp; Benchmark competitor</li>
+              <li>Branding, Logo &amp; linee guida visive</li>
+              <li>Workshop &amp; formazione Design System</li>
+            </ul>
+          </div>
+
+          <a href="#contatti" class="pr-cta">Prenota un Audit →</a>
+        </div>
+      </div>
     </div>
+
+    <!-- FOOTER BAR -->
+    <div class="arch-foot">
+      <div><strong style="color:#0a0a0a;">DNA</strong> INFORMATICA</div>
+      <div>BLOG • GUIDE • WEBINAR • PODCAST • FAQ • COMMUNITY</div>
+      <div>DESIGN SYSTEM &amp; ARCHITETTURE DIGITALI</div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const root = document.getElementById('esplora-dna-architect');
+      if (!root) return;
+
+      let done = false;
+      const io = new IntersectionObserver(function (entries) {
+        if (entries[0].isIntersecting && !done) {
+          done = true;
+          root.querySelectorAll('.arch-cnt[data-val]').forEach(function (el) {
+            const end = parseInt(el.getAttribute('data-val'), 10);
+            let cur = 0;
+            const step = Math.max(1, Math.ceil(end / 28));
+            const t = setInterval(function () {
+              cur += step;
+              if (cur >= end) {
+                el.textContent = end + '+';
+                clearInterval(t);
+              } else {
+                el.textContent = cur + '+';
+              }
+            }, 25);
+          });
+        }
+      }, { threshold: 0.12 });
+      io.observe(root);
+
+      const modeBtns = root.querySelectorAll('.pr-btn-mode');
+      modeBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          const mode = btn.getAttribute('data-plan-mode');
+          modeBtns.forEach(function (b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+
+          root.querySelectorAll('.pr-from').forEach(function (el) {
+            el.textContent = el.getAttribute('data-label-' + mode);
+          });
+          root.querySelectorAll('.pr-amount').forEach(function (el) {
+            el.textContent = el.getAttribute('data-price-' + mode);
+          });
+          root.querySelectorAll('.pr-vat').forEach(function (el) {
+            el.textContent = el.getAttribute('data-vat-' + mode);
+          });
+        });
+      });
+    })();
+  </script>
 </section>
 
-   <!-- SEZIONE BENTO GRID (Presentazione Servizi) -->
-<div class="section-divider">
-    <div class="divider-line"></div>
-    <div class="divider-dot"></div>
-    <div class="divider-line"></div>
-</div>
 
 
 
@@ -496,54 +1776,918 @@
 
 
 
+<section id="ultime-tecnologie-dna" class="dna-tech-holo">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=JetBrains+Mono:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
+    .dna-tech-holo {
+      --bg-void: #05070c;
+      --bg-card: #0b0f19;
+      --orange: #f97316;
+      --orange-bright: #fb923c;
+      --cyan: #38bdf8;
+      --emerald: #10b981;
+      --purple: #a855f7;
+      --amber: #f59e0b;
+      --rose: #f43f5e;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --radius: 12px;
 
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-void);
+      background-image:
+        radial-gradient(ellipse 55% 400px at 74% 16%, rgba(56, 189, 248, 0.22), transparent 68%),
+        radial-gradient(ellipse 40% 250px at 74% 26%, rgba(249, 115, 22, 0.16), transparent 65%),
+        linear-gradient(180deg, #060912 0%, #070b14 55%, #060606 100%);
+      padding: 56px 36px 48px;
+      width: 100%;
+      box-sizing: border-box;
+      position: relative;
+      overflow: hidden;
+      color: var(--text-main);
+    }
 
+    /* RETE DI PUNTI LUMINOSI SULLO SFONDO */
+    .dna-tech-holo::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(rgba(56, 189, 248, 0.16) 1px, transparent 1px),
+        radial-gradient(rgba(249, 115, 22, 0.12) 1px, transparent 1px);
+      background-size: 56px 56px, 84px 84px;
+      background-position: 0 0, 28px 28px;
+      -webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.45) 75%, transparent 100%);
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.45) 75%, transparent 100%);
+      pointer-events: none;
+      z-index: 0;
+    }
 
+    .dna-tech-holo *,
+    .dna-tech-holo *::before,
+    .dna-tech-holo *::after {
+      box-sizing: border-box;
+    }
 
+    .dna-tech-holo .tech-wrap {
+      max-width: 1680px;
+      width: 100%;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
 
+    /* ================= HERO SUPERIORE + GLOBO OLOGRAFICO ================= */
+    .dna-tech-holo .holo-hero {
+      display: grid;
+      grid-template-columns: 54% 46%;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 28px;
+      position: relative;
+    }
 
+    .dna-tech-holo .tech-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--orange-bright);
+      background: rgba(249, 115, 22, 0.08);
+      border: 1px solid rgba(249, 115, 22, 0.35);
+      padding: 5px 13px;
+      border-radius: 6px;
+      margin-bottom: 14px;
+    }
 
+    .dna-tech-holo .tech-kicker i {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--orange);
+      box-shadow: 0 0 12px var(--orange);
+      animation: holoPulse 1.6s infinite;
+    }
 
+    @keyframes holoPulse {
+      0%, 100% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.45); opacity: 0.45; }
+    }
 
+    .dna-tech-holo .tech-title {
+      font-size: clamp(36px, 4.4vw, 56px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.04;
+      margin: 0 0 12px;
+      color: #ffffff;
+    }
 
+    .dna-tech-holo .tech-title span {
+      color: var(--orange);
+      text-shadow: 0 0 32px rgba(249, 115, 22, 0.35);
+    }
 
+    .dna-tech-holo .tech-subtitle {
+      font-size: 18px;
+      line-height: 1.48;
+      color: #cbd5e1;
+      margin: 0 0 22px;
+      max-width: 680px;
+    }
 
+    /* FILTRI PILLOLA */
+    .dna-tech-holo .tech-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
 
+    .dna-tech-holo .tf-btn {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 10px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      color: #cbd5e1;
+      background: rgba(15, 23, 42, 0.72);
+      border: 1px solid rgba(56, 189, 248, 0.22);
+      backdrop-filter: blur(8px);
+      transition: all 0.25s ease;
+    }
 
+    .dna-tech-holo .tf-btn:hover {
+      color: #ffffff;
+      border-color: var(--cyan);
+      background: rgba(56, 189, 248, 0.12);
+    }
 
+    .dna-tech-holo .tf-btn.active {
+      background: linear-gradient(135deg, #f97316, #ea580c);
+      border-color: #fb923c;
+      color: #ffffff;
+      box-shadow: 0 0 24px rgba(249, 115, 22, 0.5);
+    }
 
+    /* SCENA GLOBO OLOGRAFICO A DESTRA */
+    .dna-tech-holo .holo-stage {
+      position: relative;
+      height: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
+    .dna-tech-holo .holo-tag-left {
+      position: absolute;
+      left: 2%;
+      top: 22%;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.65;
+      letter-spacing: 0.14em;
+      color: rgba(148, 163, 184, 0.75);
+      text-transform: uppercase;
+    }
 
+    .dna-tech-holo .holo-tag-left::after {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--cyan);
+      margin-top: 8px;
+      box-shadow: 0 0 8px var(--cyan);
+    }
 
+    .dna-tech-holo .holo-tag-right {
+      position: absolute;
+      right: 1%;
+      top: 8%;
+      text-align: right;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12.5px;
+      font-weight: 700;
+      line-height: 1.6;
+      letter-spacing: 0.14em;
+      color: rgba(148, 163, 184, 0.65);
+    }
 
+    .dna-tech-holo .holo-tag-right::after {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 2px;
+      background: var(--orange);
+      margin-top: 6px;
+    }
 
+    .dna-tech-holo .holo-script {
+      position: absolute;
+      right: 1%;
+      bottom: 22%;
+      font-family: 'Caveat', cursive;
+      font-size: 25px;
+      color: rgba(226, 232, 240, 0.65);
+      transform: rotate(-10deg);
+      line-height: 1.05;
+      pointer-events: none;
+    }
 
+    .dna-tech-holo .globe-svg {
+      width: 280px;
+      height: 280px;
+      overflow: visible;
+      filter: drop-shadow(0 0 28px rgba(56, 189, 248, 0.4));
+    }
 
-<!-- SEZIONE VISIONE / IL NOSTRO FUTURO -->
-<section class="vision-section">
-    <div class="vision-container">
-        
-        <!-- Colonna Sinistra: Testi -->
-        <div class="vision-content">
-            <span class="vision-tag">IL NOSTRO SOGNO</span>
-            <h2>Costruiamo il futuro<br>del digitale, mattoncino<br>dopo mattoncino.</h2>
-            <p>Il nostro obiettivo è creare un ecosistema tecnologico solido, innovativo e sostenibile. Un luogo dove le idee prendono forma e le aziende crescono. Stiamo costruendo le fondamenta del domani, oggi.</p>
-            
-            <div class="vision-signature">
-                <div class="vision-line"></div>
-                <span>DNA Hub - Progetto in divenire</span>
-            </div>
+    .dna-tech-holo .globe-spin {
+      transform-origin: 150px 140px;
+      animation: globeRotate 24s linear infinite;
+    }
+
+    @keyframes globeRotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* ================= GRIGLIA 8 SCHEDE OLOGRAFICHE (BILANCIATA / SEMI-COMPATTA) ================= */
+    .dna-tech-holo .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      perspective: 1200px;
+    }
+
+    .dna-tech-holo .t-card {
+      --mx: 50%;
+      --my: 50%;
+      --accent: #a855f7;
+      --accent-glow: rgba(168, 85, 247, 0.35);
+
+      background: linear-gradient(165deg, rgba(16, 22, 38, 0.92) 0%, rgba(8, 11, 20, 0.96) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius);
+      padding: 18px 22px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 265px;
+      box-shadow: 0 18px 38px -14px rgba(0, 0, 0, 0.9), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      transform-style: preserve-3d;
+      transition: transform 0.24s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+    }
+
+    .dna-tech-holo .t-card.is-dimmed {
+      opacity: 0.22;
+      transform: scale(0.97);
+    }
+
+    .dna-tech-holo .t-card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 22px 44px -12px var(--accent-glow), inset 0 0 20px rgba(255, 255, 255, 0.04);
+    }
+
+    /* SPOTLIGHT DINAMICO */
+    .dna-tech-holo .t-spotlight {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(280px circle at var(--mx) var(--my), var(--accent-glow), transparent 72%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .dna-tech-holo .t-card:hover .t-spotlight {
+      opacity: 1;
+    }
+
+    /* STELLINA / MIRINO IN ALTO A SINISTRA */
+    .dna-tech-holo .t-spark {
+      position: absolute;
+      top: 10px;
+      left: 12px;
+      color: var(--accent);
+      font-size: 14px;
+      line-height: 1;
+      text-shadow: 0 0 10px var(--accent);
+      z-index: 4;
+      pointer-events: none;
+    }
+
+    /* BADGE IN ALTO A DESTRA */
+    .dna-tech-holo .t-badge {
+      position: absolute;
+      top: 13px;
+      right: 15px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 3px 9px;
+      border-radius: 5px;
+      color: var(--accent);
+      background: rgba(10, 14, 24, 0.85);
+      border: 1px solid var(--accent);
+      box-shadow: 0 0 12px var(--accent-glow);
+      z-index: 4;
+    }
+
+    /* VISUAL OLOGRAFICO SUPERIORE DEDICATO (PROPORZIONE COMPATTA) */
+    .dna-tech-holo .t-holo-art {
+      height: 98px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
+      margin-bottom: 4px;
+      transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .dna-tech-holo .t-card:hover .t-holo-art {
+      transform: scale(1.06) translateY(-2px);
+    }
+
+    .dna-tech-holo .t-holo-art svg {
+      width: 100%;
+      height: 94px;
+      overflow: visible;
+      filter: drop-shadow(0 0 12px var(--accent-glow));
+    }
+
+    /* TESTI CARD */
+    .dna-tech-holo .t-body {
+      position: relative;
+      z-index: 3;
+    }
+
+    .dna-tech-holo .t-card h4 {
+      font-size: 20px;
+      font-weight: 800;
+      color: #ffffff;
+      margin: 0 0 4px;
+      letter-spacing: -0.02em;
+    }
+
+    .dna-tech-holo .t-card p {
+      font-size: 15px;
+      line-height: 1.4;
+      color: #cbd5e1;
+      margin: 0 0 10px;
+    }
+
+    /* TELEMETRIA & PROGRESS BAR NEON */
+    .dna-tech-holo .t-telemetry {
+      position: relative;
+      z-index: 3;
+      margin-bottom: 10px;
+    }
+
+    .dna-tech-holo .t-tel-row {
+      display: flex;
+      justify-content: space-between;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #94a3b8;
+      margin-bottom: 4px;
+    }
+
+    .dna-tech-holo .t-bar-track {
+      width: 100%;
+      height: 3.5px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 99px;
+      overflow: hidden;
+    }
+
+    .dna-tech-holo .t-bar-fill {
+      height: 100%;
+      background: var(--accent);
+      box-shadow: 0 0 10px var(--accent);
+      border-radius: 99px;
+    }
+
+    /* FOOTER SCHEDA */
+    .dna-tech-holo .t-foot {
+      padding-top: 9px;
+      border-top: 1px dashed rgba(255, 255, 255, 0.14);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #64748b;
+      position: relative;
+      z-index: 3;
+    }
+
+    .dna-tech-holo .t-foot a {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 14.5px;
+      font-weight: 700;
+      color: #e2e8f0;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: color 0.2s ease, gap 0.2s ease;
+    }
+
+    .dna-tech-holo .t-card:hover .t-foot a {
+      color: var(--accent);
+      gap: 9px;
+    }
+
+    /* ================= BARRA FINALE VERSO FOOTER NERO ================= */
+    .dna-tech-holo .tech-bottom-bar {
+      margin-top: 30px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #94a3b8;
+    }
+
+    /* ================= RESPONSIVE ================= */
+    @media (max-width: 1320px) {
+      .dna-tech-holo .holo-hero {
+        grid-template-columns: 1fr;
+      }
+      .dna-tech-holo .holo-stage {
+        height: 230px;
+      }
+      .dna-tech-holo .tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 720px) {
+      .dna-tech-holo {
+        padding: 44px 16px 36px;
+      }
+      .dna-tech-holo .tech-grid {
+        grid-template-columns: 1fr;
+      }
+      .dna-tech-holo .holo-tag-left,
+      .dna-tech-holo .holo-tag-right,
+      .dna-tech-holo .holo-script {
+        display: none;
+      }
+    }
+  </style>
+
+  <div class="tech-wrap">
+    <!-- HERO + GLOBO OLOGRAFICO -->
+    <div class="holo-hero">
+      <div>
+        <div class="tech-kicker">
+          <i></i>
+          [10] // R&amp;D LAB &amp; NEXT-GEN INTERFACES
+        </div>
+        <h3 class="tech-title">Ultime <span>Tecnologie</span></h3>
+        <p class="tech-subtitle">
+          Progettiamo interfacce e architetture pronte per i paradigmi emergenti: intelligenza artificiale, sistemi distribuiti e connettività ad altissima velocità.
+        </p>
+
+        <div class="tech-filters" role="group" aria-label="Filtra tecnologie">
+          <button type="button" class="tf-btn active" data-tech-filter="all">Tutte (08)</button>
+          <button type="button" class="tf-btn" data-tech-filter="ai">AI &amp; Data</button>
+          <button type="button" class="tf-btn" data-tech-filter="infra">Cloud &amp; 5G</button>
+          <button type="button" class="tf-btn" data-tech-filter="frontier">Web3 &amp; XR</button>
+        </div>
+      </div>
+
+      <div class="holo-stage" aria-hidden="true">
+        <div class="holo-tag-left">
+          CONNECT<br>INNOVATE<br>BUILD<br>TOGETHER
         </div>
 
-        <!-- Colonna Destra: Immagine -->
-        <div class="vision-image-wrapper">
-            <img src="img/ufficio2.png" alt="DNA Hub - Il nostro futuro" class="vision-img">
-            <!-- Bordo decorativo arancione -->
-            <div class="vision-border"></div>
-        </div>
+        <svg class="globe-svg" viewBox="0 0 300 300" fill="none">
+          <defs>
+            <radialGradient id="globeCore" cx="45%" cy="40%" r="55%">
+              <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.55"/>
+              <stop offset="55%" stop-color="#0284c7" stop-opacity="0.22"/>
+              <stop offset="100%" stop-color="#090d16" stop-opacity="0.05"/>
+            </radialGradient>
+            <linearGradient id="pedestalGlow" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#f97316" stop-opacity="0"/>
+              <stop offset="50%" stop-color="#38bdf8" stop-opacity="0.95"/>
+              <stop offset="100%" stop-color="#f97316" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
 
+          <!-- Sfera centrale luminosa -->
+          <circle cx="150" cy="140" r="88" fill="url(#globeCore)" stroke="#38bdf8" stroke-width="1.4" stroke-opacity="0.7"/>
+          <circle cx="150" cy="140" r="102" stroke="#f97316" stroke-width="0.9" stroke-dasharray="4 6" stroke-opacity="0.55"/>
+
+          <!-- Meridiani e paralleli rotanti -->
+          <g class="globe-spin">
+            <ellipse cx="150" cy="140" rx="88" ry="32" stroke="#38bdf8" stroke-width="1" stroke-opacity="0.55"/>
+            <ellipse cx="150" cy="140" rx="88" ry="64" stroke="#38bdf8" stroke-width="0.9" stroke-opacity="0.35"/>
+            <ellipse cx="150" cy="140" rx="34" ry="88" stroke="#38bdf8" stroke-width="1" stroke-opacity="0.55"/>
+            <ellipse cx="150" cy="140" rx="66" ry="88" stroke="#38bdf8" stroke-width="0.9" stroke-opacity="0.35"/>
+            <circle cx="116" cy="108" r="3" fill="#fb923c"/>
+            <circle cx="188" cy="122" r="3.5" fill="#38bdf8"/>
+            <circle cx="134" cy="174" r="2.8" fill="#38bdf8"/>
+            <circle cx="176" cy="166" r="3" fill="#fb923c"/>
+            <line x1="116" y1="108" x2="188" y2="122" stroke="#fb923c" stroke-width="1" stroke-opacity="0.7"/>
+            <line x1="188" y1="122" x2="176" y2="166" stroke="#38bdf8" stroke-width="1" stroke-opacity="0.7"/>
+          </g>
+
+          <!-- Anello orbitale inclinato -->
+          <ellipse cx="150" cy="142" rx="124" ry="28" transform="rotate(-14 150 142)" stroke="#38bdf8" stroke-width="1.3" stroke-opacity="0.75"/>
+          <circle cx="34" cy="170" r="3.5" fill="#f97316"/>
+          <circle cx="268" cy="114" r="3.5" fill="#38bdf8"/>
+
+          <!-- Piedistallo olografico inferiore -->
+          <ellipse cx="150" cy="254" rx="95" ry="14" stroke="url(#pedestalGlow)" stroke-width="2.5"/>
+          <ellipse cx="150" cy="262" rx="122" ry="18" stroke="#f97316" stroke-width="1.2" stroke-opacity="0.55"/>
+          <line x1="92" y1="224" x2="92" y2="254" stroke="#38bdf8" stroke-width="1" stroke-dasharray="2 3" stroke-opacity="0.65"/>
+          <line x1="208" y1="224" x2="208" y2="254" stroke="#38bdf8" stroke-width="1" stroke-dasharray="2 3" stroke-opacity="0.65"/>
+        </svg>
+
+        <div class="holo-tag-right">
+          IDEAS<br>TODAY<br>A SMARTER<br>TOMORROW
+        </div>
+        <div class="holo-script">Technology<br>that moves<br>people forward</div>
+      </div>
     </div>
+
+    <!-- GRIGLIA 8 SCHEDE OLOGRAFICHE -->
+    <div class="tech-grid">
+      <!-- 01: AI -->
+      <article class="t-card" data-cat="ai" style="--accent: #a855f7; --accent-glow: rgba(168, 85, 247, 0.35);">
+        <span class="t-spark">✦</span>
+        <span class="t-badge">AI</span>
+        <div class="t-spotlight"></div>
+
+        <div class="t-holo-art">
+          <svg viewBox="0 0 240 130" fill="none">
+            <path d="M98 112 C98 92, 82 88, 82 66 C82 40, 102 22, 128 24 C150 26, 162 42, 162 62 C162 72, 168 78, 168 83 C168 87, 161 89, 160 94 C159 102, 152 106, 140 106 L132 115" stroke="#a855f7" stroke-width="2" fill="rgba(168,85,247,0.12)"/>
+            <circle cx="115" cy="52" r="3" fill="#38bdf8"/>
+            <circle cx="136" cy="46" r="3" fill="#e879f9"/>
+            <circle cx="126" cy="68" r="3.5" fill="#38bdf8"/>
+            <circle cx="105" cy="72" r="2.5" fill="#a855f7"/>
+            <circle cx="144" cy="70" r="2.5" fill="#38bdf8"/>
+            <line x1="115" y1="52" x2="136" y2="46" stroke="#38bdf8" stroke-width="1.2"/>
+            <line x1="115" y1="52" x2="126" y2="68" stroke="#a855f7" stroke-width="1.2"/>
+            <line x1="136" y1="46" x2="126" y2="68" stroke="#38bdf8" stroke-width="1.2"/>
+            <line x1="105" y1="72" x2="126" y2="68" stroke="#a855f7" stroke-width="1.2"/>
+            <line x1="126" y1="68" x2="144" y2="70" stroke="#38bdf8" stroke-width="1.2"/>
+            <line x1="56" y1="60" x2="82" y2="60" stroke="#a855f7" stroke-width="1" stroke-dasharray="3 3"/>
+            <line x1="64" y1="76" x2="84" y2="76" stroke="#38bdf8" stroke-width="1"/>
+          </svg>
+        </div>
+
+        <div class="t-body">
+          <h4>AI</h4>
+          <p>Design e interfacce per AI, assistenti generativi, copiloti aziendali e flussi predittivi.</p>
+        </div>
+
+        <div>
+          <div class="t-telemetry">
+            <div class="t-tel-row"><span>ADOPTION INDEX</span><span>96%</span></div>
+            <div class="t-bar-track"><div class="t-bar-fill" style="width:96%;"></div></div>
+          </div>
+          <div class="t-foot">
+            <span>NEURAL UX // 01</span>
+            <a href="#tech-ai">Esplora AI →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 02: BLOCKCHAIN -->
+      <article class="t-card" data-cat="frontier" style="--accent: #f59e0b; --accent-glow: rgba(245, 158, 11, 0.35);">
+        <span class="t-spark">✦</span>
+        <span class="t-badge">WEB3</span>
+        <div class="t-spotlight"></div>
+
+        <div class="t-holo-art">
+          <svg viewBox="0 0 240 130" fill="none">
+            <polygon points="84,36 106,24 128,36 106,48" fill="rgba(245,158,11,0.22)" stroke="#fbbf24" stroke-width="1.6"/>
+            <polygon points="84,36 106,48 106,72 84,60" fill="rgba(245,158,11,0.12)" stroke="#f59e0b" stroke-width="1.6"/>
+            <polygon points="128,36 106,48 106,72 128,60" fill="rgba(245,158,11,0.32)" stroke="#fbbf24" stroke-width="1.6"/>
+            <polygon points="134,54 156,42 178,54 156,66" fill="rgba(245,158,11,0.22)" stroke="#fbbf24" stroke-width="1.6"/>
+            <polygon points="134,54 156,66 156,90 134,78" fill="rgba(245,158,11,0.12)" stroke="#f59e0b" stroke-width="1.6"/>
+            <polygon points="178,54 156,66 156,90 178,78" fill="rgba(245,158,11,0.32)" stroke="#fbbf24" stroke-width="1.6"/>
+            <polygon points="94,76 116,64 138,76 116,88" fill="rgba(245,158,11,0.22)" stroke="#fbbf24" stroke-width="1.6"/>
+            <polygon points="94,76 116,88 116,112 94,100" fill="rgba(245,158,11,0.12)" stroke="#f59e0b" stroke-width="1.6"/>
+            <polygon points="138,76 116,88 116,112 138,100" fill="rgba(245,158,11,0.32)" stroke="#fbbf24" stroke-width="1.6"/>
+            <line x1="128" y1="48" x2="134" y2="54" stroke="#fde68a" stroke-width="1.6"/>
+            <line x1="106" y1="72" x2="116" y2="64" stroke="#fde68a" stroke-width="1.6"/>
+          </svg>
+        </div>
+
+        <div class="t-body">
+          <h4>Blockchain</h4>
+          <p>Interfacce per Web3, smart contract, notarizzazione sicura e tracciabilità decentralizzata.</p>
+        </div>
+
+        <div>
+          <div class="t-telemetry">
+            <div class="t-tel-row"><span>ZERO-TRUST LEDGER</span><span>88%</span></div>
+            <div class="t-bar-track"><div class="t-bar-fill" style="width:88%;"></div></div>
+          </div>
+          <div class="t-foot">
+            <span>WEB3 // 02</span>
+            <a href="#tech-blockchain">Esplora Web3 →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 03: IoT -->
+      <article class="t-card" data-cat="infra" style="--accent: #10b981; --accent-glow: rgba(16, 185, 129, 0.35);">
+        <span class="t-spark">✦</span>
+        <span class="t-badge">IoT</span>
+        <div class="t-spotlight"></div>
+
+        <div class="t-holo-art">
+          <svg viewBox="0 0 240 130" fill="none">
+            <polygon points="120,24 196,64 120,104 44,64" fill="rgba(16,185,129,0.08)" stroke="#10b981" stroke-width="1.4"/>
+            <rect x="106" y="46" width="28" height="22" rx="3" fill="rgba(16,185,129,0.25)" stroke="#34d399" stroke-width="1.6"/>
+            <circle cx="80" cy="64" r="5" fill="#10b981"/>
+            <circle cx="160" cy="64" r="5" fill="#34d399"/>
+            <circle cx="120" cy="86" r="5" fill="#10b981"/>
+            <circle cx="120" cy="36" r="4" fill="#6ee7b7"/>
+            <line x1="85" y1="64" x2="106" y2="58" stroke="#34d399" stroke-width="1.4"/>
+            <line x1="134" y1="58" x2="155" y2="64" stroke="#34d399" stroke-width="1.4"/>
+            <line x1="120" y1="68" x2="120" y2="81" stroke="#34d399" stroke-width="1.4"/>
+          </svg>
+        </div>
+
+        <div class="t-body">
+          <h4>IoT</h4>
+          <p>Interfacce per Internet of Things, telemetria industriale in tempo reale e controllo dispositivi.</p>
+        </div>
+
+        <div>
+          <div class="t-telemetry">
+            <div class="t-tel-row"><span>REAL-TIME TELEMETRY</span><span>92%</span></div>
+            <div class="t-bar-track"><div class="t-bar-fill" style="width:92%;"></div></div>
+          </div>
+          <div class="t-foot">
+            <span>SMART SENSORS // 03</span>
+            <a href="#tech-iot">Esplora IoT →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 04: QUANTUM -->
+      <article class="t-card" data-cat="ai" style="--accent: #38bdf8; --accent-glow: rgba(56, 189, 248, 0.38);">
+        <span class="t-spark">✦</span>
+        <span class="t-badge">QTM</span>
+        <div class="t-spotlight"></div>
+
+        <div class="t-holo-art">
+          <svg viewBox="0 0 240 130" fill="none">
+            <ellipse cx="120" cy="65" rx="54" ry="20" stroke="#38bdf8" stroke-width="1.6"/>
+            <ellipse cx="120" cy="65" rx="54" ry="20" transform="rotate(60 120 65)" stroke="#818cf8" stroke-width="1.6"/>
+            <ellipse cx="120" cy="65" rx="54" ry="20" transform="rotate(-60 120 65)" stroke="#38bdf8" stroke-width="1.6"/>
+            <circle cx="120" cy="65" r="10" fill="#38bdf8" fill-opacity="0.35" stroke="#e0f2fe" stroke-width="1.5"/>
+            <circle cx="120" cy="65" r="4.5" fill="#ffffff"/>
+            <circle cx="174" cy="65" r="3" fill="#38bdf8"/>
+            <circle cx="93" cy="20" r="3" fill="#818cf8"/>
+            <circle cx="93" cy="110" r="3" fill="#38bdf8"/>
+          </svg>
+        </div>
+
+        <div class="t-body">
+          <h4>Quantum</h4>
+          <p>Interfacce per Quantum Computing, simulazioni avanzate e crittografia di nuova generazione.</p>
+        </div>
+
+        <div>
+          <div class="t-telemetry">
+            <div class="t-tel-row"><span>QUBIT SIMULATION LAB</span><span>84%</span></div>
+            <div class="t-bar-track"><div class="t-bar-fill" style="width:84%;"></div></div>
+          </div>
+          <div class="t-foot">
+            <span>QUANTUM R&amp;D // 04</span>
+            <a href="#tech-quantum">Esplora Quantum →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 05: EDGE COMPUTING -->
+      <article class="t-card" data-cat="infra" style="--accent: #f43f5e; --accent-glow: rgba(244, 63, 94, 0.35);">
+        <span class="t-spark">✦</span>
+        <span class="t-badge">EDGE</span>
+        <div class="t-spotlight"></div>
+
+        <div class="t-holo-art">
+          <svg viewBox="0 0 240 130" fill="none">
+            <path d="M84 78 H156 C168 78, 176 70, 176 59 C176 49, 168 41, 158 41 C154 27, 141 18, 126 18 C110 18, 97 29, 95 44 C84 45, 76 53, 76 63 C76 72, 80 78, 84 78 Z" fill="rgba(244,63,94,0.14)" stroke="#fb7185" stroke-width="1.8"/>
+            <rect x="78" y="96" width="18" height="12" rx="2" stroke="#38bdf8" stroke-width="1.5"/>
+            <rect x="111" y="96" width="18" height="12" rx="2" stroke="#fb7185" stroke-width="1.5"/>
+            <rect x="144" y="96" width="18" height="12" rx="2" stroke="#38bdf8" stroke-width="1.5"/>
+            <line x1="87" y1="78" x2="87" y2="96" stroke="#38bdf8" stroke-width="1.4"/>
+            <line x1="120" y1="78" x2="120" y2="96" stroke="#fb7185" stroke-width="1.4"/>
+            <line x1="153" y1="78" x2="153" y2="96" stroke="#38bdf8" stroke-width="1.4"/>
+          </svg>
+        </div>
+
+        <div class="t-body">
+          <h4>Edge Computing</h4>
+          <p>Interfacce per calcolo distribuito a bassissima latenza direttamente vicino alla fonte del dato.</p>
+        </div>
+
+        <div>
+          <div class="t-telemetry">
+            <div class="t-tel-row"><span>LATENCY &lt; 4ms</span><span>95%</span></div>
+            <div class="t-bar-track"><div class="t-bar-fill" style="width:95%;"></div></div>
+          </div>
+          <div class="t-foot">
+            <span>DISTRIBUTED // 05</span>
+            <a href="#tech-edge">Esplora Edge →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 06: 5G -->
+      <article class="t-card" data-cat="infra" style="--accent: #0ea5e9; --accent-glow: rgba(14, 165, 233, 0.35);">
+        <span class="t-spark">✦</span>
+        <span class="t-badge">5G</span>
+        <div class="t-spotlight"></div>
+
+        <div class="t-holo-art">
+          <svg viewBox="0 0 240 130" fill="none">
+            <polygon points="120,42 104,110 136,110" stroke="#38bdf8" stroke-width="1.8" fill="rgba(56,189,248,0.1)"/>
+            <line x1="112" y1="76" x2="128" y2="76" stroke="#38bdf8" stroke-width="1.4"/>
+            <line x1="108" y1="94" x2="132" y2="94" stroke="#38bdf8" stroke-width="1.4"/>
+            <circle cx="120" cy="40" r="4.5" fill="#e0f2fe"/>
+            <path d="M98 24 A28 28 0 0 0 98 56" stroke="#38bdf8" stroke-width="1.6" stroke-linecap="round"/>
+            <path d="M84 14 A44 44 0 0 0 84 66" stroke="#38bdf8" stroke-width="1.3" stroke-opacity="0.65" stroke-linecap="round"/>
+            <path d="M142 24 A28 28 0 0 1 142 56" stroke="#38bdf8" stroke-width="1.6" stroke-linecap="round"/>
+            <path d="M156 14 A44 44 0 0 1 156 66" stroke="#38bdf8" stroke-width="1.3" stroke-opacity="0.65" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <div class="t-body">
+          <h4>5G</h4>
+          <p>Interfacce per connettività veloce, streaming ad alta densità e sincronizzazione mobile istantanea.</p>
+        </div>
+
+        <div>
+          <div class="t-telemetry">
+            <div class="t-tel-row"><span>THROUGHPUT 10Gbps</span><span>94%</span></div>
+            <div class="t-bar-track"><div class="t-bar-fill" style="width:94%;"></div></div>
+          </div>
+          <div class="t-foot">
+            <span>ULTRA-WIDEBAND // 06</span>
+            <a href="#tech-5g">Esplora 5G →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 07: VR/AR -->
+      <article class="t-card" data-cat="frontier" style="--accent: #8b5cf6; --accent-glow: rgba(139, 92, 246, 0.38);">
+        <span class="t-spark">✦</span>
+        <span class="t-badge">XR / 3D</span>
+        <div class="t-spotlight"></div>
+
+        <div class="t-holo-art">
+          <svg viewBox="0 0 240 130" fill="none">
+            <circle cx="120" cy="64" r="44" stroke="#38bdf8" stroke-width="1" stroke-dasharray="4 4" stroke-opacity="0.6"/>
+            <rect x="74" y="46" width="92" height="38" rx="12" fill="rgba(139,92,246,0.25)" stroke="#a78bfa" stroke-width="2"/>
+            <path d="M106 84 C112 76, 128 76, 134 84" stroke="#38bdf8" stroke-width="1.8"/>
+            <line x1="86" y1="58" x2="154" y2="58" stroke="#38bdf8" stroke-width="1.2" stroke-opacity="0.7"/>
+          </svg>
+        </div>
+
+        <div class="t-body">
+          <h4>VR/AR</h4>
+          <p>Interfacce per realtà virtuale, realtà aumentata, digital twin e ambienti immersivi interattivi.</p>
+        </div>
+
+        <div>
+          <div class="t-telemetry">
+            <div class="t-tel-row"><span>SPATIAL UI ENGINE</span><span>90%</span></div>
+            <div class="t-bar-track"><div class="t-bar-fill" style="width:90%;"></div></div>
+          </div>
+          <div class="t-foot">
+            <span>IMMERSIVE // 07</span>
+            <a href="#tech-vrar">Esplora VR/AR →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 08: SERVERLESS -->
+      <article class="t-card" data-cat="infra" style="--accent: #f97316; --accent-glow: rgba(249, 115, 22, 0.38);">
+        <span class="t-spark">✦</span>
+        <span class="t-badge">CLOUD</span>
+        <div class="t-spotlight"></div>
+
+        <div class="t-holo-art">
+          <svg viewBox="0 0 240 130" fill="none">
+            <rect x="82" y="46" width="22" height="58" rx="2" fill="rgba(56,189,248,0.14)" stroke="#38bdf8" stroke-width="1.5"/>
+            <rect x="109" y="32" width="24" height="72" rx="2" fill="rgba(249,115,22,0.18)" stroke="#fb923c" stroke-width="1.7"/>
+            <rect x="138" y="42" width="22" height="62" rx="2" fill="rgba(56,189,248,0.14)" stroke="#38bdf8" stroke-width="1.5"/>
+            <line x1="114" y1="44" x2="128" y2="44" stroke="#fb923c" stroke-width="1.5"/>
+            <line x1="114" y1="54" x2="128" y2="54" stroke="#38bdf8" stroke-width="1.5"/>
+            <line x1="114" y1="64" x2="128" y2="64" stroke="#fb923c" stroke-width="1.5"/>
+            <path d="M74 44 A50 34 0 0 1 168 44" stroke="#fb923c" stroke-width="1.5" stroke-dasharray="3 3"/>
+          </svg>
+        </div>
+
+        <div class="t-body">
+          <h4>Serverless</h4>
+          <p>Interfacce per cloud computing elastico, microservizi event-driven e scalabilità automatica.</p>
+        </div>
+
+        <div>
+          <div class="t-telemetry">
+            <div class="t-tel-row"><span>AUTO-SCALING SLA</span><span>99.9%</span></div>
+            <div class="t-bar-track"><div class="t-bar-fill" style="width:99%;"></div></div>
+          </div>
+          <div class="t-foot">
+            <span>CLOUD NATIVE // 08</span>
+            <a href="#tech-serverless">Esplora Serverless →</a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!-- BARRA DI RACCORDO CON IL FOOTER NERO (#060606) -->
+    <div class="tech-bottom-bar">
+      <div><strong style="color:#ffffff;">DNA</strong> R&amp;D LAB</div>
+      <div>AI • BLOCKCHAIN • IoT • QUANTUM • EDGE • 5G • VR/AR • SERVERLESS</div>
+      <div>INNOVAZIONE CONTINUA</div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const root = document.getElementById('ultime-tecnologie-dna');
+      if (!root) return;
+
+      const cards = root.querySelectorAll('.t-card');
+      const filterBtns = root.querySelectorAll('.tf-btn');
+
+      // 1. Tilt 3D + Spotlight dinamico al passaggio del mouse
+      cards.forEach(function (card) {
+        card.addEventListener('mousemove', function (e) {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+          const rotateX = ((y - centerY) / centerY) * -4.5;
+          const rotateY = ((x - centerX) / centerX) * 4.5;
+
+          card.style.setProperty('--mx', x + 'px');
+          card.style.setProperty('--my', y + 'px');
+          card.style.transform = 'perspective(1000px) rotateX(' + rotateX.toFixed(2) + 'deg) rotateY(' + rotateY.toFixed(2) + 'deg) translateY(-5px)';
+        });
+
+        card.addEventListener('mouseleave', function () {
+          card.style.transform = '';
+        });
+      });
+
+      // 2. Filtro interattivo per categoria
+      filterBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          const filter = btn.getAttribute('data-tech-filter');
+          filterBtns.forEach(function (b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+
+          cards.forEach(function (card) {
+            const cat = card.getAttribute('data-cat');
+            if (filter === 'all' || cat === filter) {
+              card.classList.remove('is-dimmed');
+            } else {
+              card.classList.add('is-dimmed');
+            }
+          });
+        });
+      });
+    })();
+  </script>
 </section>
 
 
@@ -568,4 +2712,12 @@
 <!-- Scripts -->
 <script src="/js/footer.js?v=1"></script>
 </body>
+
+
 </html>
+
+
+
+
+
+

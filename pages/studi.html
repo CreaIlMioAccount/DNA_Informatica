@@ -1,150 +1,742 @@
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lo Studio - DNA Informatica</title>
-    
+
     <!-- CSS GLOBALI -->
     <link rel="stylesheet" href="/css/style.css?v=1">
     <link rel="stylesheet" href="/css/menu.css?v=1">
     <link rel="stylesheet" href="/css/footer.css?v=1">
-    
+
     <!-- CSS SPECIFICO -->
-    <link rel="stylesheet" href="/css/studi.css?v=1">
+    <link rel="stylesheet" href="/css/studi.css?v=3">
 </head>
 <body>
 
     <!-- HEADER -->
     <div id="header-placeholder"></div>
 
-    <!-- 1. HERO D'IMPATTO -->
-    <section class="studio-hero">
-        <div class="studio-hero-overlay"></div>
-        <div class="studio-hero-content">
-            <h1>Esperienza, tecnologia e visione.<br><span>Da oltre 20 anni nel mondo dell'informatica.</span></h1>
-            <p>DNA Informatica è uno studio informatico che unisce la solidità dell'esperienza ventennale alla continua ricerca dell'innovazione. Un partner tecnologico che guarda al futuro senza dimenticare le fondamenta.</p>
-        </div>
-    </section>
+    <!-- DIVISORE -->
+    <div class="section-divider">
+        <div class="divider-line"></div>
+        <div class="divider-dot"></div>
+        <div class="divider-line"></div>
+    </div>
 
-    <!-- 2. LA NOSTRA STORIA -->
-    <section class="studio-storia">
-        <div class="studio-container">
-            <div class="studio-grid-2">
-                <div class="studio-text">
-                    <span class="studio-tag">LA NOSTRA STORIA</span>
-                    <h2>Un percorso di<br>crescita continua.</h2>
-                    <p>DNA Informatica nasce più di vent'anni fa come studio informatico con una missione chiara: rendere la tecnologia uno strumento concreto di crescita per le aziende. In un settore in continua evoluzione, abbiamo saputo adattarci, innovare e crescere, mantenendo sempre saldi i nostri valori.</p>
-                    <p>Anni di esperienza sul campo ci hanno insegnato che la tecnologia non è fine a sé stessa, ma un mezzo per risolvere problemi reali e creare valore. È questa consapevolezza che guida ogni nostro progetto.</p>
+    <!-- HERO -->
+    <section class="hero-studies">
+        <div class="container">
+            <div class="hero-studies-grid">
+
+                <div class="hero-studies-content">
+
+                    <span class="hero-studies-badge">
+                        <span class="dot"></span>
+                        Esperienze che generano valore
+                    </span>
+
+                    <h1>
+                        Ogni Progetto<br>
+                        <span class="accent">Ha una Storia.</span>
+                    </h1>
+
+                    <h2>
+                        Visioni concrete.
+                        <span>Risultati che evolvono.</span>
+                    </h2>
+
+                    <p>
+                        Dietro ogni realizzazione c'è un'idea, una sfida
+                        e la volontà di costruire qualcosa che faccia
+                        davvero la differenza. Raccontiamo il nostro
+                        percorso attraverso esperienze concrete,
+                        soluzioni tecnologiche e trasformazioni che
+                        dimostrano il valore dell'innovazione applicata
+                        al mondo delle imprese.
+                    </p>
+
+                    <div class="hero-studies-actions">
+
+                        <a href="#case-study" class="btn-studies-primary">
+                            Esplora le esperienze
+
+                            <svg viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+
+                        <a href="#metodo" class="btn-studies-secondary">
+                            Il nostro approccio
+                        </a>
+
+                    </div>
+
+                    <!-- DNA PROMO CODE -->
+                    <div class="hero-promo">
+
+                        <div class="hero-promo-info">
+
+                            <span class="hero-promo-label">
+                                <span class="promo-dot"></span>
+                                DNA SPECIAL OFFER
+                            </span>
+
+                            <strong>
+                                Un vantaggio in più per il tuo prossimo progetto.
+                            </strong>
+
+                            <small>
+                                Richiedi una consulenza e scopri la promozione dedicata.
+                            </small>
+
+                        </div>
+
+                        <div class="hero-promo-code">
+
+                            <span>CODICE PROMO</span>
+
+                            <button type="button" onclick="copyDnaPromo()">
+                                DNA-WEB
+
+                                <svg viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="8" y="8" width="13" height="13" rx="2"/>
+                                    <path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/>
+                                </svg>
+                            </button>
+
+                            <small id="promo-copy-feedback">
+                                Clicca per copiare
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                    <!-- FOOTER HERO -->
+                    <div class="hero-studies-footer">
+
+                        <span class="footer-line"></span>
+
+                        <div>
+                            <strong>DNA Informatica</strong>
+                            <small>Idee, tecnologia e valore nel tempo</small>
+                        </div>
+
+                    </div>
+
                 </div>
-                <div class="studio-image">
-                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop" alt="La storia di DNA Informatica">
+
+                <!-- PARTE VISIVA -->
+                <div class="hero-studies-visual">
+
+                    <div class="visual-circle"></div>
+                    <div class="visual-orbit"></div>
+
+                    <div class="visual-main-card">
+
+                        <div class="visual-card-header">
+                            <span class="visual-logo">DNA<span>.</span></span>
+                            <span class="visual-label">OUR EXPERIENCE</span>
+                        </div>
+
+                        <div class="visual-main-content">
+
+                            <span>DNA INFORMATICA / 2026</span>
+
+                            <h3>
+                                Digital<br>
+                                <strong>Evolution.</strong>
+                            </h3>
+
+                            <p>
+                                La tecnologia incontra nuove possibilità.
+                            </p>
+
+                        </div>
+
+                        <div class="visual-card-bottom">
+                            <span>VISIONE</span>
+                            <span>STRATEGIA</span>
+                            <span>EVOLUZIONE</span>
+                        </div>
+
+                    </div>
+
+                    <!-- CARD 1 -->
+                    <div class="floating-card card-one">
+
+                        <div class="floating-card-top">
+                            <span class="card-icon">01</span>
+                            <span class="card-tag">BUSINESS</span>
+                        </div>
+
+                        <div class="card-decoration decoration-one">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+
+                        <h4>Nuove Prospettive</h4>
+
+                        <p>
+                            La tecnologia apre nuove strade alla crescita.
+                        </p>
+
+                        <span class="card-arrow">↗</span>
+
+                    </div>
+
+                    <!-- CARD 2 -->
+                    <div class="floating-card card-two">
+
+                        <div class="floating-card-top">
+                            <span class="card-icon">02</span>
+                            <span class="card-tag">INDUSTRY</span>
+                        </div>
+
+                        <div class="card-decoration decoration-two">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+
+                        <h4>Nuovi Orizzonti</h4>
+
+                        <p>
+                            Innovazione e automazione al servizio delle imprese.
+                        </p>
+
+                        <span class="card-arrow">↗</span>
+
+                    </div>
+
+                    <div class="visual-number">
+                        <span>DNA</span>
+                        <strong>01</strong>
+                    </div>
+
                 </div>
+
             </div>
         </div>
     </section>
 
-    <!-- 3. LA NOSTRA IDENTITÀ -->
-    <section class="studio-identita">
-        <div class="studio-container">
-            <div class="studio-identita-header">
-                <span class="studio-tag" style="color: #ff6b00;">LA NOSTRA IDENTITÀ</span>
-                <h2>Ciò che ci rende<br>unici.</h2>
-                <p>Non solo un fornitore di servizi, ma un partner che condivide la tua visione e lavora al tuo fianco per raggiungere obiettivi concreti.</p>
+    <!-- DIVISORE -->
+    <div class="section-divider">
+        <div class="divider-line"></div>
+        <div class="divider-dot"></div>
+        <div class="divider-line"></div>
+    </div>
+
+    <!-- CASE STUDY -->
+    <section class="studies-showcase" id="case-study">
+        <div class="container">
+
+            <div class="showcase-header">
+
+                <div class="showcase-heading">
+                    <span class="section-badge">
+                        <span class="dot"></span>
+                        Il Valore delle Esperienze
+                    </span>
+
+                    <h2>
+                        Idee Diverse.<br>
+                        <span class="accent">Un'unica Visione.</span>
+                    </h2>
+                </div>
+
+                <div class="showcase-description">
+                    <p>
+                        Ogni realtà presenta esigenze, obiettivi e
+                        prospettive differenti. Attraverso le nostre
+                        esperienze raccontiamo come tecnologia,
+                        progettazione e competenze possano incontrarsi
+                        per costruire nuove opportunità.
+                    </p>
+                </div>
+
             </div>
-            <div class="studio-identita-grid">
-                <div class="identita-card">
-                    <h3>Professionalità</h3>
-                    <p>Ogni progetto è gestito con rigore, competenza e attenzione ai dettagli.</p>
-                </div>
-                <div class="identita-card">
-                    <h3>Passione</h3>
-                    <p>Amiamo l'informatica e questa passione traspare in ogni soluzione che proponiamo.</p>
-                </div>
-                <div class="identita-card">
-                    <h3>Precisione</h3>
-                    <p>Nessun margine di errore: analisi, sviluppo e test seguono standard rigorosi.</p>
-                </div>
-                <div class="identita-card">
-                    <h3>Ricerca</h3>
-                    <p>Sperimentiamo continuamente nuove tecnologie per offrirti il meglio.</p>
-                </div>
+
+            <div class="showcase-grid">
+
+                <!-- PROGETTO 01 -->
+                <article class="showcase-card showcase-large">
+
+                    <div class="showcase-image image-business">
+                        <span class="showcase-index">01 / 03</span>
+
+                        <div class="business-visual">
+                            <div class="business-window">
+                                <div class="window-top">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <div class="window-content">
+                                    <div class="window-sidebar"></div>
+                                    <div class="window-dashboard">
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <span class="image-category">BUSINESS</span>
+                    </div>
+
+                    <div class="showcase-card-content">
+                        <div class="showcase-meta">
+                            <span>Digital Transformation</span>
+                            <span>01</span>
+                        </div>
+
+                        <h3>
+                            Nuovi modi di<br>
+                            <span class="accent">fare impresa.</span>
+                        </h3>
+
+                        <p>
+                            Soluzioni digitali e sistemi integrati
+                            per migliorare l'organizzazione,
+                            semplificare le attività e supportare
+                            l'evoluzione aziendale.
+                        </p>
+
+                        <a href="#contatti" class="showcase-link">
+                            Approfondisci l'esperienza
+                            <span>↗</span>
+                        </a>
+                    </div>
+
+                </article>
+
+                <!-- PROGETTO 02 -->
+                <article class="showcase-card">
+
+                    <div class="showcase-image image-industry">
+                        <span class="showcase-index">02 / 03</span>
+
+                        <div class="industry-visual">
+                            <div class="industry-circle"></div>
+                            <div class="industry-line"></div>
+                            <div class="industry-line"></div>
+                            <div class="industry-core">DNA</div>
+                        </div>
+
+                        <span class="image-category">INDUSTRY</span>
+                    </div>
+
+                    <div class="showcase-card-content">
+                        <div class="showcase-meta">
+                            <span>Technology & Automation</span>
+                            <span>02</span>
+                        </div>
+
+                        <h3>
+                            Tecnologia al servizio<br>
+                            <span class="accent">dell'industria.</span>
+                        </h3>
+
+                        <p>
+                            Infrastrutture, automazione e
+                            integrazione tecnologica per
+                            ambienti produttivi evoluti.
+                        </p>
+
+                        <a href="#contatti" class="showcase-link">
+                            Approfondisci l'esperienza
+                            <span>↗</span>
+                        </a>
+                    </div>
+
+                </article>
+
+                <!-- PROGETTO 03 -->
+                <article class="showcase-card">
+
+                    <div class="showcase-image image-digital">
+                        <span class="showcase-index">03 / 03</span>
+
+                        <div class="digital-visual">
+                            <div class="digital-orbit"></div>
+                            <div class="digital-orbit"></div>
+                            <div class="digital-core">DNA.</div>
+                            <span class="digital-point point-one"></span>
+                            <span class="digital-point point-two"></span>
+                            <span class="digital-point point-three"></span>
+                        </div>
+
+                        <span class="image-category">DIGITAL</span>
+                    </div>
+
+                    <div class="showcase-card-content">
+                        <div class="showcase-meta">
+                            <span>Digital Innovation</span>
+                            <span>03</span>
+                        </div>
+
+                        <h3>
+                            Nuove prospettive.<br>
+                            <span class="accent">Nuove possibilità.</span>
+                        </h3>
+
+                        <p>
+                            Piattaforme, ecosistemi digitali
+                            e strumenti progettati per
+                            connettere persone, processi e idee.
+                        </p>
+
+                        <a href="#contatti" class="showcase-link">
+                            Approfondisci l'esperienza
+                            <span>↗</span>
+                        </a>
+                    </div>
+
+                </article>
+
             </div>
+
         </div>
     </section>
 
-    <!-- 4. COMPETENZE E CONOSCENZE -->
-    <section class="studio-competenze">
-        <div class="studio-container">
-            <div class="studio-competenze-header">
-                <span class="studio-tag">COMPETENZE</span>
-                <h2>Le nostre aree<br>di eccellenza.</h2>
+    <!-- DIVISORE -->
+    <div class="section-divider">
+        <div class="divider-line"></div>
+        <div class="divider-dot"></div>
+        <div class="divider-line"></div>
+    </div>
+
+    <!-- FILOSOFIA E PACCHETTI -->
+    <section class="studies-philosophy">
+
+        <div class="philosophy-container">
+
+            <div class="philosophy-top">
+                <span class="philosophy-label">
+                    <span class="label-dot"></span>
+                    IL NOSTRO MODO DI CREARE VALORE
+                </span>
+
+                <span class="philosophy-number">03 / 04</span>
             </div>
-            <div class="studio-competenze-grid">
-                <div class="competenza-card">
-                    <h3>Sviluppo Software</h3>
-                    <p>Applicazioni gestionali e software su misura per ogni esigenza aziendale.</p>
+
+            <div class="philosophy-content">
+
+                <div class="philosophy-left">
+
+                    <h2>
+                        La differenza è<br>
+                        nel modo in cui<br>
+                        realizziamo le <span>idee.</span>
+                    </h2>
+
+                    <div class="philosophy-symbol">
+                        <span class="symbol-line"></span>
+                        <span class="symbol-text">DNA INFORMATICA</span>
+                    </div>
+
                 </div>
-                <div class="competenza-card">
-                    <h3>Sviluppo Web</h3>
-                    <p>Siti web, portali e piattaforme digitali responsive e performanti.</p>
+
+                <div class="philosophy-right">
+
+                    <p class="philosophy-intro">
+                        Ogni trasformazione digitale nasce da una visione.
+                        Il nostro lavoro è darle forma, attraverso competenze,
+                        metodo e tecnologia.
+                    </p>
+
+                    <p class="philosophy-description">
+                        Ascoltiamo le esigenze, analizziamo le possibilità
+                        e costruiamo soluzioni capaci di evolvere nel tempo.
+                        Perché un progetto efficace non si limita a risolvere
+                        un problema: apre nuove opportunità.
+                    </p>
+
+                    <div class="philosophy-words">
+                        <span>Strategia</span>
+                        <i></i>
+                        <span>Tecnologia</span>
+                        <i></i>
+                        <span>Evoluzione</span>
+                    </div>
+
+                    <!-- PREZZI -->
+                    <div class="philosophy-pricing">
+
+                        <div class="pricing-header">
+                            <div>
+                                <span class="pricing-eyebrow">
+                                    INVESTIRE NEL DIGITALE
+                                </span>
+
+                                <h3>
+                                    Il progetto giusto,<br>
+                                    al giusto valore.
+                                </h3>
+                            </div>
+
+                            <span class="pricing-icon">↗</span>
+                        </div>
+
+                        <!-- PACCHETTO 01 -->
+                        <div class="pricing-item">
+
+                            <div class="pricing-item-info">
+                                <span class="pricing-category">
+                                    01 / DIGITAL PRESENCE
+                                </span>
+
+                                <strong>Presenza digitale</strong>
+                                <small>Web e comunicazione online</small>
+                            </div>
+
+                            <div class="pricing-value">
+                                <small>DA</small>
+                                <strong>490 €</strong>
+                            </div>
+
+                           <button
+    class="pricing-add-quote"
+    data-quote-add
+    data-id="presenza-digitale"
+    data-name="Presenza digitale"
+    data-description="Web e comunicazione online"
+    data-tag="DIGITAL PRESENCE"
+    data-icon="web"
+    data-price="490 € ">
+    Aggiungi +
+</button>
+
+                        </div>
+
+                        <!-- PACCHETTO 02 -->
+                        <div class="pricing-item">
+
+                            <div class="pricing-item-info">
+                                <span class="pricing-category">
+                                    02 / BUSINESS SOLUTIONS
+                                </span>
+
+                                <strong>Soluzioni Business</strong>
+                                <small>Strumenti e sistemi per le imprese</small>
+                            </div>
+
+                            <div class="pricing-value">
+                                <small>DA</small>
+                                <strong>790 €</strong>
+                            </div>
+
+             <button
+    class="pricing-add-quote"
+    data-quote-add
+    data-id="soluzioni-business"
+    data-name="Soluzioni Business"
+    data-description="Strumenti e sistemi per le imprese"
+    data-tag="BUSINESS SOLUTIONS"
+    data-icon="software"
+    data-price="790 €">
+    Aggiungi +
+</button>
+
+                        </div>
+
+                        <!-- PACCHETTO 03 -->
+                        <div class="pricing-item">
+
+                            <div class="pricing-item-info">
+                                <span class="pricing-category">
+                                    03 / DIGITAL EVOLUTION
+                                </span>
+
+                                <strong>Digital Evolution</strong>
+                                <small>Progetti tecnologici evoluti</small>
+                            </div>
+
+                            <div class="pricing-value">
+                                <small>DA</small>
+                                <strong>990 €</strong>
+                            </div>
+
+    <button
+    class="pricing-add-quote"
+    data-quote-add
+    data-id="digital-evolution"
+    data-name="Digital Evolution"
+    data-description="Progetti tecnologici evoluti"
+    data-tag="DIGITAL EVOLUTION"
+    data-price="990"
+    data-icon="ai">
+    
+    Aggiungi +
+</button>
+
+                        </div>
+
+                        <div class="pricing-footer">
+                            <span>
+                                Hai un progetto più complesso?
+                            </span>
+
+                            <a href="/preventivo.html">
+                                Richiedi un preventivo su misura
+                                <span>↗</span>
+                            </a>
+                        </div>
+
+                    </div>
+
                 </div>
-                <div class="competenza-card">
-                    <h3>Database & Dati</h3>
-                    <p>Progettazione, gestione e ottimizzazione di database complessi.</p>
-                </div>
-                <div class="competenza-card">
-                    <h3>Sistemi Informatici</h3>
-                    <p>Infrastrutture IT, server e reti progettate per la massima affidabilità.</p>
-                </div>
-                <div class="competenza-card">
-                    <h3>Tecnologie Digitali</h3>
-                    <p>Integrazione di soluzioni cloud, AI e automazione nei processi aziendali.</p>
-                </div>
-                <div class="competenza-card">
-                    <h3>Integrazione dei Sistemi</h3>
-                    <p>Colleghiamo software e piattaforme diverse in un ecosistema unico.</p>
-                </div>
+
             </div>
+
+            <div class="philosophy-bottom">
+
+                <span>DALLE IDEE AI RISULTATI CONCRETI</span>
+
+                <div class="philosophy-bottom-line"></div>
+
+                <span>DNA / 2026</span>
+
+            </div>
+
+            <div class="philosophy-orbit">
+                <div class="orbit-circle"></div>
+                <div class="orbit-core"></div>
+            </div>
+
         </div>
+
     </section>
 
-    <!-- 5. IL NOSTRO APPROCCIO -->
-    <section class="studio-approccio">
-        <div class="studio-container">
-            <div class="studio-grid-2 studio-grid-reverse">
-                <div class="studio-image">
-                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop" alt="Il nostro approccio">
+    <!-- DIVISORE -->
+    <div class="section-divider">
+        <div class="divider-line"></div>
+        <div class="divider-dot"></div>
+        <div class="divider-line"></div>
+    </div>
+
+    <!-- ISPIRAZIONE -->
+    <section class="inspiration-section">
+
+        <div class="inspiration-container">
+
+            <div class="inspiration-heading">
+
+                <div class="inspiration-heading-text">
+                    <span class="inspiration-eyebrow">
+                        <span></span>
+                        IDEE, CONDIVISIONE, CONOSCENZA
+                    </span>
+
+                    <h2>
+                        Connessi e <span>Ispirati.</span>
+                    </h2>
+
+                    <p>
+                        Le idee crescono quando vengono condivise.
+                        Uno spazio dedicato alla conoscenza, alle esperienze
+                        e alle connessioni che generano nuove opportunità.
+                    </p>
                 </div>
-                <div class="studio-text">
-                    <span class="studio-tag">IL NOSTRO APPROCCIO</span>
-                    <h2>Metodo, analisi<br>e ricerca.</h2>
-                    <p>Il nostro approccio si basa su un metodo collaudato: ascoltiamo le tue esigenze, analizziamo il contesto, progettiamo la soluzione e la sviluppiamo con attenzione maniacale ai dettagli.</p>
-                    <p>Non vendiamo "scatole preconfezionate", ma costruiamo soluzioni su misura, con un supporto continuo che non si ferma dopo la consegna.</p>
+
+                <div class="inspiration-heading-image">
+                    <img
+                        src="https://media.istockphoto.com/id/1471825996/it/foto/la-tecnologia-dellintelligenza-artificiale-del-futuro-e-gli-esseri-umani-per-insegnare-e.jpg?s=1024x1024&w=is&k=20&c=sgX87YI_8_JassFysHNsM5ln_5W372iix8sZX27kjkU="
+                        alt="Persona che legge e si informa"
+                    >
+                    <span class="image-caption">CONOSCENZA IN MOVIMENTO</span>
                 </div>
+
             </div>
+
+            <!-- BLOG -->
+            <div class="inspiration-feature blog-feature">
+
+                <div class="feature-image">
+                    <img
+                        src="https://static.wixstatic.com/media/11062b_714fff363748447eb4cda8bcab984829~mv2.jpg/v1/fill/w_622,h_349,fp_0.45_0.28,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Uomo%20legge%20il%20giornale.jpg"
+                        alt="Informazione e approfondimento"
+                    >
+                    <span class="feature-index">01</span>
+                </div>
+
+                <div class="feature-content">
+                    <span class="feature-category">IL BLOG</span>
+
+                    <h3>
+                        Visioni in <span>Parole.</span>
+                    </h3>
+
+                    <p>
+                        Approfondimenti, idee e nuove prospettive sul mondo
+                        della tecnologia e dell'innovazione. Contenuti
+                        pensati per informare, stimolare la curiosità
+                        e accompagnare la crescita.
+                    </p>
+
+                    <a href="https://www.dnainformatica.com/" class="feature-link">
+                        Esplora il blog
+                        <span>↗</span>
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- COMMUNITY -->
+            <div class="inspiration-feature community-feature">
+
+                <div class="feature-content">
+                    <span class="feature-category">LA COMMUNITY</span>
+
+                    <h3>
+                        Dialoghi e <span>Connessioni.</span>
+                    </h3>
+
+                    <p>
+                        Le idee migliori nascono dal confronto.
+                        Entra nella nostra community, condividi esperienze,
+                        partecipa alle discussioni e mettiti in contatto
+                        con persone che hanno voglia di crescere insieme.
+                    </p>
+
+                    <a href="https://www.dnainformatica.com/group/gruppo-dna-informatica/discussion"
+                       class="feature-link">
+                        Entra nella community
+                        <span>↗</span>
+                    </a>
+                </div>
+
+                <div class="feature-image">
+                    <img
+                        src="https://static.wixstatic.com/media/11062b_d09b23ad922e4d1a921fbe5e84a1b736~mv2.jpeg/v1/fill/w_622,h_417,fp_0.23_0.60,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Fare%20una%20foto.jpeg"
+                        alt="Condivisione e creatività"
+                    >
+                    <span class="feature-index">02</span>
+                </div>
+
+            </div>
+
         </div>
+
     </section>
 
-    <!-- 6. INNOVAZIONE E FUTURO -->
-    <section class="studio-innovazione">
-        <div class="studio-innovazione-overlay"></div>
-        <div class="studio-innovazione-content">
-            <span class="studio-tag" style="color: #ff6b00;">INNOVAZIONE E FUTURO</span>
-            <h2>Guardiamo oltre.<br>Ogni giorno.</h2>
-            <p>La tecnologia evolve continuamente e noi evolviamo con lei. Esploriamo le frontiere dell'intelligenza artificiale, del cloud e delle architetture distribuite per offrirti soluzioni sempre all'avanguardia.</p>
-            <p>Il futuro non si aspetta: si costruisce. E noi siamo pronti a costruirlo insieme a te.</p>
-        </div>
-    </section>
-
-    <!-- 7. CITAZIONE FINALE -->
-    <section class="studio-citazione">
-        <div class="studio-citazione-content">
-            <svg class="citazione-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-            <h2>La tecnologia evolve continuamente.<br>L'esperienza permette di comprenderla,<br>interpretarla e guardare oltre.</h2>
-            <p>— DNA Informatica</p>
-        </div>
-    </section>
+    <!-- DIVISORE -->
+    <div class="section-divider">
+        <div class="divider-line"></div>
+        <div class="divider-dot"></div>
+        <div class="divider-line"></div>
+    </div>
 
     <!-- FOOTER -->
     <div id="footer-placeholder"></div>
@@ -152,6 +744,27 @@
     <!-- SCRIPTS -->
     <script src="/js/menu.js?v=2"></script>
     <script src="/js/footer.js?v=2"></script>
+
+    <!-- PREVENTIVO -->
+    <script src="/js/preventivo.js?v=3"></script>
+
+    <!-- CODICE PROMO -->
+    <script>
+        function copyDnaPromo() {
+
+            const promoCode = "DNA-WEB";
+            const feedback = document.getElementById("promo-copy-feedback");
+
+            navigator.clipboard.writeText(promoCode)
+                .then(() => {
+                    feedback.textContent = "Codice copiato!";
+                })
+                .catch(() => {
+                    feedback.textContent = "Copia non disponibile";
+                });
+
+        }
+    </script>
 
 </body>
 </html>

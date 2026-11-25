@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benvenuti - DNA Informatica</title>
+    
+    <link rel="stylesheet" href="/css/style.css?v=1">
+    <link rel="stylesheet" href="/css/menu.css?v=1">
+    <link rel="stylesheet" href="/css/footer.css?v=3">
+    <link rel="stylesheet" href="/css/preventivo.css?v=2">
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+
+
+
+
+
+
+
+<section class="dna-quote-banner">
+    <div class="dna-quote-banner-overlay"></div>
+
+    <div class="dna-quote-banner-content">
+        <div class="dna-quote-brand">
+            DNA <span>INFORMATICA</span>
+        </div>
+
+        <div class="dna-quote-divider"></div>
+
+        <div class="dna-quote-title">
+            <h1>DNA <strong>PREVENTIVI</strong></h1>
+            <p>Il tuo progetto, il nostro supporto.</p>
+        </div>
+    </div>
+
+    <div class="dna-quote-banner-index">
+        PROJECT STUDIO <span> / </span> 2026
+    </div>
+</section>
+
+<!-- ============================================================
+     MENU SOTTO IL BANNER (Sticky Navigation)
+     ============================================================ -->
+<nav class="dna-sub-menu">
+    <div class="dna-sub-menu-inner">
+        <!-- AGGIUNGI id="menu-configuratore" a questo link -->
+        <a href="#quote-configurator" class="dna-menu-item" id="menu-configuratore">
+            <span class="dna-menu-number">01</span>
+            Configuratore
+        </a>
+        <a href="#quote-cart-layout" class="dna-menu-item">
+            <span class="dna-menu-number">02</span>
+            Il tuo Carrello
+        </a>
+        <a href="#quote-contacts" class="dna-menu-item">
+            <span class="dna-menu-number">03</span>
+            Contatti
+        </a>
+    </div>
+</nav>
+
+<style>
+    /* Stile del Menu Orizzontale */
+    .dna-sub-menu {
+        background: #ffffff;
+        border-bottom: 1px solid #ededed;
+        position: sticky;
+        top: 0; /* Si attacca in alto quando scorri */
+        z-index: 99; /* Sta sopra tutto */
+        box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    }
+
+    .dna-sub-menu-inner {
+        max-width: 1450px; /* Stessa larghezza del contenitore del preventivo */
+        margin: 0 auto;
+        padding: 0 7%;
+        display: flex;
+        align-items: center;
+        gap: 35px;
+        height: 60px;
+    }
+
+    .dna-menu-item {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        color: #555;
+        font-size: 13px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        height: 100%;
+        position: relative;
+        transition: color 0.3s ease;
+    }
+
+    .dna-menu-number {
+        color: #f36b21; /* Arancione DNA */
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 1px;
+    }
+
+    /* Effetto linea arancione in basso */
+    .dna-menu-item::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: #f36b21;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s ease;
+    }
+
+    /* Hover ed elemento attivo */
+    .dna-menu-item:hover,
+    .dna-menu-item.active {
+        color: #171717;
+    }
+
+    .dna-menu-item:hover::after,
+    .dna-menu-item.active::after {
+        transform: scaleX(1);
+    }
+
+    /* Responsive Mobile */
+    @media (max-width: 768px) {
+        .dna-sub-menu-inner {
+            height: 50px;
+            gap: 20px;
+            padding: 0 6%;
+            overflow-x: auto; /* Permette lo scroll orizzontale se i testi sono lunghi */
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none; /* Nasconde la barra di scorrimento su Firefox */
+        }
+        
+        .dna-sub-menu-inner::-webkit-scrollbar {
+            display: none; /* Nasconde la barra di scorrimento su Chrome/Safari */
+        }
+
+        .dna-menu-item {
+            font-size: 11px;
+        }
+    }
+</style>
+
+
+
+<main class="quote-page">
+
+  <!-- ============================================================
+     NUOVA SEZIONE: WOW EFFECT / COSA OTTIENI
+     ============================================================ -->
+<section class="quote-wow-section">
+    <style>
+        /* Variabili locale per la sezione */
+        .quote-wow-section {
+            --wow-orange: #f36b21;
+            --wow-black: #171717;
+            --wow-grey: #777;
+            position: relative;
+            background: #fafaf9;
+            padding: 70px 7% 90px;
+            overflow: hidden;
+            border-bottom: 1px solid #ededed;
+            font-family: inherit;
+        }
+
+        /* Griglia di sfondo (Effetto Tech) */
+        .quote-wow-section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: 
+                linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Alone arancione in alto a destra */
+        .quote-wow-section::after {
+            content: "";
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(243,107,33,0.08) 0%, rgba(243,107,33,0) 70%);
+            top: -200px;
+            right: -200px;
+            border-radius: 50%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .quote-wow-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 1450px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        /* Colonna Sinistra: Testo */
+        .quote-wow-text {
+            flex: 1 1 45%;
+            max-width: 550px;
+        }
+
+        .quote-wow-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--wow-orange);
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .quote-wow-eyebrow::before {
+            content: "";
+            width: 30px;
+            height: 2px;
+            background: var(--wow-orange);
+        }
+
+        .quote-wow-text h2 {
+            margin: 0 0 20px;
+            font-size: clamp(32px, 4vw, 54px);
+            font-weight: 800;
+            letter-spacing: -2px;
+            line-height: 1.05;
+            color: var(--wow-black);
+        }
+
+        .quote-wow-text h2 span {
+            color: var(--wow-orange);
+        }
+
+        .quote-wow-text p {
+            color: var(--wow-grey);
+            font-size: 15px;
+            line-height: 1.8;
+            margin: 0 0 30px;
+        }
+
+        .quote-wow-tip {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            padding: 20px;
+            background: #fff;
+            border-left: 3px solid var(--wow-orange);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border-radius: 0 8px 8px 0;
+        }
+
+        .quote-wow-tip svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--wow-orange);
+            flex-shrink: 0;
+        }
+
+        .quote-wow-tip p {
+            margin: 0;
+            font-size: 13px;
+            color: #444;
+            line-height: 1.6;
+        }
+
+        .quote-wow-tip strong {
+            color: var(--wow-black);
+        }
+
+        /* Colonna Destra: Le Card (Effetto WOW) */
+        .quote-wow-cards {
+            flex: 1 1 55%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            position: relative;
+        }
+
+        /* Linea verticale luminosa che connette le card */
+        .quote-wow-cards::before {
+            content: "";
+            position: absolute;
+            top: 40px;
+            bottom: 40px;
+            left: 35px;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--wow-orange) 0%, rgba(243,107,33,0.1) 100%);
+            z-index: 0;
+        }
+
+        .quote-wow-card {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: flex-start;
+            gap: 25px;
+            padding: 25px 30px;
+            background: #ffffff;
+            border: 1px solid #ededed;
+            border-radius: 12px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: default;
+        }
+
+        /* Effetto Hover 3D dinamico */
+        .quote-wow-card:hover {
+            transform: translateX(10px) scale(1.02);
+            border-color: var(--wow-orange);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08), 0 0 0 2px rgba(243,107,33,0.1);
+            background: #fffdfb;
+        }
+
+        .quote-wow-step {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            background: #fff;
+            border: 2px solid var(--wow-orange);
+            border-radius: 50%;
+            color: var(--wow-orange);
+            font-size: 16px;
+            font-weight: 800;
+            flex-shrink: 0;
+            transition: all 0.4s ease;
+            box-shadow: 0 0 0 6px #fafaf9;
+        }
+
+        .quote-wow-card:hover .quote-wow-step {
+            background: var(--wow-orange);
+            color: #fff;
+            transform: rotate(360deg);
+            box-shadow: 0 0 0 6px #fffdfb, 0 0 15px rgba(243,107,33,0.4);
+        }
+
+        .quote-wow-card-content h3 {
+            margin: 0 0 6px;
+            font-size: 17px;
+            font-weight: 750;
+            letter-spacing: -0.5px;
+            color: var(--wow-black);
+        }
+
+        .quote-wow-card-content p {
+            margin: 0;
+            font-size: 13px;
+            color: var(--wow-grey);
+            line-height: 1.6;
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 960px) {
+            .quote-wow-inner {
+                flex-direction: column;
+                gap: 40px;
+            }
+            .quote-wow-text {
+                max-width: 100%;
+                text-align: center;
+            }
+            .quote-wow-eyebrow {
+                justify-content: center;
+            }
+            .quote-wow-tip {
+                text-align: left;
+            }
+            .quote-wow-cards::before {
+                display: none; /* Nasconde la linea su mobile */
+            }
+            .quote-wow-card:hover {
+                transform: translateY(-5px);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .quote-wow-section {
+                padding: 50px 6% 60px;
+            }
+            .quote-wow-card {
+                padding: 20px;
+                gap: 15px;
+            }
+            .quote-wow-step {
+                width: 36px;
+                height: 36px;
+                font-size: 14px;
+            }
+        }
+    </style>
+
+    <div class="quote-wow-inner">
+        
+        <!-- Testo e Consiglio -->
+        <div class="quote-wow-text">
+            <span class="quote-wow-eyebrow">IL TUO PROGETTO, PASSO DOPO PASSO</span>
+            <h2>Trasforma la tua idea in un <span>sistema reale</span>.</h2>
+            <p>
+                Non offriamo soluzioni preconfezionate: costruiamo la struttura digitale che la tua impresa merita. Usa questo spazio per configurare la tua base e capire subito su quali fondamenta poggerà il tuo futuro tecnologico.
+            </p>
+            
+            <div class="quote-wow-tip">
+                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M12 16v-4"></path>
+                    <path d="M12 8h.01"></path>
+                </svg>
+                <p>
+                    <strong>Il nostro consiglio:</strong> Inizia selezionando il pacchetto base più vicino alle tue esigenze attuali. Potrai sempre aggiungere funzionalità in seguito: la nostra architettura è pensata per crescere insieme a te.
+                </p>
+            </div>
+        </div>
+
+        <!-- Card Interattive -->
+        <div class="quote-wow-cards">
+            
+            <div class="quote-wow-card">
+                <div class="quote-wow-step">01</div>
+                <div class="quote-wow-card-content">
+                    <h3>Configura la Base</h3>
+                    <p>Scegli il pacchetto di partenza. Mettiamo le fondamenta tecniche per garantirti massime prestazioni e zero colli di bottiglia.</p>
+                </div>
+            </div>
+
+            <div class="quote-wow-card">
+                <div class="quote-wow-step">02</div>
+                <div class="quote-wow-card-content">
+                    <h3>Personalizza i Moduli</h3>
+                    <p>Aggiungi solo ciò di cui hai veramente bisogno. Dalla Dashboard AI alle aree riservate, costruisci un ecosistema su misura.</p>
+                </div>
+            </div>
+
+            <div class="quote-wow-card">
+                <div class="quote-wow-step">03</div>
+                <div class="quote-wow-card-content">
+                    <h3>Ottieni la Stima</h3>
+                    <p>Visualizza in tempo reale la stima economica del progetto. Un punto di partenza trasparente per una consulenza dedicata.</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- ============================================================
+     SEZIONE CARRELLO PROGETTO (Elegante & Editoriale)
+     ============================================================ -->
+<section class="quote-cart-layout" id="quote-cart-layout">
+    <style>
+        /* --- Stile della Sezione Carrello --- */
+        .quote-cart-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 380px;
+            gap: 50px;
+            padding: 60px 7% 90px;
+            align-items: start;
+            background: #fafaf9; /* Sfondo leggermente grigio per far risaltare le card bianche */
+            border-top: 1px solid #ededed;
+            border-bottom: 1px solid #ededed;
+            font-family: inherit;
+             position: relative;
+    z-index: 1;
+        }
+
+        /* Colonna Sinistra: Lista Servizi */
+        .quote-cart-main {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+            border: 1px solid #f0f0f0;
+        }
+
+        .quote-block-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #ededed;
+            margin-bottom: 10px;
+        }
+
+        .quote-block-heading h2 {
+            margin: 10px 0 0;
+            font-size: 32px;
+            font-weight: 800;
+            letter-spacing: -1.5px;
+            color: #171717;
+        }
+
+        .quote-cart-note {
+            color: #f36b21;
+            font-size: 9px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            background: rgba(243,107,33,0.1);
+            padding: 6px 12px;
+            border-radius: 50px;
+        }
+
+        /* Stile per quando il carrello è vuoto (Gestito da JS) */
+        .quote-empty {
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        .quote-empty h3 {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: -1px;
+            color: #171717;
+            margin: 0 0 10px;
+        }
+
+        .quote-empty p {
+            color: #777;
+            font-size: 14px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        /* Tasto Aggiungi Altri Servizi */
+        .quote-add-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 30px;
+            color: #171717;
+            font-size: 12px;
+            font-weight: 800;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        .quote-add-more span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: #f7f7f5;
+            border: 1px solid #ededeb;
+            border-radius: 50%;
+            font-size: 18px;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .quote-add-more:hover {
+            color: #f36b21;
+        }
+
+        .quote-add-more:hover span {
+            background: #f36b21;
+            border-color: #f36b21;
+            color: #fff;
+            transform: rotate(90deg) scale(1.1);
+        }
+
+        /* Colonna Destra: Riepilogo (Sticky) */
+        .quote-cart-sidebar {
+            position: sticky;
+            top: 30px;
+        }
+
+        .quote-summary-box {
+            background: #ffffff;
+            padding: 35px;
+            border-radius: 16px;
+            border: 1px solid #f0f0f0;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Dettaglio arancione in alto nella card di riepilogo */
+        .quote-summary-box::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: #f36b21;
+        }
+
+        .quote-section-label {
+            display: block;
+            margin-bottom: 15px;
+            color: #f36b21;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .quote-summary-box h2 {
+            margin: 0 0 30px;
+            font-size: 26px;
+            font-weight: 800;
+            letter-spacing: -1px;
+            color: #171717;
+        }
+
+        .quote-summary-line {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+            border-top: 1px solid #f0f0f0;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .quote-summary-line strong {
+            font-size: 16px;
+            color: #171717;
+            font-weight: 800;
+        }
+
+        .quote-summary-line:first-of-type strong {
+            color: #f36b21;
+            font-size: 20px;
+        }
+
+        .quote-summary-description {
+            padding: 20px 0;
+            border-top: 1px solid #f0f0f0;
+            color: #777;
+            font-size: 12px;
+            line-height: 1.7;
+        }
+
+        /* Bottone Procedi */
+        .quote-proceed {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 18px 20px;
+            background: #171717;
+            color: #ffffff;
+            font-size: 12px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+            margin-top: 10px;
+        }
+
+        .quote-proceed span {
+            font-size: 20px;
+            color: #f36b21;
+            transition: transform 0.3s ease;
+        }
+
+        .quote-proceed:hover {
+            background: #f36b21;
+            box-shadow: 0 10px 20px rgba(243,107,33,0.3);
+        }
+
+        .quote-proceed:hover span {
+            color: #ffffff;
+            transform: translateX(5px);
+        }
+
+        .quote-summary-footnote {
+            margin: 20px 0 0;
+            color: #aaa;
+            font-size: 10px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .quote-summary-footnote::before {
+            content: "🔒"; /* Icona lucchetto */
+            font-size: 12px;
+        }
+
+        /* Responsive Mobile */
+        @media (max-width: 900px) {
+            .quote-cart-layout {
+                grid-template-columns: 1fr;
+                padding: 40px 6%;
+                gap: 30px;
+            }
+            .quote-cart-sidebar {
+                position: static;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .quote-cart-main {
+                padding: 25px 20px;
+            }
+            .quote-block-heading {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            .quote-summary-box {
+                padding: 25px 20px;
+            }
+        }
+    </style>
+
+    <!-- Colonna Sinistra -->
+    <div class="quote-cart-main">
+        <div class="quote-block-heading">
+            <div>
+                <span class="quote-section-label">01 / IL CARRELLO</span>
+                <h2>I tuoi servizi</h2>
+            </div>
+            <span class="quote-cart-note">LA TUA SELEZIONE</span>
+        </div>
+
+        <!-- Contenitore in cui JS inietta i servizi -->
+        <div id="quote-selected-services" class="quote-selected-services"></div>
+
+        <a href="/index.html" class="quote-add-more">
+            <span>+</span> Aggiungi altri servizi
+        </a>
+    </div>
+
+    <!-- Colonna Destra (Riepilogo) -->
+    <aside class="quote-cart-sidebar">
+        <div class="quote-summary-box">
+            <span class="quote-section-label">02 / RIEPILOGO</span>
+            <h2>Il tuo progetto</h2>
+
+            <div class="quote-summary-line">
+                <span>Servizi selezionati</span>
+                <strong id="quote-summary-count">00</strong>
+            </div>
+
+           
+
+            <div class="quote-summary-description">
+                Ogni progetto viene analizzato in base alle sue caratteristiche, agli obiettivi e alle esigenze specifiche.
+            </div>
+
+            <a href="#quote-contacts" class="quote-proceed">
+                Procedi con la richiesta
+                <span>→</span>
+            </a>
+
+            <p class="quote-summary-footnote">
+                Nessun impegno. La richiesta è gratuita.
+            </p>
+        </div>
+    </aside>
+
+</section>
+<!-- CONFIGURATORE PREZZO -->
+<!-- ============================================================
+     CONFIGURATORE ESPANDIBILE (Accordion WOW)
+     ============================================================ -->
+<section class="quote-configurator-wrapper" id="quote-configurator">
+    <style>
+        /* Stile del contenitore principale */
+        .quote-configurator-wrapper {
+            max-width: 1450px;
+            margin: 0 auto;
+            padding: 40px 7% 60px;
+            font-family: inherit;
+        
+        }
+
+        /* La Card che si apre */
+        .quote-accordion-card {
+            background: #fafaf9;
+            border: 1px solid #ededed;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .quote-accordion-card:hover {
+            box-shadow: 0 10px 40px rgba(0,0,0,0.04);
+        }
+
+        /* Intestazione cliccabile */
+        .quote-accordion-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 35px 40px;
+            cursor: pointer;
+            background: #fff;
+            transition: background 0.3s ease;
+        }
+
+        .quote-accordion-header:hover {
+            background: #fffdfb;
+        }
+
+        .quote-accordion-header-text h3 {
+            margin: 0 0 8px;
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: -1px;
+            color: #171717;
+        }
+
+        .quote-accordion-header-text p {
+            margin: 0;
+            font-size: 14px;
+            color: #777;
+        }
+
+        /* Il bottone circolare/icona che ruota */
+        .quote-accordion-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: #fff;
+            border: 2px solid #f36b21;
+            color: #f36b21;
+            font-size: 24px;
+            font-weight: 300;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            flex-shrink: 0;
+        }
+
+        .quote-accordion-card.is-open .quote-accordion-toggle {
+            transform: rotate(45deg); /* Diventa una X */
+            background: #f36b21;
+            color: #fff;
+        }
+
+        /* Contenuto nascosto che si espande */
+        .quote-accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            background: #fff;
+        }
+
+        .quote-accordion-card.is-open .quote-accordion-content {
+            /* Impostiamo un'altezza massima generosa per farci stare tutto */
+            max-height: 2500px; 
+        }
+
+        /* Spaziatura interna del configuratore (una volta aperto) */
+        .quote-configurator-inner {
+            padding: 10px 40px 50px;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        /* --- STILI DEL VECCHIO CONFIGURATORE (Compattati) --- */
+        .quote-configurator-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 320px;
+            gap: 35px;
+            align-items: start;
+            margin-top: 30px;
+        }
+
+        .quote-configurator-options {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .quote-config-group h3 {
+            margin: 0 0 15px;
+            color: #222;
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        /* Pacchetti orizzontali */
+        .quote-config-group:first-child {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .quote-config-group:first-child h3 {
+            width: 100%;
+            margin-bottom: 5px;
+        }
+        .quote-config-group:first-child .quote-config-option {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: calc(33.333% - 7px);
+            padding: 15px;
+        }
+        .quote-config-group:first-child .quote-config-option span {
+            font-weight: 600;
+            font-size: 13px;
+            margin-bottom: 5px;
+        }
+        .quote-config-group:first-child .quote-config-option strong {
+            font-size: 18px;
+        }
+
+        /* Funzionalità a 2 colonne */
+        .quote-config-group:last-child {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+        }
+        .quote-config-group:last-child h3 {
+            grid-column: 1 / -1;
+            margin-bottom: 5px;
+        }
+
+        .quote-config-option {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 15px;
+            border: 1px solid #e9e9e9;
+            background: #fff;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-bottom: 0;
+        }
+
+        .quote-config-option:hover {
+            border-color: #f36b21;
+            background: #fffaf7;
+        }
+
+        .quote-config-option input {
+            width: 17px;
+            height: 17px;
+            accent-color: #f36b21;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .quote-config-option span {
+            flex: 1;
+            font-size: 12px;
+            color: #444;
+        }
+
+        .quote-config-option strong {
+            font-size: 12px;
+            color: #171717;
+            white-space: nowrap;
+        }
+
+        .quote-config-option:has(input:checked) {
+            border-color: #f36b21;
+            background: #fff8f3;
+        }
+        .quote-config-option:has(input:checked) strong {
+            color: #f36b21;
+        }
+
+        /* Riepilogo Destra */
+        .quote-live-summary {
+            position: sticky;
+            top: 30px;
+            padding: 25px;
+            background: #171717;
+            color: #fff;
+            border-radius: 8px;
+        }
+
+        .quote-live-summary .quote-eyebrow {
+            display: block;
+            margin-bottom: 15px;
+            color: #f36b21;
+            font-size: 9px;
+            font-weight: 800;
+            letter-spacing: 1.7px;
+        }
+
+        .quote-live-summary h3 {
+            margin: 0 0 20px;
+            font-size: 20px;
+            color: #fff;
+        }
+
+        .quote-live-total {
+            padding: 15px 0;
+            margin-bottom: 10px;
+            border-top: 1px solid #393939;
+            border-bottom: 1px solid #393939;
+            color: #f36b21;
+            font-size: 28px;
+            font-weight: 800;
+        }
+
+        .quote-live-details {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #393939;
+            font-size: 11px;
+        }
+
+        .quote-live-details span { color: #aaa; }
+        .quote-live-details strong { color: #fff; }
+        .quote-live-summary > p {
+            margin: 15px 0 0;
+            color: #999;
+            font-size: 10px;
+            line-height: 1.6;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .quote-accordion-header { padding: 25px 20px; }
+            .quote-accordion-header-text h3 { font-size: 20px; }
+            .quote-accordion-toggle { width: 45px; height: 45px; font-size: 20px; }
+            .quote-configurator-inner { padding: 20px; }
+            .quote-configurator-grid { grid-template-columns: 1fr; }
+            .quote-config-group:first-child .quote-config-option { width: 100%; }
+            .quote-config-group:last-child { grid-template-columns: 1fr; }
+            .quote-live-summary { position: static; }
+        }
+    </style>
+
+    <div class="quote-accordion-card" id="quote-accordion">
+        
+        <!-- HEADER CLICCABILE -->
+        <div class="quote-accordion-header" onclick="document.getElementById('quote-accordion').classList.toggle('is-open')">
+            <div class="quote-accordion-header-text">
+                <span class="quote-eyebrow" style="margin-bottom:10px; display:inline-block;">01 / CONFIGURAZIONE</span>
+                <h3>Vuoi una mano a costruire il tuo progetto?</h3>
+                <p>Clicca qui per espandere il configuratore e scoprire subito una stima del costo.</p>
+            </div>
+            <div class="quote-accordion-toggle">
+                +
+            </div>
+        </div>
+
+        <!-- CONTENUTO CHE SI ESPANDE -->
+        <div class="quote-accordion-content">
+            <div class="quote-configurator-inner">
+                
+                <div class="quote-configurator-grid">
+                    
+                    <!-- Colonna Sinistra -->
+                    <div class="quote-configurator-options">
+                        
+                        <div class="quote-config-group">
+                            <h3>Seleziona il pacchetto base</h3>
+                            <label class="quote-config-option">
+                                <input type="radio" name="quote-package" value="490">
+                                <span>Presenza digitale</span>
+                                <strong>490 €</strong>
+                            </label>
+                            <label class="quote-config-option">
+                                <input type="radio" name="quote-package" value="790">
+                                <span>Soluzioni Business</span>
+                                <strong>790 €</strong>
+                            </label>
+                            <label class="quote-config-option">
+                                <input type="radio" name="quote-package" value="990">
+                                <span>Digital Evolution</span>
+                                <strong>990 €</strong>
+                            </label>
+                        </div>
+
+                        <div class="quote-config-group">
+                            <h3>Personalizza il progetto</h3>
+                            <label class="quote-config-option">
+                                <input type="checkbox" class="quote-extra" value="150" data-name="Sito multilingua">
+                                <span>Sito multilingua</span>
+                                <strong>+150 €</strong>
+                            </label>
+                            <label class="quote-config-option">
+                                <input type="checkbox" class="quote-extra" value="250" data-name="Area riservata utenti">
+                                <span>Area riservata utenti</span>
+                                <strong>+250 €</strong>
+                            </label>
+                            <label class="quote-config-option">
+                                <input type="checkbox" class="quote-extra" value="100" data-name="Blog / News dinamiche">
+                                <span>Blog / News dinamiche</span>
+                                <strong>+100 €</strong>
+                            </label>
+                            <label class="quote-config-option">
+                                <input type="checkbox" class="quote-extra" value="180" data-name="Gestione contenuti CMS">
+                                <span>Gestione contenuti CMS</span>
+                                <strong>+180 €</strong>
+                            </label>
+                            <label class="quote-config-option">
+                                <input type="checkbox" class="quote-extra" value="90" data-name="Moduli e form avanzati">
+                                <span>Moduli e form avanzati</span>
+                                <strong>+90 €</strong>
+                            </label>
+                            <label class="quote-config-option">
+                                <input type="checkbox" class="quote-extra" value="200" data-name="Prenotazioni online">
+                                <span>Prenotazioni online</span>
+                                <strong>+200 €</strong>
+                            </label>
+                            <label class="quote-config-option">
+                                <input type="checkbox" class="quote-extra" value="250" data-name="Pagamenti online">
+                                <span>Pagamenti online</span>
+                                <strong>+250 €</strong>
+                            </label>
+                            <label class="quote-config-option">
+                                <input type="checkbox" class="quote-extra" value="250" data-name="Integrazione CRM">
+                                <span>Integrazione CRM</span>
+                                <strong>+250 €</strong>
+                            </label>
+                            <label class="quote-config-option">
+                                <input type="checkbox" class="quote-extra" value="300" data-name="Automazioni aziendali">
+                                <span>Automazioni aziendali</span>
+                                <strong>+300 €</strong>
+                            </label>
+                            <label class="quote-config-option">
+                                <input type="checkbox" class="quote-extra" value="350" data-name="Integrazione AI">
+                                <span>Integrazione AI</span>
+                                <strong>+350 €</strong>
+                            </label>
+                            <label class="quote-config-option">
+                                <input type="checkbox" class="quote-extra" value="400" data-name="Dashboard personalizzata">
+                                <span>Dashboard personalizzata</span>
+                                <strong>+400 €</strong>
+                            </label>
+                            <label class="quote-config-option">
+                                <input type="checkbox" class="quote-extra" value="300" data-name="Integrazione API esterne">
+                                <span>Integrazione API esterne</span>
+                                <strong>+300 €</strong>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Colonna Destra (Riepilogo) -->
+                    <aside class="quote-live-summary">
+                        <span class="quote-eyebrow">STIMA IN TEMPO REALE</span>
+                        <h3>Il valore del tuo progetto</h3>
+
+                        <div class="quote-live-total" id="quote-live-total">
+                            Seleziona un pacchetto
+                        </div>
+
+                        <div class="quote-live-details">
+                            <span>Pacchetto base</span>
+                            <strong id="quote-base-price">—</strong>
+                        </div>
+
+                        <div class="quote-live-details">
+                            <span>Funzionalità aggiuntive</span>
+                            <strong id="quote-extra-price">0 €</strong>
+                        </div>
+
+                        <p>La cifra visualizzata è una stima orientativa. Il costo definitivo sarà confermato dopo l'analisi del progetto.</p>
+                    </aside>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <section class="quote-form-section" id="quote-contacts">
+
+        <div class="quote-form-heading">
+            <span class="quote-section-label">03 / CONTATTI</span>
+            <h2>Parliamo del tuo progetto.</h2>
+            <p>Lasciaci i tuoi riferimenti: ti ricontatteremo per approfondire la tua idea.</p>
+        </div>
+
+       
+<form id="quote-form" class="quote-form">
+
+    <!-- RIEPILOGO SERVIZI SELEZIONATI -->
+    <!-- RIEPILOGO COMPATTO DEL PROGETTO -->
+<div id="quote-form-services" class="quote-form-services">
+    <div class="quote-form-summary-heading">
+        <span>RIEPILOGO</span>
+        <h3>La tua configurazione</h3>
+    </div>
+
+    <div id="quote-form-services-list"></div>
+</div>
+
+    <!-- DATI DI CONTATTO -->
+    <div class="quote-form-grid">
+
+        <div class="quote-field">
+            <label for="quote-name">Nome *</label>
+            <input type="text" id="quote-name" name="nome"
+                   placeholder="Il tuo nome" required>
+        </div>
+
+        <div class="quote-field">
+            <label for="quote-surname">Cognome *</label>
+            <input type="text" id="quote-surname" name="cognome"
+                   placeholder="Il tuo cognome" required>
+        </div>
+
+        <div class="quote-field">
+            <label for="quote-email">Email *</label>
+            <input type="email" id="quote-email" name="email"
+                   placeholder="nome@email.it" required>
+        </div>
+
+        <div class="quote-field">
+            <label for="quote-phone">Telefono</label>
+            <input type="tel" id="quote-phone" name="telefono"
+                   placeholder="+39">
+        </div>
+
+        <div class="quote-field quote-field-full">
+            <label for="quote-message">Raccontaci la tua idea</label>
+            <textarea id="quote-message" name="messaggio"
+                      rows="5"
+                      placeholder="Descrivi brevemente il progetto, i tuoi obiettivi o le tue esigenze..."></textarea>
+        </div>
+
+    </div>
+
+    <!-- PRIVACY -->
+    <div class="quote-privacy">
+        <input type="checkbox" id="quote-privacy"
+               name="privacy" required>
+
+        <label for="quote-privacy">
+            Dichiaro di aver letto l'informativa sulla
+            <a href="/privacy.html" target="_blank">privacy</a>
+            e acconsento al trattamento dei dati.
+        </label>
+    </div>
+
+    <!-- INVIO -->
+    <div class="quote-form-bottom">
+        <p>I campi contrassegnati con * sono obbligatori.</p>
+
+        <button type="submit" class="quote-submit">
+            Invia richiesta <span>→</span>
+        </button>
+    </div>
+
+    <!-- MESSAGGIO DI CONFERMA O ERRORE -->
+    <div id="quote-form-feedback"></div>
+
+</form>
+
+    </section>
+
+</main>
+
+        <!-- ... fine campi del form ... -->
+
+        <div id="quote-form-feedback"></div>
+
+    </form>
+
+  <!-- BOTTONE RESET INDIPENDENTE (Centrato) -->
+<div class="quote-global-reset-wrapper">
+    <button type="button" id="quote-reset-btn" class="btn-reset-danger">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px; vertical-align: text-bottom;">
+            <path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+            <line x1="10" y1="11" x2="10" y2="17"></line>
+            <line x1="14" y1="11" x2="14" y2="17"></line>
+        </svg>
+        Cancella Tutto e Ricomincia
+    </button>
+</div>
+</section>
+
+
+   <!-- SEZIONE BENTO GRID (Presentazione Servizi) -->
+<div class="section-divider">
+    <div class="divider-line"></div>
+    <div class="divider-dot"></div>
+    <div class="divider-line"></div>
+</div>
+
+
+
+
+
+
+
+
+
+<div id="footer-placeholder"></div>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        // Seleziona il link del menu e la card del configuratore
+        const menuLink = document.getElementById("menu-configuratore");
+        const accordionCard = document.getElementById("quote-accordion");
+
+        if (menuLink && accordionCard) {
+            menuLink.addEventListener("click", (e) => {
+                // 1. Apri la card se non è già aperta
+                if (!accordionCard.classList.contains("is-open")) {
+                    accordionCard.classList.add("is-open");
+                }
+
+                // 2. Fai lo scroll morbido fino alla sezione del configuratore
+                // (usiamo setTimeout per dare il tempo alla card di espandersi
+                // e calcolare la corretta altezza della pagina durante lo scroll)
+                setTimeout(() => {
+                    const targetSection = document.getElementById("quote-configurator");
+                    if (targetSection) {
+                        const yOffset = -70; // Offset per non far finire il titolo sotto il menu sticky
+                        const y = targetSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                        window.scrollTo({ top: y, behavior: 'smooth' });
+                    }
+                }, 50);
+            });
+        }
+    });
+</script>
+    <script src="/js/menu.js?v=1"></script>
+    <script src="/js/footer.js?v=1"></script>
+ <script src="/js/preventivo.js?v=5"></script>
+</body>
+</html>

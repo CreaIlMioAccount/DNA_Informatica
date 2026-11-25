@@ -23,15 +23,22 @@
           </div>
 
             <div class="header-actions">
-                <button class="icon-btn search-btn" aria-label="Cerca">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="11" cy="11" r="8"></circle>
-                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                    </svg>
-                </button>
-                <a href="#" class="btn-login">Accedi</a>
-                <a href="#" class="btn-start">Inizia</a>
-            </div>
+    <button class="icon-btn search-btn" aria-label="Cerca">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+    </button>
+    
+    <!-- NUOVO BOTTONE PREVENTIVO -->
+    <a href="/pages/preventivo.html" class="btn-preventivo-header">
+        Richiedi Preventivo
+         <span id="header-quote-count" class="header-count-badge">0</span>
+    </a>
+    
+    <a href="#" class="btn-login">Accedi</a>
+    <a href="#" class="btn-start">Inizia</a>
+</div>
         </div>
     </div>
 
@@ -50,12 +57,11 @@
             
             <nav class="main-nav" id="mainNav">
                 
-                <!-- 1. HOME (onclick sul contenitore) -->
-                <div class="has-megamenu" onclick="toggleMegamenu(event, this)">
-                    <!-- Contenitore unico per link e freccia -->
+                <!-- 1. HOME -->
+                <div class="has-megamenu">
                     <div class="menu-trigger">
                         <a href="/index.html" class="home-link">Home</a>
-                        <span class="arrow-down">&#9662;</span>
+                        <span class="arrow-down" onclick="toggleMegamenu(event, this)">&#9662;</span>
                     </div>
 
                     <div class="megamenu">
@@ -86,11 +92,11 @@
                     </div>
                 </div>
 
-                <!-- 2. PRODOTTI (onclick sul contenitore) -->
-                <div class="has-megamenu" onclick="toggleMegamenu(event, this)">
+                <!-- 2. PRODOTTI -->
+                <div class="has-megamenu">
                     <div class="menu-trigger">
                         <a href="#" class="home-link">Prodotti</a>
-                        <span class="arrow-down">&#9662;</span>
+                        <span class="arrow-down" onclick="toggleMegamenu(event, this)">&#9662;</span>
                     </div>
                     <div class="megamenu">
                         <div class="mega-header"><h3>I nostri Prodotti</h3><p>Scopri le soluzioni software e cloud pensate per la tua crescita.</p></div>
@@ -118,10 +124,10 @@
                 </div>
 
                 <!-- 3. SERVIZI -->
-                <div class="has-megamenu" onclick="toggleMegamenu(event, this)">
+                <div class="has-megamenu">
                     <div class="menu-trigger">
                         <a href="#" class="home-link">Servizi</a>
-                        <span class="arrow-down">&#9662;</span>
+                        <span class="arrow-down" onclick="toggleMegamenu(event, this)">&#9662;</span>
                     </div>
                     <div class="megamenu">
                         <div class="mega-header"><h3>I nostri Servizi</h3><p>Tutto ciò di cui hai bisogno per la trasformazione digitale.</p></div>
@@ -149,10 +155,10 @@
                 </div>
 
                 <!-- 4. SOLUZIONI -->
-                <div class="has-megamenu" onclick="toggleMegamenu(event, this)">
+                <div class="has-megamenu">
                     <div class="menu-trigger">
                         <a href="#" class="home-link">Soluzioni</a>
-                        <span class="arrow-down">&#9662;</span>
+                        <span class="arrow-down" onclick="toggleMegamenu(event, this)">&#9662;</span>
                     </div>
                     <div class="megamenu">
                         <div class="mega-header"><h3>Le nostre Soluzioni</h3><p>Soluzioni IT personalizzate per ogni esigenza aziendale.</p></div>
@@ -180,10 +186,10 @@
                 </div>
 
                 <!-- 5. SETTORI -->
-                <div class="has-megamenu" onclick="toggleMegamenu(event, this)">
+                <div class="has-megamenu">
                     <div class="menu-trigger">
                         <a href="#" class="home-link">Settori</a>
-                        <span class="arrow-down">&#9662;</span>
+                        <span class="arrow-down" onclick="toggleMegamenu(event, this)">&#9662;</span>
                     </div>
                     <div class="megamenu">
                         <div class="mega-header"><h3>Settori che serviamo</h3><p>Soluzioni specifiche per ogni industria.</p></div>
@@ -211,10 +217,10 @@
                 </div>
 
                 <!-- 6. ULTIME TECNOLOGIE -->
-                <div class="has-megamenu" onclick="toggleMegamenu(event, this)">
+                <div class="has-megamenu">
                     <div class="menu-trigger">
                         <a href="#" class="home-link">Ultime tecnologie</a>
-                        <span class="arrow-down">&#9662;</span>
+                        <span class="arrow-down" onclick="toggleMegamenu(event, this)">&#9662;</span>
                     </div>
                     <div class="megamenu">
                         <div class="mega-header"><h3>Ultime Tecnologie</h3><p>Resta al passo con l'innovazione.</p></div>
@@ -242,10 +248,10 @@
                 </div>
 
                 <!-- 7. PROGRAMMAZIONE -->
-                <div class="has-megamenu" onclick="toggleMegamenu(event, this)">
+                <div class="has-megamenu">
                     <div class="menu-trigger">
                         <a href="#" class="home-link">Programmazione</a>
-                        <span class="arrow-down">&#9662;</span>
+                        <span class="arrow-down" onclick="toggleMegamenu(event, this)">&#9662;</span>
                     </div>
                     <div class="megamenu">
                         <div class="mega-header"><h3>Programmazione</h3><p>Linguaggi e framework per ogni progetto.</p></div>
@@ -273,10 +279,10 @@
                 </div>
 
                 <!-- 8. DESIGN -->
-                <div class="has-megamenu" onclick="toggleMegamenu(event, this)">
+                <div class="has-megamenu">
                     <div class="menu-trigger">
                         <a href="#" class="home-link">Design</a>
-                        <span class="arrow-down">&#9662;</span>
+                        <span class="arrow-down" onclick="toggleMegamenu(event, this)">&#9662;</span>
                     </div>
                     <div class="megamenu">
                         <div class="mega-header"><h3>Design</h3><p>Creatività e funzionalità per il tuo brand.</p></div>
@@ -304,10 +310,10 @@
                 </div>
 
                 <!-- 9. RISORSE -->
-                <div class="has-megamenu" onclick="toggleMegamenu(event, this)">
+                <div class="has-megamenu">
                     <div class="menu-trigger">
                         <a href="#" class="home-link">Risorse</a>
-                        <span class="arrow-down">&#9662;</span>
+                        <span class="arrow-down" onclick="toggleMegamenu(event, this)">&#9662;</span>
                     </div>
                     <div class="megamenu">
                         <div class="mega-header"><h3>Risorse</h3><p>Guide, articoli e materiali per approfondire.</p></div>
@@ -335,10 +341,10 @@
                 </div>
 
                 <!-- 10. SUPPORTO -->
-                <div class="has-megamenu" onclick="toggleMegamenu(event, this)">
+                <div class="has-megamenu">
                     <div class="menu-trigger">
                         <a href="#" class="home-link">Supporto</a>
-                        <span class="arrow-down">&#9662;</span>
+                        <span class="arrow-down" onclick="toggleMegamenu(event, this)">&#9662;</span>
                     </div>
                     <div class="megamenu">
                         <div class="mega-header"><h3>Supporto</h3><p>Siamo qui per aiutarti.</p></div>
@@ -366,10 +372,10 @@
                 </div>
 
                 <!-- 11. AZIENDA -->
-                <div class="has-megamenu" onclick="toggleMegamenu(event, this)">
+                <div class="has-megamenu">
                     <div class="menu-trigger">
                         <a href="#" class="home-link">Azienda</a>
-                        <span class="arrow-down">&#9662;</span>
+                        <span class="arrow-down" onclick="toggleMegamenu(event, this)">&#9662;</span>
                     </div>
                     <div class="megamenu">
                         <div class="mega-header"><h3>La nostra Azienda</h3><p>Scopri la nostra storia, il team e i valori.</p></div>
